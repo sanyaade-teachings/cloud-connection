@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual C++ Express 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PACCPlugin_Android_x86_VS2010", "PACCPlugin_Android_x86_VS2010.vcxproj", "{C59824CE-06EA-45BC-B589-2F26FBD192C8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PACCPlugin_Win32_VS2010", "PACCPlugin_Win32_VS2010.vcxproj", "{0C53509C-55A9-460A-A04E-FEABEED95BC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|hkAndroid = Debug|hkAndroid
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|Win32 = Debug|Win32
+		Release|hkAndroid = Release|hkAndroid
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C59824CE-06EA-45BC-B589-2F26FBD192C8}.Debug|hkAndroid.ActiveCfg = Debug|hkAndroid
+		{C59824CE-06EA-45BC-B589-2F26FBD192C8}.Debug|hkAndroid.Build.0 = Debug|hkAndroid
+		{C59824CE-06EA-45BC-B589-2F26FBD192C8}.Debug|hkAndroid.Deploy.0 = Debug|hkAndroid
+		{C59824CE-06EA-45BC-B589-2F26FBD192C8}.Debug|Mixed Platforms.ActiveCfg = Debug|hkAndroid
+		{C59824CE-06EA-45BC-B589-2F26FBD192C8}.Debug|Mixed Platforms.Build.0 = Debug|hkAndroid
+		{C59824CE-06EA-45BC-B589-2F26FBD192C8}.Debug|Mixed Platforms.Deploy.0 = Debug|hkAndroid
+		{C59824CE-06EA-45BC-B589-2F26FBD192C8}.Debug|Win32.ActiveCfg = Debug|hkAndroid
+		{C59824CE-06EA-45BC-B589-2F26FBD192C8}.Release|hkAndroid.ActiveCfg = Release|hkAndroid
+		{C59824CE-06EA-45BC-B589-2F26FBD192C8}.Release|hkAndroid.Build.0 = Release|hkAndroid
+		{C59824CE-06EA-45BC-B589-2F26FBD192C8}.Release|hkAndroid.Deploy.0 = Release|hkAndroid
+		{C59824CE-06EA-45BC-B589-2F26FBD192C8}.Release|Mixed Platforms.ActiveCfg = Release|hkAndroid
+		{C59824CE-06EA-45BC-B589-2F26FBD192C8}.Release|Mixed Platforms.Build.0 = Release|hkAndroid
+		{C59824CE-06EA-45BC-B589-2F26FBD192C8}.Release|Mixed Platforms.Deploy.0 = Release|hkAndroid
+		{C59824CE-06EA-45BC-B589-2F26FBD192C8}.Release|Win32.ActiveCfg = Release|hkAndroid
+		{0C53509C-55A9-460A-A04E-FEABEED95BC2}.Debug|hkAndroid.ActiveCfg = Debug|Win32
+		{0C53509C-55A9-460A-A04E-FEABEED95BC2}.Debug|Mixed Platforms.ActiveCfg = Debug|Win32
+		{0C53509C-55A9-460A-A04E-FEABEED95BC2}.Debug|Mixed Platforms.Build.0 = Debug|Win32
+		{0C53509C-55A9-460A-A04E-FEABEED95BC2}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0C53509C-55A9-460A-A04E-FEABEED95BC2}.Debug|Win32.Build.0 = Debug|Win32
+		{0C53509C-55A9-460A-A04E-FEABEED95BC2}.Release|hkAndroid.ActiveCfg = Release|Win32
+		{0C53509C-55A9-460A-A04E-FEABEED95BC2}.Release|Mixed Platforms.ActiveCfg = Release|Win32
+		{0C53509C-55A9-460A-A04E-FEABEED95BC2}.Release|Mixed Platforms.Build.0 = Release|Win32
+		{0C53509C-55A9-460A-A04E-FEABEED95BC2}.Release|Win32.ActiveCfg = Release|Win32
+		{0C53509C-55A9-460A-A04E-FEABEED95BC2}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

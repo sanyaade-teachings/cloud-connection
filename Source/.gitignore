@@ -1,0 +1,5 @@
+*.vcxproj.user
+*.sdf
+*.suo
+/ipch/
+/IPlayGamesClient.cs

@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|hkAndroid">
+      <Configuration>Debug</Configuration>
+      <Platform>hkAndroid</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|hkAndroid">
+      <Configuration>Release</Configuration>
+      <Platform>hkAndroid</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{C59824CE-06EA-45BC-B589-2F26FBD192C8}</ProjectGuid>
+    <RootNamespace>PACCPlugin_Android_x86_VS2010</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
+    <PlatformToolset>x86-4.6</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
+    <AndroidArch>x86</AndroidArch>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
+    <Import Project="C:\Havok\AnarchySDK\Build\Vision\PropertySheets\EnginePlugin_android_x86_vs2010_anarchyDebug.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
+    <OutDir>..\Bin\$(ProjectName)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
+    <IntDir>..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <TargetName>PACloudConnectionPlugin</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
+    <ClCompile />
+    <ClCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="ClientFactory.hpp" />
+    <ClInclude Include="GPGAndroidClient.hpp" />
+    <ClInclude Include="DummyClient.hpp" />
+    <ClInclude Include="GPGIOSClient.hpp" />
+    <ClInclude Include="PACloudConnectionClient.hpp" />
+    <ClInclude Include="PACloudConnectionModule.hpp" />
+    <ClInclude Include="PACloudConnectionPlugin.hpp" />
+    <ClInclude Include="PACloudConnectionPluginImportExport.h" />
+    <ClInclude Include="PACloudConnectionPluginPCH.hpp" />
+    <ClInclude Include="VisionBaseIncludes.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ClientFactory.cpp" />
+    <ClCompile Include="GPGAndroidClient.cpp" />
+    <ClCompile Include="DummyClient.cpp" />
+    <ClCompile Include="GPGIOSClient.cpp" />
+    <ClCompile Include="PACloudConnectionModule.cpp" />
+    <ClCompile Include="PACloudConnectionPluginPCH.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

@@ -36,7 +36,7 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
     <IntDir>..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
-    <TargetName>PACloudConnectionPlugin</TargetName>
+    <TargetName>libPACloudConnectionPlugin</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
     <ClCompile />
@@ -63,6 +63,7 @@
     <ClCompile Include="DummyClient.cpp" />
     <ClCompile Include="GPGIOSClient.cpp" />
     <ClCompile Include="PACloudConnectionModule.cpp" />
+    <ClCompile Include="PACloudConnectionPlugin.cpp" />
     <ClCompile Include="PACloudConnectionPluginPCH.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -10,7 +10,10 @@
 /// Provides the Google Play Games Android Client
 class GPGAndroidClient : public PACloudConnectionClient
 {
-public:
+public:    
+  GPGAndroidClient();
+  ~GPGAndroidClient();
+
   /// \brief
   /// Returns whether or not user is authenticated
   virtual bool IsAuthenticated() HKV_OVERRIDE;
@@ -49,6 +52,7 @@ public:
 
 protected:
 private:
+  VString* m_pPlayerName; ///< TEMP DUMMY VALUE
 };
 
 #endif

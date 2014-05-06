@@ -71,5 +71,8 @@
     <ClCompile Include="ClientFactory.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="PACloudConnectionPlugin.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

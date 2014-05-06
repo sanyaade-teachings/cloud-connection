@@ -15,6 +15,7 @@
     <ClCompile Include="GPGAndroidClient.cpp" />
     <ClCompile Include="GPGIOSClient.cpp" />
     <ClCompile Include="PACloudConnectionModule.cpp" />
+    <ClCompile Include="PACloudConnectionPlugin.cpp" />
     <ClCompile Include="PACloudConnectionPluginPCH.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
     </ClCompile>

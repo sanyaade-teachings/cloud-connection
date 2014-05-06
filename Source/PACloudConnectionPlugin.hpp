@@ -1,6 +1,8 @@
 #ifndef _PACLOUDCONNECTIONPLUGIN_HPP_
 #define _PACLOUDCONNECTIONPLUGIN_HPP_
 
+#include "VisionBaseIncludes.h"
+
 #define PACCP_PLUGIN_NAME "PACloudConnectionPlugin"
 
 class PACloudConnectionPlugin : public IVisPlugin_cl
@@ -43,7 +45,7 @@ VEXPORT IVisPlugin_cl* GetEnginePlugin()
 
 void PACloudConnectionPlugin::OnInitEnginePlugin()
 {
-  Vision::Error.SystemMessage("PACloudConnectionPlugin:OnInitEnginePlugin()");
+  hkvLog::Debug("PACloudConnectionPlugin:OnInitEnginePlugin()");
 
   // register our module when the plugin is initialized
   Vision::RegisterModule(&g_PACloudConnectionModule);
@@ -51,7 +53,7 @@ void PACloudConnectionPlugin::OnInitEnginePlugin()
 
 void PACloudConnectionPlugin::OnDeInitEnginePlugin()
 {
-  Vision::Error.SystemMessage("PACloudConnectionPlugin:OnDeInitEnginePlugin()");
+  hkvLog::Debug("PACloudConnectionPlugin:OnDeInitEnginePlugin()");
 
   // de-register our module when the plugin is de-initialized
   Vision::UnregisterModule(&g_PACloudConnectionModule);

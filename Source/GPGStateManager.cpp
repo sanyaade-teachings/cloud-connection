@@ -35,7 +35,7 @@ const int32_t BUFFER_SIZE = 256;
 #else
 
 #include "android/Log.h"
-#define DEBUG_TAG "TeapotNativeActivity"
+#define DEBUG_TAG "PACloudConnectionNativeActivity"
 #define LOGI(...) \
     ((void)__android_log_print(ANDROID_LOG_INFO, DEBUG_TAG, __VA_ARGS__))
 

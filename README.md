@@ -48,3 +48,28 @@ cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\lib\x86
 $(NDKROOT)/platforms\android-9\arch-x86\usr\lib
 $(NDKROOT)/sources/cxx-stl/gnu-libstdc++/4.8/libs/x86
 
+#### Java
+requires the Google Play Services SDK to be installed
+%ADTROOT%sdk\extras\google\google_play_services\libproject\google-play-services_lib\libs
+google-play-services.jar
+
+Adding $(ADTROOT)sdk\extras\google\google_play_services\libproject\google-play-services_lib\libs\google-play-services.jar to Deploy APK -> Jar Files
+
+#### Android Manifest
+Requires a customised Manifest from
+cloud-connection\Data\Android\AndroidManifest.xml
+
+#### Android Res Folder
+Reqires a customised res folder (contains default icons copied from Project Anarchy default)
+cloud-connection\Data\Android\res
+
+cloud-connection\Data\Android\res\values\ids.xml - constains the APP_ID that must be changed for the developers Google Application
+
+Need to merge in the files from following into a temp res folder as they are required to make Google Play SDK work
+$(ADTROOT)\sdk\extras\google\google_play_services\libproject\google-play-services_lib\res
+
+
+
+
+
+

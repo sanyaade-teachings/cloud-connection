@@ -54,6 +54,7 @@
     <ClInclude Include="PACloudConnectionPlugin.hpp" />
     <ClInclude Include="PACloudConnectionPluginImportExport.h" />
     <ClInclude Include="PACloudConnectionPluginPCH.hpp" />
+    <ClInclude Include="PACloudConnectionTypes.h" />
     <ClInclude Include="VisionBaseIncludes.h" />
   </ItemGroup>
   <ItemGroup>

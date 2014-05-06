@@ -30,6 +30,7 @@
     <ClInclude Include="PACloudConnectionPluginImportExport.h" />
     <ClInclude Include="PACloudConnectionPluginPCH.hpp" />
     <ClInclude Include="ClientFactory.hpp" />
+    <ClInclude Include="PACloudConnectionTypes.h" />
     <ClInclude Include="VisionBaseIncludes.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

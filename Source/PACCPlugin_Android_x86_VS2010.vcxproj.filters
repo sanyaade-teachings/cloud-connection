@@ -48,6 +48,9 @@
     <ClInclude Include="ClientFactory.hpp">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="PACloudConnectionTypes.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DummyClient.cpp">

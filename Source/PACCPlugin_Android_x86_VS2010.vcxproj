@@ -42,6 +42,8 @@
     <ClCompile />
     <ClCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/android/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalOptions>-std=gnu++11 -frtti %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -49,6 +51,7 @@
     <ClInclude Include="GPGAndroidClient.hpp" />
     <ClInclude Include="DummyClient.hpp" />
     <ClInclude Include="GPGIOSClient.hpp" />
+    <ClInclude Include="GPGStateManager.h" />
     <ClInclude Include="PACloudConnectionClient.hpp" />
     <ClInclude Include="PACloudConnectionModule.hpp" />
     <ClInclude Include="PACloudConnectionPlugin.hpp" />
@@ -62,6 +65,7 @@
     <ClCompile Include="GPGAndroidClient.cpp" />
     <ClCompile Include="DummyClient.cpp" />
     <ClCompile Include="GPGIOSClient.cpp" />
+    <ClCompile Include="GPGStateManager.cpp" />
     <ClCompile Include="PACloudConnectionModule.cpp" />
     <ClCompile Include="PACloudConnectionPlugin.cpp" />
     <ClCompile Include="PACloudConnectionPluginPCH.cpp" />

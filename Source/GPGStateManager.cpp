@@ -13,7 +13,7 @@
 // limitations under the License.
 //
 
-#include "StateManager.h"
+#include "GPGStateManager.h"
 
 #ifdef __APPLE__
 // Logging for CoreFoundation

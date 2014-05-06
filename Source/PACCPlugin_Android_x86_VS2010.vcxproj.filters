@@ -51,6 +51,9 @@
     <ClInclude Include="PACloudConnectionTypes.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="GPGStateManager.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DummyClient.cpp">
@@ -72,6 +75,9 @@
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="PACloudConnectionPlugin.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="GPGStateManager.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>

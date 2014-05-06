@@ -1,5 +1,7 @@
-#ifndef TEAPOT_JNI_STATE_MANAGER_H
-#define TEAPOT_JNI_STATE_MANAGER_H
+#ifndef _GPGSTATEMANANGER_H_
+#define _GPGSTATEMANANGER_H_
+
+#if defined(_VISION_ANDROID)
 
 #ifdef __OBJC__
 #include <objc/NSObjCRuntime.h>
@@ -41,4 +43,6 @@ class StateManager {
   static std::unique_ptr<gpg::GameServices> game_services_;
 };
 
-#endif  // TEAPOT_JNI_STATE_MANAGER_H
+#endif
+
+#endif

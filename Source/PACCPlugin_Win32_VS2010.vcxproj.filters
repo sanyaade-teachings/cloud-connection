@@ -24,16 +24,16 @@
     <ClCompile Include="GPGIOSClient.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="PACloudConnectionPluginPCH.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
-    <ClCompile Include="PACloudConnectionModule.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="ClientFactory.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="PACloudConnectionPlugin.cpp">
+    <ClCompile Include="CloudConnectionModule.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="CloudConnectionPlugin.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="CloudConnectionPluginPCH.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,28 +47,28 @@
     <ClInclude Include="GPGIOSClient.hpp">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="PACloudConnectionPlugin.hpp">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="PACloudConnectionPluginPCH.hpp">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="PACloudConnectionPluginImportExport.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="VisionBaseIncludes.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="PACloudConnectionModule.hpp">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="PACloudConnectionClient.hpp">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="ClientFactory.hpp">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="PACloudConnectionTypes.h">
+    <ClInclude Include="CloudConnectionModule.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="CloudConnectionPluginImportExport.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="CloudConnectionClient.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="CloudConnectionTypes.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="CloudConnectionPlugin.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="CloudConnectionPluginPCH.hpp">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

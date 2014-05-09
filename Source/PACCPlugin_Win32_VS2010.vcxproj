@@ -11,27 +11,28 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CloudConnectionModule.cpp" />
+    <ClCompile Include="CloudConnectionPlugin.cpp" />
     <ClCompile Include="DummyClient.cpp" />
     <ClCompile Include="GPGAndroidClient.cpp" />
     <ClCompile Include="GPGIOSClient.cpp" />
-    <ClCompile Include="PACloudConnectionModule.cpp" />
-    <ClCompile Include="PACloudConnectionPlugin.cpp" />
-    <ClCompile Include="PACloudConnectionPluginPCH.cpp">
+    <ClCompile Include="CloudConnectionPluginPCH.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CloudConnectionPluginPCH.hpp</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="ClientFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CloudConnectionClient.hpp" />
+    <ClInclude Include="CloudConnectionModule.hpp" />
+    <ClInclude Include="CloudConnectionPlugin.hpp" />
+    <ClInclude Include="CloudConnectionPluginImportExport.h" />
+    <ClInclude Include="CloudConnectionTypes.h" />
     <ClInclude Include="DummyClient.hpp" />
     <ClInclude Include="GPGAndroidClient.hpp" />
     <ClInclude Include="GPGIOSClient.hpp" />
-    <ClInclude Include="PACloudConnectionClient.hpp" />
-    <ClInclude Include="PACloudConnectionModule.hpp" />
-    <ClInclude Include="PACloudConnectionPlugin.hpp" />
-    <ClInclude Include="PACloudConnectionPluginImportExport.h" />
-    <ClInclude Include="PACloudConnectionPluginPCH.hpp" />
+    <ClInclude Include="CloudConnectionPluginPCH.hpp" />
     <ClInclude Include="ClientFactory.hpp" />
-    <ClInclude Include="PACloudConnectionTypes.h" />
     <ClInclude Include="VisionBaseIncludes.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -65,7 +66,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <TargetExt>.vPluginD</TargetExt>
-    <TargetName>PACloudConnectionPlugin</TargetName>
+    <TargetName>CloudConnectionPlugin</TargetName>
     <OutDir>..\Bin\$(ProjectName)\$(Configuration)\</OutDir>
     <IntDir>..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>

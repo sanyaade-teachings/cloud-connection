@@ -2,7 +2,7 @@
 #define _PLAYGAMESCLIENTFACTORY_HPP_
 
 #include "VisionBaseIncludes.h"
-#include "PACloudConnectionClient.hpp"
+#include "CloudConnectionClient.hpp"
 #include "DummyClient.hpp"
 #include "GPGAndroidClient.hpp"
 #include "GPGIOSClient.hpp"
@@ -14,7 +14,7 @@ class ClientFactory
 public:  
   /// \brief
   /// Creates the Plugin Instance Client For the platform you are working on
-  static PACloudConnectionClient* GetPACloudConnectionClient()
+  static CloudConnectionClient* GetCloudConnectionClient()
   {
     if ( Vision::Editor.IsInEditor() ) 
     {

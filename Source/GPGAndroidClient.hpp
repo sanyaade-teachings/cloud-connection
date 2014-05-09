@@ -3,12 +3,12 @@
 #if defined(_VISION_ANDROID)
 
 #include "VisionBaseIncludes.h"
-#include "PACloudConnectionClient.hpp"
+#include "CloudConnectionClient.hpp"
 
 /// \brief
 /// Defines an concrete implementation for for a Project Anarchy Cloud Connection Client.
 /// Provides the Google Play Games Android Client
-class GPGAndroidClient : public PACloudConnectionClient
+class GPGAndroidClient : public CloudConnectionClient
 {
 public:    
   GPGAndroidClient();

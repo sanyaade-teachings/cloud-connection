@@ -23,6 +23,7 @@
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
     <AndroidArch>x86</AndroidArch>
+    <AndroidAPILevel>android-10</AndroidAPILevel>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -36,39 +37,39 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
     <IntDir>..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
-    <TargetName>libPACloudConnectionPlugin</TargetName>
+    <TargetName>libCloudConnectionPlugin</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
     <ClCompile />
     <ClCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>../ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/android/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>-std=gnu++11 -frtti %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>-frtti -std=c++11 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ClientFactory.hpp" />
+    <ClInclude Include="CloudConnectionPluginPCH.hpp" />
     <ClInclude Include="GPGAndroidClient.hpp" />
     <ClInclude Include="DummyClient.hpp" />
     <ClInclude Include="GPGIOSClient.hpp" />
     <ClInclude Include="GPGStateManager.h" />
-    <ClInclude Include="PACloudConnectionClient.hpp" />
-    <ClInclude Include="PACloudConnectionModule.hpp" />
-    <ClInclude Include="PACloudConnectionPlugin.hpp" />
-    <ClInclude Include="PACloudConnectionPluginImportExport.h" />
-    <ClInclude Include="PACloudConnectionPluginPCH.hpp" />
-    <ClInclude Include="PACloudConnectionTypes.h" />
+    <ClInclude Include="CloudConnectionClient.hpp" />
+    <ClInclude Include="CloudConnectionModule.hpp" />
+    <ClInclude Include="CloudConnectionPlugin.hpp" />
+    <ClInclude Include="CloudConnectionPluginImportExport.h" />
+    <ClInclude Include="CloudConnectionTypes.h" />
     <ClInclude Include="VisionBaseIncludes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ClientFactory.cpp" />
+    <ClCompile Include="CloudConnectionPluginPCH.cpp" />
     <ClCompile Include="GPGAndroidClient.cpp" />
     <ClCompile Include="DummyClient.cpp" />
     <ClCompile Include="GPGIOSClient.cpp" />
     <ClCompile Include="GPGStateManager.cpp" />
-    <ClCompile Include="PACloudConnectionModule.cpp" />
-    <ClCompile Include="PACloudConnectionPlugin.cpp" />
-    <ClCompile Include="PACloudConnectionPluginPCH.cpp" />
+    <ClCompile Include="CloudConnectionModule.cpp" />
+    <ClCompile Include="CloudConnectionPlugin.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

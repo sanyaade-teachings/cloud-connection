@@ -2,13 +2,13 @@
 #define _DUMMYCLIENT_HPP_
 
 #include "VisionBaseIncludes.h"
-#include "PACloudConnectionClient.hpp"
+#include "CloudConnectionClient.hpp"
 
 
 /// \brief
 /// Defines an concrete implementation for for a Project Anarchy Cloud Connection Client that provides
 /// No functionality and can be used for testing on any platform
-class DummyClient : public PACloudConnectionClient
+class DummyClient : public CloudConnectionClient
 {
 public:
   DummyClient();

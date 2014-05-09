@@ -119,6 +119,7 @@ void StateManager::InitServices(
     game_services_ = gpg::GameServices::Builder()
         .SetLogging(gpg::DEFAULT_ON_LOG, gpg::LogLevel::VERBOSE)
         .SetOnAuthActionStarted([started_callback](gpg::AuthOperation op) {
+          LOGI("Sign in started");
           is_auth_in_progress_ = true;
           started_callback(op);
         })

@@ -16,6 +16,7 @@ This plugin allows you to create connection to cloud service providers from a Pr
 
 ### Android
 * Android NDK r9d or greater (NDK previous to r9d will not work)
+* Google Services SDK is installed (from the Gooogle ADK)
 * Build requires compiled with C++11
 * Build requires compiled with RTTI
 
@@ -63,7 +64,7 @@ cloud-connection\Data\Android\AndroidManifest.xml
 Reqires a customised res folder (contains default icons copied from Project Anarchy default)
 cloud-connection\Data\Android\res
 
-cloud-connection\Data\Android\res\values\ids.xml - constains the APP_ID that must be changed for the developers Google Application
+cloud-connection\Data\Android\res\values\ids.xml - contains the APP_ID that must be changed for the developers Google Application
 
 Need to merge in the files from following into a temp res folder as they are required to make Google Play SDK work
 $(ADTROOT)\sdk\extras\google\google_play_services\libproject\google-play-services_lib\res

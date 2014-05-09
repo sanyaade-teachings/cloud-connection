@@ -2,6 +2,7 @@
 #define _CLOUDCONNECTIONPLUGIN_HPP_
 
 #include "VisionBaseIncludes.h"
+#include "CloudConnectionModule.hpp"
 
 #define PACCP_PLUGIN_NAME "CloudConnectionPlugin"
 
@@ -42,13 +43,15 @@ VEXPORT IVisPlugin_cl* GetEnginePlugin()
 }
 #endif // _DLL or _WINDLL
 
-
 void CloudConnectionPlugin::OnInitEnginePlugin()
 {
   hkvLog::Debug("CloudConnectionPlugin:OnInitEnginePlugin()");
 
   // register our module when the plugin is initialized
   Vision::RegisterModule(&g_CloudConnectionModule);
+
+  CloudConnectionModule* ccm = CloudConnectionModule::GetInstance();
+  ccm->OneTimeInit();
 }
 
 void CloudConnectionPlugin::OnDeInitEnginePlugin()
@@ -57,7 +60,9 @@ void CloudConnectionPlugin::OnDeInitEnginePlugin()
 
   // de-register our module when the plugin is de-initialized
   Vision::UnregisterModule(&g_CloudConnectionModule);
-}
 
+  CloudConnectionModule* ccm = CloudConnectionModule::GetInstance();
+  ccm->OneTimeDeInit();
+}
 
 #endif

@@ -4,6 +4,7 @@
 #include "CloudConnectionPluginImportExport.h"
 
 class CloudConnectionClient;
+class CloudConnectionScriptMananger;
 
 /// 
 /// \brief
@@ -17,6 +18,11 @@ public:
 
 	CloudConnectionModule();
 	virtual ~CloudConnectionModule();
+
+  /// \brief Called Once to initalise when the Plugin is created
+  void OneTimeInit();
+  /// \brief Called Once to de-initalise when the Plugin is destroyed
+  void OneTimeDeInit();
 
 	/// \brief
 	///   IVisCallbackHandler_cl implementation  
@@ -39,6 +45,7 @@ protected:
 
 private:
   CloudConnectionClient* m_pCloudConnClient; ///< The instance of the Cloud Connection Client for the Target Platform
+  CloudConnectionScriptMananger* m_pCloudConnSM;  ///< Manges the Lua/swig bindings for the plugin
 };
 
 #endif

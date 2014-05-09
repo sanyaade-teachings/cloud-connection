@@ -14,6 +14,7 @@
     <ClCompile Include="CloudConnectionClient.cpp" />
     <ClCompile Include="CloudConnectionModule.cpp" />
     <ClCompile Include="CloudConnectionPlugin.cpp" />
+    <ClCompile Include="CloudConnectionScriptManager.cpp" />
     <ClCompile Include="DummyClient.cpp" />
     <ClCompile Include="GPGAndroidClient.cpp" />
     <ClCompile Include="GPGIOSClient.cpp" />
@@ -29,6 +30,7 @@
     <ClInclude Include="CloudConnectionModule.hpp" />
     <ClInclude Include="CloudConnectionPlugin.hpp" />
     <ClInclude Include="CloudConnectionPluginImportExport.h" />
+    <ClInclude Include="CloudConnectionScriptManager.hpp" />
     <ClInclude Include="CloudConnectionTypes.h" />
     <ClInclude Include="DummyClient.hpp" />
     <ClInclude Include="GPGAndroidClient.hpp" />

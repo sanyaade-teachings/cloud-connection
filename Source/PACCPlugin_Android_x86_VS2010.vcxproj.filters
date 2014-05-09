@@ -57,6 +57,9 @@
     <ClInclude Include="CloudConnectionPluginPCH.hpp">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="CloudConnectionScriptManager.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DummyClient.cpp">
@@ -88,6 +91,9 @@
     </ClCompile>
     <ClCompile Include="Lua\CloudConnection.cpp">
       <Filter>src\Lua</Filter>
+    </ClCompile>
+    <ClCompile Include="CloudConnectionScriptManager.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

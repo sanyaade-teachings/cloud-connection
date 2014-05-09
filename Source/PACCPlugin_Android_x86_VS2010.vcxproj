@@ -44,7 +44,7 @@
     <ClCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>../ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/android/include;./Lua/../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>-frtti -std=c++11 %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>-std=c++11 %(AdditionalOptions)</AdditionalOptions>
       <PrecompiledHeaderFile>CloudConnectionPluginPCH.hpp</PrecompiledHeaderFile>
       <PrecompiledHeader>Yes</PrecompiledHeader>
       <PrecompiledHeaderOutputFile>$(IntDir)CloudConnectionPluginPCH.pch</PrecompiledHeaderOutputFile>
@@ -53,6 +53,7 @@
   <ItemGroup>
     <ClInclude Include="ClientFactory.hpp" />
     <ClInclude Include="CloudConnectionPluginPCH.hpp" />
+    <ClInclude Include="CloudConnectionScriptManager.hpp" />
     <ClInclude Include="GPGAndroidClient.hpp" />
     <ClInclude Include="DummyClient.hpp" />
     <ClInclude Include="GPGIOSClient.hpp" />
@@ -68,6 +69,7 @@
     <ClCompile Include="ClientFactory.cpp" />
     <ClCompile Include="CloudConnectionClient.cpp" />
     <ClCompile Include="CloudConnectionPluginPCH.cpp" />
+    <ClCompile Include="CloudConnectionScriptManager.cpp" />
     <ClCompile Include="GPGAndroidClient.cpp" />
     <ClCompile Include="DummyClient.cpp" />
     <ClCompile Include="GPGIOSClient.cpp" />

@@ -2,7 +2,7 @@
 #define _CLOUDCONNECTIONPLUGIN_HPP_
 
 #include "VisionBaseIncludes.h"
-#include "CloudConnectionModule.hpp"
+#include "CloudConnection.hpp"
 
 #define PACCP_PLUGIN_NAME "CloudConnectionPlugin"
 
@@ -50,7 +50,7 @@ void CloudConnectionPlugin::OnInitEnginePlugin()
   // register our module when the plugin is initialized
   Vision::RegisterModule(&g_CloudConnectionModule);
 
-  CloudConnectionModule* ccm = CloudConnectionModule::GetInstance();
+  CloudConnection* ccm = CloudConnection::GetInstance();
   ccm->OneTimeInit();
 }
 
@@ -61,7 +61,7 @@ void CloudConnectionPlugin::OnDeInitEnginePlugin()
   // de-register our module when the plugin is de-initialized
   Vision::UnregisterModule(&g_CloudConnectionModule);
 
-  CloudConnectionModule* ccm = CloudConnectionModule::GetInstance();
+  CloudConnection* ccm = CloudConnection::GetInstance();
   ccm->OneTimeDeInit();
 }
 

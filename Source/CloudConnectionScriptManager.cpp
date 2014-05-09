@@ -2,10 +2,10 @@
 #include "CloudConnectionScriptManager.hpp"
 #include "VisionBaseIncludes.h"
 #include "CloudConnectionClient.hpp"
-#include "CloudConnectionModule.hpp"
+#include "CloudConnection.hpp"
 
-#define LUA_MODULE_CLOUDCONNECTION "CloudConnection"
-extern "C" int luaopen_CloudConnection(lua_State *);
+#define LUA_MODULE_CLOUDCONNECTION "CloudConnectionLuaModule"
+extern "C" int luaopen_CloudConnectionLuaModule(lua_State *);
 
 CloudConnectionScriptMananger::CloudConnectionScriptMananger() {}
 CloudConnectionScriptMananger::~CloudConnectionScriptMananger() {}
@@ -33,11 +33,11 @@ void CloudConnectionScriptMananger::OnHandleCallback( IVisCallbackDataObject_cl*
       lua_State* pLuaState = ((VScriptResourceManager*)pSM)->GetMasterState();
       if(pLuaState) 
       {
-        luaopen_CloudConnection(pLuaState);
+        luaopen_CloudConnectionLuaModule(pLuaState);
       } 
       else 
       {
-        hkvLog::FatalError("Unable to create Lua CloudConnection Module, lua_State is NULL!");
+        hkvLog::FatalError("Unable to create CloudConnection Lua Module, lua_State is NULL!");
       }
     }
   } 
@@ -62,13 +62,13 @@ void CloudConnectionScriptMananger::OnHandleCallback( IVisCallbackDataObject_cl*
 					pScriptData->m_pInstance //the input parameters (out instance to cast)
 					);
 			} 
-      else if(pScriptData->m_pInstance->IsOfType( V_RUNTIME_CLASS(CloudConnectionModule) )) 
+      else if(pScriptData->m_pInstance->IsOfType( V_RUNTIME_CLASS(CloudConnection) )) 
       {
-				//call lua cast function for CloudConnectionModule (created via the macro in CloudConnectionModule.i)
+				//call lua cast function for CloudConnectionModule (created via the macro in CloudConnection.i)
 				iRetParams = LUA_CallStaticFunction(
 					pScriptData->m_pLuaState, // our lua state
 					LUA_MODULE_CLOUDCONNECTION, // the name of the module
-					"CloudConnectionModule", // the name of the class
+					"CloudConnection", // the name of the class
 					"Cast", // the name of the fucntion
 					"E>E", // the function's signature
 					pScriptData->m_pInstance //the input parameters (out instance to cast)

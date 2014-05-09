@@ -1656,8 +1656,8 @@ SWIG_Lua_dostring(lua_State *L, const char* str) {
 
 /* -------- TYPES TABLE (BEGIN) -------- */
 
-#define SWIGTYPE_p_CloudConnectionClient swig_types[0]
-#define SWIGTYPE_p_CloudConnectionModule swig_types[1]
+#define SWIGTYPE_p_CloudConnection swig_types[0]
+#define SWIGTYPE_p_CloudConnectionClient swig_types[1]
 #define SWIGTYPE_p_IVObjectComponent swig_types[2]
 #define SWIGTYPE_p_VBitmask swig_types[3]
 #define SWIGTYPE_p_VColorRef swig_types[4]
@@ -1695,11 +1695,11 @@ static swig_module_info swig_module = {swig_types, 32, 0, 0, 0, 0};
 
 /* -------- TYPES TABLE (END) -------- */
 
-#define SWIG_name      "CloudConnection"
-#define SWIG_init      luaopen_CloudConnection
-#define SWIG_init_user luaopen_CloudConnection_user
+#define SWIG_name      "CloudConnectionLuaModule"
+#define SWIG_init      luaopen_CloudConnectionLuaModule
+#define SWIG_init_user luaopen_CloudConnectionLuaModule_user
 
-#define SWIG_LUACODE   luaopen_CloudConnection_luacode
+#define SWIG_LUACODE   luaopen_CloudConnectionLuaModule_luacode
 
 
 namespace swig {
@@ -3002,7 +3002,7 @@ SWIGINTERN int VisBaseEntity_cl_GetPrimarySortingKey(VisBaseEntity_cl *self){
 
   //we need to define the C++ headers here
   #include "../CloudConnectionClient.hpp"
-  #include "../CloudConnectionModule.hpp"  
+  #include "../CloudConnection.hpp"  
 
 SWIGINTERN CloudConnectionClient *CloudConnectionClient_Cast(VTypedObject *pObject){
     if(pObject && pObject->IsOfType(CloudConnectionClient::GetClassTypeId()))
@@ -3010,10 +3010,10 @@ SWIGINTERN CloudConnectionClient *CloudConnectionClient_Cast(VTypedObject *pObje
     hkvLog::Warning("[Lua] Cannot cast to %s!","CloudConnectionClient");
     return NULL;
   }
-SWIGINTERN CloudConnectionModule *CloudConnectionModule_Cast(VTypedObject *pObject){
-    if(pObject && pObject->IsOfType(CloudConnectionModule::GetClassTypeId()))
-      return (CloudConnectionModule *) pObject;
-    hkvLog::Warning("[Lua] Cannot cast to %s!","CloudConnectionModule");
+SWIGINTERN CloudConnection *CloudConnection_Cast(VTypedObject *pObject){
+    if(pObject && pObject->IsOfType(CloudConnection::GetClassTypeId()))
+      return (CloudConnection *) pObject;
+    hkvLog::Warning("[Lua] Cannot cast to %s!","CloudConnection");
     return NULL;
   }
 #ifdef __cplusplus
@@ -10631,13 +10631,13 @@ static swig_lua_class *swig_CloudConnectionClient_bases[] = {0,0};
 static const char *swig_CloudConnectionClient_base_names[] = {"VTypedObject *",0};
 static swig_lua_class _wrap_class_CloudConnectionClient = { "CloudConnectionClient", &SWIGTYPE_p_CloudConnectionClient,0,0, swig_CloudConnectionClient_methods, swig_CloudConnectionClient_attributes, swig_CloudConnectionClient_bases, swig_CloudConnectionClient_base_names };
 
-static int _wrap_CloudConnectionModule_GetInstance(lua_State* L) {
+static int _wrap_CloudConnection_GetInstance(lua_State* L) {
   int SWIG_arg = 0;
-  CloudConnectionModule *result = 0 ;
+  CloudConnection *result = 0 ;
   
-  SWIG_check_num_args("CloudConnectionModule::GetInstance",0,0)
-  result = (CloudConnectionModule *)CloudConnectionModule::GetInstance();
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_CloudConnectionModule,0); SWIG_arg++; 
+  SWIG_check_num_args("CloudConnection::GetInstance",0,0)
+  result = (CloudConnection *)CloudConnection::GetInstance();
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_CloudConnection,0); SWIG_arg++; 
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -10648,20 +10648,20 @@ fail:
 }
 
 
-static int _wrap_CloudConnectionModule_Cast(lua_State* L) {
+static int _wrap_CloudConnection_Cast(lua_State* L) {
   int SWIG_arg = 0;
   VTypedObject *arg1 = (VTypedObject *) 0 ;
-  CloudConnectionModule *result = 0 ;
+  CloudConnection *result = 0 ;
   
-  SWIG_check_num_args("CloudConnectionModule_Cast",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CloudConnectionModule_Cast",1,"VTypedObject *");
+  SWIG_check_num_args("CloudConnection_Cast",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CloudConnection_Cast",1,"VTypedObject *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_VTypedObject,0))){
-    SWIG_fail_ptr("CloudConnectionModule_Cast",1,SWIGTYPE_p_VTypedObject);
+    SWIG_fail_ptr("CloudConnection_Cast",1,SWIGTYPE_p_VTypedObject);
   }
   
-  result = (CloudConnectionModule *)CloudConnectionModule_Cast(arg1);
-  SWIG_NewPointerObj(L,result,SWIGTYPE_p_CloudConnectionModule,0); SWIG_arg++; 
+  result = (CloudConnection *)CloudConnection_Cast(arg1);
+  SWIG_NewPointerObj(L,result,SWIGTYPE_p_CloudConnection,0); SWIG_arg++; 
   return SWIG_arg;
   
   if(0) SWIG_fail;
@@ -10672,15 +10672,15 @@ fail:
 }
 
 
-static swig_lua_method swig_CloudConnectionModule_methods[] = {
+static swig_lua_method swig_CloudConnection_methods[] = {
     {0,0}
 };
-static swig_lua_attribute swig_CloudConnectionModule_attributes[] = {
+static swig_lua_attribute swig_CloudConnection_attributes[] = {
     {0,0,0}
 };
-static swig_lua_class *swig_CloudConnectionModule_bases[] = {0,0};
-static const char *swig_CloudConnectionModule_base_names[] = {"VTypedObject *",0};
-static swig_lua_class _wrap_class_CloudConnectionModule = { "CloudConnectionModule", &SWIGTYPE_p_CloudConnectionModule,0,0, swig_CloudConnectionModule_methods, swig_CloudConnectionModule_attributes, swig_CloudConnectionModule_bases, swig_CloudConnectionModule_base_names };
+static swig_lua_class *swig_CloudConnection_bases[] = {0,0};
+static const char *swig_CloudConnection_base_names[] = {"VTypedObject *",0};
+static swig_lua_class _wrap_class_CloudConnection = { "CloudConnection", &SWIGTYPE_p_CloudConnection,0,0, swig_CloudConnection_methods, swig_CloudConnection_attributes, swig_CloudConnection_bases, swig_CloudConnection_base_names };
 
 #ifdef __cplusplus
 }
@@ -10688,8 +10688,8 @@ static swig_lua_class _wrap_class_CloudConnectionModule = { "CloudConnectionModu
 
 static const struct luaL_reg swig_commands[] = {
     { "CloudConnectionClient_Cast", _wrap_CloudConnectionClient_Cast},
-    { "CloudConnectionModule_GetInstance", _wrap_CloudConnectionModule_GetInstance},
-    { "CloudConnectionModule_Cast", _wrap_CloudConnectionModule_Cast},
+    { "CloudConnection_GetInstance", _wrap_CloudConnection_GetInstance},
+    { "CloudConnection_Cast", _wrap_CloudConnection_Cast},
     {0,0}
 };
 
@@ -10727,9 +10727,6 @@ static void *_p_VisBaseEntity_clTo_p_VisObject3D_cl(void *x, int *SWIGUNUSEDPARM
 static void *_p_IVObjectComponentTo_p_VTypedObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((VTypedObject *) (VisTypedEngineObject_cl *) ((IVObjectComponent *) x));
 }
-static void *_p_CloudConnectionModuleTo_p_VTypedObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((VTypedObject *)  ((CloudConnectionModule *) x));
-}
 static void *_p_VisBaseEntity_clTo_p_VTypedObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((VTypedObject *) (VisTypedEngineObject_cl *)(VisObject3D_cl *) ((VisBaseEntity_cl *) x));
 }
@@ -10742,14 +10739,17 @@ static void *_p_VisTypedEngineObject_clTo_p_VTypedObject(void *x, int *SWIGUNUSE
 static void *_p_CloudConnectionClientTo_p_VTypedObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((VTypedObject *)  ((CloudConnectionClient *) x));
 }
+static void *_p_CloudConnectionTo_p_VTypedObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((VTypedObject *)  ((CloudConnection *) x));
+}
 static void *_p_VisBaseEntity_clTo_p_VisObjectKey_cl(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((VisObjectKey_cl *) (VisObject3D_cl *) ((VisBaseEntity_cl *) x));
 }
 static void *_p_VisObject3D_clTo_p_VisObjectKey_cl(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((VisObjectKey_cl *)  ((VisObject3D_cl *) x));
 }
+static swig_type_info _swigt__p_CloudConnection = {"_p_CloudConnection", "CloudConnection *", 0, 0, (void*)&_wrap_class_CloudConnection, 0};
 static swig_type_info _swigt__p_CloudConnectionClient = {"_p_CloudConnectionClient", "CloudConnectionClient *", 0, 0, (void*)&_wrap_class_CloudConnectionClient, 0};
-static swig_type_info _swigt__p_CloudConnectionModule = {"_p_CloudConnectionModule", "CloudConnectionModule *", 0, 0, (void*)&_wrap_class_CloudConnectionModule, 0};
 static swig_type_info _swigt__p_IVObjectComponent = {"_p_IVObjectComponent", "IVObjectComponent *", 0, 0, (void*)&_wrap_class_IVObjectComponent, 0};
 static swig_type_info _swigt__p_VBitmask = {"_p_VBitmask", "VBitmask *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_VColorRef = {"_p_VColorRef", "VColorRef *", 0, 0, (void*)&_wrap_class_VColorRef, 0};
@@ -10782,8 +10782,8 @@ static swig_type_info _swigt__p_unsigned_long = {"_p_unsigned_long", "HANDLE_PTR
 static swig_type_info _swigt__p_unsigned_short = {"_p_unsigned_short", "WORD *|UHALF_PTR *|unsigned short *|USHORT *|FSHORT *|LANGID *|UINT16 *", 0, 0, (void*)0, 0};
 
 static swig_type_info *swig_type_initial[] = {
+  &_swigt__p_CloudConnection,
   &_swigt__p_CloudConnectionClient,
-  &_swigt__p_CloudConnectionModule,
   &_swigt__p_IVObjectComponent,
   &_swigt__p_VBitmask,
   &_swigt__p_VColorRef,
@@ -10816,15 +10816,15 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_unsigned_short,
 };
 
+static swig_cast_info _swigc__p_CloudConnection[] = {  {&_swigt__p_CloudConnection, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_CloudConnectionClient[] = {  {&_swigt__p_CloudConnectionClient, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_CloudConnectionModule[] = {  {&_swigt__p_CloudConnectionModule, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_IVObjectComponent[] = {  {&_swigt__p_IVObjectComponent, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VBitmask[] = {  {&_swigt__p_VBitmask, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VColorRef[] = {  {&_swigt__p_VColorRef, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VDynamicMesh[] = {  {&_swigt__p_VDynamicMesh, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VString[] = {  {&_swigt__p_VString, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VTextureObject[] = {  {&_swigt__p_VTextureObject, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_VTypedObject[] = {  {&_swigt__p_IVObjectComponent, _p_IVObjectComponentTo_p_VTypedObject, 0, 0},  {&_swigt__p_CloudConnectionModule, _p_CloudConnectionModuleTo_p_VTypedObject, 0, 0},  {&_swigt__p_VTypedObject, 0, 0, 0},  {&_swigt__p_VisBaseEntity_cl, _p_VisBaseEntity_clTo_p_VTypedObject, 0, 0},  {&_swigt__p_VisObject3D_cl, _p_VisObject3D_clTo_p_VTypedObject, 0, 0},  {&_swigt__p_VisTypedEngineObject_cl, _p_VisTypedEngineObject_clTo_p_VTypedObject, 0, 0},  {&_swigt__p_CloudConnectionClient, _p_CloudConnectionClientTo_p_VTypedObject, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_VTypedObject[] = {  {&_swigt__p_IVObjectComponent, _p_IVObjectComponentTo_p_VTypedObject, 0, 0},  {&_swigt__p_VTypedObject, 0, 0, 0},  {&_swigt__p_VisBaseEntity_cl, _p_VisBaseEntity_clTo_p_VTypedObject, 0, 0},  {&_swigt__p_VisObject3D_cl, _p_VisObject3D_clTo_p_VTypedObject, 0, 0},  {&_swigt__p_VisTypedEngineObject_cl, _p_VisTypedEngineObject_clTo_p_VTypedObject, 0, 0},  {&_swigt__p_CloudConnectionClient, _p_CloudConnectionClientTo_p_VTypedObject, 0, 0},  {&_swigt__p_CloudConnection, _p_CloudConnectionTo_p_VTypedObject, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VisBaseEntity_cl[] = {  {&_swigt__p_VisBaseEntity_cl, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VisObject3D_cl[] = {  {&_swigt__p_VisBaseEntity_cl, _p_VisBaseEntity_clTo_p_VisObject3D_cl, 0, 0},  {&_swigt__p_VisObject3D_cl, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VisObjectKey_cl[] = {  {&_swigt__p_VisObjectKey_cl, 0, 0, 0},  {&_swigt__p_VisBaseEntity_cl, _p_VisBaseEntity_clTo_p_VisObjectKey_cl, 0, 0},  {&_swigt__p_VisObject3D_cl, _p_VisObject3D_clTo_p_VisObjectKey_cl, 0, 0},{0, 0, 0, 0}};
@@ -10850,8 +10850,8 @@ static swig_cast_info _swigc__p_unsigned_long[] = {  {&_swigt__p_unsigned_long, 
 static swig_cast_info _swigc__p_unsigned_short[] = {  {&_swigt__p_unsigned_short, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
+  _swigc__p_CloudConnection,
   _swigc__p_CloudConnectionClient,
-  _swigc__p_CloudConnectionModule,
   _swigc__p_IVObjectComponent,
   _swigc__p_VBitmask,
   _swigc__p_VColorRef,

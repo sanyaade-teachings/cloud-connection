@@ -39,9 +39,6 @@
     <ClInclude Include="GPGStateManager.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="CloudConnectionModule.hpp">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="CloudConnectionPluginImportExport.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -58,6 +55,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="CloudConnectionScriptManager.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="CloudConnection.hpp">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
@@ -77,9 +77,6 @@
     <ClCompile Include="GPGStateManager.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="CloudConnectionModule.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="CloudConnectionPlugin.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -89,11 +86,14 @@
     <ClCompile Include="CloudConnectionClient.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Lua\CloudConnection.cpp">
-      <Filter>src\Lua</Filter>
-    </ClCompile>
     <ClCompile Include="CloudConnectionScriptManager.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="CloudConnection.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Lua\CloudConnectionLuaModule.cpp">
+      <Filter>src\Lua</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

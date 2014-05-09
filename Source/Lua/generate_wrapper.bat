@@ -1,4 +1,4 @@
-SET MODULE_NAME=CloudConnection
+SET MODULE_NAME=CloudConnectionLuaModule
 
 %VISION_SDK%\ThirdParty\redistsdks\swig\2.0.3\swig -I%VISION_SDK% -c++ -lua -verbose -o %MODULE_NAME%.cpp %MODULE_NAME%.i
 PAUSE

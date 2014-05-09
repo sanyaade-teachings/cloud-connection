@@ -1,5 +1,5 @@
-#ifndef _CLOUDCONNECTIONMODULE_HPP_
-#define _CLOUDCONNECTIONMODULE_HPP_
+#ifndef _CLOUDCONNECTION_HPP_
+#define _CLOUDCONNECTION_HPP_
 
 #include "CloudConnectionPluginImportExport.h"
 
@@ -8,16 +8,16 @@ class CloudConnectionScriptMananger;
 
 /// 
 /// \brief
-/// Module responsible for the Cloud Service Connections
+/// Main Module responsible for the Cloud Service Connections
 ///
-class CloudConnectionModule : public IVisCallbackHandler_cl, public VTypedObject
+class CloudConnection : public IVisCallbackHandler_cl, public VTypedObject
 {
 public: 
   /** RTTI declarations */
-	V_DECLARE_DYNAMIC_DLLEXP(CloudConnectionModule, CLOUDCONNECTIONPLUGIN_IMPEXP);
+	V_DECLARE_DYNAMIC_DLLEXP(CloudConnection, CLOUDCONNECTIONPLUGIN_IMPEXP);
 
-	CloudConnectionModule();
-	virtual ~CloudConnectionModule();
+	CloudConnection();
+	virtual ~CloudConnection();
 
   /// \brief Called Once to initalise when the Plugin is created
   void OneTimeInit();
@@ -30,7 +30,7 @@ public:
     
   /// \brief
   /// Gets the Global Instance of this Cloud Connection Module
-	CLOUDCONNECTIONPLUGIN_IMPEXP static CloudConnectionModule* GetInstance() 
+	CLOUDCONNECTIONPLUGIN_IMPEXP static CloudConnection* GetInstance() 
   {
     return &g_GlobalManager;
   }
@@ -41,7 +41,7 @@ public:
 
 protected:
   	  
-	static CloudConnectionModule g_GlobalManager; ///< one global instance of our manager
+	static CloudConnection g_GlobalManager; ///< one global instance of our manager
 
 private:
   CloudConnectionClient* m_pCloudConnClient; ///< The instance of the Cloud Connection Client for the Target Platform

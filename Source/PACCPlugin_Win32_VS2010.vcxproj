@@ -11,8 +11,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CloudConnection.cpp" />
     <ClCompile Include="CloudConnectionClient.cpp" />
-    <ClCompile Include="CloudConnectionModule.cpp" />
     <ClCompile Include="CloudConnectionPlugin.cpp" />
     <ClCompile Include="CloudConnectionScriptManager.cpp" />
     <ClCompile Include="DummyClient.cpp" />
@@ -23,11 +23,11 @@
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CloudConnectionPluginPCH.hpp</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="ClientFactory.cpp" />
-    <ClCompile Include="Lua\CloudConnection.cpp" />
+    <ClCompile Include="Lua\CloudConnectionLuaModule.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CloudConnection.hpp" />
     <ClInclude Include="CloudConnectionClient.hpp" />
-    <ClInclude Include="CloudConnectionModule.hpp" />
     <ClInclude Include="CloudConnectionPlugin.hpp" />
     <ClInclude Include="CloudConnectionPluginImportExport.h" />
     <ClInclude Include="CloudConnectionScriptManager.hpp" />

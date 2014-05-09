@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ClientFactory.cpp" />
+    <ClCompile Include="CloudConnectionClient.cpp" />
     <ClCompile Include="CloudConnectionPluginPCH.cpp" />
     <ClCompile Include="GPGAndroidClient.cpp" />
     <ClCompile Include="DummyClient.cpp" />

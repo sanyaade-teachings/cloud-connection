@@ -1,6 +1,8 @@
-#include "PACloudConnectionPluginPCH.hpp"
+#include "CloudConnectionPluginPCH.hpp"
 #include "DummyClient.hpp"
 
+/** RTTI definitions */
+V_IMPLEMENT_DYNAMIC( DummyClient, CloudConnectionClient, &g_CloudConnectionModule );
    
 DummyClient::DummyClient()
 {

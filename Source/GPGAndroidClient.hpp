@@ -11,6 +11,9 @@
 class GPGAndroidClient : public CloudConnectionClient
 {
 public:    
+  /** RTTI declarations */
+	V_DECLARE_DYNAMIC_DLLEXP(GPGAndroidClient, CLOUDCONNECTIONPLUGIN_IMPEXP);
+
   GPGAndroidClient();
   ~GPGAndroidClient();
 

@@ -1,8 +1,11 @@
-#include "PACloudConnectionPluginPCH.hpp"
+#include "CloudConnectionPluginPCH.hpp"
 #include "CloudConnectionModule.hpp"
 #include "ClientFactory.hpp"
 
 CloudConnectionModule CloudConnectionModule::g_GlobalManager; ///< static one global instance of our manager
+
+/** RTTI definitions */
+V_IMPLEMENT_DYNAMIC( CloudConnectionModule, VTypedObject, &g_CloudConnectionModule );
 
 CloudConnectionModule::CloudConnectionModule()
 {

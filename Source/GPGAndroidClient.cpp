@@ -1,7 +1,10 @@
-#include "PACloudConnectionPluginPCH.hpp"
+#include "CloudConnectionPluginPCH.hpp"
 #include "GPGAndroidClient.hpp"
 
 #if defined(_VISION_ANDROID)
+
+/** RTTI definitions */
+V_IMPLEMENT_DYNAMIC( GPGAndroidClient, CloudConnectionClient, &g_CloudConnectionModule );
 
 GPGAndroidClient::GPGAndroidClient()
 {

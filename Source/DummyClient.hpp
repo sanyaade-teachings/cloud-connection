@@ -10,7 +10,10 @@
 /// No functionality and can be used for testing on any platform
 class DummyClient : public CloudConnectionClient
 {
-public:
+public: 
+  /** RTTI declarations */
+	V_DECLARE_DYNAMIC_DLLEXP(DummyClient, CLOUDCONNECTIONPLUGIN_IMPEXP);
+
   DummyClient();
   ~DummyClient();
 

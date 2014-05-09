@@ -9,9 +9,12 @@ class CloudConnectionClient;
 /// \brief
 /// Module responsible for the Cloud Service Connections
 ///
-class CloudConnectionModule : public IVisCallbackHandler_cl
+class CloudConnectionModule : public IVisCallbackHandler_cl, public VTypedObject
 {
-public:
+public: 
+  /** RTTI declarations */
+	V_DECLARE_DYNAMIC_DLLEXP(CloudConnectionModule, CLOUDCONNECTIONPLUGIN_IMPEXP);
+
 	CloudConnectionModule();
 	virtual ~CloudConnectionModule();
 

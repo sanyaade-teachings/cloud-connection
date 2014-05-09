@@ -3,13 +3,17 @@
 
 #include "VisionBaseIncludes.h"
 #include "CloudConnectionTypes.h"
+#include "CloudConnectionPluginImportExport.h"
 
 /// \brief
 /// Defines an abstract interface for a Project Anarchy Cloud Connection Client. 
 /// Concrete implementations might be, for example, the Google Play Games Client client for Android or for iOS.
-class CloudConnectionClient
+class CloudConnectionClient : public VTypedObject
 {
 public:
+	/** RTTI declarations */
+	V_DECLARE_DYNAMIC_DLLEXP(CloudConnectionClient, CLOUDCONNECTIONPLUGIN_IMPEXP);  
+
   /// \brief
   /// Returns whether or not user is authenticated
   virtual bool IsAuthenticated() = 0;

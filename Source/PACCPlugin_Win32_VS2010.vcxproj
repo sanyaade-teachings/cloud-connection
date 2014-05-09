@@ -11,6 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CloudConnectionClient.cpp" />
     <ClCompile Include="CloudConnectionModule.cpp" />
     <ClCompile Include="CloudConnectionPlugin.cpp" />
     <ClCompile Include="DummyClient.cpp" />
@@ -79,7 +80,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;PACLOUDCONNECTIONPLUGIN_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <PrecompiledHeaderFile>PACloudConnectionPluginPCH.hpp</PrecompiledHeaderFile>
+      <PrecompiledHeaderFile>CloudConnectionPluginPCH.hpp</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>

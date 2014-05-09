@@ -11,6 +11,12 @@
 class GPGIOSClient : public CloudConnectionClient
 {  
 public:
+  /** RTTI declarations */
+	V_DECLARE_DYNAMIC_DLLEXP(DummyClient, CLOUDCONNECTIONPLUGIN_IMPEXP);
+    
+  GPGIOSClient();
+  ~GPGIOSClient();
+
   /// \brief
   /// Returns whether or not user is authenticated
   virtual bool IsAuthenticated() HKV_OVERRIDE;

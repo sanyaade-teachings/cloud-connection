@@ -22,6 +22,7 @@
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CloudConnectionPluginPCH.hpp</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="ClientFactory.cpp" />
+    <ClCompile Include="Lua\CloudConnection.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CloudConnectionClient.hpp" />

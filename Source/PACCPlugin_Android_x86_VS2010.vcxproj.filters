@@ -16,6 +16,9 @@
     <Filter Include="src">
       <UniqueIdentifier>{3a942236-10ee-4f22-9a8c-fae8467aadda}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Lua">
+      <UniqueIdentifier>{bf723510-62f1-4286-bba7-2399ba998857}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DummyClient.hpp">
@@ -82,6 +85,9 @@
     </ClCompile>
     <ClCompile Include="CloudConnectionClient.cpp">
       <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="Lua\CloudConnection.cpp">
+      <Filter>src\Lua</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -43,8 +43,11 @@
     <ClCompile />
     <ClCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/android/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/android/include;./Lua/../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-frtti -std=c++11 %(AdditionalOptions)</AdditionalOptions>
+      <PrecompiledHeaderFile>CloudConnectionPluginPCH.hpp</PrecompiledHeaderFile>
+      <PrecompiledHeader>Yes</PrecompiledHeader>
+      <PrecompiledHeaderOutputFile>$(IntDir)CloudConnectionPluginPCH.pch</PrecompiledHeaderOutputFile>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -71,6 +74,7 @@
     <ClCompile Include="GPGStateManager.cpp" />
     <ClCompile Include="CloudConnectionModule.cpp" />
     <ClCompile Include="CloudConnectionPlugin.cpp" />
+    <ClCompile Include="Lua\CloudConnection.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

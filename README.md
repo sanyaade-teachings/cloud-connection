@@ -32,6 +32,15 @@ This plugin allows you to create connection to cloud service providers from a Pr
 ###already included by Project Anarchy project
 -landroid -lEGL -lGLESv1_CM
 
+### PreProcessor Definitions required in developer plugin
+* CLOUDCONNECTIONPLUGIN_IMPORTS in both the developer plugin and application
+
+#### Win32 dll Only 
+* Cloud Connection pluging dll must be coped into the exe target dir in the Post-Build Event step
+xcopy /Y /D /C "CloudConnectionPlugin.vPluginD" "$(TargetDir)"
+* in developer plugin OnInitEnginePlugin() call macro VISION_PLUGIN_ENSURE_LOADED(CloudConnectionPlugin);
+* in developer app PreloadPlugins() call macro VISION_PLUGIN_ENSURE_LOADED(CloudConnectionPlugin);
+
 ###include folders required
 cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\include
 $(NDKROOT)/platforms/android-9/arch-arm/usr/include

@@ -7,13 +7,14 @@
 ///
 class CloudConnection : public VTypedObject
 {
-public: 
-  /// \brief
-  /// Gets the Global Instance of this Cloud Connection Module
-  static CloudConnection* GetInstance();
+public:   
 
-    //Vision specific extension:
+  /// \brief Gets the Cloud Connection Client
+  /// \return The Cloud Connection Client for the Target Platform
+  CloudConnectionClient* GetClient();
+
+  //Vision specific extension:
   %extend {
-    VSWIG_CREATE_CAST(CloudConnection)
+    VSWIG_CREATE_CAST_UNSAFE(CloudConnection)
   }
 };

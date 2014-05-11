@@ -20,6 +20,7 @@ This plugin allows you to create connection to cloud service providers from a Pr
 * Build requires compiled with C++11
 * Build requires compiled with RTTI
 
+## Manual Setup
 
 ### Compiler params required to build with the google gpg pluging for android
 -std=gnu++11 -frtti 
@@ -78,6 +79,16 @@ cloud-connection\Data\Android\res\values\ids.xml - contains the APP_ID that must
 Need to merge in the files from following into a temp res folder as they are required to make Google Play SDK work
 $(ADTROOT)\sdk\extras\google\google_play_services\libproject\google-play-services_lib\res
 
+## Lua
+
+### Global Access
+
+Global access to via "CloudConnection"
+
+e.g. To get the cloud connection user display name
+
+  local ccClient = CloudConnection:GetClient()
+  local displayName = ccClient:GetUserDisplayName()
 
 
 

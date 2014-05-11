@@ -26,7 +26,7 @@ void GPGAndroidClient::SignOut()
   hkvLog::Info( "PACloudConnectionPlugin - GPGAndroidClient::SignOut()" );
 }
 
-VString GPGAndroidClient::GetUserDisplayName()
+const char* GPGAndroidClient::GetUserDisplayName() const
 {
   return (*m_pPlayerName);
 }
@@ -43,9 +43,9 @@ bool GPGAndroidClient::IsAuthInProgress()
   return false;
 }
 
-void GPGAndroidClient::UnlockAchievement(const VString &achievementId)
+void GPGAndroidClient::UnlockAchievement(const char* achievementId)
 {
-  hkvLog::Info( "PACloudConnectionPlugin - GPGAndroidClient::UnlockAchievement() '%s'", achievementId.AsChar() );
+  hkvLog::Info( "PACloudConnectionPlugin - GPGAndroidClient::UnlockAchievement() '%s'", achievementId );
 }
 
 void GPGAndroidClient::ShowAchievements()
@@ -54,14 +54,14 @@ void GPGAndroidClient::ShowAchievements()
 }
     
 
-void GPGAndroidClient::SubmitHighScore(const VString &leaderboardId, ULONG64 score)
+void GPGAndroidClient::SubmitHighScore(const char* leaderboardId, ULONG64 score)
 {
-  hkvLog::Info( "PACloudConnectionPlugin - GPGAndroidClient::SubmitHighScore() '%s',%d", leaderboardId.AsChar(), score );
+  hkvLog::Info( "PACloudConnectionPlugin - GPGAndroidClient::SubmitHighScore() '%s',%d", leaderboardId, score );
 }
 
-void GPGAndroidClient::ShowLeaderboard(const VString &leaderboardId) 
+void GPGAndroidClient::ShowLeaderboard(const char* leaderboardId) 
 {
-   hkvLog::Info( "PACloudConnectionPlugin - GPGAndroidClient::ShowLeaderboard() '%s'", leaderboardId.AsChar() );
+   hkvLog::Info( "PACloudConnectionPlugin - GPGAndroidClient::ShowLeaderboard() '%s'", leaderboardId );
 }
 
 #endif

@@ -24,7 +24,7 @@ void DummyClient::SignOut()
   hkvLog::Info( "PACloudConnectionPlugin - DummyClient::SignOut()" );
 }
 
-VString DummyClient::GetUserDisplayName()
+const char* DummyClient::GetUserDisplayName() const
 {
   return (*m_pPlayerName);
 }
@@ -41,9 +41,9 @@ bool DummyClient::IsAuthInProgress()
   return false;
 }
 
-void DummyClient::UnlockAchievement(const VString &achievementId)
+void DummyClient::UnlockAchievement(const char* achievementId)
 {
-  hkvLog::Info( "PACloudConnectionPlugin - DummyClient::UnlockAchievement() '%s'", achievementId.AsChar() );
+  hkvLog::Info( "PACloudConnectionPlugin - DummyClient::UnlockAchievement() '%s'", achievementId );
 }
 
 void DummyClient::ShowAchievements()
@@ -52,12 +52,12 @@ void DummyClient::ShowAchievements()
 }
     
 
-void DummyClient::SubmitHighScore(const VString &leaderboardId, ULONG64 score)
+void DummyClient::SubmitHighScore(const char* leaderboardId, ULONG64 score)
 {
-  hkvLog::Info( "PACloudConnectionPlugin - DummyClient::SubmitHighScore() '%s',%d", leaderboardId.AsChar(), score );
+  hkvLog::Info( "PACloudConnectionPlugin - DummyClient::SubmitHighScore() '%s',%d", leaderboardId, score );
 }
 
-void DummyClient::ShowLeaderboard(const VString &leaderboardId) 
+void DummyClient::ShowLeaderboard(const char* leaderboardId) 
 {
-   hkvLog::Info( "PACloudConnectionPlugin - DummyClient::ShowLeaderboard() '%s'", leaderboardId.AsChar() );
+   hkvLog::Info( "PACloudConnectionPlugin - DummyClient::ShowLeaderboard() '%s'", leaderboardId);
 }

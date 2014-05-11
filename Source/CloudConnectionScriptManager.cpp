@@ -34,11 +34,30 @@ void CloudConnectionScriptMananger::OnHandleCallback( IVisCallbackDataObject_cl*
       if(pLuaState) 
       {
         luaopen_CloudConnectionLuaModule(pLuaState);
+
+        //Register the global instance of the class "CloudConnection"
+        int iRetParams = LUA_CallStaticFunction(pLuaState, LUA_MODULE_CLOUDCONNECTION, "CloudConnection", "Cast", "v>v", CloudConnection::GetInstance());        
+			  if (iRetParams==1)
+			  {
+				  if(lua_isnil(pLuaState, -1))
+				  {
+					  lua_pop(pLuaState, iRetParams);
+				  }
+				  else
+				  {
+					  lua_setglobal(pLuaState, "CloudConnection");  //defines the global "CloudConnection" availble in Lua
+				  }
+			  }
+        
       } 
       else 
       {
-        hkvLog::FatalError("Unable to create CloudConnection Lua Module, lua_State is NULL!");
+        hkvLog::Warning("Unable to create CloudConnection Lua Module, lua_State is NULL!");
       }
+    }
+    else
+    {
+      hkvLog::Warning("Unable to get the VScriptManager in CloudConnection Lua Module");
     }
   } 
   else if(pData->m_pSender==&IVScriptManager::OnScriptProxyCreation) 

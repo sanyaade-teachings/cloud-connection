@@ -35,7 +35,7 @@ public:
     return &g_GlobalManager;
   }
 
-  /// \brief Gets the Global Instance of this Cloud Connection Module
+  /// \brief Gets the Cloud Connection Client
   /// \return The Cloud Connection Client for the Target Platform
   CLOUDCONNECTIONPLUGIN_IMPEXP CloudConnectionClient* GetClient();
 

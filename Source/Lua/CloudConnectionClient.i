@@ -17,7 +17,7 @@ public:
 
   /// \brief
   /// Returns the authenticated user's display name
-  virtual VString GetUserDisplayName() = 0;
+  virtual const char* GetUserDisplayName() const = 0;
 
   /// \brief
   /// Brings up a platform-specific user authorization flow. 
@@ -29,7 +29,7 @@ public:
 
   /// \brief
   /// Unlock an achievement for the currently signed in player. 
-  virtual void UnlockAchievement(const VString &achievementId) = 0;
+  virtual void UnlockAchievement(const char* achievementId) = 0;
 
   /// \brief
   /// Presents a UI to the user that displays information about all achievements. 
@@ -37,11 +37,11 @@ public:
     
   /// \brief
   /// Submit a score to the leaderboard for the currently signed-in player. 
-  virtual void SubmitHighScore(const VString &leaderboardId, ULONG64 score) = 0;
+  virtual void SubmitHighScore(const char* leaderboardId, ULONG64 score) = 0;
 
   /// \brief
   /// Presents a UI to the user that displays information about a specific leaderboard. 
-  virtual void ShowLeaderboard(const VString &leaderboardId)  = 0;
+  virtual void ShowLeaderboard(const char* leaderboardId)  = 0;
 
   
   //Vision specific extension:

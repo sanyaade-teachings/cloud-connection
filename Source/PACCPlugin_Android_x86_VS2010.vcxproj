@@ -31,6 +31,9 @@
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
     <Import Project="C:\Havok\AnarchySDK\Build\Vision\PropertySheets\EnginePlugin_android_x86_vs2010_anarchyDebug.props" />
   </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
+    <Import Project="C:\Havok\AnarchySDK\Build\Vision\PropertySheets\EnginePluginDX9_win32_vs2010_anarchyDebug.props" />
+  </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
     <OutDir>..\Bin\$(ProjectName)\$(Configuration)\</OutDir>

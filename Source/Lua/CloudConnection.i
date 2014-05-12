@@ -14,7 +14,8 @@ public:
   CloudConnectionClient* GetClient();
 
   //Vision specific extension:
-  %extend {
-    VSWIG_CREATE_CAST_UNSAFE(CloudConnection)
+  %extend 
+  {
+    VSWIG_CREATE_CAST_UNSAFE(CloudConnection);
   }
 };

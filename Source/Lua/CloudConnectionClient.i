@@ -45,7 +45,8 @@ public:
 
   
   //Vision specific extension:
-  %extend {
-    VSWIG_CREATE_CAST(CloudConnectionClient)
+  %extend 
+  {
+    VSWIG_CREATE_CAST(CloudConnectionClient);
   }
 };

@@ -79,6 +79,25 @@ cloud-connection\Data\Android\res\values\ids.xml - contains the APP_ID that must
 Need to merge in the files from following into a temp res folder as they are required to make Google Play SDK work
 $(ADTROOT)\sdk\extras\google\google_play_services\libproject\google-play-services_lib\res
 
+## iOS
+
+### System Requirements
+Xcode version 5.0.1 or higher.
+A mobile device running iOS 6.0 or higher.
+
+### Library, Framework & Bundle Requirements
+
+https://developers.google.com/games/services/downloads/
+
+* From the Google Play Games C++ SDK (gpg-cpp-sdk) ( \cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\ios )
+	gpg.bundle
+	gpg.framework
+	
+* From the Google+ iOS SDK (\cloud-connection\ThirdParty\redistsdks\google-plus-ios-sdk\V1.5.1)
+	GooglePlus.framework
+	GooglePlus.bundle
+	GoogleOpenSource.framework
+
 ## Lua
 
 ### Global Access

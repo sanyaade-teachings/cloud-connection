@@ -1,45 +1,12 @@
-// Copyright (c) 2014 Google Inc.
-//
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//     http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-//
+#if defined(_VISION_ANDROID)
 
-#include "GPGStateManager.h"
-
-#ifdef __APPLE__
-// Logging for CoreFoundation
-#include <CoreFoundation/CoreFoundation.h>
-
-extern "C" void NSLog(CFStringRef format, ...);
-const int32_t BUFFER_SIZE = 256;
-
-// Wrap macro in do/while to ensure ;
-#define LOGI(...) do { \
-    char c[BUFFER_SIZE]; \
-    snprintf(c, BUFFER_SIZE, __VA_ARGS__); \
-    CFStringRef str = CFStringCreateWithCString(kCFAllocatorDefault, c, \
-                                                kCFStringEncodingMacRoman); \
-    NSLog(str); \
-    CFRelease(str); \
-  } while (false)
-
-#else
-
+#include "GPGAndroidStateManager.hpp"
 #include "android/Log.h"
 #define DEBUG_TAG "PACloudConnectionNativeActivity"
 #define LOGI(...) \
     ((void)__android_log_print(ANDROID_LOG_INFO, DEBUG_TAG, __VA_ARGS__))
 
-#endif
+
 
 #include "gpg/achievement_manager.h"
 bool StateManager::is_auth_in_progress_ = false;
@@ -141,3 +108,5 @@ void StateManager::InitServices(
   }
   LOGI("Created");
 }
+
+#endif

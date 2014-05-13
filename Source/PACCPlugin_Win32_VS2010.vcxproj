@@ -17,6 +17,7 @@
     <ClCompile Include="CloudConnectionScriptManager.cpp" />
     <ClCompile Include="DummyClient.cpp" />
     <ClCompile Include="GPGAndroidClient.cpp" />
+    <ClCompile Include="GPGAndroidStateManager.cpp" />
     <ClCompile Include="GPGIOSClient.cpp" />
     <ClCompile Include="CloudConnectionPluginPCH.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -34,6 +35,7 @@
     <ClInclude Include="CloudConnectionTypes.h" />
     <ClInclude Include="DummyClient.hpp" />
     <ClInclude Include="GPGAndroidClient.hpp" />
+    <ClInclude Include="GPGAndroidStateManager.hpp" />
     <ClInclude Include="GPGIOSClient.hpp" />
     <ClInclude Include="CloudConnectionPluginPCH.hpp" />
     <ClInclude Include="ClientFactory.hpp" />

@@ -48,6 +48,9 @@
     <ClCompile Include="Lua\CloudConnectionLuaModule.cpp">
       <Filter>src\Lua</Filter>
     </ClCompile>
+    <ClCompile Include="GPGAndroidStateManager.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DummyClient.hpp">
@@ -84,6 +87,9 @@
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="CloudConnection.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="GPGAndroidStateManager.hpp">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

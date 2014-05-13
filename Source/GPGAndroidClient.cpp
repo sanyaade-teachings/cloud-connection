@@ -1,7 +1,10 @@
 #include "CloudConnectionPluginPCH.hpp"
-#include "GPGAndroidClient.hpp"
 
 #if defined(_VISION_ANDROID)
+
+#include "GPGAndroidClient.hpp"
+#include "GPGAndroidStateManager.hpp"
+
 
 /** RTTI definitions */
 V_IMPLEMENT_DYNAMIC( GPGAndroidClient, CloudConnectionClient, &g_CloudConnectionModule );
@@ -18,50 +21,72 @@ GPGAndroidClient::~GPGAndroidClient()
 
 bool GPGAndroidClient::IsAuthenticated()
 {
-  return true;
+  bool auth = false;
+  gpg::GameServices* gameservices = StateManager::GetGameServices();
+  if ( gameservices != NULL )
+  {
+    auth = gameservices->IsAuthorized();
+  }
+  return auth;
 }
 
 void GPGAndroidClient::SignOut()
 {
-  hkvLog::Info( "PACloudConnectionPlugin - GPGAndroidClient::SignOut()" );
+  hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::SignOut()" );    
+  StateManager::SignOut();
 }
 
 const char* GPGAndroidClient::GetUserDisplayName() const
 {
+  gpg::GameServices* gameservices = StateManager::GetGameServices();
+  if ( gameservices != NULL )
+  {     
+    if ( !gameservices->IsAuthorized() ) 
+    {
+      //get the players google+ name
+      hkvLog::Warning( "PACloudConnectionPlugin - GPGAndroidClient::GetUserDisplayName() - METHOD NOT YET IMPLEMENTED" );    
+    }
+  }
+      
   return (*m_pPlayerName);
 }
 
 
 void GPGAndroidClient::BeginUserInitiatedSignIn() 
 {
-  hkvLog::Info( "PACloudConnectionPlugin - GPGAndroidClient::BeginUserInitiatedSignIn()" );
+  hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::BeginUserInitiatedSignIn()" );
+  StateManager::BeginUserInitiatedSignIn();
 }
 
 
 bool GPGAndroidClient::IsAuthInProgress()
 {
-  return false;
+  return StateManager::IsAuthInProgress();
 }
 
 void GPGAndroidClient::UnlockAchievement(const char* achievementId)
 {
-  hkvLog::Info( "PACloudConnectionPlugin - GPGAndroidClient::UnlockAchievement() '%s'", achievementId );
+  hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::UnlockAchievement() '%s'", achievementId );
+  StateManager::UnlockAchievement(achievementId);
 }
 
 void GPGAndroidClient::ShowAchievements()
 {
-  hkvLog::Info( "PACloudConnectionPlugin - GPGAndroidClient::ShowAchievements()" );
+  hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::ShowAchievements()" );
+  StateManager::ShowAchievements();
 }
     
 
 void GPGAndroidClient::SubmitHighScore(const char* leaderboardId, ULONG64 score)
 {
-  hkvLog::Info( "PACloudConnectionPlugin - GPGAndroidClient::SubmitHighScore() '%s',%d", leaderboardId, score );
+  hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::SubmitHighScore() '%s',%d", leaderboardId, score );
+  StateManager::SubmitHighScore(leaderboardId, score);
 }
 
 void GPGAndroidClient::ShowLeaderboard(const char* leaderboardId) 
 {
-   hkvLog::Info( "PACloudConnectionPlugin - GPGAndroidClient::ShowLeaderboard() '%s'", leaderboardId );
+   hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::ShowLeaderboard() '%s'", leaderboardId );
+   StateManager::ShowLeaderboard(leaderboardId);
 }
 
 #endif

@@ -11,28 +11,28 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{C59824CE-06EA-45BC-B589-2F26FBD192C8}</ProjectGuid>
+    <ProjectGuid>{7DBD826D-9802-4423-B7DD-E94539F65EEB}</ProjectGuid>
     <RootNamespace>PACCPlugin_Android_x86_VS2010</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
-    <PlatformToolset>x86-4.6</PlatformToolset>
+    <PlatformToolset>arm-linux-androideabi-4.6</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
     <ConfigurationType>StaticLibrary</ConfigurationType>
   </PropertyGroup>
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
-    <AndroidArch>x86</AndroidArch>
+    <AndroidArch>armv7-a</AndroidArch>
     <AndroidAPILevel>android-10</AndroidAPILevel>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
-    <Import Project="C:\Havok\AnarchySDK\Build\Vision\PropertySheets\EnginePlugin_android_x86_vs2010_anarchyDebug.props" />
+    <Import Project="C:\Havok\AnarchySDK\Build\Vision\PropertySheets\EnginePlugin_android_arm_vs2010_anarchyDebug.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
-    <Import Project="C:\Havok\AnarchySDK\Build\Vision\PropertySheets\EnginePluginDX9_win32_vs2010_anarchyDebug.props" />
+    <Import Project="C:\Havok\AnarchySDK\Build\Vision\PropertySheets\EnginePlugin_android_arm_vs2010_anarchyRelease.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">

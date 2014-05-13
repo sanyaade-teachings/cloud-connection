@@ -5,6 +5,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PACCPlugin_Android_x86_VS20
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PACCPlugin_Win32_VS2010", "PACCPlugin_Win32_VS2010.vcxproj", "{0C53509C-55A9-460A-A04E-FEABEED95BC2}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PACCPlugin_Android_ARM_VS2010", "PACCPlugin_Android_ARM_VS2010.vcxproj", "{7DBD826D-9802-4423-B7DD-E94539F65EEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|hkAndroid = Debug|hkAndroid
@@ -39,6 +41,20 @@ Global
 		{0C53509C-55A9-460A-A04E-FEABEED95BC2}.Release|Mixed Platforms.Build.0 = Release|Win32
 		{0C53509C-55A9-460A-A04E-FEABEED95BC2}.Release|Win32.ActiveCfg = Release|Win32
 		{0C53509C-55A9-460A-A04E-FEABEED95BC2}.Release|Win32.Build.0 = Release|Win32
+		{7DBD826D-9802-4423-B7DD-E94539F65EEB}.Debug|hkAndroid.ActiveCfg = Debug|hkAndroid
+		{7DBD826D-9802-4423-B7DD-E94539F65EEB}.Debug|hkAndroid.Build.0 = Debug|hkAndroid
+		{7DBD826D-9802-4423-B7DD-E94539F65EEB}.Debug|hkAndroid.Deploy.0 = Debug|hkAndroid
+		{7DBD826D-9802-4423-B7DD-E94539F65EEB}.Debug|Mixed Platforms.ActiveCfg = Debug|hkAndroid
+		{7DBD826D-9802-4423-B7DD-E94539F65EEB}.Debug|Mixed Platforms.Build.0 = Debug|hkAndroid
+		{7DBD826D-9802-4423-B7DD-E94539F65EEB}.Debug|Mixed Platforms.Deploy.0 = Debug|hkAndroid
+		{7DBD826D-9802-4423-B7DD-E94539F65EEB}.Debug|Win32.ActiveCfg = Debug|hkAndroid
+		{7DBD826D-9802-4423-B7DD-E94539F65EEB}.Release|hkAndroid.ActiveCfg = Release|hkAndroid
+		{7DBD826D-9802-4423-B7DD-E94539F65EEB}.Release|hkAndroid.Build.0 = Release|hkAndroid
+		{7DBD826D-9802-4423-B7DD-E94539F65EEB}.Release|hkAndroid.Deploy.0 = Release|hkAndroid
+		{7DBD826D-9802-4423-B7DD-E94539F65EEB}.Release|Mixed Platforms.ActiveCfg = Release|hkAndroid
+		{7DBD826D-9802-4423-B7DD-E94539F65EEB}.Release|Mixed Platforms.Build.0 = Release|hkAndroid
+		{7DBD826D-9802-4423-B7DD-E94539F65EEB}.Release|Mixed Platforms.Deploy.0 = Release|hkAndroid
+		{7DBD826D-9802-4423-B7DD-E94539F65EEB}.Release|Win32.ActiveCfg = Release|hkAndroid
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

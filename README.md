@@ -14,6 +14,9 @@ This plugin allows you to create connection to cloud service providers from a Pr
 
 ## Requirements
 
+### Project Anarchy
+* Build 2014.1 or greater
+
 ### Android
 * Android NDK r9d or greater (NDK previous to r9d will not work)
 * Google Services SDK is installed (from the Gooogle ADK)

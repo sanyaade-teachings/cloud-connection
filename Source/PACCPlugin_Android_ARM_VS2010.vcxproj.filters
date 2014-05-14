@@ -98,5 +98,8 @@
     <ClCompile Include="GPGAndroidStateManager.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="PreAndroid4LifeCycleSupport.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -72,6 +72,7 @@
   <ItemGroup>
     <ClCompile Include="ClientFactory.cpp" />
     <ClCompile Include="CloudConnectionClient.cpp" />
+    <ClCompile Include="PreAndroid4LifeCycleSupport.cpp" />
     <ClCompile Include="CloudConnectionPluginPCH.cpp" />
     <ClCompile Include="CloudConnectionScriptManager.cpp" />
     <ClCompile Include="GPGAndroidClient.cpp" />

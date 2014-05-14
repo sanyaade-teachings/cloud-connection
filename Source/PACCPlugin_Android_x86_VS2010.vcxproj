@@ -55,6 +55,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ClientFactory.hpp" />
+    <ClInclude Include="CloudConnectionBase.h" />
     <ClInclude Include="CloudConnectionPluginPCH.hpp" />
     <ClInclude Include="CloudConnectionScriptManager.hpp" />
     <ClInclude Include="GPGAndroidClient.hpp" />

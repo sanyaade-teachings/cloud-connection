@@ -28,6 +28,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CloudConnection.hpp" />
+    <ClInclude Include="CloudConnectionBase.h" />
     <ClInclude Include="CloudConnectionClient.hpp" />
     <ClInclude Include="CloudConnectionPlugin.hpp" />
     <ClInclude Include="CloudConnectionPluginImportExport.h" />

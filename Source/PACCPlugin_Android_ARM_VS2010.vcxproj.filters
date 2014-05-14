@@ -60,6 +60,9 @@
     <ClInclude Include="GPGAndroidStateManager.hpp">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="CloudConnectionBase.h">
+      <Filter>src</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DummyClient.cpp">

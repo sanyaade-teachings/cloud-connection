@@ -1,2 +1,5 @@
 /classes/
 /local.properties
+/bin/
+/gen/
+/libs/

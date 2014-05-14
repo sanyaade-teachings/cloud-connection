@@ -1,4 +1,9 @@
 REM Runs the Android build for java source files
 
+REM Build in release mode
+call ant release
+
 REM Build in debug mode
-ant debug
+REM ant debug
+
+PAUSE

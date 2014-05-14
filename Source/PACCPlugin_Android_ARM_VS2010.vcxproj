@@ -67,12 +67,13 @@
     <ClInclude Include="CloudConnectionPlugin.hpp" />
     <ClInclude Include="CloudConnectionPluginImportExport.h" />
     <ClInclude Include="CloudConnectionTypes.h" />
+    <ClInclude Include="platform\Android\jni\com_havok_Vision_CloudConnectionLifeCycleSupport.h" />
     <ClInclude Include="VisionBaseIncludes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ClientFactory.cpp" />
     <ClCompile Include="CloudConnectionClient.cpp" />
-    <ClCompile Include="PreAndroid4LifeCycleSupport.cpp" />
+    <ClCompile Include="com_havok_Vision_CloudConnectionLifeCycleSupport.cpp" />
     <ClCompile Include="CloudConnectionPluginPCH.cpp" />
     <ClCompile Include="CloudConnectionScriptManager.cpp" />
     <ClCompile Include="GPGAndroidClient.cpp" />

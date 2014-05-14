@@ -1,4 +1,8 @@
  package com.havok.Vision;
+ 
+ import android.os.Bundle;
+ import android.app.Activity;
+ 
  /**
  * This class provides the Cloud Connection Plug with pre- Android 4.0 support for Google Play Games Services
  * If you do not wish to target pre-Android 4.0 devices then this class is not required. 

@@ -67,6 +67,7 @@
     <ClInclude Include="CloudConnectionPlugin.hpp" />
     <ClInclude Include="CloudConnectionPluginImportExport.h" />
     <ClInclude Include="CloudConnectionTypes.h" />
+    <ClInclude Include="platform\Android\jni\com_havok_Vision_CloudConnectionLifeCycleSupport.h" />
     <ClInclude Include="VisionBaseIncludes.h" />
   </ItemGroup>
   <ItemGroup>
@@ -74,6 +75,7 @@
     <ClCompile Include="CloudConnectionClient.cpp" />
     <ClCompile Include="CloudConnectionPluginPCH.cpp" />
     <ClCompile Include="CloudConnectionScriptManager.cpp" />
+    <ClCompile Include="com_havok_Vision_CloudConnectionLifeCycleSupport.cpp" />
     <ClCompile Include="GPGAndroidClient.cpp" />
     <ClCompile Include="DummyClient.cpp" />
     <ClCompile Include="GPGAndroidStateManager.cpp" />
@@ -81,7 +83,6 @@
     <ClCompile Include="CloudConnection.cpp" />
     <ClCompile Include="CloudConnectionPlugin.cpp" />
     <ClCompile Include="Lua\CloudConnectionLuaModule.cpp" />
-    <ClCompile Include="PreAndroid4LifeCycleSupport.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

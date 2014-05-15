@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!--
+        Import per project custom build rules if present at the root of the project.
+        This is the place to put custom intermediary targets such as:
+            -pre-build
+            -pre-compile
+            -post-compile (This is typically used for code obfuscation.
+                           Compiled code location: ${out.classes.absolute.dir}
+                           If this is not done in place, override ${out.dex.input.absolute.dir})
+            -post-package
+            -post-build
+            -pre-clean
+    -->
+<project>    
+	<target name="-pre-build">
+	    <echo>**** -pre-build *****</echo>	   
+	</target>
+	
+	<target name="-pre-compile">
+	    <echo>**** -pre-compile *****</echo>
+	</target>
+	
+	<target name="-post-compile">
+	    <echo>**** -post-compile *****</echo>
+	</target>    
+	
+	<target name="-post-package">
+	    <echo>**** post-package *****</echo>
+	</target> 
+	
+	<target name="-post-build">
+	    <echo>**** -post-build *****</echo>
+	</target> 
+	
+	<target name="-pre-clean">
+	    <echo>**** -pre-clean *****</echo>
+	</target>
+</project>

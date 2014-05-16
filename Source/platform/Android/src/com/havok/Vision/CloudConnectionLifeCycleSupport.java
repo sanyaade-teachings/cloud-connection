@@ -16,6 +16,26 @@
  public class CloudConnectionLifeCycleSupport extends NativeLibLoader 
  {
   private static String TAG = "CloudConnectionLifeCycleSupport";
+  
+  static
+  {
+    Log.v(TAG, "Static Constructor");
+	
+	/* if you do not load the library that contains the native JNI callbacks then they will not function
+	make sure the native library that contains the JNI callbacks has been loaded */
+    System.loadLibrary("PACCPTestGameApplication");
+  }
+  
+  // The following methods are Implemented in the cloud connection C++ plugin.
+  // if you want to move all these methods out of this class and into your own implementation
+  // then the names of the JNI method  calls in C++ must also be changed to match
+  private static native void nativeOnActivityCreated(Activity activity, Bundle savedInstanceState);
+  private static native void nativeOnActivityDestroyed(Activity activity);
+  private static native void nativeOnActivityPaused(Activity activity);
+  private static native void nativeOnActivityResumed(Activity activity);
+  private static native void nativeOnActivitySaveInstanceState(Activity activity, Bundle outState);
+  private static native void nativeOnActivityStarted(Activity activity);
+  private static native void nativeOnActivityStopped(Activity activity);
  
   protected void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
@@ -121,15 +141,4 @@
       }
     }	 
    }
-
-   // The following methods are Implemented in the cloud connection C++ plugin.
-   // if you want to move all these methods out of this class and into your own implementation
-   // then the names of the JNI method  calls in C++ must also be changed to match
-   private static native void nativeOnActivityCreated(Activity activity, Bundle savedInstanceState);
-   private static native void nativeOnActivityDestroyed(Activity activity);
-   private static native void nativeOnActivityPaused(Activity activity);
-   private static native void nativeOnActivityResumed(Activity activity);
-   private static native void nativeOnActivitySaveInstanceState(Activity activity, Bundle outState);
-   private static native void nativeOnActivityStarted(Activity activity);
-   private static native void nativeOnActivityStopped(Activity activity);
  }

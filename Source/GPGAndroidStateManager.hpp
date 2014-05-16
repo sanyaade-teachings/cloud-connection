@@ -22,11 +22,18 @@
 class StateManager 
 {
  public:
+
+   /// \brief 
+   /// Called from the developers application to initialise the GPG on Android.
+   /// Builds the Google Play Games Platform Configuration and attempts the silent
+   /// sign-in to the services.
+  static void InitServices(struct android_app* AndroidApplication);
+
+  /// \brief initialises the GPG services
   static void InitServices(
       gpg::PlatformConfiguration const &pc,
       gpg::GameServices::Builder::OnAuthActionStartedCallback started_callback,
-      gpg::GameServices::Builder::OnAuthActionFinishedCallback
-          finished_callback);
+      gpg::GameServices::Builder::OnAuthActionFinishedCallback finished_callback);
 
   /// \brief gets the google game services state object
   static gpg::GameServices *GetGameServices();
@@ -52,6 +59,7 @@ class StateManager
   static bool is_auth_in_progress_;
   static std::unique_ptr<gpg::GameServices> game_services_;
 };
+
 
 #endif
 

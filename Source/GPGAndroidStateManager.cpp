@@ -1,6 +1,9 @@
 #if defined(_VISION_ANDROID)
 
+#include "VisionBaseIncludes.h"
 #include "GPGAndroidStateManager.hpp"
+#include "gpg/android_initialization.h"
+#include "gpg/debug.h"
 #include "android/Log.h"
 #define DEBUG_TAG "PACloudConnectionNativeActivity"
 #define LOGI(...) \
@@ -109,4 +112,44 @@ void StateManager::InitServices(
   LOGI("Created");
 }
 
+
+void StateManager::InitServices(struct android_app* AndroidApplication)
+{
+  VASSERT_MSG(AndroidApplication != NULL, "The android_app* cannot be null");
+
+  // gpg-cpp: Set platform intiialization
+  gpg::AndroidInitialization::android_main(AndroidApplication);
+
+  // gpg-cpp:  Here we create the callback on auth operations
+  auto callback = [&](gpg::AuthOperation op, gpg::AuthStatus status) {
+    hkvLog::Debug("OnAuthActionFinished");
+    if (IsSuccess(status)) {
+      hkvLog::Debug("Cloud Connection - You are logged in!");
+    } else {
+      hkvLog::Debug("Cloud Connection - You are not logged in!");
+    }
+  };
+
+  // gpg-cpp:  We need to check to see if there's a previous state.
+  // If there was, we'll just continue, but if not we'll set up
+  // gpg-cpp for the first time.
+  if (AndroidApplication->savedState != NULL) {
+    // We are starting with a previous saved state; restore from it.
+    //engine.state = *(struct saved_state*)AndroidApplication->savedState;
+  } else {
+    hkvLog::Debug("Setting up gpg-cpp");
+
+    // Get the platform configuration.
+    gpg::AndroidPlatformConfiguration platform_configuration;
+    platform_configuration.SetActivity(AndroidApplication->activity->clazz);
+
+    hkvLog::Debug("SetActivity finished gpg-cpp");
+
+    // Now, create the game service (see StateManager.cpp)
+    // and pass in our callback
+    StateManager::InitServices(platform_configuration, NULL, callback );
+    
+    hkvLog::Debug("InitServices finished gpg-cpp");
+  }
+}
 #endif

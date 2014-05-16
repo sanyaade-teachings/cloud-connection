@@ -63,7 +63,7 @@
     <ClInclude Include="CloudConnectionBase.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="platform\Android\jni\com_havok_Vision_CloudConnectionLifeCycleSupport.h">
+    <ClInclude Include="com_havok_Vision_CloudConnectionLifeCycleSupport.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -101,5 +101,10 @@
     <ClCompile Include="GPGAndroidStateManager.cpp">
       <Filter>src</Filter>
     </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="com_havok_Vision_CloudConnectionLifeCycleSupport.inl">
+      <Filter>Header Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -67,7 +67,6 @@
     <ClInclude Include="CloudConnectionPlugin.hpp" />
     <ClInclude Include="CloudConnectionPluginImportExport.h" />
     <ClInclude Include="CloudConnectionTypes.h" />
-    <ClInclude Include="platform\Android\jni\com_havok_Vision_CloudConnectionLifeCycleSupport.h" />
     <ClInclude Include="VisionBaseIncludes.h" />
   </ItemGroup>
   <ItemGroup>

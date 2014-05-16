@@ -10,8 +10,8 @@
 // They are used to notify pre Android 4.0 devices about life cycle changes to the Activity.
 // If it is not required to support Android 2.3 or 3.x devices then these functions are not required
 
-JNIEXPORT void JNICALL Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityCreated
-  (JNIEnv *env, jclass, jobject activity, jobject saved_instance_state)
+extern "C" JNIEXPORT void JNICALL Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityCreated
+  (JNIEnv *env, jclass thiz, jobject activity, jobject saved_instance_state)
 {
   hkvLog::Debug("Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityCreated");
   if ( env != NULL )
@@ -22,42 +22,42 @@ JNIEXPORT void JNICALL Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nat
   }
 }
 
-JNIEXPORT void JNICALL Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityDestroyed
+extern "C" JNIEXPORT void JNICALL Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityDestroyed
   (JNIEnv *env, jclass thiz, jobject activity)
 {
   hkvLog::Debug("Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityDestroyed");
   gpg::AndroidSupport::OnActivityDestroyed(env, activity);
 }
 
-JNIEXPORT void JNICALL Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityPaused
+extern "C" JNIEXPORT void JNICALL Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityPaused
   (JNIEnv *env, jclass thiz, jobject activity)
 {
   hkvLog::Debug("Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityPaused");
   gpg::AndroidSupport::OnActivityPaused(env, activity);
 }
 
-JNIEXPORT void JNICALL Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityResumed
+extern "C" JNIEXPORT void JNICALL Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityResumed
   (JNIEnv *env, jclass thiz, jobject activity)
 {
   hkvLog::Debug("Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityResumed");
   gpg::AndroidSupport::OnActivityResumed(env, activity);
 }
 
-JNIEXPORT void JNICALL Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivitySaveInstanceState
+extern "C" JNIEXPORT void JNICALL Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivitySaveInstanceState
   (JNIEnv *env, jclass thiz, jobject activity, jobject out_state)
 {
   hkvLog::Debug("Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivitySaveInstanceState");
   gpg::AndroidSupport::OnActivitySaveInstanceState(env, activity, out_state);
 }
 
-JNIEXPORT void JNICALL Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityStarted
+extern "C" JNIEXPORT void JNICALL Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityStarted
   (JNIEnv *env, jclass thiz, jobject activity)
 {
-  hkvLog::Debug("Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityStarted");
+  hkvLog::Debug("Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityStarted");    
   gpg::AndroidSupport::OnActivityStarted(env, activity);
 }
 
-JNIEXPORT void JNICALL Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityStopped
+extern "C" JNIEXPORT void JNICALL Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityStopped
   (JNIEnv *env, jclass thiz, jobject activity)
 {
   hkvLog::Debug("Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityStopped");

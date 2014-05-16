@@ -52,6 +52,10 @@
       <PrecompiledHeader>Yes</PrecompiledHeader>
       <PrecompiledHeaderOutputFile>$(IntDir)CloudConnectionPluginPCH.pch</PrecompiledHeaderOutputFile>
     </ClCompile>
+    <Lib>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ClientFactory.hpp" />
@@ -73,7 +77,6 @@
   <ItemGroup>
     <ClCompile Include="ClientFactory.cpp" />
     <ClCompile Include="CloudConnectionClient.cpp" />
-    <ClCompile Include="com_havok_Vision_CloudConnectionLifeCycleSupport.cpp" />
     <ClCompile Include="CloudConnectionPluginPCH.cpp" />
     <ClCompile Include="CloudConnectionScriptManager.cpp" />
     <ClCompile Include="GPGAndroidClient.cpp" />

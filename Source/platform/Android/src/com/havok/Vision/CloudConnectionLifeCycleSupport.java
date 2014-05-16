@@ -2,6 +2,7 @@
  
  import android.os.Bundle;
  import android.app.Activity;
+ import android.util.Log;
  
  /**
  * This class provides the Cloud Connection Plug with pre- Android 4.0 support for Google Play Games Services
@@ -14,43 +15,115 @@
  */
  public class CloudConnectionLifeCycleSupport extends NativeLibLoader 
  {
-   protected void onCreate(Bundle savedInstanceState){
-     super.onCreate(savedInstanceState);
-     nativeOnActivityCreated(this, savedInstanceState);
-   }
+  private static String TAG = "CloudConnectionLifeCycleSupport";
+ 
+  protected void onCreate(Bundle savedInstanceState){
+    super.onCreate(savedInstanceState);
+    try
+    {
+      nativeOnActivityCreated(this, savedInstanceState);
+    }
+    catch( UnsatisfiedLinkError e )
+    {
+      if ( android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH )
+      {
+        Log.w(TAG, "pre-Android 4.0 Life Cycle Support is not working", e);
+      }
+    }
+  }
 
-   protected void onDestroy(){
-     super.onDestroy();
-     nativeOnActivityDestroyed(this);
-   }
+  protected void onDestroy(){
+    super.onDestroy();
+    try
+    {
+      nativeOnActivityDestroyed(this);
+    }
+    catch( UnsatisfiedLinkError e )
+    {
+      if ( android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH )
+      {
+        Log.w(TAG, "pre-Android 4.0 Life Cycle Support is not working", e);
+      }
+    }
+  }
 
    protected void onPause(){
-     super.onPause();
-     nativeOnActivityPaused(this);
+    super.onPause();
+    try
+    {
+      nativeOnActivityPaused(this);
+    }
+    catch( UnsatisfiedLinkError e )
+    {
+      if ( android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH )
+      {
+        Log.w(TAG, "pre-Android 4.0 Life Cycle Support is not working", e);
+      }
+    }
    }
 
    protected void onResume(){
-     super.onResume();
-     nativeOnActivityResumed(this);
+    super.onResume();
+    try
+    {
+      nativeOnActivityResumed(this);
+    }
+    catch( UnsatisfiedLinkError e )
+    {
+      if ( android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH )
+      {
+        Log.w(TAG, "pre-Android 4.0 Life Cycle Support is not working", e);
+      }
+    } 
    }
 
    protected void onStart(){
-     super.onStart();
-     nativeOnActivityStarted(this);
+    super.onStart();     
+    try
+    {
+      nativeOnActivityStarted(this);
+    }
+    catch( UnsatisfiedLinkError e )
+    {
+      if ( android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH )
+      {
+        Log.w(TAG, "pre-Android 4.0 Life Cycle Support is not working", e);
+      }
+    }	 
    }
 
    protected void onStop(){
-     super.onStop();
-     nativeOnActivityStopped(this);
+    super.onStop();
+    try
+    {
+      nativeOnActivityStopped(this);
+    }
+    catch( UnsatisfiedLinkError e )
+    {
+      if ( android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH )
+      {
+        Log.w(TAG, "pre-Android 4.0 Life Cycle Support is not working", e);
+      }
+    }	 
    }
 
    protected void onSaveInstanceState(Bundle outState) {
-     super.onSaveInstanceState(outState);
-     nativeOnActivitySaveInstanceState(this, outState);
+    super.onSaveInstanceState(outState);     
+    try
+    {
+      nativeOnActivitySaveInstanceState(this, outState);
+    }
+    catch( UnsatisfiedLinkError e )
+    {
+      if ( android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.ICE_CREAM_SANDWICH )
+      {
+        Log.w(TAG, "pre-Android 4.0 Life Cycle Support is not working", e);
+      }
+    }	 
    }
 
    // The following methods are Implemented in the cloud connection C++ plugin.
-   // if you want to move all these methods out of this class and into your own implmentation
+   // if you want to move all these methods out of this class and into your own implementation
    // then the names of the JNI method  calls in C++ must also be changed to match
    private static native void nativeOnActivityCreated(Activity activity, Bundle savedInstanceState);
    private static native void nativeOnActivityDestroyed(Activity activity);

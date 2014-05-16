@@ -4,17 +4,12 @@
 
 #include "GPGAndroidClient.hpp"
 #include "GPGAndroidStateManager.hpp"
-#include "platform\Android\jni\com_havok_Vision_CloudConnectionLifeCycleSupport.h"
-
 
 /** RTTI definitions */
 V_IMPLEMENT_DYNAMIC( GPGAndroidClient, CloudConnectionClient, &g_CloudConnectionModule );
 
 GPGAndroidClient::GPGAndroidClient()
 {
-   //Dummy calls to stop the compiler stripping out these JNI calls
-  Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityCreated(NULL, NULL, NULL, NULL); 
-
   m_pPlayerName = new VString("GPGAndroidClient Dummy Player");
 }
 

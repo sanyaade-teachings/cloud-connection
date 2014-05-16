@@ -101,8 +101,5 @@
     <ClCompile Include="GPGAndroidStateManager.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="com_havok_Vision_CloudConnectionLifeCycleSupport.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

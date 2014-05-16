@@ -34,20 +34,27 @@ void CloudConnectionScriptMananger::OnHandleCallback( IVisCallbackDataObject_cl*
       if(pLuaState) 
       {
         luaopen_CloudConnectionLuaModule(pLuaState);
-
+        
         //Register the global instance of the class "CloudConnection"
+        /*
+        //** Removed this for now as it instantly crashes the Android build **
         int iRetParams = LUA_CallStaticFunction(pLuaState, LUA_MODULE_CLOUDCONNECTION, "CloudConnection", "Cast", "v>v", CloudConnection::GetInstance());        
 			  if (iRetParams==1)
 			  {
 				  if(lua_isnil(pLuaState, -1))
 				  {
 					  lua_pop(pLuaState, iRetParams);
+            hkvLog::Warning("Unable to create 'CloudConnection' Global in lua - 1");
 				  }
 				  else
 				  {
 					  lua_setglobal(pLuaState, "CloudConnection");  //defines the global "CloudConnection" availble in Lua
 				  }
 			  }
+        else
+        {
+          hkvLog::Warning("2: Unable to create 'CloudConnection' Global in lua - 2");
+        }*/
         
       } 
       else 
@@ -68,7 +75,7 @@ void CloudConnectionScriptMananger::OnHandleCallback( IVisCallbackDataObject_cl*
 		if(!pScriptData->m_bProcessed)
 		{
 			int iRetParams = 0;
-
+      
 			if(pScriptData->m_pInstance->IsOfType(V_RUNTIME_CLASS(CloudConnectionClient)))
       {
 				//call lua cast function for CloudConnectionClient (created via the macro in CloudConnectionClient.i)
@@ -77,7 +84,7 @@ void CloudConnectionScriptMananger::OnHandleCallback( IVisCallbackDataObject_cl*
 					LUA_MODULE_CLOUDCONNECTION, // the name of the module
 					"CloudConnectionClient", // the name of the class
 					"Cast", // the name of the fucntion
-					"E>E", // the function's signature
+					"v>v", // the function's signature
 					pScriptData->m_pInstance //the input parameters (out instance to cast)
 					);
 			} 
@@ -89,11 +96,11 @@ void CloudConnectionScriptMananger::OnHandleCallback( IVisCallbackDataObject_cl*
 					LUA_MODULE_CLOUDCONNECTION, // the name of the module
 					"CloudConnection", // the name of the class
 					"Cast", // the name of the fucntion
-					"E>E", // the function's signature
+					"v>v", // the function's signature
 					pScriptData->m_pInstance //the input parameters (out instance to cast)
 					);
 			}
-
+      
 			//could we handle the object?
 			if(iRetParams>0)
 			{

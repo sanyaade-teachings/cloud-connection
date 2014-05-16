@@ -3152,6 +3152,9 @@ SWIGINTERN int VisBaseEntity_cl_GetPrimarySortingKey(VisBaseEntity_cl *self){
   #include "../CloudConnectionClient.hpp"
   #include "../CloudConnection.hpp"  
 
+SWIGINTERN CloudConnectionClient *CloudConnectionClient_Cast(unsigned long *lObject){
+    return (CloudConnectionClient *) lObject;
+  }
 SWIGINTERN CloudConnection *CloudConnection_Cast(unsigned long *lObject){
     return (CloudConnection *) lObject;
   }
@@ -11453,6 +11456,39 @@ fail:
 }
 
 
+static int _wrap_CloudConnectionClient_Cast(lua_State* L) {
+  int SWIG_arg = 0;
+  unsigned long *arg1 = (unsigned long *) 0 ;
+  CloudConnectionClient *result = 0 ;
+  
+  SWIG_check_num_args("CloudConnectionClient_Cast",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CloudConnectionClient_Cast",1,"unsigned long *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_unsigned_long,0))){
+    SWIG_fail_ptr("CloudConnectionClient_Cast",1,SWIGTYPE_p_unsigned_long);
+  }
+  
+  result = (CloudConnectionClient *)CloudConnectionClient_Cast(arg1);
+  
+  if(VTraits::IsBaseOf<VTypedObject, CloudConnectionClient>::value)
+  {
+    LUA_PushObjectProxy(L, (VTypedObject*)result); SWIG_arg++;
+  }
+  else
+  {
+    SWIG_NewPointerObj(L,result,SWIGTYPE_p_CloudConnectionClient,0); SWIG_arg++;
+  }
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static swig_lua_method swig_CloudConnectionClient_methods[] = {
     {"IsAuthenticated", _wrap_CloudConnectionClient_IsAuthenticated}, 
     {"SignOut", _wrap_CloudConnectionClient_SignOut}, 
@@ -11561,6 +11597,7 @@ static swig_lua_class _wrap_class_CloudConnection = { "CloudConnection", &SWIGTY
 #endif
 
 static const struct luaL_reg swig_commands[] = {
+    { "CloudConnectionClient_Cast", _wrap_CloudConnectionClient_Cast},
     { "CloudConnection_Cast", _wrap_CloudConnection_Cast},
     {0,0}
 };

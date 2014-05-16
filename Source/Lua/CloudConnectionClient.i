@@ -47,6 +47,6 @@ public:
   //Vision specific extension:
   %extend 
   {
-    VSWIG_CREATE_CAST(CloudConnectionClient);
+    VSWIG_CREATE_CAST_UNSAFE(CloudConnectionClient)
   }
 };

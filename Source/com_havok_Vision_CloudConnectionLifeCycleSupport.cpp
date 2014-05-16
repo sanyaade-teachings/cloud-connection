@@ -5,6 +5,7 @@
 #include "gpg/android_support.h"
 #include "VisionBaseIncludes.h"
 
+
 // These JNI functions are for the com.havok.Vision.CloudConnectionLifeCycleSupport java class
 // They are used to notify pre Android 4.0 devices about life cycle changes to the Activity.
 // If it is not required to support Android 2.3 or 3.x devices then these functions are not required
@@ -13,9 +14,12 @@ JNIEXPORT void JNICALL Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nat
   (JNIEnv *env, jclass, jobject activity, jobject saved_instance_state)
 {
   hkvLog::Debug("Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityCreated");
-  gpg::AndroidSupport::OnActivityCreated(env,
-                                      activity,
-                                      saved_instance_state);
+  if ( env != NULL )
+  {
+    gpg::AndroidSupport::OnActivityCreated(env,
+                                        activity,
+                                        saved_instance_state);
+  }
 }
 
 JNIEXPORT void JNICALL Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityDestroyed
@@ -59,6 +63,5 @@ JNIEXPORT void JNICALL Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nat
   hkvLog::Debug("Java_com_havok_Vision_CloudConnectionLifeCycleSupport_nativeOnActivityStopped");
   gpg::AndroidSupport::OnActivityStopped(env, activity);
 }
-
 
 #endif

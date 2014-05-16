@@ -11,12 +11,15 @@ Project Anarchy, it includes required elements for Google Play services -->
 
 
     <application android:icon="@drawable/icon" android:label="PACCPTest Game Application" android:debuggable="true" android:hasCode="true">
-		<!-- START - required by the google play games services GPG/GMS -->
+		<!-- CloudConnection START - required by the google play games services GPG/GMS -->
         <meta-data android:name="com.google.android.gms.games.APP_ID" android:value="@string/app_id" />
         <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
-		<!-- END - required by the google play games services GPG/GMS -->	
+		<!--  CloudConnection END - required by the google play games services GPG/GMS -->	
 	
-        <activity android:name="com.havok.Vision.NativeLibLoader"
+		<!--  CloudConnection - You must use or extend from the activity "com.havok.Vision.CloudConnectionLifeCycleSupport"
+		in order to support pre Android 4.0 devices, if you do not want to support devices less than that then you do not
+		have to do this-->
+        <activity android:name="com.havok.Vision.CloudConnectionLifeCycleSupport"
                 android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
                 android:launchMode="singleTask"
                 android:configChanges="keyboardHidden|orientation"

@@ -73,14 +73,25 @@ Adding $(ADTROOT)sdk\extras\google\google_play_services\libproject\google-play-s
 Requires a customised Manifest from
 cloud-connection\Data\Android\AndroidManifest.xml
 
-#### Android Res Folder
-Reqires a customised res folder (contains default icons copied from Project Anarchy default)
-cloud-connection\Data\Android\res
+Add these lines
+		<!-- CloudConnection START - required by the google play games services GPG/GMS -->
+        <meta-data android:name="com.google.android.gms.games.APP_ID" android:value="@string/app_id" />
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+		<!--  CloudConnection END - required by the google play games services GPG/GMS -->
+		
+Extend activity from this class to have pre-Android 4.0 support
+com.havok.Vision.CloudConnectionLifeCycleSupport
 
-cloud-connection\Data\Android\res\values\ids.xml - contains the APP_ID that must be changed for the developers Google Application
+		
 
-Need to merge in the files from following into a temp res folder as they are required to make Google Play SDK work
-$(ADTROOT)\sdk\extras\google\google_play_services\libproject\google-play-services_lib\res
+#### Android Google Play Services Java Library
+Android build is reliant on this library (contains classes and resources), it must be compiled correctly into the final .apk
+\cloud-connection\ThirdParty\redistsdks\google-play-services_lib\V4323000
+
+The Google Play Services APP_ID must be given in the xml in the developer build and compiled correctly into the final .apk
+res\values\ids.xml - contains the APP_ID that must be changed for the developers Google Application
+
+<string name="app_id">REPLACE_ME</string>
 
 ## iOS
 

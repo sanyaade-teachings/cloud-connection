@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CloudConnection.cpp" />
+    <ClCompile Include="CloudConnectionCallbacks.cpp" />
     <ClCompile Include="CloudConnectionClient.cpp" />
     <ClCompile Include="CloudConnectionPlugin.cpp" />
     <ClCompile Include="CloudConnectionScriptManager.cpp" />
@@ -29,6 +30,7 @@
   <ItemGroup>
     <ClInclude Include="CloudConnection.hpp" />
     <ClInclude Include="CloudConnectionBase.h" />
+    <ClInclude Include="CloudConnectionCallbacks.hpp" />
     <ClInclude Include="CloudConnectionClient.hpp" />
     <ClInclude Include="CloudConnectionPlugin.hpp" />
     <ClInclude Include="CloudConnectionPluginImportExport.h" />

@@ -98,6 +98,19 @@ void StateManager::InitServices(
           LOGI("Sign in finished with a result of %d", status);
           is_auth_in_progress_ = false;
           finished_callback(op, status);
+
+          const gpg::AchievementManager& pAchievementManager = game_services_->Achievements();
+          const gpg::LeaderboardManager& pLeaderboardManager = game_services_->Leaderboards();
+          LOGI("Fetching Self Player nonblocking");
+//          const gpg::PlayerManager& playerManger = game_services_->Players();
+          game_services_->Players().FetchSelf(
+            gpg::DataSource::CACHE_OR_NETWORK, 
+            [] (gpg::PlayerManager::FetchSelfResponse response) { 
+              gpg::Player player = (gpg::Player)response.data;
+              LOGI("Player Fetch Self response data (Player Name): %s", player.Name().c_str() ); 
+              LOGI("Player Fetch Self response status: %d", response.status);});
+          LOGI("--------------------------------------------------------------");
+
           LOGI("Fetching all blocking");
           gpg::AchievementManager::FetchAllResponse fetchResponse = game_services_->Achievements().FetchAllBlocking(std::chrono::milliseconds(1000));
           LOGI("--------------------------------------------------------------");

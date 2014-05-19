@@ -24,7 +24,6 @@ void CloudConnectionScriptMananger::OneTimeDeInit()
 
 void CloudConnectionScriptMananger::OnHandleCallback( IVisCallbackDataObject_cl* pData ) 
 {
-
   if(pData->m_pSender==&IVScriptManager::OnRegisterScriptFunctions)
   {
     IVScriptManager* pSM = Vision::GetScriptManager();
@@ -36,7 +35,8 @@ void CloudConnectionScriptMananger::OnHandleCallback( IVisCallbackDataObject_cl*
         luaopen_CloudConnectionLuaModule(pLuaState);
         
         //Register the global instance of the class "CloudConnection"
-        /*
+        hkvLog::Debug("CloudConnectionScriptMananger - Attempt to register the global instance of the class \"CloudConnection\"");
+
         //** Removed this for now as it instantly crashes the Android build **
         int iRetParams = LUA_CallStaticFunction(pLuaState, LUA_MODULE_CLOUDCONNECTION, "CloudConnection", "Cast", "v>v", CloudConnection::GetInstance());        
 			  if (iRetParams==1)
@@ -49,12 +49,13 @@ void CloudConnectionScriptMananger::OnHandleCallback( IVisCallbackDataObject_cl*
 				  else
 				  {
 					  lua_setglobal(pLuaState, "CloudConnection");  //defines the global "CloudConnection" availble in Lua
+            hkvLog::Debug("CloudConnectionScriptMananger - Registered the global instance of the class \"CloudConnection\"");
 				  }
 			  }
         else
         {
           hkvLog::Warning("2: Unable to create 'CloudConnection' Global in lua - 2");
-        }*/
+        }
         
       } 
       else 
@@ -75,32 +76,7 @@ void CloudConnectionScriptMananger::OnHandleCallback( IVisCallbackDataObject_cl*
 		if(!pScriptData->m_bProcessed)
 		{
 			int iRetParams = 0;
-      
-			if(pScriptData->m_pInstance->IsOfType(V_RUNTIME_CLASS(CloudConnectionClient)))
-      {
-				//call lua cast function for CloudConnectionClient (created via the macro in CloudConnectionClient.i)
-				iRetParams = LUA_CallStaticFunction(
-					pScriptData->m_pLuaState, // our lua state
-					LUA_MODULE_CLOUDCONNECTION, // the name of the module
-					"CloudConnectionClient", // the name of the class
-					"Cast", // the name of the fucntion
-					"v>v", // the function's signature
-					pScriptData->m_pInstance //the input parameters (out instance to cast)
-					);
-			} 
-      else if(pScriptData->m_pInstance->IsOfType( V_RUNTIME_CLASS(CloudConnection) )) 
-      {
-				//call lua cast function for CloudConnectionModule (created via the macro in CloudConnection.i)
-				iRetParams = LUA_CallStaticFunction(
-					pScriptData->m_pLuaState, // our lua state
-					LUA_MODULE_CLOUDCONNECTION, // the name of the module
-					"CloudConnection", // the name of the class
-					"Cast", // the name of the fucntion
-					"v>v", // the function's signature
-					pScriptData->m_pInstance //the input parameters (out instance to cast)
-					);
-			}
-      
+
 			//could we handle the object?
 			if(iRetParams>0)
 			{

@@ -30,10 +30,7 @@ class StateManager
   static void InitServices(struct android_app* AndroidApplication);
 
   /// \brief initialises the GPG services
-  static void InitServices(
-      gpg::PlatformConfiguration const &pc,
-      gpg::GameServices::Builder::OnAuthActionStartedCallback started_callback,
-      gpg::GameServices::Builder::OnAuthActionFinishedCallback finished_callback);
+  static void InitServices( gpg::PlatformConfiguration const &pc );
 
   /// \brief gets the google game services state object
   static gpg::GameServices *GetGameServices();
@@ -56,6 +53,14 @@ class StateManager
   }
 
  private:
+  
+  /// \brief callback when the Google Sign-in Authorisation process has finished
+  static void OnAuthFinished(gpg::AuthOperation op, gpg::AuthStatus status);
+  /// \brief callback when the Google Sign-in Authorisation process has started
+  static void OnAuthStarted(gpg::AuthOperation op);
+  /// \brief callback when the player manger fetches player data about the signed in player
+  static void OnFetchSelf(gpg::PlayerManager::FetchSelfResponse response);
+
   static bool is_auth_in_progress_;
   static std::unique_ptr<gpg::GameServices> game_services_;
 };

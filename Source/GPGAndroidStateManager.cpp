@@ -78,51 +78,64 @@ void StateManager::ShowLeaderboard(char const *leaderboard_id) {
 }
 
 
-void StateManager::InitServices(
-    gpg::PlatformConfiguration const &pc,
-    gpg::GameServices::Builder::OnAuthActionStartedCallback started_callback,
-    gpg::GameServices::Builder::OnAuthActionFinishedCallback
-        finished_callback) {
+void StateManager::InitServices( gpg::PlatformConfiguration const &pc ) 
+{
   LOGI("Initializing Services");
   if (!game_services_) {
     LOGI("Uninitialized services, so creating");
     game_services_ = gpg::GameServices::Builder()
         .SetLogging(gpg::DEFAULT_ON_LOG, gpg::LogLevel::VERBOSE)
-        .SetOnAuthActionStarted([started_callback](gpg::AuthOperation op) {
-          LOGI("Sign in started");
-          is_auth_in_progress_ = true;
-          started_callback(op);
-        })
-        .SetOnAuthActionFinished([finished_callback](gpg::AuthOperation op,
-                                                     gpg::AuthStatus status) {
-          LOGI("Sign in finished with a result of %d", status);
-          is_auth_in_progress_ = false;
-          finished_callback(op, status);
-
-          const gpg::AchievementManager& pAchievementManager = game_services_->Achievements();
-          const gpg::LeaderboardManager& pLeaderboardManager = game_services_->Leaderboards();
-          LOGI("Fetching Self Player nonblocking");
-//          const gpg::PlayerManager& playerManger = game_services_->Players();
-          game_services_->Players().FetchSelf(
-            gpg::DataSource::CACHE_OR_NETWORK, 
-            [] (gpg::PlayerManager::FetchSelfResponse response) { 
-              gpg::Player player = (gpg::Player)response.data;
-              LOGI("Player Fetch Self response data (Player Name): %s", player.Name().c_str() ); 
-              LOGI("Player Fetch Self response status: %d", response.status);});
-          LOGI("--------------------------------------------------------------");
-
-          LOGI("Fetching all blocking");
-          gpg::AchievementManager::FetchAllResponse fetchResponse = game_services_->Achievements().FetchAllBlocking(std::chrono::milliseconds(1000));
-          LOGI("--------------------------------------------------------------");
-
-          LOGI("Fetching all nonblocking");
-          game_services_->Achievements().FetchAll(gpg::DataSource::CACHE_OR_NETWORK, [] (gpg::AchievementManager::FetchAllResponse response) {LOGI("Achievement response status: %d", response.status);});
-          LOGI("--------------------------------------------------------------");
-
-        })
+        .SetOnAuthActionStarted( OnAuthStarted )
+        .SetOnAuthActionFinished( OnAuthFinished )
         .Create(pc);
   }
   LOGI("Created");
+}
+
+void StateManager::OnAuthStarted(gpg::AuthOperation op)
+{
+  LOGI("Sign in started");
+  is_auth_in_progress_ = true;
+}
+
+void StateManager::OnAuthFinished(gpg::AuthOperation op, gpg::AuthStatus status) {
+  LOGI("Sign in finished with a result of %d", status);
+  is_auth_in_progress_ = false;
+    
+  LOGI("OnAuthActionFinished");
+  if (IsSuccess(status)) 
+  {
+    LOGI("Cloud Connection - You are logged in!");
+  } 
+  else 
+  {
+    LOGI("Cloud Connection - You are not logged in!");
+  }
+
+  const gpg::AchievementManager& pAchievementManager = game_services_->Achievements();
+  const gpg::LeaderboardManager& pLeaderboardManager = game_services_->Leaderboards();  
+//          const gpg::PlayerManager& playerManger = game_services_->Players();
+
+  LOGI("Fetching Self Player nonblocking");
+  game_services_->Players().FetchSelf( gpg::DataSource::CACHE_OR_NETWORK, OnFetchSelf );
+  LOGI("--------------------------------------------------------------");
+
+  /*
+  LOGI("Fetching all blocking");
+  gpg::AchievementManager::FetchAllResponse fetchResponse = game_services_->Achievements().FetchAllBlocking(std::chrono::milliseconds(1000));
+  LOGI("--------------------------------------------------------------");
+
+  LOGI("Fetching all nonblocking");
+  game_services_->Achievements().FetchAll(gpg::DataSource::CACHE_OR_NETWORK, [] (gpg::AchievementManager::FetchAllResponse response) {LOGI("Achievement response status: %d", response.status);});
+  LOGI("--------------------------------------------------------------");
+  */
+}
+
+void StateManager::OnFetchSelf(gpg::PlayerManager::FetchSelfResponse response)
+{ 
+  LOGI("Player Fetch Self response status: %d", response.status);
+  gpg::Player player = (gpg::Player)response.data;
+  LOGI("Player Fetch Self response data (Player Name): %s", player.Name().c_str() );  
 }
 
 
@@ -132,16 +145,6 @@ void StateManager::InitServices(struct android_app* AndroidApplication)
 
   // gpg-cpp: Set platform intiialization
   gpg::AndroidInitialization::android_main(AndroidApplication);
-
-  // gpg-cpp:  Here we create the callback on auth operations
-  auto callback = [&](gpg::AuthOperation op, gpg::AuthStatus status) {
-    hkvLog::Debug("OnAuthActionFinished");
-    if (IsSuccess(status)) {
-      hkvLog::Debug("Cloud Connection - You are logged in!");
-    } else {
-      hkvLog::Debug("Cloud Connection - You are not logged in!");
-    }
-  };
 
   // gpg-cpp:  We need to check to see if there's a previous state.
   // If there was, we'll just continue, but if not we'll set up
@@ -160,7 +163,7 @@ void StateManager::InitServices(struct android_app* AndroidApplication)
 
     // Now, create the game service (see StateManager.cpp)
     // and pass in our callback
-    StateManager::InitServices(platform_configuration, NULL, callback );
+    StateManager::InitServices(platform_configuration);
     
     hkvLog::Debug("InitServices finished gpg-cpp");
   }

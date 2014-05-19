@@ -34,6 +34,8 @@ class StateManager
 
   /// \brief gets the google game services state object
   static gpg::GameServices *GetGameServices();
+  /// \brief gets the google player object for the signed in player (can be null)
+  static gpg::Player *GetSignedInPlayer();
   /// \brief starts the UI user sign-in
   static void BeginUserInitiatedSignIn();
   /// \brief signs any currently signed in player out
@@ -63,6 +65,7 @@ class StateManager
 
   static bool is_auth_in_progress_;
   static std::unique_ptr<gpg::GameServices> game_services_;
+  static std::shared_ptr<gpg::Player> player_;              ///< the data for the currently-signed in player
 };
 
 

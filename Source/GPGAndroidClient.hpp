@@ -55,7 +55,6 @@ public:
 
 protected:
 private:
-  VString* m_pPlayerName; ///< TEMP DUMMY VALUE
 };
 
 #endif

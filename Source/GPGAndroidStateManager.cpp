@@ -14,6 +14,8 @@
 #include "gpg/achievement_manager.h"
 bool StateManager::is_auth_in_progress_ = false;
 std::unique_ptr<gpg::GameServices> StateManager::game_services_;
+std::shared_ptr<gpg::Player> StateManager::player_;
+
 
 void OnAuthActionFinished(gpg::AuthOperation op, gpg::AuthStatus status) {
   LOGI("OnAuthActionFinished");
@@ -35,6 +37,11 @@ gpg::GameServices *StateManager::GetGameServices() {
   return game_services_.get();
 }
 
+gpg::Player *StateManager::GetSignedInPlayer() 
+{
+  return player_.get();
+}
+
 void StateManager::BeginUserInitiatedSignIn() {
   if (!game_services_->IsAuthorized()) {
     LOGI("StartAuthorizationUI");
@@ -46,6 +53,10 @@ void StateManager::SignOut() {
   if (game_services_->IsAuthorized()) {
     LOGI("SignOut");
     game_services_->SignOut();
+    if ( GetSignedInPlayer() != NULL )
+    {
+      player_ = NULL;
+    }
   }
 }
 
@@ -132,10 +143,16 @@ void StateManager::OnAuthFinished(gpg::AuthOperation op, gpg::AuthStatus status)
 }
 
 void StateManager::OnFetchSelf(gpg::PlayerManager::FetchSelfResponse response)
-{ 
+{       
   LOGI("Player Fetch Self response status: %d", response.status);
-  gpg::Player player = (gpg::Player)response.data;
-  LOGI("Player Fetch Self response data (Player Name): %s", player.Name().c_str() );  
+ // if ( IsSuccess(response) )
+  {
+    gpg::Player player = (gpg::Player)response.data;     
+
+    std::shared_ptr<gpg::Player> p ( new gpg::Player( player ) );
+    player_ = p;
+    LOGI("Player Fetch Self response data (Player Name): %s", player_.get()->Name().c_str() );  
+  }
 }
 
 

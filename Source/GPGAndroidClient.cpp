@@ -10,12 +10,10 @@ V_IMPLEMENT_DYNAMIC( GPGAndroidClient, CloudConnectionClient, &g_CloudConnection
 
 GPGAndroidClient::GPGAndroidClient()
 {
-  m_pPlayerName = new VString("GPGAndroidClient Dummy Player");
 }
 
 GPGAndroidClient::~GPGAndroidClient()
 {
-  V_SAFE_DELETE( m_pPlayerName );
 }
 
 bool GPGAndroidClient::IsAuthenticated()
@@ -40,14 +38,21 @@ const char* GPGAndroidClient::GetUserDisplayName() const
   gpg::GameServices* gameservices = StateManager::GetGameServices();
   if ( gameservices != NULL )
   {     
-    if ( !gameservices->IsAuthorized() ) 
+    if ( gameservices->IsAuthorized() ) 
     {
-      //get the players google+ name
-      hkvLog::Warning( "PACloudConnectionPlugin - GPGAndroidClient::GetUserDisplayName() - METHOD NOT YET IMPLEMENTED" );    
+      gpg::Player* player = StateManager::GetSignedInPlayer();
+      if ( player != NULL )
+      {
+        return player->Name().c_str();          //get the players google+ name
+      }
+      else
+      {
+        return "Player";
+      }
     }
   }
       
-  return (*m_pPlayerName);
+  return "Player";
 }
 
 

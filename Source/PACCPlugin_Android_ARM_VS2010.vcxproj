@@ -60,6 +60,7 @@
   <ItemGroup>
     <ClInclude Include="ClientFactory.hpp" />
     <ClInclude Include="CloudConnectionBase.h" />
+    <ClInclude Include="CloudConnectionCallbacks.hpp" />
     <ClInclude Include="CloudConnectionPluginPCH.hpp" />
     <ClInclude Include="CloudConnectionScriptManager.hpp" />
     <ClInclude Include="com_havok_Vision_CloudConnectionLifeCycleSupport.h" />
@@ -76,6 +77,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ClientFactory.cpp" />
+    <ClCompile Include="CloudConnectionCallbacks.cpp" />
     <ClCompile Include="CloudConnectionClient.cpp" />
     <ClCompile Include="CloudConnectionPluginPCH.cpp" />
     <ClCompile Include="CloudConnectionScriptManager.cpp" />

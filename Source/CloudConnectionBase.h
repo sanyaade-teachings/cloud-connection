@@ -6,6 +6,7 @@
 //Vision classes required to use the client from C++
 #include "CloudConnection.hpp"
 #include "CloudConnectionClient.hpp"
+#include "CloudConnectionCallbacks.hpp"
 
 #if defined(_VISION_ANDROID)
 

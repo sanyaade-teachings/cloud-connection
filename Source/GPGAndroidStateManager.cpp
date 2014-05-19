@@ -5,6 +5,8 @@
 #include "gpg/android_initialization.h"
 #include "gpg/debug.h"
 #include "android/Log.h"
+#include "CloudConnectionCallbacks.hpp"
+
 #define DEBUG_TAG "PACloudConnectionNativeActivity"
 #define LOGI(...) \
     ((void)__android_log_print(ANDROID_LOG_INFO, DEBUG_TAG, __VA_ARGS__))
@@ -107,12 +109,14 @@ void StateManager::OnAuthStarted(gpg::AuthOperation op)
 {
   LOGI("Sign in started");
   is_auth_in_progress_ = true;
+  CloudConnectionCallbackManager::OnAuthActionStarted.TriggerCallbacks();
 }
 
 void StateManager::OnAuthFinished(gpg::AuthOperation op, gpg::AuthStatus status) {
   LOGI("Sign in finished with a result of %d", status);
   is_auth_in_progress_ = false;
-    
+  CloudConnectionCallbackManager::OnAuthActionFinished.TriggerCallbacks();
+  
   LOGI("OnAuthActionFinished");
   if (IsSuccess(status)) 
   {
@@ -145,7 +149,7 @@ void StateManager::OnAuthFinished(gpg::AuthOperation op, gpg::AuthStatus status)
 void StateManager::OnFetchSelf(gpg::PlayerManager::FetchSelfResponse response)
 {       
   LOGI("Player Fetch Self response status: %d", response.status);
- // if ( IsSuccess(response) )
+  //if ( IsSuccess(response) )
   {
     gpg::Player player = (gpg::Player)response.data;     
 

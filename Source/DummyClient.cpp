@@ -47,6 +47,21 @@ bool DummyClient::IsAuthInProgress()
   return false;
 }
 
+void DummyClient::IncrementAchievement(const char* achievementId, int steps)
+{
+  hkvLog::Info( "PACloudConnectionPlugin - DummyClient::IncrementAchievement() '%s', %d", achievementId, steps );
+}
+
+void DummyClient::RevealAchievement(const char* achievementId)
+{
+  hkvLog::Info( "PACloudConnectionPlugin - DummyClient::RevealAchievement() '%s'", achievementId );
+}
+
+void DummyClient::SetAchievementStepsAtLeast (const char* achievementId, int steps)
+{
+  hkvLog::Info( "PACloudConnectionPlugin - DummyClient::SetAchievementStepsAtLeast() '%s', %d", achievementId, steps );
+}
+
 void DummyClient::UnlockAchievement(const char* achievementId)
 {
   hkvLog::Info( "PACloudConnectionPlugin - DummyClient::UnlockAchievement() '%s'", achievementId );
@@ -62,8 +77,18 @@ void DummyClient::SubmitHighScore(const char* leaderboardId, ULONG64 score)
 {
   hkvLog::Info( "PACloudConnectionPlugin - DummyClient::SubmitHighScore() '%s',%d", leaderboardId, score );
 }
+  
+void DummyClient::SubmitHighScore(const char* leaderboardId, ULONG64 score, const char* metadata)
+{
+  hkvLog::Info( "PACloudConnectionPlugin - DummyClient::SubmitHighScore() '%s',%d, '%s'", leaderboardId, score, metadata );
+}
 
 void DummyClient::ShowLeaderboard(const char* leaderboardId) 
 {
    hkvLog::Info( "PACloudConnectionPlugin - DummyClient::ShowLeaderboard() '%s'", leaderboardId);
+}
+
+void DummyClient::ShowLeaderboards()
+{
+  hkvLog::Info( "PACloudConnectionPlugin - DummyClient::ShowLeaderboards()");
 }

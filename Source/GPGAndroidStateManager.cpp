@@ -18,23 +18,6 @@ bool StateManager::is_auth_in_progress_ = false;
 std::unique_ptr<gpg::GameServices> StateManager::game_services_;
 std::shared_ptr<gpg::Player> StateManager::player_;
 
-
-void OnAuthActionFinished(gpg::AuthOperation op, gpg::AuthStatus status) {
-  LOGI("OnAuthActionFinished");
-}
-
-void OnAuthActionStarted(gpg::AuthOperation op) {
-  LOGI("OnAuthActionStarted");
-  switch ( op ) {
-  case gpg::AuthOperation::SIGN_IN:
-    LOGI("Signing In");
-    break;
-  case gpg::AuthOperation::SIGN_OUT:
-    LOGI("Signing Out");
-    break;
-  }
-}
-
 gpg::GameServices *StateManager::GetGameServices() {
   return game_services_.get();
 }

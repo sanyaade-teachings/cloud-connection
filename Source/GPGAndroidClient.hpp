@@ -6,7 +6,7 @@
 #include "CloudConnectionClient.hpp"
 
 /// \brief
-/// Defines an concrete implementation for for a Project Anarchy Cloud Connection Client.
+/// Defines an implementation for for a Project Anarchy Cloud Connection Client.
 /// Provides the Google Play Games Android Client
 class GPGAndroidClient : public CloudConnectionClient
 {

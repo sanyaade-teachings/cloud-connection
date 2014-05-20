@@ -6,7 +6,7 @@
 #include "CloudConnectionClient.hpp"
 
 /// \brief
-/// Defines an concrete implementation for for a Project Anarchy Cloud Connection Client.
+/// Defines an implementation for for a Project Anarchy Cloud Connection Client.
 /// Provides the Google Play Games IOS Client
 class GPGIOSClient : public CloudConnectionClient
 {  
@@ -37,6 +37,18 @@ public:
   /// \return true if an sign-in has started but not yet finished, false otherwise
   virtual bool IsAuthInProgress() HKV_OVERRIDE;
 
+  /// \brief 
+  /// Increments an achievement by the given number of steps.
+  virtual void IncrementAchievement(const char* achievementId, int steps) HKV_OVERRIDE;
+
+  /// \brief 
+  /// Reveal a hidden achievement to the currently signed-in player.
+  virtual void RevealAchievement(const char* achievementId) HKV_OVERRIDE;
+
+  /// \brief
+  /// Set an achievement to have at least the given number of steps completed. 
+  virtual void SetAchievementStepsAtLeast (const char* achievementId, int steps) HKV_OVERRIDE;
+
   /// \brief
   /// Unlock an achievement for the currently signed in player. 
   virtual void UnlockAchievement(const char* achievementId) HKV_OVERRIDE;
@@ -50,8 +62,16 @@ public:
   virtual void SubmitHighScore(const char* leaderboardId, ULONG64 score) HKV_OVERRIDE;
 
   /// \brief
+  /// Submit a score to the leaderboard for the currently signed-in player with metadata (such as something the player did to earn the score).
+  virtual void SubmitHighScore(const char* leaderboardId, ULONG64 score, const char* metadata) HKV_OVERRIDE;
+
+  /// \brief
   /// Presents a UI to the user that displays information about a specific leaderboard. 
   virtual void ShowLeaderboard(const char* leaderboardId) HKV_OVERRIDE;
+
+  /// \brief
+  /// Presents a UI to the user that displays information about all leaderboards.
+  virtual void ShowLeaderboards() HKV_OVERRIDE;
 protected:
 private:
 };

@@ -11324,6 +11324,111 @@ fail:
 }
 
 
+static int _wrap_CloudConnectionClient_IncrementAchievement(lua_State* L) {
+  int SWIG_arg = 0;
+  CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
+  char *arg2 = (char *) 0 ;
+  int arg3 ;
+  
+  SWIG_check_num_args("IncrementAchievement",3,3)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("IncrementAchievement",1,"CloudConnectionClient *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("IncrementAchievement",1,"CloudConnectionClient *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("IncrementAchievement",2,"char const *");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("IncrementAchievement",3,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CloudConnectionClient,0))){
+    SWIG_fail_ptr("CloudConnectionClient_IncrementAchievement",1,SWIGTYPE_p_CloudConnectionClient);
+  }
+  
+  arg2 = (char *)lua_tostring(L, 2);
+  arg3 = (int)lua_tonumber(L, 3);
+  
+  if (VTraits::IsBaseOf<VTypedObject, CloudConnectionClient>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CloudConnectionClient_IncrementAchievement", 1, "CloudConnectionClient *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  (arg1)->IncrementAchievement((char const *)arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CloudConnectionClient_RevealAchievement(lua_State* L) {
+  int SWIG_arg = 0;
+  CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
+  char *arg2 = (char *) 0 ;
+  
+  SWIG_check_num_args("RevealAchievement",2,2)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("RevealAchievement",1,"CloudConnectionClient *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("RevealAchievement",1,"CloudConnectionClient *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("RevealAchievement",2,"char const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CloudConnectionClient,0))){
+    SWIG_fail_ptr("CloudConnectionClient_RevealAchievement",1,SWIGTYPE_p_CloudConnectionClient);
+  }
+  
+  arg2 = (char *)lua_tostring(L, 2);
+  
+  if (VTraits::IsBaseOf<VTypedObject, CloudConnectionClient>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CloudConnectionClient_RevealAchievement", 1, "CloudConnectionClient *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  (arg1)->RevealAchievement((char const *)arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CloudConnectionClient_SetAchievementStepsAtLeast(lua_State* L) {
+  int SWIG_arg = 0;
+  CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
+  char *arg2 = (char *) 0 ;
+  int arg3 ;
+  
+  SWIG_check_num_args("SetAchievementStepsAtLeast",3,3)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("SetAchievementStepsAtLeast",1,"CloudConnectionClient *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SetAchievementStepsAtLeast",1,"CloudConnectionClient *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("SetAchievementStepsAtLeast",2,"char const *");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("SetAchievementStepsAtLeast",3,"int");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CloudConnectionClient,0))){
+    SWIG_fail_ptr("CloudConnectionClient_SetAchievementStepsAtLeast",1,SWIGTYPE_p_CloudConnectionClient);
+  }
+  
+  arg2 = (char *)lua_tostring(L, 2);
+  arg3 = (int)lua_tonumber(L, 3);
+  
+  if (VTraits::IsBaseOf<VTypedObject, CloudConnectionClient>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CloudConnectionClient_SetAchievementStepsAtLeast", 1, "CloudConnectionClient *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  (arg1)->SetAchievementStepsAtLeast((char const *)arg2,arg3);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_CloudConnectionClient_UnlockAchievement(lua_State* L) {
   int SWIG_arg = 0;
   CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
@@ -11387,7 +11492,7 @@ fail:
 }
 
 
-static int _wrap_CloudConnectionClient_SubmitHighScore(lua_State* L) {
+static int _wrap_CloudConnectionClient_SubmitHighScore__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
   char *arg2 = (char *) 0 ;
@@ -11423,6 +11528,114 @@ fail:
 }
 
 
+static int _wrap_CloudConnectionClient_SubmitHighScore__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
+  char *arg2 = (char *) 0 ;
+  ULONG64 arg3 ;
+  char *arg4 = (char *) 0 ;
+  
+  SWIG_check_num_args("SubmitHighScore",4,4)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("SubmitHighScore",1,"CloudConnectionClient *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SubmitHighScore",1,"CloudConnectionClient *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("SubmitHighScore",2,"char const *");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("SubmitHighScore",3,"ULONG64");
+  if(!SWIG_lua_isnilstring(L,4)) SWIG_fail_arg("SubmitHighScore",4,"char const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CloudConnectionClient,0))){
+    SWIG_fail_ptr("CloudConnectionClient_SubmitHighScore",1,SWIGTYPE_p_CloudConnectionClient);
+  }
+  
+  arg2 = (char *)lua_tostring(L, 2);
+  arg3 = (ULONG64)lua_tonumber(L, 3);
+  arg4 = (char *)lua_tostring(L, 4);
+  
+  if (VTraits::IsBaseOf<VTypedObject, CloudConnectionClient>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CloudConnectionClient_SubmitHighScore", 1, "CloudConnectionClient *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  (arg1)->SubmitHighScore((char const *)arg2,arg3,(char const *)arg4);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CloudConnectionClient_SubmitHighScore(lua_State* L) {
+  int argc;
+  int argv[5]={
+    1,2,3,4,5
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 3) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_CloudConnectionClient, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = SWIG_lua_isnilstring(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          return _wrap_CloudConnectionClient_SubmitHighScore__SWIG_0(L);
+        }
+      }
+    }
+  }
+  if (argc == 4) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_CloudConnectionClient, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        _v = SWIG_lua_isnilstring(L,argv[1]);
+      }
+      if (_v) {
+        {
+          _v = lua_isnumber(L,argv[2]);
+        }
+        if (_v) {
+          {
+            _v = SWIG_lua_isnilstring(L,argv[3]);
+          }
+          if (_v) {
+            return _wrap_CloudConnectionClient_SubmitHighScore__SWIG_1(L);
+          }
+        }
+      }
+    }
+  }
+  
+  lua_pushstring(L,"Wrong arguments for overloaded function 'CloudConnectionClient_SubmitHighScore'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    SubmitHighScore(CloudConnectionClient *,char const *,ULONG64)\n"
+    "    SubmitHighScore(CloudConnectionClient *,char const *,ULONG64,char const *)\n");
+  lua_error(L);return 0;
+}
+
+
 static int _wrap_CloudConnectionClient_ShowLeaderboard(lua_State* L) {
   int SWIG_arg = 0;
   CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
@@ -11445,6 +11658,36 @@ static int _wrap_CloudConnectionClient_ShowLeaderboard(lua_State* L) {
   }
   
   (arg1)->ShowLeaderboard((char const *)arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CloudConnectionClient_ShowLeaderboards(lua_State* L) {
+  int SWIG_arg = 0;
+  CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
+  
+  SWIG_check_num_args("ShowLeaderboards",1,1)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("ShowLeaderboards",1,"CloudConnectionClient *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("ShowLeaderboards",1,"CloudConnectionClient *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CloudConnectionClient,0))){
+    SWIG_fail_ptr("CloudConnectionClient_ShowLeaderboards",1,SWIGTYPE_p_CloudConnectionClient);
+  }
+  
+  
+  if (VTraits::IsBaseOf<VTypedObject, CloudConnectionClient>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CloudConnectionClient_ShowLeaderboards", 1, "CloudConnectionClient *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  (arg1)->ShowLeaderboards();
   
   return SWIG_arg;
   
@@ -11495,10 +11738,14 @@ static swig_lua_method swig_CloudConnectionClient_methods[] = {
     {"GetUserDisplayName", _wrap_CloudConnectionClient_GetUserDisplayName}, 
     {"BeginUserInitiatedSignIn", _wrap_CloudConnectionClient_BeginUserInitiatedSignIn}, 
     {"IsAuthInProgress", _wrap_CloudConnectionClient_IsAuthInProgress}, 
+    {"IncrementAchievement", _wrap_CloudConnectionClient_IncrementAchievement}, 
+    {"RevealAchievement", _wrap_CloudConnectionClient_RevealAchievement}, 
+    {"SetAchievementStepsAtLeast", _wrap_CloudConnectionClient_SetAchievementStepsAtLeast}, 
     {"UnlockAchievement", _wrap_CloudConnectionClient_UnlockAchievement}, 
     {"ShowAchievements", _wrap_CloudConnectionClient_ShowAchievements}, 
     {"SubmitHighScore", _wrap_CloudConnectionClient_SubmitHighScore}, 
     {"ShowLeaderboard", _wrap_CloudConnectionClient_ShowLeaderboard}, 
+    {"ShowLeaderboards", _wrap_CloudConnectionClient_ShowLeaderboards}, 
     {0,0}
 };
 static swig_lua_attribute swig_CloudConnectionClient_attributes[] = {

@@ -1,5 +1,6 @@
 #include "CloudConnectionPluginPCH.hpp"
 #include "DummyClient.hpp"
+#include "CloudConnectionCallbacks.hpp"
 
 /** RTTI definitions */
 V_IMPLEMENT_DYNAMIC( DummyClient, CloudConnectionClient, &g_CloudConnectionModule );
@@ -7,6 +8,7 @@ V_IMPLEMENT_DYNAMIC( DummyClient, CloudConnectionClient, &g_CloudConnectionModul
 DummyClient::DummyClient()
 {
   m_pPlayerName = new VString("Dummy Player");
+  m_authenticated = true;
 }
 
 DummyClient::~DummyClient()
@@ -16,12 +18,13 @@ DummyClient::~DummyClient()
 
 bool DummyClient::IsAuthenticated()
 {
-  return true;
+  return m_authenticated;
 }
 
 void DummyClient::SignOut()
 {
   hkvLog::Info( "PACloudConnectionPlugin - DummyClient::SignOut()" );
+  m_authenticated = false;
 }
 
 const char* DummyClient::GetUserDisplayName() const
@@ -33,6 +36,9 @@ const char* DummyClient::GetUserDisplayName() const
 void DummyClient::BeginUserInitiatedSignIn() 
 {
   hkvLog::Info( "PACloudConnectionPlugin - DummyClient::BeginUserInitiatedSignIn()" );
+  CloudConnectionCallbackManager::OnAuthActionStarted.TriggerCallbacks();
+  m_authenticated = true;
+  CloudConnectionCallbackManager::OnAuthActionFinished.TriggerCallbacks();
 }
 
 

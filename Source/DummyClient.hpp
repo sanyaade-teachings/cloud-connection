@@ -55,7 +55,8 @@ public:
 
 protected:
 private:
-  VString* m_pPlayerName;
+  VString* m_pPlayerName;   ///< dummy player name
+  bool m_authenticated;     ///< dummy flag to set authenticated
 };
 
 

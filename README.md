@@ -42,8 +42,18 @@ This plugin allows you to create connection to cloud service providers from a Pr
 #### Win32 dll Only 
 * Cloud Connection pluging dll must be coped into the exe target dir in the Post-Build Event step
 xcopy /Y /D /C "CloudConnectionPlugin.vPluginD" "$(TargetDir)"
+
+#### Linking plugin
+
+#include "CloudConnectionBase.h"
+#include "com_havok_Vision_CloudConnectionLifeCycleSupport.inl"
+
 * in developer plugin OnInitEnginePlugin() call macro VISION_PLUGIN_ENSURE_LOADED(CloudConnectionPlugin);
-* in developer app PreloadPlugins() call macro VISION_PLUGIN_ENSURE_LOADED(CloudConnectionPlugin);
+
+##### In Android
+Call these functions in OnInitEnginePlugin() to initialse the Google Connection
+  DummyJNIFunction();                             //Dummy - don't let the compiler strip JNI functions for < Android 4.0
+  StateManager::InitServices(AndroidApplication); //Set up platform intiialization of Google Play Services
 
 ###include folders required
 cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\include
@@ -62,13 +72,6 @@ cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\lib\x86
 $(NDKROOT)/platforms\android-9\arch-x86\usr\lib
 $(NDKROOT)/sources/cxx-stl/gnu-libstdc++/4.8/libs/x86
 
-#### Java
-requires the Google Play Services SDK to be installed
-%ADTROOT%sdk\extras\google\google_play_services\libproject\google-play-services_lib\libs
-google-play-services.jar
-
-Adding $(ADTROOT)sdk\extras\google\google_play_services\libproject\google-play-services_lib\libs\google-play-services.jar to Deploy APK -> Jar Files
-
 #### Android Manifest
 Requires a customised Manifest from
 cloud-connection\Data\Android\AndroidManifest.xml
@@ -83,7 +86,6 @@ Extend activity from this class to have pre-Android 4.0 support
 com.havok.Vision.CloudConnectionLifeCycleSupport
 
 		
-
 #### Android Google Play Services Java Library
 Android build is reliant on this library (contains classes and resources), it must be compiled correctly into the final .apk
 \cloud-connection\ThirdParty\redistsdks\google-play-services_lib\V4323000

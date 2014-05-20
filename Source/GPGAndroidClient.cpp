@@ -68,6 +68,24 @@ bool GPGAndroidClient::IsAuthInProgress()
   return StateManager::IsAuthInProgress();
 }
 
+void GPGAndroidClient::IncrementAchievement(const char* achievementId, int steps)
+{    
+  hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::IncrementAchievement() '%s', %d", achievementId, steps );
+  StateManager::IncrementAchievement(achievementId, steps);
+}
+
+void GPGAndroidClient::SetAchievementStepsAtLeast (const char* achievementId, int steps)
+{
+  hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::SetAchievementStepsAtLeast() '%s', %d", achievementId, steps );
+  StateManager::SetAchievementStepsAtLeast(achievementId, steps);
+}
+
+void GPGAndroidClient::RevealAchievement(const char* achievementId)
+{
+  hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::RevealAchievement() '%s'", achievementId );
+  StateManager::RevealAchievement(achievementId);
+}
+
 void GPGAndroidClient::UnlockAchievement(const char* achievementId)
 {
   hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::UnlockAchievement() '%s'", achievementId );
@@ -80,17 +98,28 @@ void GPGAndroidClient::ShowAchievements()
   StateManager::ShowAchievements();
 }
     
-
 void GPGAndroidClient::SubmitHighScore(const char* leaderboardId, ULONG64 score)
 {
   hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::SubmitHighScore() '%s',%d", leaderboardId, score );
   StateManager::SubmitHighScore(leaderboardId, score);
 }
 
+void GPGAndroidClient::SubmitHighScore(const char* leaderboardId, ULONG64 score, const char* metadata)
+{
+  hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::SubmitHighScore() '%s',%d,'%s'", leaderboardId, score, metadata );
+  StateManager::SubmitHighScore(leaderboardId, score, metadata);
+}
+
 void GPGAndroidClient::ShowLeaderboard(const char* leaderboardId) 
 {
-   hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::ShowLeaderboard() '%s'", leaderboardId );
-   StateManager::ShowLeaderboard(leaderboardId);
+  hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::ShowLeaderboard() '%s'", leaderboardId );
+  StateManager::ShowLeaderboard(leaderboardId);
+}
+
+void GPGAndroidClient::ShowLeaderboards()
+{
+  hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::ShowLeaderboards()" );
+  StateManager::ShowLeaderboards();
 }
 
 #endif

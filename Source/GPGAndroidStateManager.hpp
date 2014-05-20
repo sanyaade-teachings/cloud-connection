@@ -40,14 +40,24 @@ class StateManager
   static void BeginUserInitiatedSignIn();
   /// \brief signs any currently signed in player out
   static void SignOut();
+  /// \brief Increments an achievement by the given number of steps. 
+  static void IncrementAchievement(const char *achievementId, uint32_t steps);
+  /// \brief Set an achievement to have at least the given number of steps completed. 
+  static void SetAchievementStepsAtLeast(const char *achievementId, uint32_t steps);
+  /// \brief Reveal a hidden achievement to the currently signed-in player
+  static void RevealAchievement(const char *achievementId);
   /// \brief unlocks the achievement with the given Id for the currently signed-in player
   static void UnlockAchievement(const char *achievementId);
   /// \brief submits a highscore to the leaderboard with the given Id for the currently signed-in player
   static void SubmitHighScore(const char *leaderboardId, uint64_t score);
+  /// \brief submits a highscore to the leaderboard with the given Id for the currently signed-in player, with meta-data
+  static void SubmitHighScore(const char *leaderboardId, uint64_t score, const char *metadata);
   /// \brief brings up the Achievements UI
   static void ShowAchievements();
   /// \brief brings up the leaderboards UI for the leaderboard of given Id
   static void ShowLeaderboard(const char *leaderboardId);
+  /// \brief brings up the leaderboards UI for all leaderboards
+  static void ShowLeaderboards();
   /// \brief returns true if the sign-in has been started but has not yet completed, false otherwise
   static bool IsAuthInProgress() 
   {

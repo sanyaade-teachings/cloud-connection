@@ -62,17 +62,58 @@ void StateManager::SignOut() {
   }
 }
 
-void StateManager::UnlockAchievement(char const *achievement_id) {
-  if (game_services_->IsAuthorized()) {
+void StateManager::IncrementAchievement(const char *achievementId, uint32_t steps) 
+{
+  if (game_services_->IsAuthorized()) 
+  {
+    LOGI("Achievement Increment Steps");
+    game_services_->Achievements().Increment(achievementId, steps);
+  }
+}
+
+void StateManager::SetAchievementStepsAtLeast(const char *achievementId, uint32_t steps) 
+{
+  if (game_services_->IsAuthorized()) 
+  {
+    LOGI("Achievement Set Steps");
+    game_services_->Achievements().SetStepsAtLeast(achievementId, steps);
+  }
+}
+
+
+void StateManager::RevealAchievement(char const *achievement_id) 
+{
+  if (game_services_->IsAuthorized()) 
+  {
+    LOGI("Achievement revealed");
+    game_services_->Achievements().Reveal(achievement_id);
+  }
+}
+
+void StateManager::UnlockAchievement(char const *achievement_id) 
+{
+  if (game_services_->IsAuthorized()) 
+  {
     LOGI("Achievement unlocked");
     game_services_->Achievements().Unlock(achievement_id);
   }
 }
 
-void StateManager::SubmitHighScore(char const *leaderboard_id, uint64_t score) {
-  if (game_services_->IsAuthorized()) {
+void StateManager::SubmitHighScore(char const *leaderboard_id, uint64_t score) 
+{
+  if (game_services_->IsAuthorized()) 
+  {
     LOGI("High score submitted");
     game_services_->Leaderboards().SubmitScore(leaderboard_id, score);
+  }
+}
+
+void StateManager::SubmitHighScore(char const *leaderboard_id, uint64_t score, char const *metadata) 
+{
+  if (game_services_->IsAuthorized()) 
+  {
+    LOGI("High score submitted with metadata");
+    game_services_->Leaderboards().SubmitScore(leaderboard_id, score, metadata);
   }
 }
 
@@ -85,11 +126,19 @@ void StateManager::ShowAchievements() {
 
 void StateManager::ShowLeaderboard(char const *leaderboard_id) {
   if (game_services_->IsAuthorized()) {
-    LOGI("Show achievement");
+    LOGI("Show leaderboard");
     game_services_->Leaderboards().ShowUI(leaderboard_id);
   }
 }
 
+void StateManager::ShowLeaderboards() 
+{
+  if (game_services_->IsAuthorized()) 
+  {
+    LOGI("Show All leaderboards");
+    game_services_->Leaderboards().ShowAllUI();
+  }
+}
 
 void StateManager::InitServices( gpg::PlatformConfiguration const &pc ) 
 {

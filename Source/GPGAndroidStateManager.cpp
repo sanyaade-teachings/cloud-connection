@@ -187,7 +187,8 @@ void StateManager::OnFetchSelf(gpg::PlayerManager::FetchSelfResponse response)
 
     std::shared_ptr<gpg::Player> p ( new gpg::Player( player ) );
     player_ = p;
-    LOGI("Player Fetch Self response data (Player Name): %s", player_.get()->Name().c_str() );  
+    LOGI("Player Fetch Self response data (Player Name): %s", player_.get()->Name().c_str() );        
+    CloudConnectionCallbackManager::OnPlayerDataFetched.TriggerCallbacks();
   }
 }
 

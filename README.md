@@ -214,9 +214,12 @@ To initialise the plugin whether you wish to use it via C++ or Lua you must add 
 After initialisation a "Cloud Connection Client" is now available to either C++ or Lua script in the following manner from anywhere in your own code:
 
 ### C++
+Make sure to include `CloudConnectionBase.h` in any file you wish to access the client.
 
 ```C++
-
+	
+	#include "CloudConnectionBase.h"
+	...
 	//Get the instance of the cloud connection client  
 	CloudConnection* paccm = CloudConnection::GetInstance();  
 	CloudConnectionClient* pCClient = paccm->GetClient();
@@ -501,7 +504,7 @@ The following callbacks are provided to C++
 
 * CloudConnectionCallbackManager::OnAuthActionStarted - called when a player sign-in has started  
 * CloudConnectionCallbackManager::OnAuthActionFinished - called when a player sign-in has finished (successfully or unsuccessfully)
-* CloudConnectionCallbackManager::OnPlayerDataFetched - called when a the sign-in player's data has been retrieved
+* CloudConnectionCallbackManager::OnPlayerDataFetched - called when the signed-in player's data has been retrieved
 
 
 ### Using the callbacks

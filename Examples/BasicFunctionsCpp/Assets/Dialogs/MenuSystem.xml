@@ -1,0 +1,13 @@
+<root>
+  <LOADRESOURCE type="FONT" filename="\Fonts\CourierNew_18.fnt" name="DefaultSmall" />
+  
+  <LOADRESOURCE type="FONT" filename="\Dialogs\gilgongo_small.fnt" name="MenuSmall" />
+  <LOADRESOURCE type="FONT" filename="\Dialogs\gilgongo.fnt" name="Menu" />
+  <LOADRESOURCE type="FONT" filename="\Dialogs\gilgongo_large.fnt" name="MenuLarge" />
+
+  <CURSOR name="Default" texture="mouseNorm.tga" color="255,255,255,255" hotspot="2,2"/>
+
+  <defaults
+    cursor = "default"
+  />
+</root>

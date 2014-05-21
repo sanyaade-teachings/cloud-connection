@@ -2,6 +2,16 @@
 
 This plugin for the [Project Anarchy game engine](http://www.projectanarchy.com) allows you to interact with the [Google Play Games services](https://developers.google.com/games/services/) on Android or iOS.
 
+# Table of Contents
+ - [Overview](#overview) 
+ - [Requirements](#requirements)
+ - [Configure Your Game Service](#configure-your-game-service) 
+ - [Add Achievements and Leaderboards](#add-achievements-and-leaderboards)
+ - **TODO - SETUP**
+ - [Using the Plugin](#using-the-plugin)
+ - [Building for Android](#building-for-android)
+ - [Buidling for iOS](#building-for-ios)
+
 ## Overview
 The Project Anarchy Cloud Connection Plugin provides several clients to allow you to access the Google Play Games API using either a C++ or Lua interface. The plugin provides support for the following features of the Google Play Games API:
 

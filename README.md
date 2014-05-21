@@ -298,7 +298,7 @@ Reveals a hidden Achievement to the player but does not reward it:
 ```Lua
 
 	local ccClient = CloudConnection:GetClient()
-	ccClient:UnlockAchievement("Cfjewijawiu_QA")		
+	ccClient:RevealAchievement("Cfjewijawiu_QA")		
 ```
 
 Unlocks the Achievement that the player has successfully earned:
@@ -318,41 +318,45 @@ See the Google documentation on [Incremental Achievements](https://developers.go
 
 ### C++
 
-Increments number of steps towards finishing the achievement by 89: 
+Increments number of steps towards finishing the achievement by 89 steps: 
 
 ```C++
   
 	CloudConnection* paccm = CloudConnection::GetInstance();  
 	CloudConnectionClient* pCClient = paccm->GetClient();
-	pCClient->IncrementAchievement("Cfjewijawiu_QA", 89);	//increments the achievement by 89 steps further 
+	//increments the achievement by 89 steps further
+	pCClient->IncrementAchievement("Cfjewijawiu_QA", 89);	 
 ```
 
-Sets the number of steps to towards finishing the achievement to at least 32:
+Sets the number of steps to towards finishing the achievement to at least 32 steps:
 
 ```C++
   
 	CloudConnection* paccm = CloudConnection::GetInstance();  
 	CloudConnectionClient* pCClient = paccm->GetClient();
-	pCClient->SetAchievementStepsAtLeast("Cfjewijawiu_QA", 32);	//Sets the achievement step to at least 32 steps further 
+	//Sets the achievement to at least 32 steps
+	pCClient->SetAchievementStepsAtLeast("Cfjewijawiu_QA", 32);	 
 ```
 
 ### Lua
 
-Increments number of steps towards finishing the achievement by 89:
+Increments number of steps towards finishing the achievement by 89 steps:
 
 ```Lua
 
 	local ccClient = CloudConnection:GetClient()
-	ccClient:IncrementAchievement("Cfjewijawiu_QA", 89)		--increments the achievement by 89 steps further
+	--increments the achievement by 89 steps further
+	ccClient:IncrementAchievement("Cfjewijawiu_QA", 89)		
 ```
 
-Sets the number of steps to towards finishing the achievement to at least 32:
+Sets the number of steps to towards finishing the achievement to at least 32 steps:
 
 
 ```Lua
 
 	local ccClient = CloudConnection:GetClient()
-	ccClient:SetAchievementStepsAtLeast("Cfjewijawiu_QA", 32)		--Sets the achievement step to at least 32 steps
+	--Sets the achievement to at least 32 steps
+	ccClient:SetAchievementStepsAtLeast("Cfjewijawiu_QA", 32)		
 ```
 
 ## Submitting a Score to a Leaderboard
@@ -458,7 +462,7 @@ If you wish to show a particular leaderboard instead of all leaderboards, you us
 ## Getting the Players Name
 
 To get the signed-in players name from the client by use the `GetUserDisplayName` method.
-This method will only return a valid value if the player data has been successfully retrieved from the on-line services. The player data is requested by the client as soon as sign-in has finished successfully. However, the player data may not arrive instantly (See the Callbacks section).
+This method will only return a valid value if the player data has been successfully retrieved from the on-line services. The player data is requested automatically by the plugin as soon as sign-in has finished successfully. However, the player data may not arrive in a timely manner (See the Callbacks section).
 
 ### C++
 

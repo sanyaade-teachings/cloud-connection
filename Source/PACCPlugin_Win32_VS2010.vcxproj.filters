@@ -54,6 +54,9 @@
     <ClCompile Include="CloudConnectionCallbacks.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="CloudConnectionScriptComponent.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DummyClient.hpp">
@@ -100,6 +103,9 @@
     </ClInclude>
     <ClInclude Include="CloudConnectionCallbacks.hpp">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="CloudConnectionScriptComponent.hpp">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

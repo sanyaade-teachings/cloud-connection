@@ -4,9 +4,15 @@
 /// \brief
 /// Defines an abstract interface for a Project Anarchy Cloud Connection Client. 
 /// Concrete implementations might be, for example, the Google Play Games Client client for Android or for iOS.
-class CloudConnectionClient : public VTypedObject
+class CloudConnectionClient : public VisTypedEngineObject_cl
 {
 public:
+
+  /// \brief
+  /// Adds a script component that will list for callback events about for the Cloud Connection
+  /// \param pInstance The instance of the Lua script that will listen for callbacks
+  void AddScriptCallbackListener();
+
   /// \brief
   /// Returns whether or not user is authenticated
   virtual bool IsAuthenticated() = 0;

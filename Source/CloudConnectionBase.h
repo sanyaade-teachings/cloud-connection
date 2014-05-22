@@ -7,6 +7,7 @@
 #include "CloudConnection.hpp"
 #include "CloudConnectionClient.hpp"
 #include "CloudConnectionCallbacks.hpp"
+#include "CloudConnectionScriptComponent.hpp"
 
 #if defined(_VISION_ANDROID)
 

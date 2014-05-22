@@ -62,6 +62,7 @@
     <ClInclude Include="CloudConnectionBase.h" />
     <ClInclude Include="CloudConnectionCallbacks.hpp" />
     <ClInclude Include="CloudConnectionPluginPCH.hpp" />
+    <ClInclude Include="CloudConnectionScriptComponent.hpp" />
     <ClInclude Include="CloudConnectionScriptManager.hpp" />
     <ClInclude Include="com_havok_Vision_CloudConnectionLifeCycleSupport.h" />
     <ClInclude Include="GPGAndroidClient.hpp" />
@@ -80,6 +81,7 @@
     <ClCompile Include="CloudConnectionCallbacks.cpp" />
     <ClCompile Include="CloudConnectionClient.cpp" />
     <ClCompile Include="CloudConnectionPluginPCH.cpp" />
+    <ClCompile Include="CloudConnectionScriptComponent.cpp" />
     <ClCompile Include="CloudConnectionScriptManager.cpp" />
     <ClCompile Include="GPGAndroidClient.cpp" />
     <ClCompile Include="DummyClient.cpp" />

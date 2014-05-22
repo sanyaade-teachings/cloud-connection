@@ -11,7 +11,7 @@ V_IMPLEMENT_DYNAMIC( CloudConnection, VTypedObject, &g_CloudConnectionModule );
 CloudConnection::CloudConnection()
 {
   // creates a new cloud connection client for the target platform
-  m_pCloudConnClient = ClientFactory::GetCloudConnectionClient(); 
+  m_pCloudConnClient = ClientFactory::CreateCloudConnectionClient(); 
   m_pCloudConnSM = new CloudConnectionScriptMananger();
 }
 
@@ -27,13 +27,15 @@ CloudConnectionClient* CloudConnection::GetClient()
 }
 
 void CloudConnection::OneTimeInit()
-{
+{    
   m_pCloudConnSM->OneTimeInit();    //initalise lua scripting
+  m_pCloudConnClient->OneTimeInit();
 }
 
 void CloudConnection::OneTimeDeInit()
 {
   m_pCloudConnSM->OneTimeDeInit();  //deinitialise lua scripting
+  m_pCloudConnClient->OneTimeDeInit();  
 }
 
 void CloudConnection::OnHandleCallback(IVisCallbackDataObject_cl *pData)

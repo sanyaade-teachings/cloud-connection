@@ -11171,6 +11171,36 @@ static swig_lua_class *swig_VisBaseEntity_cl_bases[] = {0,0};
 static const char *swig_VisBaseEntity_cl_base_names[] = {"VisObject3D_cl *",0};
 static swig_lua_class _wrap_class_VisBaseEntity_cl = { "VisBaseEntity_cl", &SWIGTYPE_p_VisBaseEntity_cl,0,0, swig_VisBaseEntity_cl_methods, swig_VisBaseEntity_cl_attributes, swig_VisBaseEntity_cl_bases, swig_VisBaseEntity_cl_base_names };
 
+static int _wrap_CloudConnectionClient_AddScriptCallbackListener(lua_State* L) {
+  int SWIG_arg = 0;
+  CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
+  
+  SWIG_check_num_args("AddScriptCallbackListener",1,1)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("AddScriptCallbackListener",1,"CloudConnectionClient *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("AddScriptCallbackListener",1,"CloudConnectionClient *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CloudConnectionClient,0))){
+    SWIG_fail_ptr("CloudConnectionClient_AddScriptCallbackListener",1,SWIGTYPE_p_CloudConnectionClient);
+  }
+  
+  
+  if (VTraits::IsBaseOf<VTypedObject, CloudConnectionClient>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CloudConnectionClient_AddScriptCallbackListener", 1, "CloudConnectionClient *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  (arg1)->AddScriptCallbackListener();
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_CloudConnectionClient_IsAuthenticated(lua_State* L) {
   int SWIG_arg = 0;
   CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
@@ -11733,6 +11763,7 @@ fail:
 
 
 static swig_lua_method swig_CloudConnectionClient_methods[] = {
+    {"AddScriptCallbackListener", _wrap_CloudConnectionClient_AddScriptCallbackListener}, 
     {"IsAuthenticated", _wrap_CloudConnectionClient_IsAuthenticated}, 
     {"SignOut", _wrap_CloudConnectionClient_SignOut}, 
     {"GetUserDisplayName", _wrap_CloudConnectionClient_GetUserDisplayName}, 
@@ -11752,7 +11783,7 @@ static swig_lua_attribute swig_CloudConnectionClient_attributes[] = {
     {0,0,0}
 };
 static swig_lua_class *swig_CloudConnectionClient_bases[] = {0,0};
-static const char *swig_CloudConnectionClient_base_names[] = {"VTypedObject *",0};
+static const char *swig_CloudConnectionClient_base_names[] = {"VisTypedEngineObject_cl *",0};
 static swig_lua_class _wrap_class_CloudConnectionClient = { "CloudConnectionClient", &SWIGTYPE_p_CloudConnectionClient,0,0, swig_CloudConnectionClient_methods, swig_CloudConnectionClient_attributes, swig_CloudConnectionClient_bases, swig_CloudConnectionClient_base_names };
 
 static int _wrap_CloudConnection_GetClient(lua_State* L) {
@@ -11877,6 +11908,9 @@ static void *_p_VisBaseEntity_clTo_p_VisTypedEngineObject_cl(void *x, int *SWIGU
 static void *_p_VisObject3D_clTo_p_VisTypedEngineObject_cl(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((VisTypedEngineObject_cl *)  ((VisObject3D_cl *) x));
 }
+static void *_p_CloudConnectionClientTo_p_VisTypedEngineObject_cl(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((VisTypedEngineObject_cl *)  ((CloudConnectionClient *) x));
+}
 static void *_p_VisBaseEntity_clTo_p_VisObject3D_cl(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((VisObject3D_cl *)  ((VisBaseEntity_cl *) x));
 }
@@ -11893,7 +11927,7 @@ static void *_p_VisTypedEngineObject_clTo_p_VTypedObject(void *x, int *SWIGUNUSE
     return (void *)((VTypedObject *)  ((VisTypedEngineObject_cl *) x));
 }
 static void *_p_CloudConnectionClientTo_p_VTypedObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
-    return (void *)((VTypedObject *)  ((CloudConnectionClient *) x));
+    return (void *)((VTypedObject *) (VisTypedEngineObject_cl *) ((CloudConnectionClient *) x));
 }
 static void *_p_CloudConnectionTo_p_VTypedObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((VTypedObject *)  ((CloudConnection *) x));
@@ -12000,7 +12034,7 @@ static swig_cast_info _swigc__p_VisBaseEntity_cl[] = {  {&_swigt__p_VisBaseEntit
 static swig_cast_info _swigc__p_VisObject3D_cl[] = {  {&_swigt__p_VisBaseEntity_cl, _p_VisBaseEntity_clTo_p_VisObject3D_cl, 0, 0},  {&_swigt__p_VisObject3D_cl, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VisObjectKey_cl[] = {  {&_swigt__p_VisObjectKey_cl, 0, 0, 0},  {&_swigt__p_VisBaseEntity_cl, _p_VisBaseEntity_clTo_p_VisObjectKey_cl, 0, 0},  {&_swigt__p_VisObject3D_cl, _p_VisObject3D_clTo_p_VisObjectKey_cl, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VisSurface_cl[] = {  {&_swigt__p_VisSurface_cl, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_VisTypedEngineObject_cl[] = {  {&_swigt__p_IVObjectComponent, _p_IVObjectComponentTo_p_VisTypedEngineObject_cl, 0, 0},  {&_swigt__p_VisBaseEntity_cl, _p_VisBaseEntity_clTo_p_VisTypedEngineObject_cl, 0, 0},  {&_swigt__p_VisObject3D_cl, _p_VisObject3D_clTo_p_VisTypedEngineObject_cl, 0, 0},  {&_swigt__p_VisTypedEngineObject_cl, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_VisTypedEngineObject_cl[] = {  {&_swigt__p_IVObjectComponent, _p_IVObjectComponentTo_p_VisTypedEngineObject_cl, 0, 0},  {&_swigt__p_VisBaseEntity_cl, _p_VisBaseEntity_clTo_p_VisTypedEngineObject_cl, 0, 0},  {&_swigt__p_VisObject3D_cl, _p_VisObject3D_clTo_p_VisTypedEngineObject_cl, 0, 0},  {&_swigt__p_VisTypedEngineObject_cl, 0, 0, 0},  {&_swigt__p_CloudConnectionClient, _p_CloudConnectionClientTo_p_VisTypedEngineObject_cl, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p___int64[] = {  {&_swigt__p___int64, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_char[] = {  {&_swigt__p_char, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_float[] = {  {&_swigt__p_float, 0, 0, 0},{0, 0, 0, 0}};

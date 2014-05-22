@@ -14,22 +14,26 @@ class ClientFactory
 public:  
   /// \brief
   /// Creates the Plugin Instance Client For the platform you are working on
-  static CloudConnectionClient* GetCloudConnectionClient()
+  static CloudConnectionClient* CreateCloudConnectionClient()
   {
+    CloudConnectionClient* pClient = NULL;
+
     if ( Vision::Editor.IsInEditor() ) 
     {
-      return new DummyClient();
+      pClient = new DummyClient();
     }
   
 #if defined(_VISION_ANDROID)
-    return new GPGAndroidClient();
+    pClient = new GPGAndroidClient();
 #elif defined(_VISION_IOS)
-    return new GPGIOSClient();
+    pClient = new GPGIOSClient();
 #elif defined(_VISION_WIN32)
-    return new DummyClient();
+    pClient = new DummyClient();
 #else
     #error Target platform not supported for 'Google Play Games' in 'Project Anarchy Cloud Connection Plugin'
 #endif
+
+    return pClient;
   }
 };
 

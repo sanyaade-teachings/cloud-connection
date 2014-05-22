@@ -1,5 +1,6 @@
 <root>
-  <DIALOG class="VDialog" name="GamePausedMenu" fullscreen="FALSE" size="625,500" startPosition="ScreenCenter" pos="0, 0">
+  <DIALOG class="VDialog" name="MainMenu" fullscreen="FALSE" size="625,500" startPosition="ScreenCenter" pos="0, 0">
+    <script filename="..\scripts\MainMenu.lua" />
 	  <fadein start="0" time="0.5"/>
 	  <frame texture="DialogFrame_CyanWhiteTrans.png"/>
 	 

@@ -22,24 +22,34 @@ void CloudConnectionClient::OneTimeDeInit()
 	CloudConnectionCallbackManager::OnPlayerDataFetched -= this;
 }
 
-void CloudConnectionClient::AddScriptCallbackListener()
+void CloudConnectionClient::AddScriptCallbackListener( VScriptInstance* pInstance )
 {    
-  IVScriptManager* pSM = Vision::GetScriptManager();
-  if(pSM)
-  {
-    lua_State* pLuaState = ((VScriptResourceManager*)pSM)->GetMasterState();
-    if(pLuaState) 
-    {
-      VASSERT_MSG( pLuaState != NULL, "The lua state cannot be null" );
-      VScriptInstance* pInstance  = VScriptResourceManager::GetScriptInstanceForState (pLuaState, false);
-      VASSERT_MSG( pInstance != NULL, "The script instance to add to the cloud connection client cannot be null" );
+  VASSERT_MSG( pInstance != NULL, "The script instance to add to the cloud connection client cannot be null" );
 
-      //add the script component
-      CloudConnectionScriptComponent* pScriptComponent = new CloudConnectionScriptComponent();    
-      pScriptComponent->Initialize();
-      pScriptComponent->SetScriptInstance( pInstance );
-      AddComponent( pScriptComponent );
+
+  VScriptComponent* pComp = Components().GetComponentOfType<CloudConnectionScriptComponent>();
+  if ( pComp == NULL )
+  {
+    IVScriptManager* pSM = Vision::GetScriptManager();
+    if(pSM)
+    {
+      lua_State* pLuaState = ((VScriptResourceManager*)pSM)->GetMasterState();
+      VASSERT_MSG( pLuaState != NULL, "The lua state cannot be null" );
+      if(pLuaState) 
+      {
+        //add the script component
+        CloudConnectionScriptComponent* pScriptComponent = new CloudConnectionScriptComponent();    
+        pScriptComponent->Initialize();
+        pScriptComponent->SetScriptInstance( pInstance );
+        AddComponent( pScriptComponent );
+
+        hkvLog::Debug("added CloudConnectionScriptComponent to the script instance");
+      }
     }
+  }
+  else
+  {
+    hkvLog::Debug("CloudConnectionClient already has an instance of the cloud connection script component");
   }
 }
 

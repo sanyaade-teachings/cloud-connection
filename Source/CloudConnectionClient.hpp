@@ -29,7 +29,7 @@ public:
 
   /// \brief
   /// Adds a script component that will list for callback events about for the Cloud Connection
-  void AddScriptCallbackListener( );
+  void AddScriptCallbackListener( VScriptInstance* pInstance );
 
   /// \brief
   /// Returns whether or not user is authenticated

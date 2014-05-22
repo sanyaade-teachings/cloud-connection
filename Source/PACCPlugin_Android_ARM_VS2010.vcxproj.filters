@@ -19,6 +19,9 @@
     <Filter Include="src\Lua">
       <UniqueIdentifier>{bf723510-62f1-4286-bba7-2399ba998857}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Lua">
+      <UniqueIdentifier>{de423339-357f-4320-9740-99bef678f0ba}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DummyClient.hpp">
@@ -117,6 +120,18 @@
   <ItemGroup>
     <None Include="com_havok_Vision_CloudConnectionLifeCycleSupport.inl">
       <Filter>Header Files</Filter>
+    </None>
+    <None Include="Lua\CloudConnection.i">
+      <Filter>Lua</Filter>
+    </None>
+    <None Include="Lua\CloudConnectionClient.i">
+      <Filter>Lua</Filter>
+    </None>
+    <None Include="Lua\CloudConnectionLuaModule.i">
+      <Filter>Lua</Filter>
+    </None>
+    <None Include="Lua\generate_wrapper.bat">
+      <Filter>Lua</Filter>
     </None>
   </ItemGroup>
 </Project>

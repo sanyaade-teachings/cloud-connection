@@ -11,6 +11,11 @@ local ACHIEVEMENT_ID = "CggI9__cunsQAhAB"
 --get this from the google developer console when you create your leaderboard
 local LEADERBOARD_ID = "CggI9__cunsQAhAC" 
 
+function OnAfterSceneLoaded()  
+  -- adding listener for CloudConnection callbacks for to this script
+  local ccClient = CloudConnection:GetClient()
+  ccClient:AddScriptCallbackListener()    
+end
 
 -- called when an item in the menu is clicked
 function OnItemClicked(self, uiItem, buttons, mousePosX, mousePosY)

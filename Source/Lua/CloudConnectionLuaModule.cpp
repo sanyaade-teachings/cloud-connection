@@ -1731,39 +1731,40 @@ SWIG_Lua_dostring(lua_State *L, const char* str) {
 #define SWIGTYPE_p_VColorRef swig_types[5]
 #define SWIGTYPE_p_VDynamicMesh swig_types[6]
 #define SWIGTYPE_p_VMapT_VString_VString_t swig_types[7]
-#define SWIGTYPE_p_VTextureObject swig_types[8]
-#define SWIGTYPE_p_VTypedObject swig_types[9]
-#define SWIGTYPE_p_VisBaseEntity_cl swig_types[10]
-#define SWIGTYPE_p_VisObject3D_cl swig_types[11]
-#define SWIGTYPE_p_VisObjectKey_cl swig_types[12]
-#define SWIGTYPE_p_VisSurface_cl swig_types[13]
-#define SWIGTYPE_p_VisTypedEngineObject_cl swig_types[14]
-#define SWIGTYPE_p___int64 swig_types[15]
-#define SWIGTYPE_p_char swig_types[16]
-#define SWIGTYPE_p_float swig_types[17]
-#define SWIGTYPE_p_hkvAlignedBBox swig_types[18]
-#define SWIGTYPE_p_hkvBoundingSphere swig_types[19]
-#define SWIGTYPE_p_hkvMat3 swig_types[20]
-#define SWIGTYPE_p_hkvMat4 swig_types[21]
-#define SWIGTYPE_p_hkvPlane swig_types[22]
-#define SWIGTYPE_p_hkvQuat swig_types[23]
-#define SWIGTYPE_p_hkvVec2 swig_types[24]
-#define SWIGTYPE_p_hkvVec3 swig_types[25]
-#define SWIGTYPE_p_hkvVec4 swig_types[26]
-#define SWIGTYPE_p_int swig_types[27]
-#define SWIGTYPE_p_long swig_types[28]
-#define SWIGTYPE_p_p_char swig_types[29]
-#define SWIGTYPE_p_p_unsigned_long swig_types[30]
-#define SWIGTYPE_p_short swig_types[31]
-#define SWIGTYPE_p_signed___int64 swig_types[32]
-#define SWIGTYPE_p_signed_char swig_types[33]
-#define SWIGTYPE_p_unsigned___int64 swig_types[34]
-#define SWIGTYPE_p_unsigned_char swig_types[35]
-#define SWIGTYPE_p_unsigned_int swig_types[36]
-#define SWIGTYPE_p_unsigned_long swig_types[37]
-#define SWIGTYPE_p_unsigned_short swig_types[38]
-static swig_type_info *swig_types[40];
-static swig_module_info swig_module = {swig_types, 39, 0, 0, 0, 0};
+#define SWIGTYPE_p_VScriptInstance swig_types[8]
+#define SWIGTYPE_p_VTextureObject swig_types[9]
+#define SWIGTYPE_p_VTypedObject swig_types[10]
+#define SWIGTYPE_p_VisBaseEntity_cl swig_types[11]
+#define SWIGTYPE_p_VisObject3D_cl swig_types[12]
+#define SWIGTYPE_p_VisObjectKey_cl swig_types[13]
+#define SWIGTYPE_p_VisSurface_cl swig_types[14]
+#define SWIGTYPE_p_VisTypedEngineObject_cl swig_types[15]
+#define SWIGTYPE_p___int64 swig_types[16]
+#define SWIGTYPE_p_char swig_types[17]
+#define SWIGTYPE_p_float swig_types[18]
+#define SWIGTYPE_p_hkvAlignedBBox swig_types[19]
+#define SWIGTYPE_p_hkvBoundingSphere swig_types[20]
+#define SWIGTYPE_p_hkvMat3 swig_types[21]
+#define SWIGTYPE_p_hkvMat4 swig_types[22]
+#define SWIGTYPE_p_hkvPlane swig_types[23]
+#define SWIGTYPE_p_hkvQuat swig_types[24]
+#define SWIGTYPE_p_hkvVec2 swig_types[25]
+#define SWIGTYPE_p_hkvVec3 swig_types[26]
+#define SWIGTYPE_p_hkvVec4 swig_types[27]
+#define SWIGTYPE_p_int swig_types[28]
+#define SWIGTYPE_p_long swig_types[29]
+#define SWIGTYPE_p_p_char swig_types[30]
+#define SWIGTYPE_p_p_unsigned_long swig_types[31]
+#define SWIGTYPE_p_short swig_types[32]
+#define SWIGTYPE_p_signed___int64 swig_types[33]
+#define SWIGTYPE_p_signed_char swig_types[34]
+#define SWIGTYPE_p_unsigned___int64 swig_types[35]
+#define SWIGTYPE_p_unsigned_char swig_types[36]
+#define SWIGTYPE_p_unsigned_int swig_types[37]
+#define SWIGTYPE_p_unsigned_long swig_types[38]
+#define SWIGTYPE_p_unsigned_short swig_types[39]
+static swig_type_info *swig_types[41];
+static swig_module_info swig_module = {swig_types, 40, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3155,6 +3156,17 @@ SWIGINTERN int VisBaseEntity_cl_GetPrimarySortingKey(VisBaseEntity_cl *self){
 SWIGINTERN CloudConnectionClient *CloudConnectionClient_Cast(unsigned long *lObject){
     return (CloudConnectionClient *) lObject;
   }
+SWIGINTERN void CloudConnectionClient_AddScriptCallbackListener__SWIG_1(CloudConnectionClient *self,VCaptureSwigEnvironment *env){
+		lua_State* L = env->GetLuaState();
+
+		//Find out which script instance we are calling this from
+		VScriptInstance*  pScript = VScriptResourceManager::GetScriptInstanceForState(L);
+		VASSERT(pScript);
+      
+		self->AddScriptCallbackListener(pScript);
+    
+		env->SetNumReturnValues(lua_yield(L, 0));
+	}
 SWIGINTERN CloudConnection *CloudConnection_Cast(unsigned long *lObject){
     return (CloudConnection *) lObject;
   }
@@ -11171,16 +11183,23 @@ static swig_lua_class *swig_VisBaseEntity_cl_bases[] = {0,0};
 static const char *swig_VisBaseEntity_cl_base_names[] = {"VisObject3D_cl *",0};
 static swig_lua_class _wrap_class_VisBaseEntity_cl = { "VisBaseEntity_cl", &SWIGTYPE_p_VisBaseEntity_cl,0,0, swig_VisBaseEntity_cl_methods, swig_VisBaseEntity_cl_attributes, swig_VisBaseEntity_cl_bases, swig_VisBaseEntity_cl_base_names };
 
-static int _wrap_CloudConnectionClient_AddScriptCallbackListener(lua_State* L) {
+static int _wrap_CloudConnectionClient_AddScriptCallbackListener__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
+  VScriptInstance *arg2 = (VScriptInstance *) 0 ;
   
-  SWIG_check_num_args("AddScriptCallbackListener",1,1)
+  SWIG_check_num_args("AddScriptCallbackListener",2,2)
   if(lua_isnil(L, 1)) SWIG_fail_arg("AddScriptCallbackListener",1,"CloudConnectionClient *");
   if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("AddScriptCallbackListener",1,"CloudConnectionClient *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("AddScriptCallbackListener",2,"VScriptInstance *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CloudConnectionClient,0))){
     SWIG_fail_ptr("CloudConnectionClient_AddScriptCallbackListener",1,SWIGTYPE_p_CloudConnectionClient);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_VScriptInstance,0))){
+    SWIG_fail_ptr("CloudConnectionClient_AddScriptCallbackListener",2,SWIGTYPE_p_VScriptInstance);
   }
   
   
@@ -11189,7 +11208,7 @@ static int _wrap_CloudConnectionClient_AddScriptCallbackListener(lua_State* L) {
     SWIG_fail;
   }
   
-  (arg1)->AddScriptCallbackListener();
+  (arg1)->AddScriptCallbackListener(arg2);
   
   return SWIG_arg;
   
@@ -11762,8 +11781,106 @@ fail:
 }
 
 
+static int _wrap_CloudConnectionClient_AddScriptCallbackListener__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
+  VCaptureSwigEnvironment *arg2 = (VCaptureSwigEnvironment *) 0 ;
+  VCaptureSwigEnvironment temp2(L,SWIG_arg) ;
+  
+  {
+    arg2 = &temp2;
+  }
+  SWIG_check_num_args("AddScriptCallbackListener",1,1)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("AddScriptCallbackListener",1,"CloudConnectionClient *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("AddScriptCallbackListener",1,"CloudConnectionClient *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CloudConnectionClient,0))){
+    SWIG_fail_ptr("CloudConnectionClient_AddScriptCallbackListener",1,SWIGTYPE_p_CloudConnectionClient);
+  }
+  
+  
+  if (VTraits::IsBaseOf<VTypedObject, CloudConnectionClient>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CloudConnectionClient_AddScriptCallbackListener", 1, "CloudConnectionClient *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  CloudConnectionClient_AddScriptCallbackListener__SWIG_1(arg1,arg2);
+  
+  {
+    if(arg2->HasFailed())
+    {
+      lua_Debug ar;
+      lua_getstack(L, 1, &ar);
+      lua_getinfo(L, "nSl", &ar);
+      lua_pushfstring(L,"Error (%s:%d) in %s, %s", ar.source, ar.currentline, "CloudConnectionClient_AddScriptCallbackListener", arg2->GetErrorMessage());
+      SWIG_fail;
+    }
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CloudConnectionClient_AddScriptCallbackListener(lua_State* L) {
+  int argc;
+  int argv[3]={
+    1,2,3
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_CloudConnectionClient, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_CloudConnectionClient_AddScriptCallbackListener__SWIG_1(L);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_CloudConnectionClient, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        void *ptr;
+        if (SWIG_isptrtype(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_VScriptInstance, 0)) {
+          _v = 0;
+        } else {
+          _v = 1;
+        }
+      }
+      if (_v) {
+        return _wrap_CloudConnectionClient_AddScriptCallbackListener__SWIG_0(L);
+      }
+    }
+  }
+  
+  lua_pushstring(L,"Wrong arguments for overloaded function 'CloudConnectionClient_AddScriptCallbackListener'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    AddScriptCallbackListener(CloudConnectionClient *,VScriptInstance *)\n"
+    "    AddScriptCallbackListener(CloudConnectionClient *,VCaptureSwigEnvironment *)\n");
+  lua_error(L);return 0;
+}
+
+
 static swig_lua_method swig_CloudConnectionClient_methods[] = {
-    {"AddScriptCallbackListener", _wrap_CloudConnectionClient_AddScriptCallbackListener}, 
     {"IsAuthenticated", _wrap_CloudConnectionClient_IsAuthenticated}, 
     {"SignOut", _wrap_CloudConnectionClient_SignOut}, 
     {"GetUserDisplayName", _wrap_CloudConnectionClient_GetUserDisplayName}, 
@@ -11777,6 +11894,7 @@ static swig_lua_method swig_CloudConnectionClient_methods[] = {
     {"SubmitHighScore", _wrap_CloudConnectionClient_SubmitHighScore}, 
     {"ShowLeaderboard", _wrap_CloudConnectionClient_ShowLeaderboard}, 
     {"ShowLeaderboards", _wrap_CloudConnectionClient_ShowLeaderboards}, 
+    {"AddScriptCallbackListener", _wrap_CloudConnectionClient_AddScriptCallbackListener}, 
     {0,0}
 };
 static swig_lua_attribute swig_CloudConnectionClient_attributes[] = {
@@ -11946,6 +12064,7 @@ static swig_type_info _swigt__p_VCaptureSwigEnvironment = {"_p_VCaptureSwigEnvir
 static swig_type_info _swigt__p_VColorRef = {"_p_VColorRef", "VColorRef *", 0, 0, (void*)&_wrap_class_VColorRef, 0, NULL};
 static swig_type_info _swigt__p_VDynamicMesh = {"_p_VDynamicMesh", "VDynamicMesh *", 0, 0, (void*)0, 0, NULL};
 static swig_type_info _swigt__p_VMapT_VString_VString_t = {"_p_VMapT_VString_VString_t", "VMap< VString,VString > *", 0, 0, (void*)0, 0, NULL};
+static swig_type_info _swigt__p_VScriptInstance = {"_p_VScriptInstance", "VScriptInstance *", 0, 0, (void*)0, 0, NULL};
 static swig_type_info _swigt__p_VTextureObject = {"_p_VTextureObject", "VTextureObject *", 0, 0, (void*)0, 0, NULL};
 static swig_type_info _swigt__p_VTypedObject = {"_p_VTypedObject", "VTypedObject *", 0, 0, (void*)&_wrap_class_VTypedObject, 0, NULL};
 static swig_type_info _swigt__p_VisBaseEntity_cl = {"_p_VisBaseEntity_cl", "VisBaseEntity_cl *", 0, 0, (void*)&_wrap_class_VisBaseEntity_cl, 0, NULL};
@@ -11987,6 +12106,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_VColorRef,
   &_swigt__p_VDynamicMesh,
   &_swigt__p_VMapT_VString_VString_t,
+  &_swigt__p_VScriptInstance,
   &_swigt__p_VTextureObject,
   &_swigt__p_VTypedObject,
   &_swigt__p_VisBaseEntity_cl,
@@ -12028,6 +12148,7 @@ static swig_cast_info _swigc__p_VCaptureSwigEnvironment[] = {  {&_swigt__p_VCapt
 static swig_cast_info _swigc__p_VColorRef[] = {  {&_swigt__p_VColorRef, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VDynamicMesh[] = {  {&_swigt__p_VDynamicMesh, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VMapT_VString_VString_t[] = {  {&_swigt__p_VMapT_VString_VString_t, 0, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_VScriptInstance[] = {  {&_swigt__p_VScriptInstance, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VTextureObject[] = {  {&_swigt__p_VTextureObject, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VTypedObject[] = {  {&_swigt__p_IVObjectComponent, _p_IVObjectComponentTo_p_VTypedObject, 0, 0},  {&_swigt__p_VTypedObject, 0, 0, 0},  {&_swigt__p_VisBaseEntity_cl, _p_VisBaseEntity_clTo_p_VTypedObject, 0, 0},  {&_swigt__p_VisObject3D_cl, _p_VisObject3D_clTo_p_VTypedObject, 0, 0},  {&_swigt__p_VisTypedEngineObject_cl, _p_VisTypedEngineObject_clTo_p_VTypedObject, 0, 0},  {&_swigt__p_CloudConnectionClient, _p_CloudConnectionClientTo_p_VTypedObject, 0, 0},  {&_swigt__p_CloudConnection, _p_CloudConnectionTo_p_VTypedObject, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VisBaseEntity_cl[] = {  {&_swigt__p_VisBaseEntity_cl, 0, 0, 0},{0, 0, 0, 0}};
@@ -12069,6 +12190,7 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_VColorRef,
   _swigc__p_VDynamicMesh,
   _swigc__p_VMapT_VString_VString_t,
+  _swigc__p_VScriptInstance,
   _swigc__p_VTextureObject,
   _swigc__p_VTypedObject,
   _swigc__p_VisBaseEntity_cl,
@@ -12121,6 +12243,7 @@ SWIGRUNTIME void SWIG_InitVisionTypes() {
   SWIG_InitVisionType<VColorRef *>::Do(&_swigt__p_VColorRef);
   SWIG_InitVisionType<VDynamicMesh *>::Do(&_swigt__p_VDynamicMesh);
   SWIG_InitVisionType<VMap< VString,VString > *>::Do(&_swigt__p_VMapT_VString_VString_t);
+  SWIG_InitVisionType<VScriptInstance *>::Do(&_swigt__p_VScriptInstance);
   SWIG_InitVisionType<VTextureObject *>::Do(&_swigt__p_VTextureObject);
   SWIG_InitVisionType<VTypedObject *>::Do(&_swigt__p_VTypedObject);
   SWIG_InitVisionType<VisBaseEntity_cl *>::Do(&_swigt__p_VisBaseEntity_cl);

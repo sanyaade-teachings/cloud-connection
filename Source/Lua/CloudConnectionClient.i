@@ -11,7 +11,7 @@ public:
   /// \brief
   /// Adds a script component that will list for callback events about for the Cloud Connection
   /// \param pInstance The instance of the Lua script that will listen for callbacks
-  void AddScriptCallbackListener();
+  void AddScriptCallbackListener( VScriptInstance* pInstance );
 
   /// \brief
   /// Returns whether or not user is authenticated
@@ -73,6 +73,25 @@ public:
   //Vision specific extension:
   %extend 
   {
-    VSWIG_CREATE_CAST_UNSAFE(CloudConnectionClient)
+    VSWIG_CREATE_CAST_UNSAFE(CloudConnectionClient)    
   }
 };
+
+
+%extend CloudConnectionClient
+{      
+	/// \brief
+	/// Adding a method to add callbacks to the currently executing script
+	void AddScriptCallbackListener(VCaptureSwigEnvironment* env)
+	{
+		lua_State* L = env->GetLuaState();
+
+		//Find out which script instance we are calling this from
+		VScriptInstance*  pScript = VScriptResourceManager::GetScriptInstanceForState(L);
+		VASSERT(pScript);
+      
+		$self->AddScriptCallbackListener(pScript);
+    
+		env->SetNumReturnValues(lua_yield(L, 0));
+	}
+}

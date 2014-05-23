@@ -1,6 +1,6 @@
 #ifndef _GPGANDROIDCLIENT_HPP_
 #define _GPGANDROIDCLIENT_HPP_
-#if defined(_VISION_ANDROID)
+#if defined(_VISION_ANDROID) || defined(_VISION_IOS)
 
 #include "VisionBaseIncludes.h"
 #include "CloudConnectionClient.hpp"
@@ -77,5 +77,5 @@ protected:
 private:
 };
 
-#endif
-#endif
+#endif  //end defined Android || iOS
+#endif  //end inclusion guard

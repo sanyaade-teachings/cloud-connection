@@ -4,7 +4,7 @@
 #if defined(_VISION_IOS)
 
 /** RTTI definitions */
-V_IMPLEMENT_DYNAMIC( GPGIOSClient, CloudConnectionClient, &g_CloudConnectionModule );
+V_IMPLEMENT_DYNAMIC( GPGIOSClient, GPGAndroidClient, &g_CloudConnectionModule );
    
 GPGIOSClient::GPGIOSClient()
 {

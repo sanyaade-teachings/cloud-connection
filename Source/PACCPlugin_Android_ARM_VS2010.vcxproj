@@ -70,7 +70,7 @@
     <ClInclude Include="com_havok_Vision_CloudConnectionLifeCycleSupport.h" />
     <ClInclude Include="GPGAndroidClient.hpp" />
     <ClInclude Include="DummyClient.hpp" />
-    <ClInclude Include="GPGAndroidStateManager.hpp" />
+    <ClInclude Include="GPGStateManager.hpp" />
     <ClInclude Include="GPGIOSClient.hpp" />
     <ClInclude Include="CloudConnectionClient.hpp" />
     <ClInclude Include="CloudConnection.hpp" />
@@ -88,7 +88,7 @@
     <ClCompile Include="CloudConnectionScriptManager.cpp" />
     <ClCompile Include="GPGAndroidClient.cpp" />
     <ClCompile Include="DummyClient.cpp" />
-    <ClCompile Include="GPGAndroidStateManager.cpp" />
+    <ClCompile Include="GPGStateManager.cpp" />
     <ClCompile Include="GPGIOSClient.cpp" />
     <ClCompile Include="CloudConnection.cpp" />
     <ClCompile Include="CloudConnectionPlugin.cpp" />

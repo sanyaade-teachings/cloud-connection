@@ -9,21 +9,17 @@
 #include "CloudConnectionCallbacks.hpp"
 #include "CloudConnectionScriptComponent.hpp"
 
-#if defined(_VISION_ANDROID)
+#if defined(_VISION_ANDROID) || defined(_VISION_IOS)
 
-//Android required includes for use of cloud connection plugin
+//Android and iOS required includes for use of cloud connection C++ plugin
 
 //required to initialise the GPG state manager
-#include "GPGAndroidStateManager.hpp"
+#include "GPGStateManager.hpp"
 #include "gpg/android_initialization.h"
 #include "gpg/debug.h"
 
 //required to statically link the plugin
 VIMPORT IVisPlugin_cl* GetEnginePlugin_CloudConnectionPlugin();
-
-#elif defined(_VISION_IOS)
-
-//iOS required includes for use of cloud connection plugin
 
 #else
 

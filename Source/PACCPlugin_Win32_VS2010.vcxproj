@@ -19,13 +19,13 @@
     <ClCompile Include="CloudConnectionScriptManager.cpp" />
     <ClCompile Include="DummyClient.cpp" />
     <ClCompile Include="GPGAndroidClient.cpp" />
-    <ClCompile Include="GPGAndroidStateManager.cpp" />
     <ClCompile Include="GPGIOSClient.cpp" />
     <ClCompile Include="CloudConnectionPluginPCH.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">CloudConnectionPluginPCH.hpp</PrecompiledHeaderFile>
     </ClCompile>
     <ClCompile Include="ClientFactory.cpp" />
+    <ClCompile Include="GPGStateManager.cpp" />
     <ClCompile Include="Lua\CloudConnectionLuaModule.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -40,10 +40,10 @@
     <ClInclude Include="CloudConnectionTypes.h" />
     <ClInclude Include="DummyClient.hpp" />
     <ClInclude Include="GPGAndroidClient.hpp" />
-    <ClInclude Include="GPGAndroidStateManager.hpp" />
     <ClInclude Include="GPGIOSClient.hpp" />
     <ClInclude Include="CloudConnectionPluginPCH.hpp" />
     <ClInclude Include="ClientFactory.hpp" />
+    <ClInclude Include="GPGStateManager.hpp" />
     <ClInclude Include="VisionBaseIncludes.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

@@ -1,7 +1,7 @@
-#ifndef _GPGANDROIDSTATEMANANGER_HPP_
-#define _GPGANDROIDSTATEMANANGER_HPP_
+#ifndef _GPGSTATEMANANGER_HPP_
+#define _GPGSTATEMANANGER_HPP_
 
-#if defined(_VISION_ANDROID)
+#if defined(_VISION_ANDROID) || defined(_VISION_IOS)
 
 #include "gpg/achievement.h"
 #include "gpg/achievement_manager.h"
@@ -17,19 +17,32 @@
 #include "gpg/types.h"
 
 /// \brief
-/// Manages the State of Google Play Games for the Android Platform
-/// in the gpg::GameServices object
+/// Manages the State of Google Play Games for both the Android & iOS Platforms
+/// via the gpg::GameServices object
 class StateManager 
 {
  public:
 
+#if defined(_VISION_ANDROID)
    /// \brief 
    /// Called from the developers application to initialise the GPG on Android.
    /// Builds the Google Play Games Platform Configuration and attempts the silent
    /// sign-in to the services.
+   /// \param AndroidApplication The android application state
   static void InitServices(struct android_app* AndroidApplication);
 
-  /// \brief initialises the GPG services
+#elif defined(_VISION_IOS)     
+  /// \brief    
+  /// Called from the developers application to initialise the GPG on iOS.   
+  /// Builds the Google Play Games Platform Configuration and attempts the silent
+  /// sign-in to the services.
+  /// \param GPG_CLIENTID The Google Client ID for the game services you wish to connect to
+  static void InitServices(const char* GPG_CLIENTID);
+#else
+#error unsupported platform!!
+#endif
+
+  /// \brief initialises the GPG services with the given platform configuration
   static void InitServices( gpg::PlatformConfiguration const &pc );
 
   /// \brief gets the google game services state object

@@ -64,13 +64,13 @@
     <ClInclude Include="CloudConnectionScriptManager.hpp" />
     <ClInclude Include="GPGAndroidClient.hpp" />
     <ClInclude Include="DummyClient.hpp" />
-    <ClInclude Include="GPGAndroidStateManager.hpp" />
     <ClInclude Include="GPGIOSClient.hpp" />
     <ClInclude Include="CloudConnectionClient.hpp" />
     <ClInclude Include="CloudConnection.hpp" />
     <ClInclude Include="CloudConnectionPlugin.hpp" />
     <ClInclude Include="CloudConnectionPluginImportExport.h" />
     <ClInclude Include="CloudConnectionTypes.h" />
+    <ClInclude Include="GPGStateManager.hpp" />
     <ClInclude Include="VisionBaseIncludes.h" />
   </ItemGroup>
   <ItemGroup>
@@ -82,10 +82,10 @@
     <ClCompile Include="CloudConnectionScriptManager.cpp" />
     <ClCompile Include="GPGAndroidClient.cpp" />
     <ClCompile Include="DummyClient.cpp" />
-    <ClCompile Include="GPGAndroidStateManager.cpp" />
     <ClCompile Include="GPGIOSClient.cpp" />
     <ClCompile Include="CloudConnection.cpp" />
     <ClCompile Include="CloudConnectionPlugin.cpp" />
+    <ClCompile Include="GPGStateManager.cpp" />
     <ClCompile Include="Lua\CloudConnectionLuaModule.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

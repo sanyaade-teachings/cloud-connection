@@ -1,7 +1,7 @@
-#if defined(_VISION_ANDROID)
+#if defined(_VISION_ANDROID) || defined(_VISION_IOS)
 
 #include "VisionBaseIncludes.h"
-#include "GPGAndroidStateManager.hpp"
+#include "GPGStateManager.hpp"
 #include "gpg/android_initialization.h"
 #include "gpg/debug.h"
 #include "android/Log.h"
@@ -187,7 +187,8 @@ void StateManager::OnFetchSelf(gpg::PlayerManager::FetchSelfResponse response)
   }
 }
 
-
+#if defined(_VISION_ANDROID)
+// Android specific initialisation method
 void StateManager::InitServices(struct android_app* AndroidApplication)
 {
   VASSERT_MSG(AndroidApplication != NULL, "The android_app* cannot be null");
@@ -198,11 +199,10 @@ void StateManager::InitServices(struct android_app* AndroidApplication)
   // gpg-cpp:  We need to check to see if there's a previous state.
   // If there was, we'll just continue, but if not we'll set up
   // gpg-cpp for the first time.
-  if (AndroidApplication->savedState != NULL) {
-    // We are starting with a previous saved state; restore from it.
-    //engine.state = *(struct saved_state*)AndroidApplication->savedState;
-  } else {
-    hkvLog::Debug("Setting up gpg-cpp");
+  if (AndroidApplication->savedState == NULL) 
+  {
+    // We are not starting with a previous saved state so set up the GPG service
+    hkvLog::Debug("Android Setting up gpg-cpp");
 
     // Get the platform configuration.
     gpg::AndroidPlatformConfiguration platform_configuration;
@@ -210,11 +210,30 @@ void StateManager::InitServices(struct android_app* AndroidApplication)
 
     hkvLog::Debug("SetActivity finished gpg-cpp");
 
-    // Now, create the game service (see StateManager.cpp)
-    // and pass in our callback
+    // Now, create the game service
     StateManager::InitServices(platform_configuration);
     
-    hkvLog::Debug("InitServices finished gpg-cpp");
+    hkvLog::Debug("Android InitServices finished gpg-cpp");
   }
 }
-#endif
+#elif defined(_VISION_IOS)
+// iOS specific initialisation method
+void StateManager::InitServices(const char* GPG_CLIENTID)
+{
+    hkvLog::Debug("iOS Setting up gpg-cpp");
+
+    // Get the platform configuration.        
+    gpg::IosPlatformConfiguration platform_configuration;
+    platform_configuration.SetClientID(std::string(GPG_CLIENTID));
+
+    // Now, create the game service
+    StateManager::InitServices(platform_configuration);
+    
+    hkvLog::Debug("iOS InitServices finished gpg-cpp");
+}
+#else
+#error unsupported platform
+#endif  //end platform initialisation methods
+
+
+#endif  // end defined(_VISION_ANDROID) || defined(_VISION_IOS)

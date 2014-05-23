@@ -105,9 +105,15 @@ xcopy /Y /D /C "CloudConnectionPlugin.vPluginD" "$(TargetDir)"
 
 ###include folders required
 
+#### All platforms
 ```
 
 	cloud-connection\Source
+```
+
+#### Android
+```
+
 	cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\include
 	$(NDKROOT)/platforms/android-9/arch-arm/usr/include
 	$(NDKROOT)/sources/android/native_app_glue

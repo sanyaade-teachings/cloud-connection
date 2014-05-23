@@ -3,7 +3,7 @@
 #if defined(_VISION_ANDROID)
 
 #include "GPGAndroidClient.hpp"
-#include "GPGAndroidStateManager.hpp"
+#include "GPGStateManager.hpp"
 
 /** RTTI definitions */
 V_IMPLEMENT_DYNAMIC( GPGAndroidClient, CloudConnectionClient, &g_CloudConnectionModule );

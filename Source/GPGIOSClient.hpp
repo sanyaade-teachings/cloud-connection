@@ -6,7 +6,9 @@
 #include "CloudConnectionClient.hpp"
 
 /// \brief
-/// Defines an implementation for for a Project Anarchy CloudConnectionClient.
+/// Defines an implementation for for a Project Anarchy CloudConnectionClient
+/// for iOS that connects to the Google Games Services.
+/// \note
 /// Extending this class from the GPGAndroidClient as it is cross platform.
 /// but can extend from CloudConnectionClient instead if that becomes a problem.
 class GPGIOSClient : public GPGAndroidClient

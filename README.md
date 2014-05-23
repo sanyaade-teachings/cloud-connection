@@ -496,7 +496,9 @@ This method will only return a valid value if the player data has been successfu
 
 ## Callbacks
 
-The Cloud Connection Plugin provides several callbacks.
+### C++
+
+The Cloud Connection Plugin provides several callbacks to C++.
 You can listen for these via the Vision callback system in any class that extends from `IVisCallbackHandler_cl`.
 See the Project Anarchy Programmers documenation section on `Engine.Callbacks` for more details on how to use the callback system.
 
@@ -507,7 +509,8 @@ The following callbacks are provided to C++
 * CloudConnectionCallbackManager::OnPlayerDataFetched - called when the signed-in player's data has been retrieved
 
 
-### Using the callbacks
+### Using C++ the callbacks
+
 Register the callbacks you want to listen for:
 
 ```C++
@@ -554,6 +557,52 @@ De-Register the callbacks when you are disposing of your class:
 	...
 ```
 
+### Lua
+
+The following lua functions can be implemented to listen for callbacks
+
+* OnAuthActionStarted - called when a player sign-in has started  
+* OnAuthActionFinished - called when a player sign-in has finished (successfully or unsuccessfully)
+* OnPlayerDataFetched - called when the signed-in player's data has been retrieved
+
+### Using Lua the callbacks
+
+Call the `AddScriptCallbackListener` function in the script that you want to listen for the callbacks in.
+
+```Lua
+
+	function OnAfterSceneLoaded()  
+  		-- adding listener for CloudConnection callbacks for to this script
+  		local ccClient = CloudConnection:GetClient()
+  		ccClient:AddScriptCallbackListener()
+		...
+```   
+
+Implement the following Lua functions that will get called when CloudConnection events happen
+
+```Lua
+
+	--This callback is made to the script when the Cloud Connection
+	--Client has started the authorisation process
+	function OnAuthActionStarted()
+	  ...
+	end
+	
+	--This callback is made to the script when the Cloud Connection
+	--Client has finsihed the authorisation process, either succesfully or unsucesfully
+	function OnAuthActionFinished()
+	  ...
+	end
+	
+	--This callback is made to the script when the Cloud Connection
+	--Client has retrived the player data, this means that calls
+	--to GetUserDisplayName() will now return a valid value
+	function OnPlayerDataFetched()
+	  ...
+	end
+
+```
+
 
 ## Building for Android
 
@@ -562,6 +611,16 @@ When you are signing your APK file, please make sure that you are signing it wit
 ## Buidling for iOS
 
 **TODO**
+
+## Extending or Customising the Plugin
+
+If you wish to extend this plugin for your own purposes or implement a connection to a another service that is not Google Games Services, you can do so in the following way.
+
+Create your own class that extends from `CloudConnectionClient` - this class has several pure virtual functions that you must implement in your new class (such as `ShowAchievements` or `BeginUserInitiatedSignIn`).
+
+Once you have your own class that implements the `CloudConnectionClient` then you should alter the static method `ClientFactory::CreateCloudConnectionClient()` to return an instance of your client under the correct circumstances e.g. only for Win32 platform. 
+
+See `DummyClient` for an example of an implementation of `CloudConnectionClient` that performs no actions other than debug logging and callbacks.
 
 
 

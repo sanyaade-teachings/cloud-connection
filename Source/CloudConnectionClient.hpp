@@ -29,6 +29,12 @@ public:
 
   /// \brief
   /// Adds a script component that will list for callback events about for the Cloud Connection
+  /// The script can define and listen for callbacks inside the following script functions
+  ///
+  /// OnAuthActionStarted
+  /// OnAuthActionStarted
+  /// OnPlayerDataFetched
+  /// 
   void AddScriptCallbackListener( VScriptInstance* pInstance );
 
   /// \brief
@@ -89,6 +95,12 @@ public:
 
 protected:
 private:
+
+  /// \brief
+  /// Calls the script function with no parameters for any CloudConnectionScriptComponent's
+  /// that have been added to this client
+  /// \param szFunction  Name of the script function to call 
+  void TriggerCCScriptFunction( const char* szFunction );
 };
 
 #endif

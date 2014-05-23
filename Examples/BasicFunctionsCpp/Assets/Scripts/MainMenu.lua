@@ -15,6 +15,9 @@ function OnAfterSceneLoaded()
   -- adding listener for CloudConnection callbacks for to this script
   local ccClient = CloudConnection:GetClient()
   ccClient:AddScriptCallbackListener()    
+  
+  -- Enable debug output in the log file so we can see that callbacks are working
+  Debug:Enable(true)
 end
 
 -- called when an item in the menu is clicked
@@ -51,6 +54,26 @@ function OnItemClicked(self, uiItem, buttons, mousePosX, mousePosY)
   end
   
 end
+
+--This callback is made to the script when the Cloud Connection
+--Client has started the authorisation process
+function OnAuthActionStarted()
+  Debug:Log("OnAuthActionStarted callback was successfully made to Lua script")
+end
+
+--This callback is made to the script when the Cloud Connection
+--Client has finsihed the authorisation process, either succesfully or unsucesfully
+function OnAuthActionFinished()
+  Debug:Log("OnAuthActionFinished callback was successfully made to Lua script")
+end
+
+--This callback is made to the script when the Cloud Connection
+--Client has retrived the player data, this means that calls
+--to GetUserDisplayName() will now return a valid value
+function OnPlayerDataFetched()
+  Debug:Log("OnPlayerDataFetched callback was successfully made to Lua script")
+end
+
 
 function AuthenticationChanged()
 

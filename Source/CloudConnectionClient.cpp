@@ -61,25 +61,36 @@ void CloudConnectionClient::OnHandleCallback( IVisCallbackDataObject_cl* pData )
   if( pData->m_pSender == &CloudConnectionCallbackManager::OnAuthActionStarted )
   {
     hkvLog::Debug("CloudConnectionScriptComponent - OnAuthActionStarted");
-    //Trigger script here
-
-    /**
-    	IVScriptInstancePtr ssscript = Vision::GetScriptManager()->GetSceneScript();
-	    if ( ssscript != NULL ) {
-		    VASSERT_MSG( ssscript->HasFunction( function ), "The lua function '%s' does not exist in the scene script file", function );
-		    ssscript->ExecuteFunctionArg( function, "t", this );
-	    }
-      */
-
+    TriggerCCScriptFunction("OnAuthActionStarted");
   }
   else if( pData->m_pSender==&CloudConnectionCallbackManager::OnAuthActionFinished )
   {                
     hkvLog::Debug("CloudConnectionScriptComponent - OnAuthActionFinished");
-    //Trigger script here
+    TriggerCCScriptFunction("OnAuthActionFinished");
   }
   else if( pData->m_pSender==&CloudConnectionCallbackManager::OnPlayerDataFetched )
   {                
     hkvLog::Debug("CloudConnectionScriptComponent - OnPlayerDataFetched");
-    // Trigger script here
+    TriggerCCScriptFunction("OnPlayerDataFetched");
+  }
+}
+
+void CloudConnectionClient::TriggerCCScriptFunction( const char* szFunction )
+{      
+  VScriptComponent* pComp = Components().GetComponentOfType<CloudConnectionScriptComponent>();  //there is only one CloudConnectionScriptComponent
+  if ( pComp != NULL )
+  {
+    VScriptInstance* pScriptInst = pComp->GetScriptInstance();
+    if ( pScriptInst != NULL )
+    {
+      if ( pScriptInst->HasFunction(szFunction) )
+      {                
+        pScriptInst->ExecuteFunction(szFunction);
+      }
+      else
+      {
+        hkvLog::Warning("CloudConnectionClient - CloudConnectionScriptComponent does not have callback function '%s'", szFunction);
+      }
+    }      
   }
 }

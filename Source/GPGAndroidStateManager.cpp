@@ -6,14 +6,9 @@
 #include "gpg/debug.h"
 #include "android/Log.h"
 #include "CloudConnectionCallbacks.hpp"
-
-#define DEBUG_TAG "PACloudConnectionNativeActivity"
-#define LOGI(...) \
-    ((void)__android_log_print(ANDROID_LOG_INFO, DEBUG_TAG, __VA_ARGS__))
-
-
-
 #include "gpg/achievement_manager.h"
+
+
 bool StateManager::is_auth_in_progress_ = false;
 std::unique_ptr<gpg::GameServices> StateManager::game_services_;
 std::shared_ptr<gpg::Player> StateManager::player_;
@@ -29,14 +24,14 @@ gpg::Player *StateManager::GetSignedInPlayer()
 
 void StateManager::BeginUserInitiatedSignIn() {
   if (!game_services_->IsAuthorized()) {
-    LOGI("StartAuthorizationUI");
+    hkvLog::Debug("StartAuthorizationUI");
     game_services_->StartAuthorizationUI();
   }
 }
 
 void StateManager::SignOut() {
   if (game_services_->IsAuthorized()) {
-    LOGI("SignOut");
+    hkvLog::Debug("SignOut");
     game_services_->SignOut();
     if ( GetSignedInPlayer() != NULL )
     {
@@ -49,7 +44,7 @@ void StateManager::IncrementAchievement(const char *achievementId, uint32_t step
 {
   if (game_services_->IsAuthorized()) 
   {
-    LOGI("Achievement Increment Steps");
+    hkvLog::Debug("Achievement Increment Steps");
     game_services_->Achievements().Increment(achievementId, steps);
   }
 }
@@ -58,7 +53,7 @@ void StateManager::SetAchievementStepsAtLeast(const char *achievementId, uint32_
 {
   if (game_services_->IsAuthorized()) 
   {
-    LOGI("Achievement Set Steps");
+    hkvLog::Debug("Achievement Set Steps");
     game_services_->Achievements().SetStepsAtLeast(achievementId, steps);
   }
 }
@@ -68,7 +63,7 @@ void StateManager::RevealAchievement(char const *achievement_id)
 {
   if (game_services_->IsAuthorized()) 
   {
-    LOGI("Achievement revealed");
+    hkvLog::Debug("Achievement revealed");
     game_services_->Achievements().Reveal(achievement_id);
   }
 }
@@ -77,7 +72,7 @@ void StateManager::UnlockAchievement(char const *achievement_id)
 {
   if (game_services_->IsAuthorized()) 
   {
-    LOGI("Achievement unlocked");
+    hkvLog::Debug("Achievement unlocked");
     game_services_->Achievements().Unlock(achievement_id);
   }
 }
@@ -86,7 +81,7 @@ void StateManager::SubmitHighScore(char const *leaderboard_id, uint64_t score)
 {
   if (game_services_->IsAuthorized()) 
   {
-    LOGI("High score submitted");
+    hkvLog::Debug("High score submitted");
     game_services_->Leaderboards().SubmitScore(leaderboard_id, score);
   }
 }
@@ -95,21 +90,21 @@ void StateManager::SubmitHighScore(char const *leaderboard_id, uint64_t score, c
 {
   if (game_services_->IsAuthorized()) 
   {
-    LOGI("High score submitted with metadata");
+    hkvLog::Debug("High score submitted with metadata");
     game_services_->Leaderboards().SubmitScore(leaderboard_id, score, metadata);
   }
 }
 
 void StateManager::ShowAchievements() {
   if (game_services_->IsAuthorized()) {
-    LOGI("Show achievement");
+    hkvLog::Debug("Show achievement");
     game_services_->Achievements().ShowAllUI();
   }
 }
 
 void StateManager::ShowLeaderboard(char const *leaderboard_id) {
   if (game_services_->IsAuthorized()) {
-    LOGI("Show leaderboard");
+    hkvLog::Debug("Show leaderboard");
     game_services_->Leaderboards().ShowUI(leaderboard_id);
   }
 }
@@ -118,54 +113,54 @@ void StateManager::ShowLeaderboards()
 {
   if (game_services_->IsAuthorized()) 
   {
-    LOGI("Show All leaderboards");
+    hkvLog::Debug("Show All leaderboards");
     game_services_->Leaderboards().ShowAllUI();
   }
 }
 
 void StateManager::InitServices( gpg::PlatformConfiguration const &pc ) 
 {
-  LOGI("Initializing Services");
+  hkvLog::Debug("Initializing Services");
   if (!game_services_) {
-    LOGI("Uninitialized services, so creating");
+    hkvLog::Debug("Uninitialized services, so creating");
     game_services_ = gpg::GameServices::Builder()
         .SetLogging(gpg::DEFAULT_ON_LOG, gpg::LogLevel::VERBOSE)
         .SetOnAuthActionStarted( OnAuthStarted )
         .SetOnAuthActionFinished( OnAuthFinished )
         .Create(pc);
   }
-  LOGI("Created");
+  hkvLog::Debug("Created");
 }
 
 void StateManager::OnAuthStarted(gpg::AuthOperation op)
 {
-  LOGI("Sign in started");
+  hkvLog::Debug("Sign in started");
   is_auth_in_progress_ = true;
   CloudConnectionCallbackManager::OnAuthActionStarted.TriggerCallbacks();
 }
 
 void StateManager::OnAuthFinished(gpg::AuthOperation op, gpg::AuthStatus status) {
-  LOGI("Sign in finished with a result of %d", status);
+  hkvLog::Debug("Sign in finished with a result of %d", status);
   is_auth_in_progress_ = false;
   CloudConnectionCallbackManager::OnAuthActionFinished.TriggerCallbacks();
   
-  LOGI("OnAuthActionFinished");
+  hkvLog::Debug("OnAuthActionFinished");
   if (IsSuccess(status)) 
   {
-    LOGI("Cloud Connection - You are logged in!");
+    hkvLog::Debug("CloudConnection - You are logged in!");
   } 
   else 
   {
-    LOGI("Cloud Connection - You are not logged in!");
+    hkvLog::Debug("CloudConnection - You are not logged in!");
   }
 
   const gpg::AchievementManager& pAchievementManager = game_services_->Achievements();
   const gpg::LeaderboardManager& pLeaderboardManager = game_services_->Leaderboards();  
 //          const gpg::PlayerManager& playerManger = game_services_->Players();
 
-  LOGI("Fetching Self Player nonblocking");
+  hkvLog::Debug("Fetching Self Player nonblocking");
   game_services_->Players().FetchSelf( gpg::DataSource::CACHE_OR_NETWORK, OnFetchSelf );
-  LOGI("--------------------------------------------------------------");
+  hkvLog::Debug("--------------------------------------------------------------");
 
   /*
   LOGI("Fetching all blocking");
@@ -180,14 +175,14 @@ void StateManager::OnAuthFinished(gpg::AuthOperation op, gpg::AuthStatus status)
 
 void StateManager::OnFetchSelf(gpg::PlayerManager::FetchSelfResponse response)
 {       
-  LOGI("Player Fetch Self response status: %d", response.status);
+  hkvLog::Debug("Player Fetch Self response status: %d", response.status);
   //if ( IsSuccess(response) )
   {
     gpg::Player player = (gpg::Player)response.data;     
 
     std::shared_ptr<gpg::Player> p ( new gpg::Player( player ) );
     player_ = p;
-    LOGI("Player Fetch Self response data (Player Name): %s", player_.get()->Name().c_str() );        
+    hkvLog::Debug("Player Fetch Self response data (Player Name): %s", player_.get()->Name().c_str() );        
     CloudConnectionCallbackManager::OnPlayerDataFetched.TriggerCallbacks();
   }
 }

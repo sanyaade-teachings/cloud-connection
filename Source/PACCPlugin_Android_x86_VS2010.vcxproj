@@ -25,15 +25,21 @@
     <AndroidArch>x86</AndroidArch>
     <AndroidAPILevel>android-10</AndroidAPILevel>
   </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <AndroidArch>x86</AndroidArch>
+  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
     <Import Project="C:\Havok\AnarchySDK\Build\Vision\PropertySheets\EnginePlugin_android_x86_vs2010_anarchyDebug.props" />
+    <Import Project="PACCPlugin_Android_Arm_x86.props" />
     <Import Project="PACCPlugin.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
     <Import Project="C:\Havok\AnarchySDK\Build\Vision\PropertySheets\EnginePluginDX9_win32_vs2010_anarchyDebug.props" />
+    <Import Project="PACCPlugin_Android_Arm_x86.props" />
     <Import Project="PACCPlugin.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
@@ -41,6 +47,13 @@
     <OutDir>..\Bin\$(ProjectName)\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
+    <IntDir>..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <TargetName>libCloudConnectionPlugin</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
+    <OutDir>..\Bin\$(ProjectName)\$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
     <IntDir>..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>libCloudConnectionPlugin</TargetName>
   </PropertyGroup>

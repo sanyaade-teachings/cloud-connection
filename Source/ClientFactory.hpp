@@ -1,5 +1,5 @@
-#ifndef _PACCP_PLAYGAMESCLIENTFACTORY_HPP_
-#define _PLAYGAMESCLIENTFACTORY_HPP_
+#ifndef _CLIENTFACTORY_HPP_
+#define _CLIENTFACTORY_HPP_
 
 #include "VisionBaseIncludes.h"
 #include "CloudConnectionClient.hpp"

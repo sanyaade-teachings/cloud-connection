@@ -2,7 +2,7 @@
 #define _GPGIOSCLIENT_HPP_
 #if defined(_VISION_IOS)
 
-#include "VisionBaseIncludes.hpp"
+#include "VisionBaseIncludes.h"
 #include "CloudConnectionClient.hpp"
 
 /// \brief

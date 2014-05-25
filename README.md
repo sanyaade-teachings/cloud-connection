@@ -193,6 +193,11 @@ https://developers.google.com/games/services/downloads/
   * GooglePlus.bundle
   * GoogleOpenSource.framework
 
+In project settings ‘Custom compiler flags’
+-std=c++98 must be changed for -std=c++11
+
+
+
 ## Using the Plugin
 
 ## Initialisation

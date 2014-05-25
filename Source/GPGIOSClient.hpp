@@ -4,6 +4,7 @@
 
 #include "VisionBaseIncludes.h"
 #include "CloudConnectionClient.hpp"
+#include "GPGAndroidClient.hpp"
 
 /// \brief
 /// Defines an implementation for for a Project Anarchy CloudConnectionClient

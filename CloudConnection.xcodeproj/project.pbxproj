@@ -23,7 +23,7 @@
 		3A14565519323A8F006D3A9B /* GPGAndroidClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A14564519323A8F006D3A9B /* GPGAndroidClient.cpp */; };
 		3A14565619323A8F006D3A9B /* GPGIOSClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A14564719323A8F006D3A9B /* GPGIOSClient.cpp */; };
 		3A14565719323A8F006D3A9B /* GPGStateManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A14564919323A8F006D3A9B /* GPGStateManager.cpp */; };
-		3A14565B19323B27006D3A9B /* CloudConnectionLuaModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A14565A19323B27006D3A9B /* CloudConnectionLuaModule.cpp */; };
+		3AA0D89F19334BBC00C224E7 /* CloudConnectionLuaModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0D89E19334BBC00C224E7 /* CloudConnectionLuaModule.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +83,6 @@
 		3A14564919323A8F006D3A9B /* GPGStateManager.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GPGStateManager.cpp; path = Source/GPGStateManager.cpp; sourceTree = "<group>"; };
 		3A14564A19323A8F006D3A9B /* GPGStateManager.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = GPGStateManager.hpp; path = Source/GPGStateManager.hpp; sourceTree = "<group>"; };
 		3A14564B19323A8F006D3A9B /* VisionBaseIncludes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VisionBaseIncludes.h; path = Source/VisionBaseIncludes.h; sourceTree = "<group>"; };
-		3A14565A19323B27006D3A9B /* CloudConnectionLuaModule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CloudConnectionLuaModule.cpp; path = Source/Lua/CloudConnectionLuaModule.cpp; sourceTree = "<group>"; };
 		3A14565D1932479F006D3A9B /* gpg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = gpg.framework; path = "ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios/gpg.framework"; sourceTree = "<group>"; };
 		3A14565F193247BB006D3A9B /* gpg.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = gpg.bundle; path = "ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios/gpg.bundle"; sourceTree = "<group>"; };
 		3A14566519324D84006D3A9B /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -395,6 +394,7 @@
 		3A1457EF19325216006D3A9B /* gpg.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = gpg.bundle; sourceTree = "<group>"; };
 		3A1457F019325216006D3A9B /* gpg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = gpg.framework; sourceTree = "<group>"; };
 		3A1457F119325216006D3A9B /* licenses.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = licenses.txt; sourceTree = "<group>"; };
+		3AA0D89E19334BBC00C224E7 /* CloudConnectionLuaModule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CloudConnectionLuaModule.cpp; path = Source/Lua/CloudConnectionLuaModule.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -494,7 +494,7 @@
 		3A14565919323B0C006D3A9B /* Lua */ = {
 			isa = PBXGroup;
 			children = (
-				3A14565A19323B27006D3A9B /* CloudConnectionLuaModule.cpp */,
+				3AA0D89E19334BBC00C224E7 /* CloudConnectionLuaModule.cpp */,
 			);
 			name = Lua;
 			sourceTree = "<group>";
@@ -1591,7 +1591,7 @@
 				3A14565719323A8F006D3A9B /* GPGStateManager.cpp in Sources */,
 				3A14564C19323A8F006D3A9B /* ClientFactory.cpp in Sources */,
 				3A14565019323A8F006D3A9B /* CloudConnectionPlugin.cpp in Sources */,
-				3A14565B19323B27006D3A9B /* CloudConnectionLuaModule.cpp in Sources */,
+				3AA0D89F19334BBC00C224E7 /* CloudConnectionLuaModule.cpp in Sources */,
 				3A14565419323A8F006D3A9B /* DummyClient.cpp in Sources */,
 				3A14565519323A8F006D3A9B /* GPGAndroidClient.cpp in Sources */,
 				3A14565619323A8F006D3A9B /* GPGIOSClient.cpp in Sources */,
@@ -1689,6 +1689,7 @@
 		3A14562919323963006D3A9B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = armv7;
 				DSTROOT = /tmp/CloudConnection.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1697,7 +1698,7 @@
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_ENABLE_SYMBOL_SEPARATION = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/CloudConnectionPluginPCH.hpp;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					HK_ANARCHY,
@@ -1714,6 +1715,8 @@
 				GCC_STRICT_ALIASING = NO;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_USE_GCC3_PFE_SUPPORT = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				"GCC_WARN_64_TO_32_BIT_CONVERSION[arch=*64]" = YES;
 				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(VISION_SDK)/Source",
@@ -1747,6 +1750,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = (
 					"-W",
 					"-Wall",
@@ -1772,6 +1776,7 @@
 		3A14562A19323963006D3A9B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = armv7;
 				DSTROOT = /tmp/CloudConnection.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1780,7 +1785,7 @@
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = NO;
 				GCC_ENABLE_SYMBOL_SEPARATION = NO;
-				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/CloudConnectionPluginPCH.hpp;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					HK_ANARCHY,
@@ -1797,6 +1802,8 @@
 				GCC_STRICT_ALIASING = NO;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_USE_GCC3_PFE_SUPPORT = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				"GCC_WARN_64_TO_32_BIT_CONVERSION[arch=*64]" = YES;
 				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(VISION_SDK)/Source",
@@ -1830,6 +1837,7 @@
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
 				WARNING_CFLAGS = (
 					"-W",
 					"-Wall",

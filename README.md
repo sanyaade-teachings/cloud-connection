@@ -181,7 +181,16 @@ The Google Play Services APP_ID must be given in the xml in the developer build 
 
 ## Manual Setup iOS
 
-### Library, Framework & Bundle Requirements
+### include files required
+`cloud-connection\Source`
+
+### Library file required
+link against libCloudConnection.a 
+
+### In project settings ‘Custom compiler flags’
+`-std=c++98` must be changed for `-std=c++11`
+
+### Third Party Library, Framework & Bundle Requirements
 
 https://developers.google.com/games/services/downloads/
 
@@ -192,9 +201,6 @@ https://developers.google.com/games/services/downloads/
   * GooglePlus.framework
   * GooglePlus.bundle
   * GoogleOpenSource.framework
-
-In project settings ‘Custom compiler flags’
--std=c++98 must be changed for -std=c++11
 
 
 

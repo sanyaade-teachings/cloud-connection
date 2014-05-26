@@ -1,10 +1,13 @@
 #if defined(_VISION_ANDROID) || defined(_VISION_IOS)
 
+#if defined(_VISION_ANDROID)
+#include "gpg/android_initialization.h"
+#include "android/Log.h"
+#endif
+
 #include "VisionBaseIncludes.h"
 #include "GPGStateManager.hpp"
-#include "gpg/android_initialization.h"
 #include "gpg/debug.h"
-#include "android/Log.h"
 #include "CloudConnectionCallbacks.hpp"
 #include "gpg/achievement_manager.h"
 

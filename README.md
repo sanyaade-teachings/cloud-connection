@@ -517,12 +517,12 @@ This method will only return a valid value if the player data has been successfu
 
 The Cloud Connection Plugin provides several callbacks to C++.
 You can listen for these via the Vision callback system in any class that extends from `IVisCallbackHandler_cl`.
-See the Project Anarchy Programmers documenation section on `Engine.Callbacks` for more details on how to use the callback system.
+See the Project Anarchy Programmers documentation section on `Engine.Callbacks` for more details on how to use the callback system.
 
 The following callbacks are provided to C++
 
 * CloudConnectionCallbackManager::OnAuthActionStarted - called when a player sign-in has started  
-* CloudConnectionCallbackManager::OnAuthActionFinished - called when a player sign-in has finished (successfully or unsuccessfully)
+* CloudConnectionCallbackManager::OnAuthActionFinished - called when a player sign-in or sign-out has finished (successfully or unsuccessfully)
 * CloudConnectionCallbackManager::OnPlayerDataFetched - called when the signed-in player's data has been retrieved
 
 
@@ -579,7 +579,7 @@ De-Register the callbacks when you are disposing of your class:
 The following lua functions can be implemented to listen for callbacks
 
 * OnAuthActionStarted - called when a player sign-in has started  
-* OnAuthActionFinished - called when a player sign-in has finished (successfully or unsuccessfully)
+* OnAuthActionFinished - called when a player sign-in or sign-out has finished (successfully or unsuccessfully)
 * OnPlayerDataFetched - called when the signed-in player's data has been retrieved
 
 ### Using Lua the callbacks
@@ -606,13 +606,13 @@ Implement the following Lua functions that will get called when CloudConnection 
 	end
 	
 	--This callback is made to the script when the Cloud Connection
-	--Client has finsihed the authorisation process, either succesfully or unsucesfully
+	--Client has finsihed the authorisation process, either successfully or unsuccessfully
 	function OnAuthActionFinished()
 	  ...
 	end
 	
 	--This callback is made to the script when the Cloud Connection
-	--Client has retrived the player data, this means that calls
+	--Client has retrieved the player data, this means that calls
 	--to GetUserDisplayName() will now return a valid value
 	function OnPlayerDataFetched()
 	  ...

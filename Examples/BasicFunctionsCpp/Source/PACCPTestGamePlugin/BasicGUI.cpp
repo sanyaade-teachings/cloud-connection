@@ -120,7 +120,7 @@ void BasicGUI::Update()
       if ( pCClient->IsAuthenticated() ) 
       {
         int highScore = 12345;
-        pCClient->SubmitHighScore( LEADERBOARD_ID, highScore );
+        pCClient->SubmitScore( LEADERBOARD_ID, highScore );
         Vision::Message.Add(1, "BasicGUI - A highscore was submitted to a leaderboard" );
       }
       else

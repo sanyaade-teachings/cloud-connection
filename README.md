@@ -391,7 +391,7 @@ Sets the number of steps to towards finishing the achievement to at least 32 ste
 
 ## Submitting a Score to a Leaderboard
 
-To submit a high score to a leaderboard use the `SubmitHighScore` methods.
+To submit a high score to a leaderboard use the `SubmitScore` methods.
 
 Note that the platform and the server will automatically discard scores that are lower than the player's existing high score, so you can submit scores freely without any checks to test whether or not the score is greater than the player's existing score.
 
@@ -403,12 +403,12 @@ Note that the platform and the server will automatically discard scores that are
 	CloudConnectionClient* pCClient = paccm->GetClient();
 
 	//submit a high score of 1337 points to the leaderboard "Cfji293fjsie_QA" without metadata 
-	pCClient->SubmitHighScore("Cfji293fjsie_QA", 1337);
+	pCClient->SubmitScore("Cfji293fjsie_QA", 1337);
 
 	...
 
 	//submit a high score of 1337 points to the leaderboard "Cfji293fjsie_QA" with metadata "stage3"
-	pCClient->SubmitHighScore("Cfji293fjsie_QA", 1337, "stage3");
+	pCClient->SubmitScore("Cfji293fjsie_QA", 1337, "stage3");
 ```
 
 ### Lua
@@ -418,12 +418,12 @@ Note that the platform and the server will automatically discard scores that are
 	local ccClient = CloudConnection:GetClient()
 
 	--submit a high score of 1337 points to the leaderboard "Cfji293fjsie_QA" without metadata
-	ccClient:SubmitHighScore("Cfji293fjsie_QA", 1337)
+	ccClient:SubmitScore("Cfji293fjsie_QA", 1337)
 
 	...
 
 	--submit a high score of 1337 points to the leaderboard "Cfji293fjsie_QA" with metadata "stage3"
-	ccClient:SubmitHighScore("Cfji293fjsie_QA", 1337, "stage3")
+	ccClient:SubmitScore("Cfji293fjsie_QA", 1337, "stage3")
 ```
 
 

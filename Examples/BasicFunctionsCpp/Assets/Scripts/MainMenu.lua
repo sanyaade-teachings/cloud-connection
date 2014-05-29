@@ -49,7 +49,7 @@ function OnItemClicked(self, uiItem, buttons, mousePosX, mousePosY)
   elseif uiItem:GetID() == GUI:GetID("SUBMITSCORE") then  
     -- submits a high score to a leaderboard
     local highScore = 12346;      
-    ccClient:SubmitHighScore( LEADERBOARD_ID, highScore )
+    ccClient:SubmitScore( LEADERBOARD_ID, highScore )
     
   end
   

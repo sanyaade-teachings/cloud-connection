@@ -98,13 +98,13 @@ void GPGAndroidClient::ShowAchievements()
   StateManager::ShowAchievements();
 }
     
-void GPGAndroidClient::SubmitHighScore(const char* leaderboardId, ULONG64 score)
+void GPGAndroidClient::SubmitScore(const char* leaderboardId, ULONG64 score)
 {
   hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::SubmitHighScore() '%s',%d", leaderboardId, score );
   StateManager::SubmitHighScore(leaderboardId, score);
 }
 
-void GPGAndroidClient::SubmitHighScore(const char* leaderboardId, ULONG64 score, const char* metadata)
+void GPGAndroidClient::SubmitScore(const char* leaderboardId, ULONG64 score, const char* metadata)
 {
   hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::SubmitHighScore() '%s',%d,'%s'", leaderboardId, score, metadata );
   StateManager::SubmitHighScore(leaderboardId, score, metadata);

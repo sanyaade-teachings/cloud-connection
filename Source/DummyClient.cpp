@@ -73,14 +73,14 @@ void DummyClient::ShowAchievements()
 }
     
 
-void DummyClient::SubmitHighScore(const char* leaderboardId, ULONG64 score)
+void DummyClient::SubmitScore(const char* leaderboardId, ULONG64 score)
 {
-  hkvLog::Info( "PACloudConnectionPlugin - DummyClient::SubmitHighScore() '%s',%d", leaderboardId, score );
+  hkvLog::Info( "PACloudConnectionPlugin - DummyClient::SubmitScore() '%s',%d", leaderboardId, score );
 }
   
-void DummyClient::SubmitHighScore(const char* leaderboardId, ULONG64 score, const char* metadata)
+void DummyClient::SubmitScore(const char* leaderboardId, ULONG64 score, const char* metadata)
 {
-  hkvLog::Info( "PACloudConnectionPlugin - DummyClient::SubmitHighScore() '%s',%d, '%s'", leaderboardId, score, metadata );
+  hkvLog::Info( "PACloudConnectionPlugin - DummyClient::SubmitScore() '%s',%d, '%s'", leaderboardId, score, metadata );
 }
 
 void DummyClient::ShowLeaderboard(const char* leaderboardId) 

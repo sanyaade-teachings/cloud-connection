@@ -11541,31 +11541,31 @@ fail:
 }
 
 
-static int _wrap_CloudConnectionClient_SubmitHighScore__SWIG_0(lua_State* L) {
+static int _wrap_CloudConnectionClient_SubmitScore__SWIG_0(lua_State* L) {
   int SWIG_arg = 0;
   CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
   char *arg2 = (char *) 0 ;
   ULONG64 arg3 ;
   
-  SWIG_check_num_args("SubmitHighScore",3,3)
-  if(lua_isnil(L, 1)) SWIG_fail_arg("SubmitHighScore",1,"CloudConnectionClient *");
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SubmitHighScore",1,"CloudConnectionClient *");
-  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("SubmitHighScore",2,"char const *");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("SubmitHighScore",3,"ULONG64");
+  SWIG_check_num_args("SubmitScore",3,3)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("SubmitScore",1,"CloudConnectionClient *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SubmitScore",1,"CloudConnectionClient *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("SubmitScore",2,"char const *");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("SubmitScore",3,"ULONG64");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CloudConnectionClient,0))){
-    SWIG_fail_ptr("CloudConnectionClient_SubmitHighScore",1,SWIGTYPE_p_CloudConnectionClient);
+    SWIG_fail_ptr("CloudConnectionClient_SubmitScore",1,SWIGTYPE_p_CloudConnectionClient);
   }
   
   arg2 = (char *)lua_tostring(L, 2);
   arg3 = (ULONG64)lua_tonumber(L, 3);
   
   if (VTraits::IsBaseOf<VTypedObject, CloudConnectionClient>::value && !arg1) {
-    SWIG_push_fail_arg_info(L, "CloudConnectionClient_SubmitHighScore", 1, "CloudConnectionClient *", "deleted native object");
+    SWIG_push_fail_arg_info(L, "CloudConnectionClient_SubmitScore", 1, "CloudConnectionClient *", "deleted native object");
     SWIG_fail;
   }
   
-  (arg1)->SubmitHighScore((char const *)arg2,arg3);
+  (arg1)->SubmitScore((char const *)arg2,arg3);
   
   return SWIG_arg;
   
@@ -11577,22 +11577,22 @@ fail:
 }
 
 
-static int _wrap_CloudConnectionClient_SubmitHighScore__SWIG_1(lua_State* L) {
+static int _wrap_CloudConnectionClient_SubmitScore__SWIG_1(lua_State* L) {
   int SWIG_arg = 0;
   CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
   char *arg2 = (char *) 0 ;
   ULONG64 arg3 ;
   char *arg4 = (char *) 0 ;
   
-  SWIG_check_num_args("SubmitHighScore",4,4)
-  if(lua_isnil(L, 1)) SWIG_fail_arg("SubmitHighScore",1,"CloudConnectionClient *");
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SubmitHighScore",1,"CloudConnectionClient *");
-  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("SubmitHighScore",2,"char const *");
-  if(!lua_isnumber(L,3)) SWIG_fail_arg("SubmitHighScore",3,"ULONG64");
-  if(!SWIG_lua_isnilstring(L,4)) SWIG_fail_arg("SubmitHighScore",4,"char const *");
+  SWIG_check_num_args("SubmitScore",4,4)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("SubmitScore",1,"CloudConnectionClient *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("SubmitScore",1,"CloudConnectionClient *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("SubmitScore",2,"char const *");
+  if(!lua_isnumber(L,3)) SWIG_fail_arg("SubmitScore",3,"ULONG64");
+  if(!SWIG_lua_isnilstring(L,4)) SWIG_fail_arg("SubmitScore",4,"char const *");
   
   if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CloudConnectionClient,0))){
-    SWIG_fail_ptr("CloudConnectionClient_SubmitHighScore",1,SWIGTYPE_p_CloudConnectionClient);
+    SWIG_fail_ptr("CloudConnectionClient_SubmitScore",1,SWIGTYPE_p_CloudConnectionClient);
   }
   
   arg2 = (char *)lua_tostring(L, 2);
@@ -11600,11 +11600,11 @@ static int _wrap_CloudConnectionClient_SubmitHighScore__SWIG_1(lua_State* L) {
   arg4 = (char *)lua_tostring(L, 4);
   
   if (VTraits::IsBaseOf<VTypedObject, CloudConnectionClient>::value && !arg1) {
-    SWIG_push_fail_arg_info(L, "CloudConnectionClient_SubmitHighScore", 1, "CloudConnectionClient *", "deleted native object");
+    SWIG_push_fail_arg_info(L, "CloudConnectionClient_SubmitScore", 1, "CloudConnectionClient *", "deleted native object");
     SWIG_fail;
   }
   
-  (arg1)->SubmitHighScore((char const *)arg2,arg3,(char const *)arg4);
+  (arg1)->SubmitScore((char const *)arg2,arg3,(char const *)arg4);
   
   return SWIG_arg;
   
@@ -11616,7 +11616,7 @@ fail:
 }
 
 
-static int _wrap_CloudConnectionClient_SubmitHighScore(lua_State* L) {
+static int _wrap_CloudConnectionClient_SubmitScore(lua_State* L) {
   int argc;
   int argv[5]={
     1,2,3,4,5
@@ -11642,7 +11642,7 @@ static int _wrap_CloudConnectionClient_SubmitHighScore(lua_State* L) {
           _v = lua_isnumber(L,argv[2]);
         }
         if (_v) {
-          return _wrap_CloudConnectionClient_SubmitHighScore__SWIG_0(L);
+          return _wrap_CloudConnectionClient_SubmitScore__SWIG_0(L);
         }
       }
     }
@@ -11670,17 +11670,17 @@ static int _wrap_CloudConnectionClient_SubmitHighScore(lua_State* L) {
             _v = SWIG_lua_isnilstring(L,argv[3]);
           }
           if (_v) {
-            return _wrap_CloudConnectionClient_SubmitHighScore__SWIG_1(L);
+            return _wrap_CloudConnectionClient_SubmitScore__SWIG_1(L);
           }
         }
       }
     }
   }
   
-  lua_pushstring(L,"Wrong arguments for overloaded function 'CloudConnectionClient_SubmitHighScore'\n"
+  lua_pushstring(L,"Wrong arguments for overloaded function 'CloudConnectionClient_SubmitScore'\n"
     "  Possible C/C++ prototypes are:\n"
-    "    SubmitHighScore(CloudConnectionClient *,char const *,ULONG64)\n"
-    "    SubmitHighScore(CloudConnectionClient *,char const *,ULONG64,char const *)\n");
+    "    SubmitScore(CloudConnectionClient *,char const *,ULONG64)\n"
+    "    SubmitScore(CloudConnectionClient *,char const *,ULONG64,char const *)\n");
   lua_error(L);return 0;
 }
 
@@ -11891,7 +11891,7 @@ static swig_lua_method swig_CloudConnectionClient_methods[] = {
     {"SetAchievementStepsAtLeast", _wrap_CloudConnectionClient_SetAchievementStepsAtLeast}, 
     {"UnlockAchievement", _wrap_CloudConnectionClient_UnlockAchievement}, 
     {"ShowAchievements", _wrap_CloudConnectionClient_ShowAchievements}, 
-    {"SubmitHighScore", _wrap_CloudConnectionClient_SubmitHighScore}, 
+    {"SubmitScore", _wrap_CloudConnectionClient_SubmitScore}, 
     {"ShowLeaderboard", _wrap_CloudConnectionClient_ShowLeaderboard}, 
     {"ShowLeaderboards", _wrap_CloudConnectionClient_ShowLeaderboards}, 
     {"AddScriptCallbackListener", _wrap_CloudConnectionClient_AddScriptCallbackListener}, 

@@ -79,11 +79,11 @@ public:
     
   /// \brief
   /// Submit a score to the leaderboard for the currently signed-in player. 
-  virtual void SubmitHighScore(const char* leaderboardId, ULONG64 score) = 0;
+  virtual void SubmitScore(const char* leaderboardId, ULONG64 score) = 0;
 
   /// \brief
   /// Submit a score to the leaderboard for the currently signed-in player with metadata (such as something the player did to earn the score).
-  virtual void SubmitHighScore(const char* leaderboardId, ULONG64 score, const char* metadata) = 0;
+  virtual void SubmitScore(const char* leaderboardId, ULONG64 score, const char* metadata) = 0;
 
   /// \brief
   /// Presents a UI to the user that displays information about a specific leaderboard. 

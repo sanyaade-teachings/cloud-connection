@@ -151,19 +151,19 @@ void StateManager::OnAuthFinished(gpg::AuthOperation op, gpg::AuthStatus status)
   if (IsSuccess(status)) 
   {
     hkvLog::Debug("CloudConnection - You are logged in!");
+    // fetch the data for the signed in player
+    hkvLog::Debug("Fetching Self Player nonblocking");
+    game_services_->Players().FetchSelf( gpg::DataSource::CACHE_OR_NETWORK, OnFetchSelf );
   } 
   else 
   {
     hkvLog::Debug("CloudConnection - You are not logged in!");
+    player_ = nullptr;    //remove current player if there is one
   }
 
   const gpg::AchievementManager& pAchievementManager = game_services_->Achievements();
   const gpg::LeaderboardManager& pLeaderboardManager = game_services_->Leaderboards();  
 //          const gpg::PlayerManager& playerManger = game_services_->Players();
-
-  hkvLog::Debug("Fetching Self Player nonblocking");
-  game_services_->Players().FetchSelf( gpg::DataSource::CACHE_OR_NETWORK, OnFetchSelf );
-  hkvLog::Debug("--------------------------------------------------------------");
 
   /*
   LOGI("Fetching all blocking");

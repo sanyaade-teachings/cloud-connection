@@ -524,6 +524,7 @@ The following callbacks are provided to C++
 * CloudConnectionCallbackManager::OnAuthActionStarted - called when a player sign-in has started  
 * CloudConnectionCallbackManager::OnAuthActionFinished - called when a player sign-in or sign-out has finished (successfully or unsuccessfully)
 * CloudConnectionCallbackManager::OnPlayerDataFetched - called when the signed-in player's data has been retrieved
+* CloudConnectionCallbackManager::OnAchievementFetchedCallback  - called when a single achievement has been succesfully fetched from the network
 
 
 ### Using C++ the callbacks
@@ -537,6 +538,7 @@ Register the callbacks you want to listen for:
 	CloudConnectionCallbackManager::OnAuthActionStarted += this;
 	CloudConnectionCallbackManager::OnAuthActionFinished += this;
 	CloudConnectionCallbackManager::OnPlayerDataFetched += this;
+	CloudConnectionCallbackManager::OnAchievementFetched += this;
 	...
 ```
 
@@ -560,6 +562,25 @@ Handle the callbacks in your `OnHandleCallback` method:
 	    hkvLog::Debug("Cloud Connection Plugin Callback - OnPlayerDataFetched");
 		//The player data has been fetched from the online service
 	  }
+	  else if( pData->m_pSender==&CloudConnectionCallbackManager::OnAchievementFetched )
+	  {                
+	    hkvLog::Debug("Cloud Connection Plugin Callback - OnAchievementFetched");
+		//The achievement data has been fetched from the online service
+ 		CCAchievement* pAch = (CCAchievement*)pData;
+		if ( pAch->Valid() )
+		{
+			//You have now retrieved your valid achivement and can access data from it such
+			//as name, description, steps completed etc... 
+	        hkvLog::Debug("Achievement Id='%s'", pAch->Id() );
+	        hkvLog::Debug("Achievement Name='%s'", pAch->Name() );
+	        hkvLog::Debug("Achievement Desc='%s'", pAch->Description() );
+	        hkvLog::Debug("Achievement Type='%d'", pAch->Type() );
+	        hkvLog::Debug("Achievement State='%d'", pAch->State() );
+	        hkvLog::Debug("Achievement CurrentSteps='%d'", pAch->CurrentSteps() );
+	        hkvLog::Debug("Achievement TotalSteps='%d'", pAch->TotalSteps() );
+	        hkvLog::Debug("Achievement LastModified='%d'", pAch->LastModified() );
+		}
+	  }
 	}
 ```
 
@@ -571,6 +592,7 @@ De-Register the callbacks when you are disposing of your class:
 	CloudConnectionCallbackManager::OnAuthActionStarted -= this;
 	CloudConnectionCallbackManager::OnAuthActionFinished -= this;
 	CloudConnectionCallbackManager::OnPlayerDataFetched -= this;
+	CloudConnectionCallbackManager::OnAchievementFetched -= this;
 	...
 ```
 

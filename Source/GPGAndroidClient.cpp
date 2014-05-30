@@ -68,6 +68,12 @@ bool GPGAndroidClient::IsAuthInProgress()
   return StateManager::IsAuthInProgress();
 }
 
+void GPGAndroidClient::GetAchievement(const char* achievementId)
+{
+  hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::GetAchievement() '%s'", achievementId );
+  StateManager::FetchAchievement(achievementId);
+}
+
 void GPGAndroidClient::IncrementAchievement(const char* achievementId, int steps)
 {    
   hkvLog::Debug( "PACloudConnectionPlugin - GPGAndroidClient::IncrementAchievement() '%s', %d", achievementId, steps );

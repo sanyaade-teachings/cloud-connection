@@ -57,6 +57,9 @@
     <ClCompile Include="GPGStateManager.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="CCAchievement.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DummyClient.hpp">
@@ -105,6 +108,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="GPGStateManager.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="CCAchievement.hpp">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

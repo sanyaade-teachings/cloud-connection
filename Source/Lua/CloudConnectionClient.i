@@ -32,7 +32,10 @@ public:
   /// \brief Is there a sign-in process currently in progress
   /// \return true if an sign-in has started but not yet finished, false otherwise
   virtual bool IsAuthInProgress() = 0;
-
+    
+  // \brief gets a specific achievement, the achievement is returned when ready via a callback    
+  virtual void GetAchievement(const char* achievementId) = 0;
+  
   /// \brief 
   /// Increments an achievement by the given number of steps.
   virtual void IncrementAchievement(const char* achievementId, int steps) = 0;

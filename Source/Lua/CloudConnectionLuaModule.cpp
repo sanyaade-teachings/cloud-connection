@@ -11373,6 +11373,39 @@ fail:
 }
 
 
+static int _wrap_CloudConnectionClient_GetAchievement(lua_State* L) {
+  int SWIG_arg = 0;
+  CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
+  char *arg2 = (char *) 0 ;
+  
+  SWIG_check_num_args("GetAchievement",2,2)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("GetAchievement",1,"CloudConnectionClient *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("GetAchievement",1,"CloudConnectionClient *");
+  if(!SWIG_lua_isnilstring(L,2)) SWIG_fail_arg("GetAchievement",2,"char const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CloudConnectionClient,0))){
+    SWIG_fail_ptr("CloudConnectionClient_GetAchievement",1,SWIGTYPE_p_CloudConnectionClient);
+  }
+  
+  arg2 = (char *)lua_tostring(L, 2);
+  
+  if (VTraits::IsBaseOf<VTypedObject, CloudConnectionClient>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CloudConnectionClient_GetAchievement", 1, "CloudConnectionClient *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  (arg1)->GetAchievement((char const *)arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_CloudConnectionClient_IncrementAchievement(lua_State* L) {
   int SWIG_arg = 0;
   CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
@@ -11886,6 +11919,7 @@ static swig_lua_method swig_CloudConnectionClient_methods[] = {
     {"GetUserDisplayName", _wrap_CloudConnectionClient_GetUserDisplayName}, 
     {"BeginUserInitiatedSignIn", _wrap_CloudConnectionClient_BeginUserInitiatedSignIn}, 
     {"IsAuthInProgress", _wrap_CloudConnectionClient_IsAuthInProgress}, 
+    {"GetAchievement", _wrap_CloudConnectionClient_GetAchievement}, 
     {"IncrementAchievement", _wrap_CloudConnectionClient_IncrementAchievement}, 
     {"RevealAchievement", _wrap_CloudConnectionClient_RevealAchievement}, 
     {"SetAchievementStepsAtLeast", _wrap_CloudConnectionClient_SetAchievementStepsAtLeast}, 

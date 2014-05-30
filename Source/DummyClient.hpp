@@ -37,6 +37,9 @@ public:
   /// \return true if an sign-in has started but not yet finished, false otherwise
   virtual bool IsAuthInProgress() HKV_OVERRIDE;
 
+  // \brief gets a specific achievement, the achievement is returned when ready via a callback    
+  virtual void GetAchievement(const char* achievementId) HKV_OVERRIDE;
+
   /// \brief 
   /// Increments an achievement by the given number of steps.
   virtual void IncrementAchievement(const char* achievementId, int steps) HKV_OVERRIDE;

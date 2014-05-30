@@ -47,6 +47,14 @@ bool DummyClient::IsAuthInProgress()
   return false;
 }
 
+void DummyClient::GetAchievement(const char* achievementId)
+{
+  hkvLog::Info( "PACloudConnectionPlugin - DummyClient::GetAchievement() '%s'", achievementId );
+  //TODO: dummy client should create a valid dummy achievement and send it on via the callback
+  CloudConnectionCallbackManager::OnAchievementFetched.TriggerCallbacks();
+  hkvLog::Warning("TODO: dummy client should create a valid dummy achievement and send it on via the callback");
+}
+
 void DummyClient::IncrementAchievement(const char* achievementId, int steps)
 {
   hkvLog::Info( "PACloudConnectionPlugin - DummyClient::IncrementAchievement() '%s', %d", achievementId, steps );

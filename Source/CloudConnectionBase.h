@@ -8,6 +8,7 @@
 #include "CloudConnectionClient.hpp"
 #include "CloudConnectionCallbacks.hpp"
 #include "CloudConnectionScriptComponent.hpp"
+#include "CCAchievement.hpp"
 
 #if defined(_VISION_ANDROID) || defined(_VISION_IOS)
 

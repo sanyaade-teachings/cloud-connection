@@ -67,6 +67,7 @@
     <PreBuildEvent />
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CCAchievement.hpp" />
     <ClInclude Include="ClientFactory.hpp" />
     <ClInclude Include="CloudConnectionBase.h" />
     <ClInclude Include="CloudConnectionCallbacks.hpp" />
@@ -86,6 +87,7 @@
     <ClInclude Include="VisionBaseIncludes.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CCAchievement.cpp" />
     <ClCompile Include="ClientFactory.cpp" />
     <ClCompile Include="CloudConnectionCallbacks.cpp" />
     <ClCompile Include="CloudConnectionClient.cpp" />

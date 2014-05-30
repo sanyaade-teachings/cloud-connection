@@ -20,4 +20,19 @@ Google Java API submits the score as a java "long"
 #error Cloud Connection Plugin - types not defined for this platform
 #endif
 
+/// \brief Enumeration that represents the types of Achievements that are possible
+enum CCAchievementType
+{     
+  STANDARD = 0,
+  INCREMENTAL = 1
+};
+
+/// \brief Values used to specify achievement state. These are ordered such that only increasing transitions are possible
+enum CCAchievementState 
+{
+  HIDDEN = 0,   ///< A hidden achievement is one whose existence a player has not yet discovered make him or her aware of it.
+  REVEALED = 1, ///< A revealed achievement is one that the player knows about, but has not yet earned.
+  UNLOCKED = 2, ///< An unlocked achievement is one that the player has earned.
+};
+
 #endif

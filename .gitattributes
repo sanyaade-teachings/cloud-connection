@@ -1,0 +1,11 @@
+# Declare files that will always have CRLF line endings on checkout.
+*.c text eol=crlf
+*.cpp text eol=crlf
+*.h text eol=crlf
+*.hpp text eol=crlf
+*.inl text eol=crlf
+*.i text eol=crlf
+*.xml text eol=crlf
+*.bat text eol=crlf
+*.properties text eol=crlf
+*.java text eol=crlf

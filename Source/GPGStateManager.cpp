@@ -6,15 +6,13 @@
 #endif
 
 #include "VisionBaseIncludes.h"
-#include "GPGStateManager.hpp"
-#include "gpg/debug.h"
-#include "CloudConnectionCallbacks.hpp"
-#include "gpg/achievement_manager.h"
+#include "CloudConnectionBase.h"
 
 
 bool StateManager::is_auth_in_progress_ = false;
 std::unique_ptr<gpg::GameServices> StateManager::game_services_;
 std::shared_ptr<gpg::Player> StateManager::player_;
+VMap<std::string, CCAchievement*> StateManager::m_ccAchievementCache;
 
 gpg::GameServices *StateManager::GetGameServices() {
   return game_services_.get();
@@ -40,6 +38,18 @@ void StateManager::SignOut() {
     {
       player_ = NULL;
     }
+  }
+}
+
+void StateManager::FetchAchievement(const char *achievementId)
+{
+  if (game_services_->IsAuthorized()) 
+  {
+    hkvLog::Debug("FetchAchievement");               
+    game_services_->Achievements().Fetch(
+      gpg::DataSource::CACHE_OR_NETWORK, 
+      achievementId,
+      OnFetchAchievement);
   }
 }
 
@@ -179,7 +189,7 @@ void StateManager::OnAuthFinished(gpg::AuthOperation op, gpg::AuthStatus status)
 void StateManager::OnFetchSelf(gpg::PlayerManager::FetchSelfResponse response)
 {       
   hkvLog::Debug("Player Fetch Self response status: %d", response.status);
-  //if ( IsSuccess(response) )
+  if ( response.status == gpg::ResponseStatus::VALID )
   {
     gpg::Player player = (gpg::Player)response.data;     
 
@@ -188,6 +198,84 @@ void StateManager::OnFetchSelf(gpg::PlayerManager::FetchSelfResponse response)
     hkvLog::Debug("Player Fetch Self response data (Player Name): %s", player_.get()->Name().c_str() );        
     CloudConnectionCallbackManager::OnPlayerDataFetched.TriggerCallbacks();
   }
+}
+
+void StateManager::OnFetchAchievement(gpg::AchievementManager::FetchResponse response) 
+{
+  hkvLog::Debug("StateManager::OnFetchAchievement - Achievement response status: %d", response.status);
+  if ( response.status == gpg::ResponseStatus::VALID )
+  {
+    //find the mathing CCAchievemnet in our map or create a new one if it doesn't exits yet
+    gpg::Achievement gpgAch = response.data;
+    CCAchievement* pCcAch;
+    bool found = m_ccAchievementCache.Lookup( gpgAch.Id(), pCcAch );
+    if ( !found )
+    {
+      pCcAch = new CCAchievement();            
+      m_ccAchievementCache.SetAt( gpgAch.Id(), pCcAch ); 
+    }
+
+    VASSERT_MSG( pCcAch != NULL, "The CCAchievement has not been found or created, it cannot be null" );
+          
+    //populate pCcAch with data from response if it is valid
+    pCcAch->SetValid( gpgAch.Valid() );
+    if ( gpgAch.Valid() == true )
+    {
+      pCcAch->SetId( gpgAch.Id().c_str() );
+      pCcAch->SetName( gpgAch.Name().c_str() );
+      pCcAch->SetDescription( gpgAch.Description().c_str() );
+      pCcAch->SetType( GPGAchTypeToCCAchType( gpgAch.Type() ) );
+      pCcAch->SetState( GPGAchStateToCCAchState( gpgAch.State() ) );
+      pCcAch->SetCurrentSteps( gpgAch.CurrentSteps() );
+      pCcAch->SetTotalSteps( gpgAch.TotalSteps() );
+      pCcAch->SetLastModified( gpgAch.LastModified().count() );
+    }
+
+    //Send the data onto the callback
+    hkvLog::Debug("CloudConnectionCallbackManager::OnAchievementFetched.TriggerCallbacks( pCcAch );");
+    CloudConnectionCallbackManager::OnAchievementFetched.TriggerCallbacks( pCcAch );
+  }
+}
+ 
+unsigned int StateManager::GPGAchTypeToCCAchType( gpg::AchievementType GPGPType )
+{
+  unsigned int cctype = 0;
+  switch( GPGPType )
+  {
+  case gpg::AchievementType::STANDARD:
+    cctype = CCAchievementType::STANDARD;
+    break;
+  case gpg::AchievementType::INCREMENTAL:
+    cctype = CCAchievementType::INCREMENTAL;
+    break;
+  default:
+    hkvLog::Warning(" GPGAchTypeToCCAchType - the type conversion was not handled");
+  }
+  return cctype;
+}
+
+/// \note
+/// Converts a Google Play Games C++ Native API State into a Cloud Connection Plugin State
+/// /param GPGPState The state to be converted
+/// /return The State as a CCAchievementState
+unsigned int StateManager::GPGAchStateToCCAchState( gpg::AchievementState GPGPState )
+{
+  unsigned int ccstate = 0;
+  switch( GPGPState )
+  {
+  case gpg::AchievementState::HIDDEN:
+    ccstate = CCAchievementState::HIDDEN;
+    break;
+  case gpg::AchievementState::REVEALED:
+    ccstate = CCAchievementState::REVEALED;
+    break;
+  case gpg::AchievementState::UNLOCKED:
+    ccstate = CCAchievementState::UNLOCKED;
+    break;
+  default:
+    hkvLog::Warning(" GPGAchStateToCCAchState - the state conversion was not handled");
+  }
+  return ccstate;
 }
 
 #if defined(_VISION_ANDROID)

@@ -16,12 +16,14 @@
 #include "gpg/score_page.h"
 #include "gpg/types.h"
 
+class CCAchievement;
+
 /// \brief
 /// Manages the State of Google Play Games for both the Android & iOS Platforms
 /// via the gpg::GameServices object
 class StateManager 
 {
- public:
+public:
 
 #if defined(_VISION_ANDROID)
    /// \brief 
@@ -53,6 +55,8 @@ class StateManager
   static void BeginUserInitiatedSignIn();
   /// \brief signs any currently signed in player out
   static void SignOut();
+  /// \brief Fetch and achievement non-blocking
+  static void FetchAchievement(const char *achievementId);
   /// \brief Increments an achievement by the given number of steps. 
   static void IncrementAchievement(const char *achievementId, uint32_t steps);
   /// \brief Set an achievement to have at least the given number of steps completed. 
@@ -77,7 +81,19 @@ class StateManager
     return is_auth_in_progress_;
   }
 
- private:
+private:
+
+  /// \note
+  /// Converts a Google Play Games C++ Native API Type into a Cloud Connection Plugin Type
+  /// /param GPGPType The type to be converted
+  /// /return The type as a CCAchievementType
+  static unsigned int GPGAchTypeToCCAchType( gpg::AchievementType GPGPType );
+  /// \note
+  /// Converts a Google Play Games C++ Native API State into a Cloud Connection Plugin State
+  /// /param GPGPState The state to be converted
+  /// /return The State as a CCAchievementState
+  static unsigned int GPGAchStateToCCAchState( gpg::AchievementState GPGPState );
+
   
   /// \brief callback when the Google Sign-in Authorisation process has finished
   static void OnAuthFinished(gpg::AuthOperation op, gpg::AuthStatus status);
@@ -85,10 +101,14 @@ class StateManager
   static void OnAuthStarted(gpg::AuthOperation op);
   /// \brief callback when the player manger fetches player data about the signed in player
   static void OnFetchSelf(gpg::PlayerManager::FetchSelfResponse response);
+  /// \brief callback when the achievement manger fetches achievement data
+  /// \param response Contains data and response status for a single achievement.
+  static void OnFetchAchievement(gpg::AchievementManager::FetchResponse response);
 
   static bool is_auth_in_progress_;
   static std::unique_ptr<gpg::GameServices> game_services_;
-  static std::shared_ptr<gpg::Player> player_;              ///< the data for the currently-signed in player
+  static std::shared_ptr<gpg::Player> player_;                          ///< the data for the currently-signed in player
+  static VMap<std::string, CCAchievement*> m_ccAchievementCache;       ///< cache of all achievements that have been downloaded
 };
 
 

@@ -33,6 +33,16 @@ protected:
 private:
 };
 
+/// \brief Callback when a single achievement has been succesfully fetched from the network
+class CCOnAchievementFetchedCallback : public VCallback
+{
+public:
+  CCOnAchievementFetchedCallback();
+  ~CCOnAchievementFetchedCallback();
+protected:
+private:
+};
+
 /// \brief Manager for all the callbacks required
 class CloudConnectionCallbackManager
 {
@@ -43,6 +53,7 @@ public:
   static CCOnAuthActionStartedCallback OnAuthActionStarted;       ///< called when a sign-in event begins
   static CCOnAuthActionFinishedCallback OnAuthActionFinished;     ///< called when a sign-in event ends
   static CCOnPlayerDataFetchedCallback OnPlayerDataFetched;       ///< called when a player data has been fetched
+  static CCOnAchievementFetchedCallback OnAchievementFetched;     ///< called when a single achievement has been succesfully fetched from the network
 protected:
 private:
 };

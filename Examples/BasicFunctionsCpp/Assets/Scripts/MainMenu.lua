@@ -74,6 +74,12 @@ function OnPlayerDataFetched()
   Debug:Log("OnPlayerDataFetched callback was successfully made to Lua script")
 end
 
+--This callback is made to the script when the Cloud Connection
+--Client has retrived achievement data via the GetAchievement( id ) call
+function OnAchievementFetched( id, name, description, achtype, achstate, totalsteps, currentsteps )
+  Debug:Log("OnAchievementFetched callback was successfully made to Lua script")
+end
+
 
 function AuthenticationChanged()
 

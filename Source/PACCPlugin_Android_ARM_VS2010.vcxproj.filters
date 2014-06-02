@@ -139,5 +139,8 @@
     <None Include="Lua\generate_wrapper.bat">
       <Filter>Lua</Filter>
     </None>
+    <None Include="Lua\CCAchievement.i">
+      <Filter>Lua</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -22,7 +22,9 @@
   //we need to define the C++ headers here
   #include "../CloudConnectionClient.hpp"
   #include "../CloudConnection.hpp"  
+  #include "../CCAchievement.hpp"
 %}
  
 %include <CloudConnectionClient.i>
 %include <CloudConnection.i>
+%include <CCAchievement.i>

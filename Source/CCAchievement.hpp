@@ -8,9 +8,11 @@
 /// \brief
 /// Cloud Connection Achievement - Represents the data for an online Achievement
 ///
-class CCAchievement : public IVisCallbackDataObject_cl
+class CCAchievement : public IVisCallbackDataObject_cl, public VTypedObject
 {
 public:
+  V_DECLARE_DYNCREATE_DLLEXP(CCAchievement, CLOUDCONNECTIONPLUGIN_IMPEXP);
+
   CCAchievement();
   virtual ~CCAchievement();
 

@@ -104,6 +104,14 @@ private:
   /// that have been added to this client
   /// \param szFunction  Name of the script function to call 
   void TriggerCCScriptFunction( const char* szFunction );
+
+  /// \brief
+  /// Calls the script function for any CloudConnectionScriptComponent's
+  /// that have been added to this client
+  /// \param szFunction  Name of the script function to call 
+  /// \param szArgFormat  See IVScriptInstance::ExecuteFunctionArgV
+  /// \param parameter the argument as specified in szArgFormat 
+  void TriggerCCScriptFunctionArg( const char* szFunction, const char* szArgFormat, void* parameter );
 };
 
 #endif

@@ -1,6 +1,8 @@
 #include "CloudConnectionPluginPCH.hpp"
 #include "CCAchievement.hpp"
 
+V_IMPLEMENT_DYNCREATE(CCAchievement, VTypedObject, &g_CloudConnectionModule);
+
 CCAchievement::CCAchievement()
 {
   m_valid = false;

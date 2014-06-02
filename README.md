@@ -603,6 +603,7 @@ The following lua functions can be implemented to listen for callbacks
 * OnAuthActionStarted - called when a player sign-in has started  
 * OnAuthActionFinished - called when a player sign-in or sign-out has finished (successfully or unsuccessfully)
 * OnPlayerDataFetched - called when the signed-in player's data has been retrieved
+* OnAchievementFetched - called when valid data for the signed-in player from the `GetAchievement( id )` call has been retrieved
 
 ### Using Lua the callbacks
 
@@ -640,6 +641,11 @@ Implement the following Lua functions that will get called when CloudConnection 
 	  ...
 	end
 
+	--This callback is made to the script when the Cloud Connection
+	--Client has retrived achievement data via the GetAchievement( id ) call
+	function OnAchievementFetched( id, name, description, achtype, achstate, totalsteps, currentsteps )
+		...
+	end
 ```
 
 

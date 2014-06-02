@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="com_havok_Vision_CloudConnectionLifeCycleSupport.inl" />
+    <None Include="Lua\CCAchievement.i" />
     <None Include="Lua\CloudConnection.i" />
     <None Include="Lua\CloudConnectionClient.i" />
     <None Include="Lua\CloudConnectionLuaModule.i" />

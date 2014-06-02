@@ -1723,48 +1723,49 @@ SWIG_Lua_dostring(lua_State *L, const char* str) {
 
 /* -------- TYPES TABLE (BEGIN) -------- */
 
-#define SWIGTYPE_p_CloudConnection swig_types[0]
-#define SWIGTYPE_p_CloudConnectionClient swig_types[1]
-#define SWIGTYPE_p_IVObjectComponent swig_types[2]
-#define SWIGTYPE_p_VBitmask swig_types[3]
-#define SWIGTYPE_p_VCaptureSwigEnvironment swig_types[4]
-#define SWIGTYPE_p_VColorRef swig_types[5]
-#define SWIGTYPE_p_VDynamicMesh swig_types[6]
-#define SWIGTYPE_p_VMapT_VString_VString_t swig_types[7]
-#define SWIGTYPE_p_VScriptInstance swig_types[8]
-#define SWIGTYPE_p_VTextureObject swig_types[9]
-#define SWIGTYPE_p_VTypedObject swig_types[10]
-#define SWIGTYPE_p_VisBaseEntity_cl swig_types[11]
-#define SWIGTYPE_p_VisObject3D_cl swig_types[12]
-#define SWIGTYPE_p_VisObjectKey_cl swig_types[13]
-#define SWIGTYPE_p_VisSurface_cl swig_types[14]
-#define SWIGTYPE_p_VisTypedEngineObject_cl swig_types[15]
-#define SWIGTYPE_p___int64 swig_types[16]
-#define SWIGTYPE_p_char swig_types[17]
-#define SWIGTYPE_p_float swig_types[18]
-#define SWIGTYPE_p_hkvAlignedBBox swig_types[19]
-#define SWIGTYPE_p_hkvBoundingSphere swig_types[20]
-#define SWIGTYPE_p_hkvMat3 swig_types[21]
-#define SWIGTYPE_p_hkvMat4 swig_types[22]
-#define SWIGTYPE_p_hkvPlane swig_types[23]
-#define SWIGTYPE_p_hkvQuat swig_types[24]
-#define SWIGTYPE_p_hkvVec2 swig_types[25]
-#define SWIGTYPE_p_hkvVec3 swig_types[26]
-#define SWIGTYPE_p_hkvVec4 swig_types[27]
-#define SWIGTYPE_p_int swig_types[28]
-#define SWIGTYPE_p_long swig_types[29]
-#define SWIGTYPE_p_p_char swig_types[30]
-#define SWIGTYPE_p_p_unsigned_long swig_types[31]
-#define SWIGTYPE_p_short swig_types[32]
-#define SWIGTYPE_p_signed___int64 swig_types[33]
-#define SWIGTYPE_p_signed_char swig_types[34]
-#define SWIGTYPE_p_unsigned___int64 swig_types[35]
-#define SWIGTYPE_p_unsigned_char swig_types[36]
-#define SWIGTYPE_p_unsigned_int swig_types[37]
-#define SWIGTYPE_p_unsigned_long swig_types[38]
-#define SWIGTYPE_p_unsigned_short swig_types[39]
-static swig_type_info *swig_types[41];
-static swig_module_info swig_module = {swig_types, 40, 0, 0, 0, 0};
+#define SWIGTYPE_p_CCAchievement swig_types[0]
+#define SWIGTYPE_p_CloudConnection swig_types[1]
+#define SWIGTYPE_p_CloudConnectionClient swig_types[2]
+#define SWIGTYPE_p_IVObjectComponent swig_types[3]
+#define SWIGTYPE_p_VBitmask swig_types[4]
+#define SWIGTYPE_p_VCaptureSwigEnvironment swig_types[5]
+#define SWIGTYPE_p_VColorRef swig_types[6]
+#define SWIGTYPE_p_VDynamicMesh swig_types[7]
+#define SWIGTYPE_p_VMapT_VString_VString_t swig_types[8]
+#define SWIGTYPE_p_VScriptInstance swig_types[9]
+#define SWIGTYPE_p_VTextureObject swig_types[10]
+#define SWIGTYPE_p_VTypedObject swig_types[11]
+#define SWIGTYPE_p_VisBaseEntity_cl swig_types[12]
+#define SWIGTYPE_p_VisObject3D_cl swig_types[13]
+#define SWIGTYPE_p_VisObjectKey_cl swig_types[14]
+#define SWIGTYPE_p_VisSurface_cl swig_types[15]
+#define SWIGTYPE_p_VisTypedEngineObject_cl swig_types[16]
+#define SWIGTYPE_p___int64 swig_types[17]
+#define SWIGTYPE_p_char swig_types[18]
+#define SWIGTYPE_p_float swig_types[19]
+#define SWIGTYPE_p_hkvAlignedBBox swig_types[20]
+#define SWIGTYPE_p_hkvBoundingSphere swig_types[21]
+#define SWIGTYPE_p_hkvMat3 swig_types[22]
+#define SWIGTYPE_p_hkvMat4 swig_types[23]
+#define SWIGTYPE_p_hkvPlane swig_types[24]
+#define SWIGTYPE_p_hkvQuat swig_types[25]
+#define SWIGTYPE_p_hkvVec2 swig_types[26]
+#define SWIGTYPE_p_hkvVec3 swig_types[27]
+#define SWIGTYPE_p_hkvVec4 swig_types[28]
+#define SWIGTYPE_p_int swig_types[29]
+#define SWIGTYPE_p_long swig_types[30]
+#define SWIGTYPE_p_p_char swig_types[31]
+#define SWIGTYPE_p_p_unsigned_long swig_types[32]
+#define SWIGTYPE_p_short swig_types[33]
+#define SWIGTYPE_p_signed___int64 swig_types[34]
+#define SWIGTYPE_p_signed_char swig_types[35]
+#define SWIGTYPE_p_unsigned___int64 swig_types[36]
+#define SWIGTYPE_p_unsigned_char swig_types[37]
+#define SWIGTYPE_p_unsigned_int swig_types[38]
+#define SWIGTYPE_p_unsigned_long swig_types[39]
+#define SWIGTYPE_p_unsigned_short swig_types[40]
+static swig_type_info *swig_types[42];
+static swig_module_info swig_module = {swig_types, 41, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -3152,6 +3153,7 @@ SWIGINTERN int VisBaseEntity_cl_GetPrimarySortingKey(VisBaseEntity_cl *self){
   //we need to define the C++ headers here
   #include "../CloudConnectionClient.hpp"
   #include "../CloudConnection.hpp"  
+  #include "../CCAchievement.hpp"
 
 SWIGINTERN CloudConnectionClient *CloudConnectionClient_Cast(unsigned long *lObject){
     return (CloudConnectionClient *) lObject;
@@ -3169,6 +3171,9 @@ SWIGINTERN void CloudConnectionClient_AddScriptCallbackListener__SWIG_1(CloudCon
 	}
 SWIGINTERN CloudConnection *CloudConnection_Cast(unsigned long *lObject){
     return (CloudConnection *) lObject;
+  }
+SWIGINTERN CCAchievement *CCAchievement_Cast(unsigned long *lObject){
+    return (CCAchievement *) lObject;
   }
 #ifdef __cplusplus
 extern "C" {
@@ -12022,6 +12027,337 @@ static swig_lua_class *swig_CloudConnection_bases[] = {0,0};
 static const char *swig_CloudConnection_base_names[] = {"VTypedObject *",0};
 static swig_lua_class _wrap_class_CloudConnection = { "CloudConnection", &SWIGTYPE_p_CloudConnection,0,0, swig_CloudConnection_methods, swig_CloudConnection_attributes, swig_CloudConnection_bases, swig_CloudConnection_base_names };
 
+static int _wrap_CCAchievement_Valid(lua_State* L) {
+  int SWIG_arg = 0;
+  CCAchievement *arg1 = (CCAchievement *) 0 ;
+  bool result;
+  
+  SWIG_check_num_args("Valid",1,1)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("Valid",1,"CCAchievement const *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Valid",1,"CCAchievement const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CCAchievement,0))){
+    SWIG_fail_ptr("CCAchievement_Valid",1,SWIGTYPE_p_CCAchievement);
+  }
+  
+  
+  if (VTraits::IsBaseOf<VTypedObject, CCAchievement const>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CCAchievement_Valid", 1, "CCAchievement const *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  result = (bool)((CCAchievement const *)arg1)->Valid();
+  lua_pushboolean(L,(int)(result!=0)); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CCAchievement_Id(lua_State* L) {
+  int SWIG_arg = 0;
+  CCAchievement *arg1 = (CCAchievement *) 0 ;
+  char *result = 0 ;
+  
+  SWIG_check_num_args("Id",1,1)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("Id",1,"CCAchievement const *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Id",1,"CCAchievement const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CCAchievement,0))){
+    SWIG_fail_ptr("CCAchievement_Id",1,SWIGTYPE_p_CCAchievement);
+  }
+  
+  
+  if (VTraits::IsBaseOf<VTypedObject, CCAchievement const>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CCAchievement_Id", 1, "CCAchievement const *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  result = (char *)((CCAchievement const *)arg1)->Id();
+  lua_pushstring(L,(const char *)result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CCAchievement_Name(lua_State* L) {
+  int SWIG_arg = 0;
+  CCAchievement *arg1 = (CCAchievement *) 0 ;
+  char *result = 0 ;
+  
+  SWIG_check_num_args("Name",1,1)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("Name",1,"CCAchievement const *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Name",1,"CCAchievement const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CCAchievement,0))){
+    SWIG_fail_ptr("CCAchievement_Name",1,SWIGTYPE_p_CCAchievement);
+  }
+  
+  
+  if (VTraits::IsBaseOf<VTypedObject, CCAchievement const>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CCAchievement_Name", 1, "CCAchievement const *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  result = (char *)((CCAchievement const *)arg1)->Name();
+  lua_pushstring(L,(const char *)result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CCAchievement_Description(lua_State* L) {
+  int SWIG_arg = 0;
+  CCAchievement *arg1 = (CCAchievement *) 0 ;
+  char *result = 0 ;
+  
+  SWIG_check_num_args("Description",1,1)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("Description",1,"CCAchievement const *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Description",1,"CCAchievement const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CCAchievement,0))){
+    SWIG_fail_ptr("CCAchievement_Description",1,SWIGTYPE_p_CCAchievement);
+  }
+  
+  
+  if (VTraits::IsBaseOf<VTypedObject, CCAchievement const>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CCAchievement_Description", 1, "CCAchievement const *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  result = (char *)((CCAchievement const *)arg1)->Description();
+  lua_pushstring(L,(const char *)result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CCAchievement_Type(lua_State* L) {
+  int SWIG_arg = 0;
+  CCAchievement *arg1 = (CCAchievement *) 0 ;
+  unsigned int result;
+  
+  SWIG_check_num_args("Type",1,1)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("Type",1,"CCAchievement const *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("Type",1,"CCAchievement const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CCAchievement,0))){
+    SWIG_fail_ptr("CCAchievement_Type",1,SWIGTYPE_p_CCAchievement);
+  }
+  
+  
+  if (VTraits::IsBaseOf<VTypedObject, CCAchievement const>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CCAchievement_Type", 1, "CCAchievement const *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  result = (unsigned int)((CCAchievement const *)arg1)->Type();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CCAchievement_State(lua_State* L) {
+  int SWIG_arg = 0;
+  CCAchievement *arg1 = (CCAchievement *) 0 ;
+  unsigned int result;
+  
+  SWIG_check_num_args("State",1,1)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("State",1,"CCAchievement const *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("State",1,"CCAchievement const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CCAchievement,0))){
+    SWIG_fail_ptr("CCAchievement_State",1,SWIGTYPE_p_CCAchievement);
+  }
+  
+  
+  if (VTraits::IsBaseOf<VTypedObject, CCAchievement const>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CCAchievement_State", 1, "CCAchievement const *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  result = (unsigned int)((CCAchievement const *)arg1)->State();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CCAchievement_CurrentSteps(lua_State* L) {
+  int SWIG_arg = 0;
+  CCAchievement *arg1 = (CCAchievement *) 0 ;
+  unsigned int result;
+  
+  SWIG_check_num_args("CurrentSteps",1,1)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("CurrentSteps",1,"CCAchievement const *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CurrentSteps",1,"CCAchievement const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CCAchievement,0))){
+    SWIG_fail_ptr("CCAchievement_CurrentSteps",1,SWIGTYPE_p_CCAchievement);
+  }
+  
+  
+  if (VTraits::IsBaseOf<VTypedObject, CCAchievement const>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CCAchievement_CurrentSteps", 1, "CCAchievement const *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  result = (unsigned int)((CCAchievement const *)arg1)->CurrentSteps();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CCAchievement_TotalSteps(lua_State* L) {
+  int SWIG_arg = 0;
+  CCAchievement *arg1 = (CCAchievement *) 0 ;
+  unsigned int result;
+  
+  SWIG_check_num_args("TotalSteps",1,1)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("TotalSteps",1,"CCAchievement const *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("TotalSteps",1,"CCAchievement const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CCAchievement,0))){
+    SWIG_fail_ptr("CCAchievement_TotalSteps",1,SWIGTYPE_p_CCAchievement);
+  }
+  
+  
+  if (VTraits::IsBaseOf<VTypedObject, CCAchievement const>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CCAchievement_TotalSteps", 1, "CCAchievement const *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  result = (unsigned int)((CCAchievement const *)arg1)->TotalSteps();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CCAchievement_LastModified(lua_State* L) {
+  int SWIG_arg = 0;
+  CCAchievement *arg1 = (CCAchievement *) 0 ;
+  ULONG64 result;
+  
+  SWIG_check_num_args("LastModified",1,1)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("LastModified",1,"CCAchievement const *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("LastModified",1,"CCAchievement const *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CCAchievement,0))){
+    SWIG_fail_ptr("CCAchievement_LastModified",1,SWIGTYPE_p_CCAchievement);
+  }
+  
+  
+  if (VTraits::IsBaseOf<VTypedObject, CCAchievement const>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CCAchievement_LastModified", 1, "CCAchievement const *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  result = ((CCAchievement const *)arg1)->LastModified();
+  lua_pushnumber(L, (lua_Number) result); SWIG_arg++;
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CCAchievement_Cast(lua_State* L) {
+  int SWIG_arg = 0;
+  unsigned long *arg1 = (unsigned long *) 0 ;
+  CCAchievement *result = 0 ;
+  
+  SWIG_check_num_args("CCAchievement_Cast",1,1)
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CCAchievement_Cast",1,"unsigned long *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_unsigned_long,0))){
+    SWIG_fail_ptr("CCAchievement_Cast",1,SWIGTYPE_p_unsigned_long);
+  }
+  
+  result = (CCAchievement *)CCAchievement_Cast(arg1);
+  
+  if(VTraits::IsBaseOf<VTypedObject, CCAchievement>::value)
+  {
+    LUA_PushObjectProxy(L, (VTypedObject*)result); SWIG_arg++;
+  }
+  else
+  {
+    SWIG_NewPointerObj(L,result,SWIGTYPE_p_CCAchievement,0); SWIG_arg++;
+  }
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static swig_lua_method swig_CCAchievement_methods[] = {
+    {"Valid", _wrap_CCAchievement_Valid}, 
+    {"Id", _wrap_CCAchievement_Id}, 
+    {"Name", _wrap_CCAchievement_Name}, 
+    {"Description", _wrap_CCAchievement_Description}, 
+    {"Type", _wrap_CCAchievement_Type}, 
+    {"State", _wrap_CCAchievement_State}, 
+    {"CurrentSteps", _wrap_CCAchievement_CurrentSteps}, 
+    {"TotalSteps", _wrap_CCAchievement_TotalSteps}, 
+    {"LastModified", _wrap_CCAchievement_LastModified}, 
+    {0,0}
+};
+static swig_lua_attribute swig_CCAchievement_attributes[] = {
+    {0,0,0}
+};
+static swig_lua_class *swig_CCAchievement_bases[] = {0,0};
+static const char *swig_CCAchievement_base_names[] = {"VTypedObject *",0};
+static swig_lua_class _wrap_class_CCAchievement = { "CCAchievement", &SWIGTYPE_p_CCAchievement,0,0, swig_CCAchievement_methods, swig_CCAchievement_attributes, swig_CCAchievement_bases, swig_CCAchievement_base_names };
+
 #ifdef __cplusplus
 }
 #endif
@@ -12029,6 +12365,7 @@ static swig_lua_class _wrap_class_CloudConnection = { "CloudConnection", &SWIGTY
 static const struct luaL_reg swig_commands[] = {
     { "CloudConnectionClient_Cast", _wrap_CloudConnectionClient_Cast},
     { "CloudConnection_Cast", _wrap_CloudConnection_Cast},
+    { "CCAchievement_Cast", _wrap_CCAchievement_Cast},
     {0,0}
 };
 
@@ -12084,12 +12421,16 @@ static void *_p_CloudConnectionClientTo_p_VTypedObject(void *x, int *SWIGUNUSEDP
 static void *_p_CloudConnectionTo_p_VTypedObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((VTypedObject *)  ((CloudConnection *) x));
 }
+static void *_p_CCAchievementTo_p_VTypedObject(void *x, int *SWIGUNUSEDPARM(newmemory)) {
+    return (void *)((VTypedObject *)  ((CCAchievement *) x));
+}
 static void *_p_VisBaseEntity_clTo_p_VisObjectKey_cl(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((VisObjectKey_cl *) (VisObject3D_cl *) ((VisBaseEntity_cl *) x));
 }
 static void *_p_VisObject3D_clTo_p_VisObjectKey_cl(void *x, int *SWIGUNUSEDPARM(newmemory)) {
     return (void *)((VisObjectKey_cl *)  ((VisObject3D_cl *) x));
 }
+static swig_type_info _swigt__p_CCAchievement = {"_p_CCAchievement", "CCAchievement *", 0, 0, (void*)&_wrap_class_CCAchievement, 0, NULL};
 static swig_type_info _swigt__p_CloudConnection = {"_p_CloudConnection", "CloudConnection *", 0, 0, (void*)&_wrap_class_CloudConnection, 0, NULL};
 static swig_type_info _swigt__p_CloudConnectionClient = {"_p_CloudConnectionClient", "CloudConnectionClient *", 0, 0, (void*)&_wrap_class_CloudConnectionClient, 0, NULL};
 static swig_type_info _swigt__p_IVObjectComponent = {"_p_IVObjectComponent", "IVObjectComponent *", 0, 0, (void*)&_wrap_class_IVObjectComponent, 0, NULL};
@@ -12132,6 +12473,7 @@ static swig_type_info _swigt__p_unsigned_long = {"_p_unsigned_long", "HANDLE_PTR
 static swig_type_info _swigt__p_unsigned_short = {"_p_unsigned_short", "WORD *|UHALF_PTR *|unsigned short *|USHORT *|FSHORT *|LANGID *|UINT16 *", 0, 0, (void*)0, 0, NULL};
 
 static swig_type_info *swig_type_initial[] = {
+  &_swigt__p_CCAchievement,
   &_swigt__p_CloudConnection,
   &_swigt__p_CloudConnectionClient,
   &_swigt__p_IVObjectComponent,
@@ -12174,6 +12516,7 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_unsigned_short,
 };
 
+static swig_cast_info _swigc__p_CCAchievement[] = {  {&_swigt__p_CCAchievement, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_CloudConnection[] = {  {&_swigt__p_CloudConnection, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_CloudConnectionClient[] = {  {&_swigt__p_CloudConnectionClient, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_IVObjectComponent[] = {  {&_swigt__p_IVObjectComponent, 0, 0, 0},{0, 0, 0, 0}};
@@ -12184,7 +12527,7 @@ static swig_cast_info _swigc__p_VDynamicMesh[] = {  {&_swigt__p_VDynamicMesh, 0,
 static swig_cast_info _swigc__p_VMapT_VString_VString_t[] = {  {&_swigt__p_VMapT_VString_VString_t, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VScriptInstance[] = {  {&_swigt__p_VScriptInstance, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VTextureObject[] = {  {&_swigt__p_VTextureObject, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_VTypedObject[] = {  {&_swigt__p_IVObjectComponent, _p_IVObjectComponentTo_p_VTypedObject, 0, 0},  {&_swigt__p_VTypedObject, 0, 0, 0},  {&_swigt__p_VisBaseEntity_cl, _p_VisBaseEntity_clTo_p_VTypedObject, 0, 0},  {&_swigt__p_VisObject3D_cl, _p_VisObject3D_clTo_p_VTypedObject, 0, 0},  {&_swigt__p_VisTypedEngineObject_cl, _p_VisTypedEngineObject_clTo_p_VTypedObject, 0, 0},  {&_swigt__p_CloudConnectionClient, _p_CloudConnectionClientTo_p_VTypedObject, 0, 0},  {&_swigt__p_CloudConnection, _p_CloudConnectionTo_p_VTypedObject, 0, 0},{0, 0, 0, 0}};
+static swig_cast_info _swigc__p_VTypedObject[] = {  {&_swigt__p_IVObjectComponent, _p_IVObjectComponentTo_p_VTypedObject, 0, 0},  {&_swigt__p_VTypedObject, 0, 0, 0},  {&_swigt__p_VisBaseEntity_cl, _p_VisBaseEntity_clTo_p_VTypedObject, 0, 0},  {&_swigt__p_VisObject3D_cl, _p_VisObject3D_clTo_p_VTypedObject, 0, 0},  {&_swigt__p_VisTypedEngineObject_cl, _p_VisTypedEngineObject_clTo_p_VTypedObject, 0, 0},  {&_swigt__p_CloudConnectionClient, _p_CloudConnectionClientTo_p_VTypedObject, 0, 0},  {&_swigt__p_CloudConnection, _p_CloudConnectionTo_p_VTypedObject, 0, 0},  {&_swigt__p_CCAchievement, _p_CCAchievementTo_p_VTypedObject, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VisBaseEntity_cl[] = {  {&_swigt__p_VisBaseEntity_cl, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VisObject3D_cl[] = {  {&_swigt__p_VisBaseEntity_cl, _p_VisBaseEntity_clTo_p_VisObject3D_cl, 0, 0},  {&_swigt__p_VisObject3D_cl, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_VisObjectKey_cl[] = {  {&_swigt__p_VisObjectKey_cl, 0, 0, 0},  {&_swigt__p_VisBaseEntity_cl, _p_VisBaseEntity_clTo_p_VisObjectKey_cl, 0, 0},  {&_swigt__p_VisObject3D_cl, _p_VisObject3D_clTo_p_VisObjectKey_cl, 0, 0},{0, 0, 0, 0}};
@@ -12216,6 +12559,7 @@ static swig_cast_info _swigc__p_unsigned_long[] = {  {&_swigt__p_unsigned_long, 
 static swig_cast_info _swigc__p_unsigned_short[] = {  {&_swigt__p_unsigned_short, 0, 0, 0},{0, 0, 0, 0}};
 
 static swig_cast_info *swig_cast_initial[] = {
+  _swigc__p_CCAchievement,
   _swigc__p_CloudConnection,
   _swigc__p_CloudConnectionClient,
   _swigc__p_IVObjectComponent,
@@ -12269,6 +12613,7 @@ template<typename T> struct SWIG_InitVisionType<T*, true> { static void Do(swig_
             info->visiontype = pType;
   } };
 SWIGRUNTIME void SWIG_InitVisionTypes() {
+  SWIG_InitVisionType<CCAchievement *>::Do(&_swigt__p_CCAchievement);
   SWIG_InitVisionType<CloudConnection *>::Do(&_swigt__p_CloudConnection);
   SWIG_InitVisionType<CloudConnectionClient *>::Do(&_swigt__p_CloudConnectionClient);
   SWIG_InitVisionType<IVObjectComponent *>::Do(&_swigt__p_IVObjectComponent);

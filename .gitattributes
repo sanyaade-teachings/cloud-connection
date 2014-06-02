@@ -9,3 +9,4 @@
 *.bat text eol=crlf
 *.properties text eol=crlf
 *.java text eol=crlf
+*.lua text eol=crlf

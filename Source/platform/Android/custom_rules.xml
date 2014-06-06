@@ -12,21 +12,30 @@
             -pre-clean
     -->
 <project>    
+  
+  <!-- adding ant contrib to the tasks -->
+  <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+    <classpath>
+      <pathelement location="ant/antcontrib/ant-contrib-0.6.jar"/>
+    </classpath>
+  </taskdef>
+
 	<target name="-pre-build">
 	   <echo>**** -pre-build *****</echo>
      
-     <echo>arch= ${arch}</echo>
+     <echo>arch= ${arch}</echo> <!-- should be armeabi-v7a -->
      <echo>mainlib= ${mainlib}</echo>
+     <echo>extranativelib= ${extranativelib}</echo>
      
-    <!-- copy the native binaries that were built in visual studio into the /libs folder -->       
+    <!-- copy the native binaries that were built in visual studio into the /libs folder -->     
+    <!-- copy the lib to correct folder (arm or x86) -->
+    <copy file="${mainlib}" todir="./libs/${arch}"/>
     
-    <!-- TODO : copy the lib to correct folder (arm or x86) -->
-    <copy todir="./libs/armeabi-v7a">
-      <fileset dir="${mainlib}">
-      </fileset>
-    </copy>      
+    <!-- TODO: strip the symbols from the main lib to shrink it -->
+    <!-- TODO: rename lib with "lib" prefix -->
     
-    <!-- TODO : copy any other .so libs required to run the game -->
+    <!-- copy any other .so libs required to run the game (such as fmod libs) --> 
+    <foreach target="copyNativeLib" param="nativelibtocopy" list="${extranativelib}" delimiter="*"/>
     
     <!-- TODO : emulate the asset copy system that from deployAndroid.py "def copyAssets(options, fatOptions=None):" -->
     
@@ -43,7 +52,12 @@
     </copy>      
     
 	</target>
-	
+  
+  <!-- copy the file ${nativelibtocopy} to the libs folder  -->
+  <target name="copyNativeLib">
+    <copy file="${nativelibtocopy}" todir="./libs/${arch}"/>
+  </target>
+  
 	<target name="-pre-compile">
 	    <echo>**** -pre-compile *****</echo>
 	</target>

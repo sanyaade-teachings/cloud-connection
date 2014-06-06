@@ -17,7 +17,7 @@
       <AdditionalDependencies>-lCloudConnectionPlugin;-lgpg;-lgnustl_static;-llog;-lz;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>Platform\Android\build.bat mainlib $(TargetDir) arch $(AndroidArch)</Command>
+      <Command>Platform\Android\build.bat mainlib $(TargetPath) arch $(AndroidArch) extranativelib $(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/lib/android/armeabi-v7a/libfmodexL.so*$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/lib/android/armeabi-v7a/libfmodeventL.so</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Build Java and Package .apk using Android ANT build process</Message>

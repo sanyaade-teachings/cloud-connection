@@ -9,10 +9,23 @@ public class NativeLibLoader extends NativeActivity
 
   static
   {
-      Log.v(TAG, "Static Constructor");
-    System.loadLibrary("fmodexL");
-    System.loadLibrary("fmodeventL");
-
+    Log.v(TAG, "Static Constructor");
+      
+    try
+    {
+      //Try to load the Release FMOD libraries
+      System.loadLibrary("fmodex");
+      System.loadLibrary("fmodevent");
+      Log.v(TAG, "Loaded FMOD Release Libraries");
+    }
+    catch( UnsatisfiedLinkError e )
+    {
+      //Try to load the debug FMOD libraries instead if the release ones aren't present
+      Log.v(TAG, "Couldn't load the FMOD Release Libraries : '" + e.getMessage() + "'" );
+      System.loadLibrary("fmodexL");
+      System.loadLibrary("fmodeventL");
+      Log.v(TAG, "Loaded FMOD Debug Libraries");
+    }
   }
 
   public NativeLibLoader()

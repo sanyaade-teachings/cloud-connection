@@ -91,6 +91,10 @@ Achievement and leaderboard IDs are alphanumeric strings (e.g. "Cgkx9eiuwi8_AQ")
 
 The plugin should be downloaded to the following folder:
 
+`%HAVOK_THIRDPARTY_DIR%\plugins\cloud-connection`
+
+this folder is an alias of the following...
+
 `%VISION_SDK%\ThirdParty\plugins\cloud-connection`
 
 You may need to make the "plugins" folder if it doesn't already exist 
@@ -112,15 +116,14 @@ xcopy /Y /D /C "CloudConnectionPlugin.vPluginD" "$(TargetDir)"
 ###include folders required
 
 #### All platforms
-```
 
-	$(VISION_SDK)\ThirdParty\plugins\cloud-connection\Source
-```
+`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Source`
+
 
 #### Android
 ```
 
-	$(VISION_SDK)\ThirdParty\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\include
+	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\include
 	$(NDKROOT)/platforms/android-9/arch-arm/usr/include
 	$(NDKROOT)/sources/android/native_app_glue
 ```
@@ -130,9 +133,9 @@ xcopy /Y /D /C "CloudConnectionPlugin.vPluginD" "$(TargetDir)"
 ##### Arm
 ```
 
-	$(VISION_SDK)\ThirdParty\plugins\cloud-connection\Lib\android_arm\debug (for debug only) 
-	$(VISION_SDK)\ThirdParty\plugins\cloud-connection\Lib\android_arm\release (for release only) 
-	$(VISION_SDK)\ThirdParty\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\lib\armeabi-v7a
+	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\android_arm\debug (for debug only) 
+	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\android_arm\release (for release only) 
+	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\lib\armeabi-v7a
 	$(NDKROOT)/platforms\android-9\arch-arm\usr\lib
 	$(NDKROOT)/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi-v7a
 ```
@@ -140,9 +143,9 @@ xcopy /Y /D /C "CloudConnectionPlugin.vPluginD" "$(TargetDir)"
 ##### x86
 ```
 
-	$(VISION_SDK)\ThirdParty\plugins\cloud-connection\Lib\android_arm\debug (for debug only) 
-	$(VISION_SDK)\ThirdParty\plugins\cloud-connection\Lib\android_x86\release (for release only) 
-	$(VISION_SDK)\ThirdParty\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\lib\x86
+	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\android_arm\debug (for debug only) 
+	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\android_x86\release (for release only) 
+	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\lib\x86
 	$(NDKROOT)/platforms\android-9\arch-x86\usr\lib
 	$(NDKROOT)/sources/cxx-stl/gnu-libstdc++/4.8/libs/x86
 ```
@@ -154,7 +157,8 @@ xcopy /Y /D /C "CloudConnectionPlugin.vPluginD" "$(TargetDir)"
 #### google gpg plugin for android
 
 * -lgpg
-* -llog -lz
+* -llog 
+* -lz
 * -lgnustl_static
 
 
@@ -190,7 +194,7 @@ The Google Play Services APP_ID must be given in the xml in the developer build 
 ## Manual Setup iOS
 
 ### include files required
-`$(VISION_SDK)\ThirdParty\plugins\cloud-connection\Source`
+`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Source`
 
 ### Library file required
 link against libCloudConnection.a 
@@ -202,10 +206,10 @@ link against libCloudConnection.a
 
 https://developers.google.com/games/services/downloads/
 
-* From the Google Play Games C++ SDK (gpg-cpp-sdk) ( `$(VISION_SDK)\ThirdParty\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\ios` )
+* From the Google Play Games C++ SDK (gpg-cpp-sdk) ( `$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\ios` )
   * gpg.bundle
   * gpg.framework
-* From the Google+ iOS SDK (`$(VISION_SDK)\ThirdParty\plugins\cloud-connection\ThirdParty\redistsdks\google-plus-ios-sdk\V1.5.1`)
+* From the Google+ iOS SDK (`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\google-plus-ios-sdk\V1.5.1`)
   * GooglePlus.framework
   * GooglePlus.bundle
   * GoogleOpenSource.framework

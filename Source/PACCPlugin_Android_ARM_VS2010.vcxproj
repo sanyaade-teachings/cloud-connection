@@ -43,14 +43,14 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
-    <OutDir>..\Bin\$(ProjectName)\$(Configuration)\</OutDir>
+    <OutDir>..\Lib\android_arm\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
     <IntDir>..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>libCloudConnectionPlugin</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
-    <OutDir>..\Bin\$(ProjectName)\$(Configuration)\</OutDir>
+    <OutDir>..\Lib\android_arm\$(Configuration)\</OutDir>
     <IntDir>..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>libCloudConnectionPlugin</TargetName>
   </PropertyGroup>

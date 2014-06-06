@@ -8,11 +8,12 @@
     <PreBuildEvent />
     <PreBuildEvent />
     <ClCompile>
-      <AdditionalOptions>-std=c++11 -frtti %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>-std=c++11 %(AdditionalOptions)</AdditionalOptions>
       <AdditionalIncludeDirectories>../ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/android/include;./Lua/../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PrecompiledHeader>Yes</PrecompiledHeader>
       <PrecompiledHeaderFile>CloudConnectionPluginPCH.hpp</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)CloudConnectionPluginPCH.pch</PrecompiledHeaderOutputFile>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup />

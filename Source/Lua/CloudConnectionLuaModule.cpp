@@ -2060,7 +2060,7 @@ SWIGINTERN void VTypedObject_GetProperty(VTypedObject *self,char const *pszName,
       {
         BOOL b;
         pVar->GetValueDirect(self, (void*) &b, true);
-        env->AddReturnValueBool(b);
+        env->AddReturnValueBool(b != 0);
       }
       break;
       case VULPTYPE_VECTOR_INT:

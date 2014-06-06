@@ -28,6 +28,7 @@
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
     <ConfigurationType>StaticLibrary</ConfigurationType>
     <AndroidArch>x86</AndroidArch>
+    <PlatformToolset>x86-4.6</PlatformToolset>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
@@ -38,20 +39,20 @@
     <Import Project="PACCPlugin.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
-    <Import Project="C:\Havok\AnarchySDK\Build\Vision\PropertySheets\EnginePluginDX9_win32_vs2010_anarchyDebug.props" />
+    <Import Project="C:\Havok\AnarchySDK\Build\Vision\PropertySheets\EnginePlugin_android_x86_vs2010_anarchyRelease.props" />
     <Import Project="PACCPlugin_Android_Arm_x86.props" />
     <Import Project="PACCPlugin.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
-    <OutDir>..\Bin\$(ProjectName)\$(Configuration)\</OutDir>
+    <OutDir>..\Lib\android_x86\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
     <IntDir>..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>libCloudConnectionPlugin</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
-    <OutDir>..\Bin\$(ProjectName)\$(Configuration)\</OutDir>
+    <OutDir>..\Lib\android_x86\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
     <IntDir>..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
@@ -60,12 +61,18 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
     <ClCompile />
     <ClCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>../ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/android/include;./Lua/../;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalOptions>-std=c++11 -frtti %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalOptions>-std=c++11 %(AdditionalOptions)</AdditionalOptions>
       <PrecompiledHeaderFile>CloudConnectionPluginPCH.hpp</PrecompiledHeaderFile>
       <PrecompiledHeader>Yes</PrecompiledHeader>
       <PrecompiledHeaderOutputFile>$(IntDir)CloudConnectionPluginPCH.pch</PrecompiledHeaderOutputFile>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
+    <ClCompile>
+      <AdditionalOptions>-std=c++11 %(AdditionalOptions)</AdditionalOptions>
+      <Warnings>NormalWarnings</Warnings>
+      <ObjectFileName>$(IntDir)%(FileName).o</ObjectFileName>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>

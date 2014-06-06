@@ -83,7 +83,7 @@
     <LinkIncremental>true</LinkIncremental>
     <TargetExt>.vPluginD</TargetExt>
     <TargetName>CloudConnectionPlugin</TargetName>
-    <OutDir>..\Bin\$(ProjectName)\$(Configuration)\</OutDir>
+    <OutDir>..\Lib\$(ProjectName)\$(Configuration)\</OutDir>
     <IntDir>..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

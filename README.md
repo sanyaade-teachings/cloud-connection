@@ -124,7 +124,7 @@ xcopy /Y /D /C "CloudConnectionPlugin.vPluginD" "$(TargetDir)"
 ##### Arm
 ```
 
-	cloud-connection\ ***TODO: Arm Lib Folder path**
+	cloud-connection\Lib\android_arm\debug | cloud-connection\Lib\android_arm\release 
 	cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\lib\armeabi-v7a
 	$(NDKROOT)/platforms\android-9\arch-arm\usr\lib
 	$(NDKROOT)/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi-v7a
@@ -133,7 +133,7 @@ xcopy /Y /D /C "CloudConnectionPlugin.vPluginD" "$(TargetDir)"
 ##### x86
 ```
 
-	cloud-connection\ ***TODO: x86 Lib Folder path**
+	cloud-connection\Lib\android_arm\debug | cloud-connection\Lib\android_x86\release 
 	cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\lib\x86
 	$(NDKROOT)/platforms\android-9\arch-x86\usr\lib
 	$(NDKROOT)/sources/cxx-stl/gnu-libstdc++/4.8/libs/x86

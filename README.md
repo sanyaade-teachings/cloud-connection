@@ -7,7 +7,7 @@ This plugin for the [Project Anarchy game engine](http://www.projectanarchy.com)
  - [Requirements](#requirements)
  - [Configure Your Game Service](#configure-your-game-service) 
  - [Add Achievements and Leaderboards](#add-achievements-and-leaderboards)
- - **TODO - SETUP**
+ - [Plugin Installation](#plugin-installation)
  - [Using the Plugin](#using-the-plugin)
  - [Building for Android](#building-for-android)
  - [Buidling for iOS](#building-for-ios)
@@ -22,6 +22,7 @@ The Project Anarchy Cloud Connection Plugin provides several clients to allow yo
 * submit scores to leaderboards
 * show achievements
 * show leaderboards
+* get a specific achievement
 
 ### Dummy Client (Win32 / vForge)
 This client performs no actions and creates no connections. It is used for testing and development. This will allow you to prototype code in Win32 & vForge before testing it out on either iOS or Android.
@@ -87,134 +88,13 @@ to your game in the Google Play Developer Console. For each achievement and
 leaderboard you configure, make sure to note the corresponding **achievement ID** or **leaderboard ID**, as those will be needed when making the API calls. 
 Achievement and leaderboard IDs are alphanumeric strings (e.g. "Cgkx9eiuwi8_AQ").
 
-## Installation
+## Plugin Installation
 
-The plugin should be downloaded to the following folder:
+Please refer to one of the following readme files on how to install the plugin:
 
-`%HAVOK_THIRDPARTY_DIR%\plugins\cloud-connection`
+[Android Installation](README_Installation_Android.md)
 
-this folder is an alias of the following...
-
-`%VISION_SDK%\ThirdParty\plugins\cloud-connection`
-
-You may need to make the "plugins" folder if it doesn't already exist 
-
-## Manual Setup Android
-
-### Compiler params required to build with the google gpg pluging for android
-* -std=gnu++11 
-* -frtti 
-
-### PreProcessor Definitions required in developer plugin
-* CLOUDCONNECTIONPLUGIN_IMPORTS in both the developer plugin and application
-
-### Win32 dll Only 
-* Cloud Connection pluging dll must be coped into the exe target dir in the Post-Build Event step
-xcopy /Y /D /C "CloudConnectionPlugin.vPluginD" "$(TargetDir)"
-
-
-###include folders required
-
-#### All platforms
-
-`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Source`
-
-
-#### Android
-```
-
-	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\include
-	$(NDKROOT)/platforms/android-9/arch-arm/usr/include
-	$(NDKROOT)/sources/android/native_app_glue
-```
-
-###lib folders required
-
-##### Arm
-```
-
-	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\android_arm\debug (for debug only) 
-	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\android_arm\release (for release only) 
-	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\lib\armeabi-v7a
-	$(NDKROOT)/platforms\android-9\arch-arm\usr\lib
-	$(NDKROOT)/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi-v7a
-```
-
-##### x86
-```
-
-	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\android_arm\debug (for debug only) 
-	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\android_x86\release (for release only) 
-	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\lib\x86
-	$(NDKROOT)/platforms\android-9\arch-x86\usr\lib
-	$(NDKROOT)/sources/cxx-stl/gnu-libstdc++/4.8/libs/x86
-```
-
-### Libraries required for Linking
-#### Cloud Connection Plugin
-* -lCloudConnectionPlugin
-
-#### google gpg plugin for android
-
-* -lgpg
-* -llog 
-* -lz
-* -lgnustl_static
-
-
-#### already included by Project Anarchy project
-* -landroid 
-* -lEGL 
-* -lGLESv1_CM
-
-#### Android Manifest
-Requires a customised Manifest from `cloud-connection\Data\Android\AndroidManifest.xml`
-
-Add these lines to your AndroidManifest.xml
-
-```xml
-
-	<meta-data android:name="com.google.android.gms.games.APP_ID" android:value="@string/app_id" />`
-	<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
-```
-
-#### Android Activity		
-Extend activity from this class to have pre-Android 4.0 support `com.havok.Vision.CloudConnectionLifeCycleSupport`
-
-		
-#### Android Google Play Services Java Library
-Android build is reliant on this library (contains classes and resources), it must be compiled correctly into the final .apk
-`$(VISION_SDK)\ThirdParty\plugins\cloud-connection\ThirdParty\redistsdks\google-play-services_lib\V4323000`
-
-The Google Play Services APP_ID must be given in the xml in the developer build and compiled correctly into the final .apk
-`res\values\ids.xml` - contains the `APP_ID` that must be changed for the developers Google Application
-
-`<string name="app_id">REPLACE_ME</string>`
-
-## Manual Setup iOS
-
-### include files required
-`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Source`
-
-### Library file required
-link against libCloudConnection.a 
-
-### In project settings ‘Custom compiler flags’
-`-std=c++98` must be changed for `-std=c++11`
-
-### Third Party Library, Framework & Bundle Requirements
-
-https://developers.google.com/games/services/downloads/
-
-* From the Google Play Games C++ SDK (gpg-cpp-sdk) ( `$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\ios` )
-  * gpg.bundle
-  * gpg.framework
-* From the Google+ iOS SDK (`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\google-plus-ios-sdk\V1.5.1`)
-  * GooglePlus.framework
-  * GooglePlus.bundle
-  * GoogleOpenSource.framework
-
-
+[iOS Installation](README_Installation_iOS.md)
 
 ## Using the Plugin
 
@@ -678,6 +558,18 @@ Create your own class that extends from `CloudConnectionClient` - this class has
 Once you have your own class that implements the `CloudConnectionClient` then you should alter the static method `ClientFactory::CreateCloudConnectionClient()` to return an instance of your client under the correct circumstances e.g. only for Win32 platform. 
 
 See `DummyClient` for an example of an implementation of `CloudConnectionClient` that performs no actions other than debug logging and callbacks.
+
+## Known Issues
+
+### Android
+
+When compiling for Android you may see the warning `warning : command line option '-std=c++11' is valid for C++/ObjC++ but not for C [enabled by default]` - C++11 is required by the Google Native Games SDK and it is not used by the plugin itself.
+
+`__LP64__` warnings when compiling with Android NDK r9d - [Please see this issue](https://code.google.com/p/android/issues/detail?id=69975) which is being resolved in a future release of the Android NDK
+
+### All Platforms
+
+`CCAchievemet::LastModified()` - This call returns invalid values for any Google Game Services, it appears this is not implemented by Google.
 
 
 

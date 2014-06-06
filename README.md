@@ -87,7 +87,13 @@ to your game in the Google Play Developer Console. For each achievement and
 leaderboard you configure, make sure to note the corresponding **achievement ID** or **leaderboard ID**, as those will be needed when making the API calls. 
 Achievement and leaderboard IDs are alphanumeric strings (e.g. "Cgkx9eiuwi8_AQ").
 
+## Installation
 
+The plugin should be downloaded to the following folder:
+
+`%VISION_SDK%\ThirdParty\plugins\cloud-connection`
+
+You may need to make the "plugins" folder if it doesn't already exist 
 
 ## Manual Setup Android
 
@@ -108,13 +114,13 @@ xcopy /Y /D /C "CloudConnectionPlugin.vPluginD" "$(TargetDir)"
 #### All platforms
 ```
 
-	cloud-connection\Source
+	$(VISION_SDK)\ThirdParty\plugins\cloud-connection\Source
 ```
 
 #### Android
 ```
 
-	cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\include
+	$(VISION_SDK)\ThirdParty\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\include
 	$(NDKROOT)/platforms/android-9/arch-arm/usr/include
 	$(NDKROOT)/sources/android/native_app_glue
 ```
@@ -124,8 +130,9 @@ xcopy /Y /D /C "CloudConnectionPlugin.vPluginD" "$(TargetDir)"
 ##### Arm
 ```
 
-	cloud-connection\Lib\android_arm\debug | cloud-connection\Lib\android_arm\release 
-	cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\lib\armeabi-v7a
+	$(VISION_SDK)\ThirdParty\plugins\cloud-connection\Lib\android_arm\debug (for debug only) 
+	$(VISION_SDK)\ThirdParty\plugins\cloud-connection\Lib\android_arm\release (for release only) 
+	$(VISION_SDK)\ThirdParty\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\lib\armeabi-v7a
 	$(NDKROOT)/platforms\android-9\arch-arm\usr\lib
 	$(NDKROOT)/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi-v7a
 ```
@@ -133,8 +140,9 @@ xcopy /Y /D /C "CloudConnectionPlugin.vPluginD" "$(TargetDir)"
 ##### x86
 ```
 
-	cloud-connection\Lib\android_arm\debug | cloud-connection\Lib\android_x86\release 
-	cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\lib\x86
+	$(VISION_SDK)\ThirdParty\plugins\cloud-connection\Lib\android_arm\debug (for debug only) 
+	$(VISION_SDK)\ThirdParty\plugins\cloud-connection\Lib\android_x86\release (for release only) 
+	$(VISION_SDK)\ThirdParty\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\lib\x86
 	$(NDKROOT)/platforms\android-9\arch-x86\usr\lib
 	$(NDKROOT)/sources/cxx-stl/gnu-libstdc++/4.8/libs/x86
 ```
@@ -172,7 +180,7 @@ Extend activity from this class to have pre-Android 4.0 support `com.havok.Visio
 		
 #### Android Google Play Services Java Library
 Android build is reliant on this library (contains classes and resources), it must be compiled correctly into the final .apk
-`\cloud-connection\ThirdParty\redistsdks\google-play-services_lib\V4323000`
+`$(VISION_SDK)\ThirdParty\plugins\cloud-connection\ThirdParty\redistsdks\google-play-services_lib\V4323000`
 
 The Google Play Services APP_ID must be given in the xml in the developer build and compiled correctly into the final .apk
 `res\values\ids.xml` - contains the `APP_ID` that must be changed for the developers Google Application
@@ -182,7 +190,7 @@ The Google Play Services APP_ID must be given in the xml in the developer build 
 ## Manual Setup iOS
 
 ### include files required
-`cloud-connection\Source`
+`$(VISION_SDK)\ThirdParty\plugins\cloud-connection\Source`
 
 ### Library file required
 link against libCloudConnection.a 
@@ -194,10 +202,10 @@ link against libCloudConnection.a
 
 https://developers.google.com/games/services/downloads/
 
-* From the Google Play Games C++ SDK (gpg-cpp-sdk) ( \cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\ios )
+* From the Google Play Games C++ SDK (gpg-cpp-sdk) ( `$(VISION_SDK)\ThirdParty\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\ios` )
   * gpg.bundle
   * gpg.framework
-* From the Google+ iOS SDK (\cloud-connection\ThirdParty\redistsdks\google-plus-ios-sdk\V1.5.1)
+* From the Google+ iOS SDK (`$(VISION_SDK)\ThirdParty\plugins\cloud-connection\ThirdParty\redistsdks\google-plus-ios-sdk\V1.5.1`)
   * GooglePlus.framework
   * GooglePlus.bundle
   * GoogleOpenSource.framework

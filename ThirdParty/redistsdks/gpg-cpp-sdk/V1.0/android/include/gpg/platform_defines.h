@@ -16,7 +16,7 @@
 
 #define GPG_ANDROID 1
 
-#elif __APPLE__
+#elif defined(__APPLE__)
 
 #include <TargetConditionals.h>
 #if TARGET_IPHONE_SIMULATOR || TARGET_OS_IPHONE

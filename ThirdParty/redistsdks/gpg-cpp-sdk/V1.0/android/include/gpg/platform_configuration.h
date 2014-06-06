@@ -13,7 +13,7 @@
 
 #include "gpg/platform_defines.h"
 
-#if GPG_IOS
+#if defined(GPG_IOS)
 #include "gpg/ios_platform_configuration.h"
 namespace gpg {
 

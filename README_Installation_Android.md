@@ -95,20 +95,6 @@ This should match with the name of the native binary that was built in Visual St
 	...
 ```
 
-
-
-### Enable Android 2.3 / 3.x Support If Required
-
-To support Google Play Games services correctly on handsets that are less than Android 4.0 then you should extend your activity from this class `com.havok.Vision.CloudConnectionLifeCycleSupport`
-
-```xml
-
-        <activity android:name="com.havok.Vision.CloudConnectionLifeCycleSupport"
-		...
-```
-
-If you have your own custom Java Activity already then you can extend it from `com.havok.Vision.CloudConnectionLifeCycleSupport`
-
 ### Set Your Google Application ID
 
 There is a resource file located at `$(MY_GAME)\Source\$(MY_GAME_APPLICATION)\Platform\Android\res\values\ids.xml` in which you should put your **Google Application ID** that you obtained when you set up google play game services.
@@ -118,6 +104,17 @@ There is a resource file located at `$(MY_GAME)\Source\$(MY_GAME_APPLICATION)\Pl
 	<string name="app_id">REPLACE_ME</string>
 ```
 
+### Enable Android 2.3 / 3.x Support If Required
+
+To support Google Play Games services correctly on handsets that are less than Android 4.0 then you should use the activity class `com.havok.Vision.CloudConnectionLifeCycleSupport`
+
+```xml
+
+        <activity android:name="com.havok.Vision.CloudConnectionLifeCycleSupport"
+		...
+```
+
+If you have your own custom Java Activity already then you can extend it from `com.havok.Vision.CloudConnectionLifeCycleSupport`
 
 ### Customising the Build Process
 
@@ -219,7 +216,7 @@ Extend activity from this class to have pre-Android 4.0 support `com.havok.Visio
 		
 #### Android Google Play Services Java Library
 Android build is reliant on this library (contains classes and resources), it must be compiled correctly into the final .apk
-`$(VISION_SDK)\ThirdParty\plugins\cloud-connection\ThirdParty\redistsdks\google-play-services_lib\V4323000`
+`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Source\platform\Android\google-play-services_lib\V4323000`
 
 The Google Play Services APP_ID must be given in the xml in the developer build and compiled correctly into the final .apk
 `res\values\ids.xml` - contains the `APP_ID` that must be changed for the developers Google Application

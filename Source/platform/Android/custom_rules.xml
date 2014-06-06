@@ -13,7 +13,35 @@
     -->
 <project>    
 	<target name="-pre-build">
-	    <echo>**** -pre-build *****</echo>	   
+	   <echo>**** -pre-build *****</echo>
+     
+     <echo>arch= ${arch}</echo>
+     <echo>mainlib= ${mainlib}</echo>
+     
+    <!-- copy the native binaries that were built in visual studio into the /libs folder -->       
+    
+    <!-- TODO : copy the lib to correct folder (arm or x86) -->
+    <copy todir="./libs/armeabi-v7a">
+      <fileset dir="${mainlib}">
+      </fileset>
+    </copy>      
+    
+    <!-- TODO : copy any other .so libs required to run the game -->
+    
+    <!-- TODO : emulate the asset copy system that from deployAndroid.py "def copyAssets(options, fatOptions=None):" -->
+    
+    <!-- copy the game assets /Assets folder -->       
+    <copy todir="./assets/Assets">
+      <fileset dir="../../../../Assets/">
+      </fileset>
+    </copy>      
+    
+    <!-- copy the vision base assets /Data folder -->       
+    <copy todir="./assets/Data">
+      <fileset dir="../../../../Data/">
+      </fileset>
+    </copy>      
+    
 	</target>
 	
 	<target name="-pre-compile">

@@ -10,3 +10,4 @@
 *.properties text eol=crlf
 *.java text eol=crlf
 *.lua text eol=crlf
+*.aidlt text eol=crlf

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- unit test file for VisionCopyAssetsTask ANT Task -->
+<project> 
+
+  <!-- adding VisionCopyAssetsTask to the tasks -->
+  <taskdef name="VisionCopyAssets" classname="com.havok.Vision.anttasks.VisionCopyAssetsTask"/>
+
+  <!-- copy the managed resources, this source folder does have the .aidlt file -->
+  <target name="copyManagedResources">
+            
+    <VisionCopyAssets DestinationPath="..\toAssetTest">
+      <fileset dir="..\fromAssetTest">
+        <include name="**"/>
+        <exclude name="**/AssetMgmt_data/thumbnails/*"/>
+        <exclude name="**/DX9.vShaderBin"/>
+      </fileset>
+    </VisionCopyAssets>
+    
+  </target>
+   
+  <!-- copy the unmanaged resources, this source folder does not have the .aidlt file -->
+  <target name="copyUnManagedResources">
+   
+    <VisionCopyAssets DestinationPath="..\toAssetTest">
+      <fileset dir="..\fromAssetTest_NoProfile">
+        <include name="**"/>
+        <exclude name="**/testfile.excludeme"/>        
+      </fileset>
+    </VisionCopyAssets>
+    
+  </target>
+      
+  <!-- DestinationPath has not been set, should throw a build exception -->
+  <target name="noDestinationPathSet">
+  
+    <VisionCopyAssets>
+      <fileset dir="..\fromAssetTest_NoProfile">
+        <include name="**"/>
+        <exclude name="**/testfile.excludeme"/>        
+      </fileset>
+    </VisionCopyAssets>
+    
+  </target>
+  
+    <!-- SourcePath dir has been to an invalid folder, should throw a build exception -->
+  <target name="invalidSourcePathSet">
+  
+    <VisionCopyAssets DestinationPath="..\toAssetTest">
+      <fileset dir="..\path\to\src\does\not\exist\anywhere">
+        <include name="**"/>
+        <exclude name="**/testfile.excludeme"/>        
+      </fileset>
+    </VisionCopyAssets>
+    
+  </target>
+  
+  <target name="cleanup">
+    <echo>cleanup - done</echo>
+    
+  </target>  
+</project>

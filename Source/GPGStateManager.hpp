@@ -104,6 +104,8 @@ private:
   /// \brief callback when the achievement manger fetches achievement data
   /// \param response Contains data and response status for a single achievement.
   static void OnFetchAchievement(gpg::AchievementManager::FetchResponse response);
+  /// \brief returns the AuthStatus as a human readable value
+  static const char* AuthStatusToName( gpg::AuthStatus status );
 
   static bool is_auth_in_progress_;
   static std::unique_ptr<gpg::GameServices> game_services_;

@@ -153,7 +153,7 @@ void StateManager::OnAuthStarted(gpg::AuthOperation op)
 }
 
 void StateManager::OnAuthFinished(gpg::AuthOperation op, gpg::AuthStatus status) {
-  hkvLog::Debug("Sign in finished with a result of %d", status);
+  hkvLog::Debug("Sign in finished with a result of %d, %s", status, AuthStatusToName(status) );
   is_auth_in_progress_ = false;
   CloudConnectionCallbackManager::OnAuthActionFinished.TriggerCallbacks();
   
@@ -276,6 +276,33 @@ unsigned int StateManager::GPGAchStateToCCAchState( gpg::AchievementState GPGPSt
     hkvLog::Warning(" GPGAchStateToCCAchState - the state conversion was not handled");
   }
   return ccstate;
+}
+
+/// \brief returns the AuthStatus as a human readable value
+const char* StateManager::AuthStatusToName( gpg::AuthStatus status )
+{
+  if ( status == gpg::AuthStatus::VALID )
+  {
+    return "VALID";
+  }
+  else if ( status == gpg::AuthStatus::ERROR_INTERNAL )
+  {
+    return "ERROR_INTERNAL";
+  }
+  else if ( status == gpg::AuthStatus:: ERROR_NOT_AUTHORIZED  )
+  {
+    return "ERROR_NOT_AUTHORIZED";
+  }
+  else if ( status == gpg::AuthStatus:: ERROR_VERSION_UPDATE_REQUIRED )
+  {
+    return "ERROR_VERSION_UPDATE_REQUIRED";
+  }
+  else if ( status == gpg::AuthStatus:: ERROR_TIMEOUT )
+  {
+    return "ERROR_TIMEOUT";
+  }  
+
+  return "UNKNOWN_ERROR";
 }
 
 #if defined(_VISION_ANDROID)

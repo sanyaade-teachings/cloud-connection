@@ -134,6 +134,8 @@ The [Android ANT Build Process Documentation](http://developer.android.com/tools
 This section describes all the settings you require to setup the plugin manually if you do not want to use the property sheets.
 
 #### Compiler params required to build with the google gpg pluging for android
+* NDK tool chain version must be at least 4.8 for x86 build
+* NDK tool chain version must be at least 4.6 for Arm build
 * -std=gnu++11 
 * -frtti 
 

@@ -36,6 +36,7 @@ Calls to methods in the client will output debug information to the Vision log f
 
 ### Android
 * Android NDK r9d or greater (NDK previous to r9d will not work)
+* [Apache Ant](http://ant.apache.org/) 1.8 or later
 * Build	**MUST** be compiled with C++11 support ( -std=c++11 )
 * Build **MUST** to be compiled with RTTI support ( -frtti )
 

@@ -66,6 +66,12 @@
     </Lib>
     <PreBuildEvent />
   </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
+    <Lib>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="CCAchievement.hpp" />
     <ClInclude Include="ClientFactory.hpp" />

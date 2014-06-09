@@ -13,7 +13,7 @@
 
     <target name="compile" description="Compiles the Tasks" depends="clean">
         <mkdir dir="${classes.dir}"/>
-        <javac srcdir="${source.dir}" destdir="${classes.dir}" includeAntRuntime="yes"/>
+        <javac srcdir="${source.dir}" destdir="${classes.dir}" target="1.6" source="1.6" includeAntRuntime="yes"/>
     	<!-- copy the task definitions into the classes folder -->
     	<copy 
     		file="${source.dir}/com/havok/Vision/anttasks/visionanttasks.properties"

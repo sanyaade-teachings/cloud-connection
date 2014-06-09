@@ -126,7 +126,102 @@ This file has hooks in it to the Android build process and you should modify thi
 
 ### Futher Reading
 
-The [Android ANT Build Process Documentation](http://developer.android.com/tools/building/building-cmdline.html) is available online for further reading on how the build process works.
+The [Google Android ANT Build Process Documentation](http://developer.android.com/tools/building/building-cmdline.html) is available online for further reading on how the build process works.
+
+## Vision ANT Tasks
+
+The following Vision ANT Tasks can be made available to an ANT build script by including the task definitions specified in the `VisionAntTasks.jar` 
+
+```xml
+
+	<!-- adding the Vision ANT Tasks task definitions -->
+	<taskdef resource="com/havok/Vision/anttasks/visionanttasks.properties">
+		<classpath>
+		  <pathelement location="ant/VisionAntTasks/VisionAntTasks.jar"/>
+		</classpath>
+	</taskdef>  
+```
+
+### VisionCopyLib
+
+Copies an native library (.so) file into a the correct sub-folder for the processor architecture and removes any unneeded symbols from the file to reduce the size. It will also prefix the library with "lib" if it does not have that prefix already.
+
+**Parameters:**
+
+* `Arch` - REQUIRED - x86, arm or armv7  
+* `Lib` - REQUIRED - The path to the .so file to be copied
+* `ToDir`- REQUIRED - The path to the folder where the .so will be copied to (and placed in an the appropriate architecture sub-folder)
+* `Strip` - OPTIONAL - true or false. true to strip unneeded symbols, false to leave as is/>
+
+**Example:**
+
+This example will copy `d:/files/mygame/bin/x86/MyGame.so` to `d:/output/libs/x86/libMyGame.so` and also remove any unneeded symbols from  `libMyGame.so`
+
+```xml
+   
+	<VisionCopyLib 
+	  Arch="x86" 
+	  Lib="d:/files/mygame/bin/MyGame.so"
+	  ToDir="d:/output/libs"
+	  Strip="true"/>
+```
+
+### VisionCopyAssets
+
+Copies assets from one folder to another. Is aware of the Vision asset management system and will try to exclude files that are not relevant to the android profile (if one is found in `AssetMgmt_data/android.aidlt` ).
+
+**Parameters:**
+
+* `DestinationPath` - REQUIRED - The path to a folder where the assets will be copied
+* `fileset` - REQUIRED - A source folder to be copied. You can use the excludes to omit any custom folders or files (see [ANT FileSet Type](http://ant.apache.org/manual/Types/fileset.html))
+
+**Example 1:**
+
+Will copy the assets into `./assets/Assets` from `../../../../Assets/` while excluding the Vision asset management data thumbnails folder.  `./assets/Assets` will be created if it doesn't exist.
+
+```xml
+
+	<VisionCopyAssets DestinationPath="./assets">
+	  <fileset dir="../../../../Assets/">
+	    <include name="**"/>
+	    <exclude name="**/AssetMgmt_data/thumbnails/*"/>
+	  </fileset>
+	</VisionCopyAssets>
+
+```
+
+**Example 2:**
+
+Will copy the assets into `./assets/Data` from `../../../../Data/` while excluding the Vision asset management data thumbnails folder. `./assets/Data` will be created if it doesn't exist.
+
+```xml
+
+    <VisionCopyAssets DestinationPath="./assets">
+      <fileset dir="../../../../Data/">
+        <include name="**"/>
+        <exclude name="**/AssetMgmt_data/thumbnails/*"/>
+      </fileset>
+    </VisionCopyAssets>
+
+```
+
+### VisionStripLib
+
+Strips all unneeded symbols from the native library (.so) to reduce size and obfuscate file. This will overwrite the input library file.
+ 
+**Parameters:**
+
+* `Arch` - REQUIRED - x86, arm or armv7  
+* `Lib` - REQUIRED - The path to the .so file to be stripped
+
+**Example**
+
+Removes any unneeded symbols from `MyGame.so`, overwriting `MyGame.so` with the output.
+
+```xml
+
+	<VisionStripLib Arch="x86" Lib="d:/files/mygame/bin/MyGame.so">
+```
 
 
 ## Manual Setup Android

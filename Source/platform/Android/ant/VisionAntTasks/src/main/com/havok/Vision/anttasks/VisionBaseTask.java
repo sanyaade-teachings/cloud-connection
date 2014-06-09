@@ -38,7 +38,24 @@ public abstract class VisionBaseTask extends Task
    */
   public enum Architecture
   {
-    ARCH_ARM, ARCH_X86
+    ARCH_ARM("armeabi-v7a"), 
+    ARCH_X86("x86");
+        
+    private Architecture( String libFolder )
+    {
+      m_libFolder = libFolder;
+    }
+        
+    /** the name of the sub-folder where the lib's for this arch will be stored in the jar 'armeabi-v7a' or 'x86'*/
+    private String m_libFolder;
+    
+    /**
+     * @return  the name of the sub-folder where the lib's for this arch will be stored in the jar 'armeabi-v7a' or 'x86'
+     */
+    public String getSubFolderName()
+    {
+      return m_libFolder;
+    }
   }
 
   /**

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- unit test file for VisionCopyLibTask ANT Task -->
+<project> 
+
+  <!-- adding VisionStripLibTask to the tasks -->
+  <taskdef name="VisionCopyLib" classname="com.havok.Vision.anttasks.VisionCopyLibTask"/>
+
+  <!-- test can successfully strip the symbols from an Arm native library  -->
+  <target name="stripArmLib">
+            
+    <VisionCopyLib 
+      ToDir="..\testlibs"
+      Lib="..\testlibs\PACCPTestGameApplication.so"
+      Arch="arm" />
+    
+  </target>
+  
+  <target name="cleanup">
+    <echo>cleanup - done</echo>    
+  </target>  
+</project>

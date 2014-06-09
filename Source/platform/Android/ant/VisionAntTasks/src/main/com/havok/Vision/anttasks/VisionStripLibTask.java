@@ -14,9 +14,9 @@ import org.apache.tools.ant.BuildException;
 public class VisionStripLibTask extends VisionBaseTask
 {
   /* This is the fully name of the processor architecture for the compiled native binary we are going to process */
-  private Architecture m_architecture = null;
-  /** this is the libraray that we are going to process */
-  private File m_library = null;
+  protected Architecture m_architecture = null;
+  /** this is the library that we are going to process */
+  protected File m_library = null;
   
   /** ANT Attribute - Required 
    * This is the fully name of the processor architecture for the compiled native binary we are going to process */

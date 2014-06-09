@@ -30,22 +30,21 @@
 	<target name="-pre-build">
 	   <echo>**** -pre-build *****</echo>
      
-     <fail unless="${arch}">The arch value has not been set!</fail>
-     <fail unless="${mainlib}">The mainlib value has not been set!</fail>
-     <fail unless="${extranativelib}">The extranativelib value has not been set!</fail>
+    <fail unless="arch">The arch value has not been set!</fail>
+    <fail unless="mainlib">The mainlib value has not been set!</fail>
+    <fail unless="extranativelib">The extranativelib value has not been set!</fail>
      
      <echo>arch= ${arch}</echo> <!-- should be armeabi-v7a -->
      <echo>mainlib= ${mainlib}</echo>
      <echo>extranativelib= ${extranativelib}</echo>
-     
-    <!-- copy the native binaries that were built in visual studio into the /libs folder -->     
-    <!-- copy the lib to correct folder (arm or x86) -->
-    <copy file="${mainlib}" todir="./libs/${arch}"/>
-    
-    <!-- strip the symbols from the main lib to shrink it -->   
-    <VisionStripLib Arch="${arch}" Lib="${mainlib}"/>
-    
-    <!-- TODO: rename lib with "lib" prefix -->
+         
+    <!-- strip the symbols from the main lib to shrink it, copy it to the libs folder 
+    (inside the correct sub-folder) and prefix with "lib" if needed -->   
+    <VisionCopyLib 
+      Arch="${arch}" 
+      Lib="${mainlib}"
+      ToDir="./libs"
+      Strip="true"/>
     
     <!-- copy any other .so libs required to run the game (such as fmod libs) --> 
     <foreach target="copyNativeLib" param="nativelibtocopy" list="${extranativelib}" delimiter="*"/>
@@ -68,9 +67,16 @@
         
 	</target>
   
-  <!-- copy the file ${nativelibtocopy} to the libs folder  -->
+  <!-- copy the file ${nativelibtocopy} to the libs folder, these are the
+  additional .so libraries require by the build, such as the FMOD libaries-->
   <target name="copyNativeLib">
-    <copy file="${nativelibtocopy}" todir="./libs/${arch}"/>
+        
+    <VisionCopyLib 
+      Arch="${arch}" 
+      Lib="${nativelibtocopy}"
+      ToDir="./libs"
+      Strip="false"/>
+    
   </target>
   
 	<target name="-pre-compile">

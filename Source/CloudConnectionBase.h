@@ -14,10 +14,14 @@
 
 //Android and iOS required includes for use of cloud connection C++ plugin
 
-//required to initialise the GPG state manager
+//required to initialise the GPG state manager on iOS and Android
 #include "GPGStateManager.hpp"
-#include "gpg/android_initialization.h"
 #include "gpg/debug.h"
+
+//required to initialise on Android only
+#if defined(_VISION_ANDROID)
+#include "gpg/android_initialization.h"
+#endif
 
 //required to statically link the plugin
 VIMPORT IVisPlugin_cl* GetEnginePlugin_CloudConnectionPlugin();

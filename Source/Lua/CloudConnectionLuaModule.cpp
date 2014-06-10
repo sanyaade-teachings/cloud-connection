@@ -8,7 +8,7 @@
  * interface file instead. 
  * ----------------------------------------------------------------------------- */
 
-#include <CloudConnectionPluginPCH.hpp>
+#include "CloudConnectionPluginPCH.hpp"
 #include <Vision/Runtime/EnginePlugins/VisionEnginePlugin/Scripting/VScriptIncludes.hpp>
 
 #ifndef _VISION_DOC

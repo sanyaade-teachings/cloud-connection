@@ -83,7 +83,7 @@
     <LinkIncremental>true</LinkIncremental>
     <TargetExt>.vPluginD</TargetExt>
     <TargetName>CloudConnectionPlugin</TargetName>
-    <OutDir>..\Lib\$(ProjectName)\$(Configuration)\</OutDir>
+    <OutDir>..\Lib\win32_vs2010\$(Configuration)\</OutDir>
     <IntDir>..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -100,7 +100,7 @@
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <ImportLibrary>..\Lib\$(ProjectName)\$(Configuration)\$(TargetName)D.lib</ImportLibrary>
+      <ImportLibrary>..\Lib\win32_vs2010\$(Configuration)\$(TargetName)D.lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

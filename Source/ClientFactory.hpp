@@ -21,17 +21,19 @@ public:
     if ( Vision::Editor.IsInEditor() ) 
     {
       pClient = new DummyClient();
-    }
-  
+    }  
+    else
+    {
 #if defined(_VISION_ANDROID)
-    pClient = new GPGAndroidClient();
+      pClient = new GPGAndroidClient();
 #elif defined(_VISION_IOS)
-    pClient = new GPGIOSClient();
+      pClient = new GPGIOSClient();
 #elif defined(_VISION_WIN32)
-    pClient = new DummyClient();
+      pClient = new DummyClient();
 #else
-    #error Target platform not supported for 'Google Play Games' in 'Project Anarchy Cloud Connection Plugin'
+      #error Target platform not supported for 'Google Play Games' in 'Project Anarchy Cloud Connection Plugin'
 #endif
+    }
 
     return pClient;
   }

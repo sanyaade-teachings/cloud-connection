@@ -1,3 +1,5 @@
+#include "CloudConnectionPluginPCH.hpp"
+
 #if defined(_VISION_ANDROID) || defined(_VISION_IOS)
 
 #if defined(_VISION_ANDROID)

@@ -16,7 +16,13 @@ The plugin should be downloaded from GitHub to the following folder (you will ne
 `$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Source`
 
 ### Library file required
-link against libCloudConnection.a 
+link against library `libCloudConnection.a`
+ 
+`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\iOS\Release-iphone\libCloudConnection.a`
+
+or
+
+`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\iOS\Debug-iphone\libCloudConnection.a`
 
 ### In project settings ‘Custom compiler flags’
 `-std=c++98` must be changed for `-std=c++11`

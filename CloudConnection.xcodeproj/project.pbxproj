@@ -23,6 +23,7 @@
 		3A14565519323A8F006D3A9B /* GPGAndroidClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A14564519323A8F006D3A9B /* GPGAndroidClient.cpp */; };
 		3A14565619323A8F006D3A9B /* GPGIOSClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A14564719323A8F006D3A9B /* GPGIOSClient.cpp */; };
 		3A14565719323A8F006D3A9B /* GPGStateManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A14564919323A8F006D3A9B /* GPGStateManager.cpp */; };
+		3A6C974E194746D500FFA68A /* CCAchievement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A6C974C194746D500FFA68A /* CCAchievement.cpp */; };
 		3AA0D89F19334BBC00C224E7 /* CloudConnectionLuaModule.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0D89E19334BBC00C224E7 /* CloudConnectionLuaModule.cpp */; };
 /* End PBXBuildFile section */
 
@@ -394,6 +395,8 @@
 		3A1457EF19325216006D3A9B /* gpg.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = gpg.bundle; sourceTree = "<group>"; };
 		3A1457F019325216006D3A9B /* gpg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = gpg.framework; sourceTree = "<group>"; };
 		3A1457F119325216006D3A9B /* licenses.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = licenses.txt; sourceTree = "<group>"; };
+		3A6C974C194746D500FFA68A /* CCAchievement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CCAchievement.cpp; path = Source/CCAchievement.cpp; sourceTree = "<group>"; };
+		3A6C974D194746D500FFA68A /* CCAchievement.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = CCAchievement.hpp; path = Source/CCAchievement.hpp; sourceTree = "<group>"; };
 		3AA0D89E19334BBC00C224E7 /* CloudConnectionLuaModule.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CloudConnectionLuaModule.cpp; path = Source/Lua/CloudConnectionLuaModule.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -457,6 +460,8 @@
 		3A14565819323AFF006D3A9B /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				3A6C974C194746D500FFA68A /* CCAchievement.cpp */,
+				3A6C974D194746D500FFA68A /* CCAchievement.hpp */,
 				3A14562E19323A8F006D3A9B /* ClientFactory.cpp */,
 				3A14562F19323A8F006D3A9B /* ClientFactory.hpp */,
 				3A14563019323A8F006D3A9B /* CloudConnection.cpp */,
@@ -1593,6 +1598,7 @@
 				3A14565019323A8F006D3A9B /* CloudConnectionPlugin.cpp in Sources */,
 				3AA0D89F19334BBC00C224E7 /* CloudConnectionLuaModule.cpp in Sources */,
 				3A14565419323A8F006D3A9B /* DummyClient.cpp in Sources */,
+				3A6C974E194746D500FFA68A /* CCAchievement.cpp in Sources */,
 				3A14565519323A8F006D3A9B /* GPGAndroidClient.cpp in Sources */,
 				3A14565619323A8F006D3A9B /* GPGIOSClient.cpp in Sources */,
 				3A14564F19323A8F006D3A9B /* CloudConnectionClient.cpp in Sources */,

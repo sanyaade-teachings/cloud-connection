@@ -41,7 +41,7 @@ public:
   CLOUDCONNECTIONPLUGIN_IMPEXP CloudConnectionClient* GetClient();
 
   /// \brief collection of callbacks available from the plugin
-  static CloudConnectionCallbackManager Callbacks;
+  CLOUDCONNECTIONPLUGIN_IMPEXP static CloudConnectionCallbackManager Callbacks;
 
 protected:
   	  

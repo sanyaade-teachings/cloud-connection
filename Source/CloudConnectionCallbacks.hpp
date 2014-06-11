@@ -4,7 +4,7 @@
 #include "VisionBaseIncludes.h"
 
 /// \brief Callback when a sign-in event has begun
-class CCOnAuthActionStartedCallback : public VCallback
+class CLOUDCONNECTIONPLUGIN_IMPEXP CCOnAuthActionStartedCallback : public VCallback
 {
 public:
   CCOnAuthActionStartedCallback();
@@ -14,7 +14,7 @@ private:
 };
 
 /// \brief Callback when a sign-in event ends either successfully or not
-class CCOnAuthActionFinishedCallback : public VCallback
+class CLOUDCONNECTIONPLUGIN_IMPEXP CCOnAuthActionFinishedCallback : public VCallback
 {
 public:
   CCOnAuthActionFinishedCallback();
@@ -24,7 +24,7 @@ private:
 };
 
 /// \brief Callback when a the signed-in player data (such as the display name and Id) have been succesfully fetched from the network
-class CCOnPlayerDataFetchedCallback : public VCallback
+class CLOUDCONNECTIONPLUGIN_IMPEXP CCOnPlayerDataFetchedCallback : public VCallback
 {
 public:
   CCOnPlayerDataFetchedCallback();
@@ -34,7 +34,7 @@ private:
 };
 
 /// \brief Callback when a single achievement has been succesfully fetched from the network
-class CCOnAchievementFetchedCallback : public VCallback
+class CLOUDCONNECTIONPLUGIN_IMPEXP CCOnAchievementFetchedCallback : public VCallback
 {
 public:
   CCOnAchievementFetchedCallback();

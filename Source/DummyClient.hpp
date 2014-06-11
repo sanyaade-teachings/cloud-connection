@@ -4,6 +4,7 @@
 #include "VisionBaseIncludes.h"
 #include "CloudConnectionClient.hpp"
 
+class CCAchievement;
 
 /// \brief
 /// Defines an concrete implementation for for a Project Anarchy Cloud Connection Client that provides
@@ -80,6 +81,7 @@ protected:
 private:
   VString* m_pPlayerName;   ///< dummy player name
   bool m_authenticated;     ///< dummy flag to set authenticated
+  CCAchievement* m_pDummyAchievement; ///< dummy achievement that is always sent when an achievement is requested
 };
 
 

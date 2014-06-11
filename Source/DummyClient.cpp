@@ -2,19 +2,35 @@
 #include "DummyClient.hpp"
 #include "CloudConnectionCallbacks.hpp"
 #include "CloudConnection.hpp"
+#include "CCAchievement.hpp"
 
 /** RTTI definitions */
 V_IMPLEMENT_DYNAMIC( DummyClient, CloudConnectionClient, &g_CloudConnectionModule );
    
 DummyClient::DummyClient()
 {
+  //create the dummy player
   m_pPlayerName = new VString("Dummy Player");
   m_authenticated = true;
+
+  //create a dummy achievement
+  m_pDummyAchievement = new CCAchievement();
+  m_pDummyAchievement->SetId( "DUMMY_ID" );
+  m_pDummyAchievement->SetValid( true );
+  m_pDummyAchievement->SetCurrentSteps( 0 );
+  m_pDummyAchievement->SetTotalSteps( 0 );    
+  m_pDummyAchievement->SetType( STANDARD );
+  m_pDummyAchievement->SetState( UNLOCKED );  
+  m_pDummyAchievement->SetLastModified( 0 );
+  m_pDummyAchievement->SetName("Dummy Achievement");
+  m_pDummyAchievement->SetDescription( "This is not a real achievement, it is a dummy test" );
+  
 }
 
 DummyClient::~DummyClient()
 {
   V_SAFE_DELETE( m_pPlayerName );
+  V_SAFE_DELETE( m_pDummyAchievement );
 }
 
 bool DummyClient::IsAuthenticated()
@@ -25,7 +41,9 @@ bool DummyClient::IsAuthenticated()
 void DummyClient::SignOut()
 {
   hkvLog::Info( "PACloudConnectionPlugin - DummyClient::SignOut()" );
+  CloudConnection::Callbacks.OnAuthActionStarted.TriggerCallbacks();
   m_authenticated = false;
+  CloudConnection::Callbacks.OnAuthActionFinished.TriggerCallbacks();
 }
 
 const char* DummyClient::GetUserDisplayName() const
@@ -51,9 +69,8 @@ bool DummyClient::IsAuthInProgress()
 void DummyClient::GetAchievement(const char* achievementId)
 {
   hkvLog::Info( "PACloudConnectionPlugin - DummyClient::GetAchievement() '%s'", achievementId );
-  //TODO: dummy client should create a valid dummy achievement and send it on via the callback
-  CloudConnection::Callbacks.OnAchievementFetched.TriggerCallbacks();
-  hkvLog::Warning("TODO: dummy client should create a valid dummy achievement and send it on via the callback");
+  //send a valid dummy achievement via the callback
+  CloudConnection::Callbacks.OnAchievementFetched.TriggerCallbacks( m_pDummyAchievement );
 }
 
 void DummyClient::IncrementAchievement(const char* achievementId, int steps)

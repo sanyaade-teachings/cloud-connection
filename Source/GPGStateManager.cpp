@@ -151,13 +151,13 @@ void StateManager::OnAuthStarted(gpg::AuthOperation op)
 {
   hkvLog::Debug("Sign in started");
   is_auth_in_progress_ = true;
-  CloudConnectionCallbackManager::OnAuthActionStarted.TriggerCallbacks();
+  CloudConnection::Callbacks.OnAuthActionStarted.TriggerCallbacks();
 }
 
 void StateManager::OnAuthFinished(gpg::AuthOperation op, gpg::AuthStatus status) {
   hkvLog::Debug("Sign in finished with a result of %d, %s", status, AuthStatusToName(status) );
   is_auth_in_progress_ = false;
-  CloudConnectionCallbackManager::OnAuthActionFinished.TriggerCallbacks();
+  CloudConnection::Callbacks.OnAuthActionFinished.TriggerCallbacks();
   
   hkvLog::Debug("OnAuthActionFinished");
   if (IsSuccess(status)) 
@@ -198,7 +198,7 @@ void StateManager::OnFetchSelf(gpg::PlayerManager::FetchSelfResponse response)
     std::shared_ptr<gpg::Player> p ( new gpg::Player( player ) );
     player_ = p;
     hkvLog::Debug("Player Fetch Self response data (Player Name): %s", player_.get()->Name().c_str() );        
-    CloudConnectionCallbackManager::OnPlayerDataFetched.TriggerCallbacks();
+    CloudConnection::Callbacks.OnPlayerDataFetched.TriggerCallbacks();
   }
 }
 
@@ -235,7 +235,7 @@ void StateManager::OnFetchAchievement(gpg::AchievementManager::FetchResponse res
 
     //Send the data onto the callback
     hkvLog::Debug("CloudConnectionCallbackManager::OnAchievementFetched.TriggerCallbacks( pCcAch );");
-    CloudConnectionCallbackManager::OnAchievementFetched.TriggerCallbacks( pCcAch );
+    CloudConnection::Callbacks.OnAchievementFetched.TriggerCallbacks( pCcAch );
   }
 }
  

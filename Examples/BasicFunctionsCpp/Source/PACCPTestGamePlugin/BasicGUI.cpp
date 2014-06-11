@@ -8,7 +8,7 @@
 
 //this is the ID of the leaderboard that this demo will submit a score to
 //get this from the google developer console when you create your leaderboard
-#define LEADERBOARD_ID "CggI9__cunsQAhAC" 
+#define LEADERBOARD_ID "CggI9__cunsQAhAC"
 
 void BasicGUI::InitGUI()
 {
@@ -16,9 +16,10 @@ void BasicGUI::InitGUI()
   spGUIContext->SetActivate(true);
 
   //Listen for callbacks from the cloud connection plugin
-  CloudConnectionCallbackManager::OnAuthActionStarted += this;
-  CloudConnectionCallbackManager::OnAuthActionFinished += this;
-  CloudConnectionCallbackManager::OnPlayerDataFetched += this;
+  CloudConnection::Callbacks.OnAuthActionStarted += this;
+  CloudConnection::Callbacks.OnAuthActionFinished += this;
+  CloudConnection::Callbacks.OnPlayerDataFetched += this;
+  CloudConnection::Callbacks.OnAchievementFetched += this;
 }
 
 void BasicGUI::DeinitGUI()
@@ -28,9 +29,10 @@ void BasicGUI::DeinitGUI()
   spGUIContext = NULL; // destroy the GUI context
    
   //stop Listening for callbacks from the cloud connection plugin
-  CloudConnectionCallbackManager::OnAuthActionStarted -= this;
-  CloudConnectionCallbackManager::OnAuthActionFinished -= this;
-  CloudConnectionCallbackManager::OnPlayerDataFetched -= this;
+  CloudConnection::Callbacks.OnAuthActionStarted -= this;
+  CloudConnection::Callbacks.OnAuthActionFinished -= this;
+  CloudConnection::Callbacks.OnPlayerDataFetched -= this;
+  CloudConnection::Callbacks.OnAchievementFetched -= this;
 }
 
 void BasicGUI::ShowGUI()
@@ -46,6 +48,14 @@ void BasicGUI::ShowGUI()
     
   //enables disable/signin-out buttons accoding to the player sign-in status
   AuthenticationChanged();
+
+   
+  //Get the instance of the cloud connection client
+  CloudConnection* paccm = CloudConnection::GetInstance();
+  VASSERT_MSG( paccm != NULL, "The Cloud Connection Module cannot be null" );
+  CloudConnectionClient* pCClient = paccm->GetClient();   
+  pCClient->GetAchievement( ACHIEVEMENT_ID );
+
 }
 
 void BasicGUI::Update() 
@@ -149,11 +159,11 @@ void BasicGUI::Update()
 			VASSERT_MSG(!true, "unhandled message from BasicGUI")
 		}
 
-		spMainDlg->SetDialogResult(NULL);	//handled the result
+		spMainDlg->SetDialogResult(0);	//handled the result
 	}
 }
 
-void BasicGUI::OnHandleCallback( IVisCallbackDataObject_cl* pData )  
+void BasicGUI::OnHandleCallback( IVisCallbackDataObject_cl* pData ) 
 {    
   //Get the instance of the cloud connection client
   CloudConnection* paccm = CloudConnection::GetInstance();
@@ -162,11 +172,11 @@ void BasicGUI::OnHandleCallback( IVisCallbackDataObject_cl* pData )
 
   //Listen here for sign-in/sign-out callbacks
   hkvLog::Debug("BasicGUI - OnHandleCallback");      
-  if( pData->m_pSender == &CloudConnectionCallbackManager::OnAuthActionStarted )
+  if( pData->m_pSender == &CloudConnection::Callbacks.OnAuthActionStarted )
   {
     hkvLog::Debug("BasicGUI - OnAuthActionStarted");
   }
-  else if( pData->m_pSender==&CloudConnectionCallbackManager::OnAuthActionFinished )
+  else if( pData->m_pSender==&CloudConnection::Callbacks.OnAuthActionFinished )
   {                
     hkvLog::Debug("BasicGUI - OnAuthActionFinished");
 
@@ -181,13 +191,33 @@ void BasicGUI::OnHandleCallback( IVisCallbackDataObject_cl* pData )
 
     AuthenticationChanged();
   }
-  else if( pData->m_pSender==&CloudConnectionCallbackManager::OnPlayerDataFetched )
+  else if( pData->m_pSender==&CloudConnection::Callbacks.OnPlayerDataFetched )
   {                
     hkvLog::Debug("BasicGUI - OnPlayerDataFetched");
      
     if ( pCClient->IsAuthenticated() )
     {
       Vision::Message.Add(1, "BasicGUI - Welcome User '%s'", pCClient->GetUserDisplayName() );
+    }
+  }
+  else if( pData->m_pSender==&CloudConnection::Callbacks.OnAchievementFetched )
+  {                
+    hkvLog::Debug("Cloud Connection Plugin Callback - OnAchievementFetched");
+    //The achievement data has been fetched from the online service        
+    VASSERT_MSG(pData != NULL, "The Achievement data was null!!!" );
+    CCAchievement* pAch = (CCAchievement*)pData;
+    if ( pAch->Valid() )
+    {
+      //You have now retrieved your valid achivement and can access data from it such
+      //as name, description, steps completed etc...             
+      hkvLog::Debug("Achievement Id='%s'", pAch->Id() );
+      hkvLog::Debug("Achievement Name='%s'", pAch->Name() );
+      hkvLog::Debug("Achievement Desc='%s'", pAch->Description() );
+      hkvLog::Debug("Achievement Type='%d'", pAch->Type() );
+      hkvLog::Debug("Achievement State='%d'", pAch->State() );
+      hkvLog::Debug("Achievement CurrentSteps='%d'", pAch->CurrentSteps() );
+      hkvLog::Debug("Achievement TotalSteps='%d'", pAch->TotalSteps() );
+      hkvLog::Debug("Achievement LastModified='%d'", pAch->LastModified() );
     }
   }
 }

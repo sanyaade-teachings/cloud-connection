@@ -414,10 +414,10 @@ See the Project Anarchy Programmers documentation section on `Engine.Callbacks` 
 
 The following callbacks are provided to C++
 
-* CloudConnectionCallbackManager::OnAuthActionStarted - called when a player sign-in has started  
-* CloudConnectionCallbackManager::OnAuthActionFinished - called when a player sign-in or sign-out has finished (successfully or unsuccessfully)
-* CloudConnectionCallbackManager::OnPlayerDataFetched - called when the signed-in player's data has been retrieved
-* CloudConnectionCallbackManager::OnAchievementFetchedCallback  - called when a single achievement has been succesfully fetched from the network
+* CloudConnection::Callbacks.OnAuthActionStarted - called when a player sign-in has started  
+* CloudConnection::Callbacks.OnAuthActionFinished - called when a player sign-in or sign-out has finished (successfully or unsuccessfully)
+* CloudConnection::Callbacks.OnPlayerDataFetched - called when the signed-in player's data has been retrieved
+* CloudConnection::Callbacks.OnAchievementFetchedCallback  - called when a single achievement has been succesfully fetched from the network
 
 
 ### Using C++ the callbacks
@@ -428,10 +428,10 @@ Register the callbacks you want to listen for:
 
 	...
 	//Listen for callbacks from the cloud connection plugin
-	CloudConnectionCallbackManager::OnAuthActionStarted += this;
-	CloudConnectionCallbackManager::OnAuthActionFinished += this;
-	CloudConnectionCallbackManager::OnPlayerDataFetched += this;
-	CloudConnectionCallbackManager::OnAchievementFetched += this;
+	CloudConnection::Callbacks.OnAuthActionStarted += this;
+	CloudConnection::Callbacks.OnAuthActionFinished += this;
+	CloudConnection::Callbacks.OnPlayerDataFetched += this;
+	CloudConnection::Callbacks.OnAchievementFetched += this;
 	...
 ```
 
@@ -440,22 +440,22 @@ Handle the callbacks in your `OnHandleCallback` method:
 
 	void MyAwesomeGame::OnHandleCallback( IVisCallbackDataObject_cl* pData )  
 	{    	 
-	  if( pData->m_pSender == &CloudConnectionCallbackManager::OnAuthActionStarted )
+	  if( pData->m_pSender == &CloudConnection::Callbacks.OnAuthActionStarted )
 	  {
 	    hkvLog::Debug("Cloud Connection Plugin Callback - OnAuthActionStarted");
 		//The authorisation process has been started
 	  }
-	  else if( pData->m_pSender==&CloudConnectionCallbackManager::OnAuthActionFinished )
+	  else if( pData->m_pSender==&CloudConnection::Callbacks.OnAuthActionFinished )
 	  {                
 	    hkvLog::Debug("Cloud Connection Plugin Callback - OnAuthActionFinished");
 		//The authorisation process has finished either successfully or unsuccessfully
 	  }
-	  else if( pData->m_pSender==&CloudConnectionCallbackManager::OnPlayerDataFetched )
+	  else if( pData->m_pSender==&CloudConnection::Callbacks.OnPlayerDataFetched )
 	  {                
 	    hkvLog::Debug("Cloud Connection Plugin Callback - OnPlayerDataFetched");
 		//The player data has been fetched from the online service
 	  }
-	  else if( pData->m_pSender==&CloudConnectionCallbackManager::OnAchievementFetched )
+	  else if( pData->m_pSender==&CloudConnection::Callbacks.OnAchievementFetched )
 	  {                
 	    hkvLog::Debug("Cloud Connection Plugin Callback - OnAchievementFetched");
 		//The achievement data has been fetched from the online service
@@ -482,10 +482,10 @@ De-Register the callbacks when you are disposing of your class:
 
 	...
 	//UnListen for callbacks from the cloud connection plugin
-	CloudConnectionCallbackManager::OnAuthActionStarted -= this;
-	CloudConnectionCallbackManager::OnAuthActionFinished -= this;
-	CloudConnectionCallbackManager::OnPlayerDataFetched -= this;
-	CloudConnectionCallbackManager::OnAchievementFetched -= this;
+	CloudConnection::Callbacks.OnAuthActionStarted -= this;
+	CloudConnection::Callbacks.OnAuthActionFinished -= this;
+	CloudConnection::Callbacks.OnPlayerDataFetched -= this;
+	CloudConnection::Callbacks.OnAchievementFetched -= this;
 	...
 ```
 

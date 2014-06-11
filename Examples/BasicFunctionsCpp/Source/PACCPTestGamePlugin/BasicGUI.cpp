@@ -24,10 +24,10 @@ void BasicGUI::InitGUI()
 
 void BasicGUI::DeinitGUI()
 {
-  spMainDlg = NULL; // destroy the MainDlg Object
+  //spMainDlg = NULL; // destroy the MainDlg Object (don't call this if the xml has a script defined or get an object already disposed error on exit)
   spGUIContext->SetActivate(false); // Don't forget to deinit the GUI context
   spGUIContext = NULL; // destroy the GUI context
-   
+
   //stop Listening for callbacks from the cloud connection plugin
   CloudConnection::Callbacks.OnAuthActionStarted -= this;
   CloudConnection::Callbacks.OnAuthActionFinished -= this;

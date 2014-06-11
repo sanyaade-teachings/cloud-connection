@@ -12,6 +12,11 @@ public:
   /// Adds a script component that will list for callback events about for the Cloud Connection
   /// \param pInstance The instance of the Lua script that will listen for callbacks
   void AddScriptCallbackListener( VScriptInstance* pInstance );
+  
+  /// \brief
+  /// Removes a script component that that was listening for callback events for the Cloud Connection
+  /// The script can define and listen for callbacks inside the following script functions
+  void RemoveScriptCallbackListener( VScriptInstance* pInstance );
 
   /// \brief
   /// Returns whether or not user is authenticated
@@ -84,16 +89,31 @@ public:
 %extend CloudConnectionClient
 {      
 	/// \brief
-	/// Adding a method to add callbacks to the currently executing script
+	/// add callbacks to the currently executing script
 	void AddScriptCallbackListener(VCaptureSwigEnvironment* env)
 	{
 		lua_State* L = env->GetLuaState();
 
 		//Find out which script instance we are calling this from
 		VScriptInstance*  pScript = VScriptResourceManager::GetScriptInstanceForState(L);
-		VASSERT(pScript);
+		VASSERT_MSG(pScript != NULL, "The script instance to be added cannot be null");
       
 		$self->AddScriptCallbackListener(pScript);
+    
+		env->SetNumReturnValues(lua_yield(L, 0));
+	}
+  
+  /// \brief
+	/// removes callbacks to the currently executing script
+	void RemoveScriptCallbackListener(VCaptureSwigEnvironment* env)
+	{
+		lua_State* L = env->GetLuaState();
+
+		//Find out which script instance we are calling this from
+		VScriptInstance*  pScript = VScriptResourceManager::GetScriptInstanceForState(L);
+		VASSERT_MSG(pScript != NULL, "The script instance to be removed cannot be null");
+      
+		$self->RemoveScriptCallbackListener(pScript);
     
 		env->SetNumReturnValues(lua_yield(L, 0));
 	}

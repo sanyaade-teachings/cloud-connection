@@ -15,16 +15,26 @@ function OnAfterSceneLoaded()
   -- adding listener for CloudConnection callbacks for to this script
   local ccClient = CloudConnection:GetClient()
   ccClient:AddScriptCallbackListener()    
-  
+         
   -- Enable debug output in the log file so we can see that callbacks are working
   Debug:Enable(true)
+     
+  -- test that we can get an acheivement via 'OnAchievementFetched' callback
+  ccClient:GetAchievement( ACHIEVEMENT_ID )
+end
+
+function OnBeforeSceneUnloaded()
+  
+  -- removing listener for CloudConnection callbacks for to this script
+  local ccClient = CloudConnection:GetClient()
+  ccClient:RemoveScriptCallbackListener()    
 end
 
 -- called when an item in the menu is clicked
 function OnItemClicked(self, uiItem, buttons, mousePosX, mousePosY)
   -- get the cloud connection client
   local ccClient = CloudConnection:GetClient()
-
+        
   -- action the button that was pressed
   if uiItem:GetID() == GUI:GetID("SIGNIN") then  
     -- show the user sign-in dialog
@@ -78,6 +88,14 @@ end
 --Client has retrived achievement data via the GetAchievement( id ) call
 function OnAchievementFetched( id, name, description, achtype, achstate, totalsteps, currentsteps )
   Debug:Log("OnAchievementFetched callback was successfully made to Lua script")
+  Debug:Log("ID=")
+  Debug:Log(id)
+  Debug:Log(name)
+  Debug:Log(description)
+  Debug:Log(achtype)
+  Debug:Log(achstate)
+  Debug:Log(totalsteps)
+  Debug:Log(currentsteps)
 end
 
 

@@ -28,7 +28,7 @@ public:
   virtual void OnHandleCallback( IVisCallbackDataObject_cl* pData ) HKV_OVERRIDE;
 
   /// \brief
-  /// Adds a script component that will list for callback events about for the Cloud Connection
+  /// Adds a script component that will list for callback events for the Cloud Connection
   /// The script can define and listen for callbacks inside the following script functions
   ///
   /// OnAuthActionStarted
@@ -36,6 +36,11 @@ public:
   /// OnPlayerDataFetched
   /// 
   void AddScriptCallbackListener( VScriptInstance* pInstance );
+
+  /// \brief
+  /// Removes a script component that that was listening for callback events for the Cloud Connection
+  /// The script can define and listen for callbacks inside the following script functions
+  void RemoveScriptCallbackListener( VScriptInstance* pInstance );
 
   /// \brief
   /// Returns whether or not user is authenticated
@@ -112,10 +117,6 @@ private:
   /// \param szArgFormat  See IVScriptInstance::ExecuteFunctionArgV
   /// \param parameter the argument as specified in szArgFormat 
   void TriggerCCScriptFunctionArg( const char* szFunction, const char* szArgFormat, void* parameter );
-
-  /// \brief
-  /// Called when de-initalising - Removes all the script components for the Cloud Connection
-  void RemoveScriptCallbackListeners();
 };
 
 #endif

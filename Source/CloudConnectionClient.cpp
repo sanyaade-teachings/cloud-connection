@@ -24,21 +24,25 @@ void CloudConnectionClient::OneTimeDeInit()
 	CloudConnection::Callbacks.OnAuthActionFinished -= this;
 	CloudConnection::Callbacks.OnPlayerDataFetched -= this;
   CloudConnection::Callbacks.OnAchievementFetched -= this;
-
-  //Remove any/all of the script callback listeners that may
-  //have been added by the user
-  RemoveScriptCallbackListeners();
 }
 
-void CloudConnectionClient::RemoveScriptCallbackListeners() 
+void CloudConnectionClient::RemoveScriptCallbackListener( VScriptInstance* pInstance )
 {
-  RemoveAllComponents();
+  VASSERT_MSG( pInstance != NULL, "The script instance to be removed from cloud connection client cannot be null" );
+  
+  VScriptComponent* pComp = Components().GetComponentOfType<CloudConnectionScriptComponent>();
+  if ( pComp != NULL )
+  {        
+    RemoveComponent( pComp );        
+    V_SAFE_DELETE( pComp );
+    hkvLog::Debug("CloudConnectionClient - removed the instance of the cloud connection script component");
+  }
 }
 
 void CloudConnectionClient::AddScriptCallbackListener( VScriptInstance* pInstance )
 {    
   VASSERT_MSG( pInstance != NULL, "The script instance to add to the cloud connection client cannot be null" );
-
+  
   VScriptComponent* pComp = Components().GetComponentOfType<CloudConnectionScriptComponent>();
   if ( pComp == NULL )
   {

@@ -8,7 +8,7 @@
  * interface file instead. 
  * ----------------------------------------------------------------------------- */
 
-#include "CloudConnectionPluginPCH.hpp"
+#include <CloudConnectionPluginPCH.hpp>
 #include <Vision/Runtime/EnginePlugins/VisionEnginePlugin/Scripting/VScriptIncludes.hpp>
 
 #ifndef _VISION_DOC
@@ -3163,9 +3163,20 @@ SWIGINTERN void CloudConnectionClient_AddScriptCallbackListener__SWIG_1(CloudCon
 
 		//Find out which script instance we are calling this from
 		VScriptInstance*  pScript = VScriptResourceManager::GetScriptInstanceForState(L);
-		VASSERT(pScript);
+		VASSERT_MSG(pScript != NULL, "The script instance to be added cannot be null");
       
 		self->AddScriptCallbackListener(pScript);
+    
+		env->SetNumReturnValues(lua_yield(L, 0));
+	}
+SWIGINTERN void CloudConnectionClient_RemoveScriptCallbackListener__SWIG_1(CloudConnectionClient *self,VCaptureSwigEnvironment *env){
+		lua_State* L = env->GetLuaState();
+
+		//Find out which script instance we are calling this from
+		VScriptInstance*  pScript = VScriptResourceManager::GetScriptInstanceForState(L);
+		VASSERT_MSG(pScript != NULL, "The script instance to be removed cannot be null");
+      
+		self->RemoveScriptCallbackListener(pScript);
     
 		env->SetNumReturnValues(lua_yield(L, 0));
 	}
@@ -11225,6 +11236,43 @@ fail:
 }
 
 
+static int _wrap_CloudConnectionClient_RemoveScriptCallbackListener__SWIG_0(lua_State* L) {
+  int SWIG_arg = 0;
+  CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
+  VScriptInstance *arg2 = (VScriptInstance *) 0 ;
+  
+  SWIG_check_num_args("RemoveScriptCallbackListener",2,2)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("RemoveScriptCallbackListener",1,"CloudConnectionClient *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("RemoveScriptCallbackListener",1,"CloudConnectionClient *");
+  if(!SWIG_isptrtype(L,2)) SWIG_fail_arg("RemoveScriptCallbackListener",2,"VScriptInstance *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CloudConnectionClient,0))){
+    SWIG_fail_ptr("CloudConnectionClient_RemoveScriptCallbackListener",1,SWIGTYPE_p_CloudConnectionClient);
+  }
+  
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,2,(void**)&arg2,SWIGTYPE_p_VScriptInstance,0))){
+    SWIG_fail_ptr("CloudConnectionClient_RemoveScriptCallbackListener",2,SWIGTYPE_p_VScriptInstance);
+  }
+  
+  
+  if (VTraits::IsBaseOf<VTypedObject, CloudConnectionClient>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CloudConnectionClient_RemoveScriptCallbackListener", 1, "CloudConnectionClient *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  (arg1)->RemoveScriptCallbackListener(arg2);
+  
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
 static int _wrap_CloudConnectionClient_IsAuthenticated(lua_State* L) {
   int SWIG_arg = 0;
   CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
@@ -11918,6 +11966,105 @@ static int _wrap_CloudConnectionClient_AddScriptCallbackListener(lua_State* L) {
 }
 
 
+static int _wrap_CloudConnectionClient_RemoveScriptCallbackListener__SWIG_1(lua_State* L) {
+  int SWIG_arg = 0;
+  CloudConnectionClient *arg1 = (CloudConnectionClient *) 0 ;
+  VCaptureSwigEnvironment *arg2 = (VCaptureSwigEnvironment *) 0 ;
+  VCaptureSwigEnvironment temp2(L,SWIG_arg) ;
+  
+  {
+    arg2 = &temp2;
+  }
+  SWIG_check_num_args("RemoveScriptCallbackListener",1,1)
+  if(lua_isnil(L, 1)) SWIG_fail_arg("RemoveScriptCallbackListener",1,"CloudConnectionClient *");
+  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("RemoveScriptCallbackListener",1,"CloudConnectionClient *");
+  
+  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_CloudConnectionClient,0))){
+    SWIG_fail_ptr("CloudConnectionClient_RemoveScriptCallbackListener",1,SWIGTYPE_p_CloudConnectionClient);
+  }
+  
+  
+  if (VTraits::IsBaseOf<VTypedObject, CloudConnectionClient>::value && !arg1) {
+    SWIG_push_fail_arg_info(L, "CloudConnectionClient_RemoveScriptCallbackListener", 1, "CloudConnectionClient *", "deleted native object");
+    SWIG_fail;
+  }
+  
+  CloudConnectionClient_RemoveScriptCallbackListener__SWIG_1(arg1,arg2);
+  
+  {
+    if(arg2->HasFailed())
+    {
+      lua_Debug ar;
+      lua_getstack(L, 1, &ar);
+      lua_getinfo(L, "nSl", &ar);
+      lua_pushfstring(L,"Error (%s:%d) in %s, %s", ar.source, ar.currentline, "CloudConnectionClient_RemoveScriptCallbackListener", arg2->GetErrorMessage());
+      SWIG_fail;
+    }
+  }
+  return SWIG_arg;
+  
+  if(0) SWIG_fail;
+  
+fail:
+  lua_error(L);
+  return SWIG_arg;
+}
+
+
+static int _wrap_CloudConnectionClient_RemoveScriptCallbackListener(lua_State* L) {
+  int argc;
+  int argv[3]={
+    1,2,3
+  };
+  
+  argc = lua_gettop(L);
+  if (argc == 1) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_CloudConnectionClient, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      return _wrap_CloudConnectionClient_RemoveScriptCallbackListener__SWIG_1(L);
+    }
+  }
+  if (argc == 2) {
+    int _v;
+    {
+      void *ptr;
+      if (SWIG_isptrtype(L,argv[0])==0 || SWIG_ConvertPtr(L,argv[0], (void **) &ptr, SWIGTYPE_p_CloudConnectionClient, 0)) {
+        _v = 0;
+      } else {
+        _v = 1;
+      }
+    }
+    if (_v) {
+      {
+        void *ptr;
+        if (SWIG_isptrtype(L,argv[1])==0 || SWIG_ConvertPtr(L,argv[1], (void **) &ptr, SWIGTYPE_p_VScriptInstance, 0)) {
+          _v = 0;
+        } else {
+          _v = 1;
+        }
+      }
+      if (_v) {
+        return _wrap_CloudConnectionClient_RemoveScriptCallbackListener__SWIG_0(L);
+      }
+    }
+  }
+  
+  lua_pushstring(L,"Wrong arguments for overloaded function 'CloudConnectionClient_RemoveScriptCallbackListener'\n"
+    "  Possible C/C++ prototypes are:\n"
+    "    RemoveScriptCallbackListener(CloudConnectionClient *,VScriptInstance *)\n"
+    "    RemoveScriptCallbackListener(CloudConnectionClient *,VCaptureSwigEnvironment *)\n");
+  lua_error(L);return 0;
+}
+
+
 static swig_lua_method swig_CloudConnectionClient_methods[] = {
     {"IsAuthenticated", _wrap_CloudConnectionClient_IsAuthenticated}, 
     {"SignOut", _wrap_CloudConnectionClient_SignOut}, 
@@ -11934,6 +12081,7 @@ static swig_lua_method swig_CloudConnectionClient_methods[] = {
     {"ShowLeaderboard", _wrap_CloudConnectionClient_ShowLeaderboard}, 
     {"ShowLeaderboards", _wrap_CloudConnectionClient_ShowLeaderboards}, 
     {"AddScriptCallbackListener", _wrap_CloudConnectionClient_AddScriptCallbackListener}, 
+    {"RemoveScriptCallbackListener", _wrap_CloudConnectionClient_RemoveScriptCallbackListener}, 
     {0,0}
 };
 static swig_lua_attribute swig_CloudConnectionClient_attributes[] = {

@@ -508,7 +508,19 @@ Call the `AddScriptCallbackListener` function in the script that you want to lis
   		-- adding listener for CloudConnection callbacks for to this script
   		local ccClient = CloudConnection:GetClient()
   		ccClient:AddScriptCallbackListener()
-		...
+	end
+```
+
+You should remove the callback listeners when the script is unloaded using `RemoveScriptCallbackListener`
+
+```Lua
+
+	function OnBeforeSceneUnloaded()
+	  
+	  -- removing listener for CloudConnection callbacks for to this script
+	  local ccClient = CloudConnection:GetClient()
+	  ccClient:RemoveScriptCallbackListener()    
+	end
 ```   
 
 Implement the following Lua functions that will get called when CloudConnection events happen

@@ -34,7 +34,7 @@ private:
 };
 
 /// \brief Callback when a single achievement has been succesfully fetched from the network
-class CCOnAchievementFetchedCallback : public VCallback
+class CLOUDCONNECTIONPLUGIN_IMPEXPCCOnAchievementFetchedCallback : public VCallback
 {
 public:
   CCOnAchievementFetchedCallback();
@@ -44,16 +44,16 @@ private:
 };
 
 /// \brief Manager for all the callbacks required
-class CloudConnectionCallbackManager
+class CLOUDCONNECTIONPLUGIN_IMPEXP CloudConnectionCallbackManager
 {
 public:
   CloudConnectionCallbackManager();
   ~CloudConnectionCallbackManager();
 
-  static CCOnAuthActionStartedCallback OnAuthActionStarted;       ///< called when a sign-in event begins
-  static CCOnAuthActionFinishedCallback OnAuthActionFinished;     ///< called when a sign-in event ends
-  static CCOnPlayerDataFetchedCallback OnPlayerDataFetched;       ///< called when a player data has been fetched
-  static CCOnAchievementFetchedCallback OnAchievementFetched;     ///< called when a single achievement has been succesfully fetched from the network
+  CCOnAuthActionStartedCallback OnAuthActionStarted;       ///< called when a sign-in event begins
+  CCOnAuthActionFinishedCallback OnAuthActionFinished;     ///< called when a sign-in event ends
+  CCOnPlayerDataFetchedCallback OnPlayerDataFetched;       ///< called when a player data has been fetched
+  CCOnAchievementFetchedCallback OnAchievementFetched;     ///< called when a single achievement has been succesfully fetched from the network
 protected:
 private:
 };

@@ -5,6 +5,7 @@
 
 class CloudConnectionClient;
 class CloudConnectionScriptMananger;
+class CloudConnectionCallbackManager;
 
 /// 
 /// \brief
@@ -38,6 +39,9 @@ public:
   /// \brief Gets the Cloud Connection Client
   /// \return The Cloud Connection Client for the Target Platform
   CLOUDCONNECTIONPLUGIN_IMPEXP CloudConnectionClient* GetClient();
+
+  /// \brief collection of callbacks available from the plugin
+  static CloudConnectionCallbackManager Callbacks;
 
 protected:
   	  

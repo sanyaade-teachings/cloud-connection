@@ -3,6 +3,7 @@
 #include "CloudConnectionScriptComponent.hpp"
 #include "CloudConnectionCallbacks.hpp"
 #include "CCAchievement.hpp"
+#include "CloudConnection.hpp"
 
 /** RTTI definitions */
 V_IMPLEMENT_DYNAMIC( CloudConnectionClient, VisTypedEngineObject_cl, &g_CloudConnectionModule );
@@ -10,19 +11,19 @@ V_IMPLEMENT_DYNAMIC( CloudConnectionClient, VisTypedEngineObject_cl, &g_CloudCon
 void CloudConnectionClient::OneTimeInit()
 {    	
   //Listen for callbacks from the cloud connection plugin
-	CloudConnectionCallbackManager::OnAuthActionStarted += this;
-	CloudConnectionCallbackManager::OnAuthActionFinished += this;
-	CloudConnectionCallbackManager::OnPlayerDataFetched += this;
-  CloudConnectionCallbackManager::OnAchievementFetched += this;
+	CloudConnection::Callbacks.OnAuthActionStarted += this;
+	CloudConnection::Callbacks.OnAuthActionFinished += this;
+	CloudConnection::Callbacks.OnPlayerDataFetched += this;
+  CloudConnection::Callbacks.OnAchievementFetched += this;
 }
 
 void CloudConnectionClient::OneTimeDeInit()
 {    	
   //UnListen for callbacks from the cloud connection plugin
-	CloudConnectionCallbackManager::OnAuthActionStarted -= this;
-	CloudConnectionCallbackManager::OnAuthActionFinished -= this;
-	CloudConnectionCallbackManager::OnPlayerDataFetched -= this;
-  CloudConnectionCallbackManager::OnAchievementFetched -= this;
+	CloudConnection::Callbacks.OnAuthActionStarted -= this;
+	CloudConnection::Callbacks.OnAuthActionFinished -= this;
+	CloudConnection::Callbacks.OnPlayerDataFetched -= this;
+  CloudConnection::Callbacks.OnAchievementFetched -= this;
 }
 
 void CloudConnectionClient::AddScriptCallbackListener( VScriptInstance* pInstance )
@@ -61,22 +62,22 @@ void CloudConnectionClient::OnHandleCallback( IVisCallbackDataObject_cl* pData )
 {
   //Listen here for sign-in/sign-out callbacks
   hkvLog::Debug("CloudConnectionScriptComponent - OnHandleCallback");      
-  if( pData->m_pSender == &CloudConnectionCallbackManager::OnAuthActionStarted )
+  if( pData->m_pSender == &CloudConnection::Callbacks.OnAuthActionStarted )
   {
     hkvLog::Debug("CloudConnectionScriptComponent - OnAuthActionStarted");
     TriggerCCScriptFunction("OnAuthActionStarted");
   }
-  else if( pData->m_pSender==&CloudConnectionCallbackManager::OnAuthActionFinished )
+  else if( pData->m_pSender==&CloudConnection::Callbacks.OnAuthActionFinished )
   {                
     hkvLog::Debug("CloudConnectionScriptComponent - OnAuthActionFinished");
     TriggerCCScriptFunction("OnAuthActionFinished");
   }
-  else if( pData->m_pSender==&CloudConnectionCallbackManager::OnPlayerDataFetched )
+  else if( pData->m_pSender==&CloudConnection::Callbacks.OnPlayerDataFetched )
   {                
     hkvLog::Debug("CloudConnectionScriptComponent - OnPlayerDataFetched");
     TriggerCCScriptFunction("OnPlayerDataFetched");
   }
-  else if( pData->m_pSender==&CloudConnectionCallbackManager::OnAchievementFetched )
+  else if( pData->m_pSender==&CloudConnection::Callbacks.OnAchievementFetched )
   {                
     if ( pData != NULL )
     {          

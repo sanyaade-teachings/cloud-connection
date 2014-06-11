@@ -2,8 +2,10 @@
 #include "CloudConnection.hpp"
 #include "ClientFactory.hpp"
 #include "CloudConnectionScriptManager.hpp"
+#include "CloudConnectionCallbacks.hpp"
 
 CloudConnection CloudConnection::g_GlobalManager; ///< static one global instance of our manager
+CloudConnectionCallbackManager CloudConnection::Callbacks;    ///< collection of callbacks available from the plugin
 
 /** RTTI definitions */
 V_IMPLEMENT_DYNAMIC( CloudConnection, VTypedObject, &g_CloudConnectionModule );

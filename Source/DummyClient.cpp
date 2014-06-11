@@ -1,6 +1,7 @@
 #include "CloudConnectionPluginPCH.hpp"
 #include "DummyClient.hpp"
 #include "CloudConnectionCallbacks.hpp"
+#include "CloudConnection.hpp"
 
 /** RTTI definitions */
 V_IMPLEMENT_DYNAMIC( DummyClient, CloudConnectionClient, &g_CloudConnectionModule );
@@ -36,9 +37,9 @@ const char* DummyClient::GetUserDisplayName() const
 void DummyClient::BeginUserInitiatedSignIn() 
 {
   hkvLog::Info( "PACloudConnectionPlugin - DummyClient::BeginUserInitiatedSignIn()" );
-  CloudConnectionCallbackManager::OnAuthActionStarted.TriggerCallbacks();
+  CloudConnection::Callbacks.OnAuthActionStarted.TriggerCallbacks();
   m_authenticated = true;
-  CloudConnectionCallbackManager::OnAuthActionFinished.TriggerCallbacks();
+  CloudConnection::Callbacks.OnAuthActionFinished.TriggerCallbacks();
 }
 
 
@@ -51,7 +52,7 @@ void DummyClient::GetAchievement(const char* achievementId)
 {
   hkvLog::Info( "PACloudConnectionPlugin - DummyClient::GetAchievement() '%s'", achievementId );
   //TODO: dummy client should create a valid dummy achievement and send it on via the callback
-  CloudConnectionCallbackManager::OnAchievementFetched.TriggerCallbacks();
+  CloudConnection::Callbacks.OnAchievementFetched.TriggerCallbacks();
   hkvLog::Warning("TODO: dummy client should create a valid dummy achievement and send it on via the callback");
 }
 

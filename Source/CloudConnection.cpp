@@ -11,7 +11,8 @@ CloudConnectionCallbackManager CloudConnection::Callbacks;    ///< collection of
 V_IMPLEMENT_DYNAMIC( CloudConnection, VTypedObject, &g_CloudConnectionModule );
 
 CloudConnection::CloudConnection()
-{
+{    
+  hkvLog::Info("Cloud Connection Plugin Version %s", CLOUDCONNECTION_VERSION );
   // creates a new cloud connection client for the target platform
   m_pCloudConnClient = ClientFactory::CreateCloudConnectionClient(); 
   m_pCloudConnSM = new CloudConnectionScriptMananger();

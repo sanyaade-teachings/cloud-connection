@@ -112,6 +112,10 @@ private:
   /// \param szArgFormat  See IVScriptInstance::ExecuteFunctionArgV
   /// \param parameter the argument as specified in szArgFormat 
   void TriggerCCScriptFunctionArg( const char* szFunction, const char* szArgFormat, void* parameter );
+
+  /// \brief
+  /// Called when de-initalising - Removes all the script components for the Cloud Connection
+  void RemoveScriptCallbackListeners();
 };
 
 #endif

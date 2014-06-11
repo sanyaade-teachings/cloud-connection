@@ -24,12 +24,20 @@ void CloudConnectionClient::OneTimeDeInit()
 	CloudConnection::Callbacks.OnAuthActionFinished -= this;
 	CloudConnection::Callbacks.OnPlayerDataFetched -= this;
   CloudConnection::Callbacks.OnAchievementFetched -= this;
+
+  //Remove any/all of the script callback listeners that may
+  //have been added by the user
+  RemoveScriptCallbackListeners();
+}
+
+void CloudConnectionClient::RemoveScriptCallbackListeners() 
+{
+  RemoveAllComponents();
 }
 
 void CloudConnectionClient::AddScriptCallbackListener( VScriptInstance* pInstance )
 {    
   VASSERT_MSG( pInstance != NULL, "The script instance to add to the cloud connection client cannot be null" );
-
 
   VScriptComponent* pComp = Components().GetComponentOfType<CloudConnectionScriptComponent>();
   if ( pComp == NULL )

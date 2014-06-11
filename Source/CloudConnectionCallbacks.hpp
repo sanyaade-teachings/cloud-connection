@@ -34,7 +34,7 @@ private:
 };
 
 /// \brief Callback when a single achievement has been succesfully fetched from the network
-class CLOUDCONNECTIONPLUGIN_IMPEXPCCOnAchievementFetchedCallback : public VCallback
+class CCOnAchievementFetchedCallback : public VCallback
 {
 public:
   CCOnAchievementFetchedCallback();

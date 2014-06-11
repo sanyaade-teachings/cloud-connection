@@ -104,13 +104,13 @@
     <ClInclude Include="CloudConnectionCallbacks.hpp">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="CloudConnectionScriptComponent.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="GPGStateManager.hpp">
       <Filter>src</Filter>
     </ClInclude>
     <ClInclude Include="CCAchievement.hpp">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="CloudConnectionScriptComponent.hpp">
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>

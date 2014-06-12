@@ -17,6 +17,20 @@
     </VisionCopyAssets>
     
   </target>
+  
+    <!-- copy the managed resources, this source folder does have the .aidlt file and is like the vision base resources -->
+  <target name="copyManagedBaseResources">
+            
+  	<delete dir="..\toAssetTest\copyManagedBaseResources" failonerror="false"/>
+    <VisionCopyAssets DestinationPath="..\toAssetTest\copyManagedBaseResources">
+      <fileset dir="..\fromBaseTest">
+        <include name="**"/>
+        <exclude name="**/AssetMgmt_data/thumbnails/*"/>
+        <exclude name="**/DX9.vShaderBin"/>
+      </fileset>
+    </VisionCopyAssets>
+    
+  </target>
    
   <!-- copy the unmanaged resources, this source folder does not have the .aidlt file -->
   <target name="copyUnManagedResources">

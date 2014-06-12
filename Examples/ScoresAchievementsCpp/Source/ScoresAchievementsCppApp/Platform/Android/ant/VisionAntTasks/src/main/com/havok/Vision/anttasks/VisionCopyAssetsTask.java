@@ -136,11 +136,6 @@ public class VisionCopyAssetsTask extends VisionBaseTask
         FileSet fs = m_srcFileSet.get(0);
         DirectoryScanner ds = fs.getDirectoryScanner();
         
-        if ( fileDest.isDirectory() )
-        {            
-            fileDest = new File( getPath( fileDest.getPath(), srcFile.getName() ) );
-        }
-        
         log("Copying Asset Files:");
         String[] files = ds.getIncludedFiles();
         for (int i = 0; i < files.length; i++)
@@ -183,12 +178,7 @@ public class VisionCopyAssetsTask extends VisionBaseTask
       //copy unmanaged resources      
       FileSet fs = m_srcFileSet.get(0);
       DirectoryScanner ds = fs.getDirectoryScanner();
-      
-      if ( fileDest.isDirectory() )
-      {            
-          fileDest = new File( getPath( fileDest.getPath(), srcFile.getName() ) );
-      }
-              
+           
       log("Copying Asset Files:");
       String[] files = ds.getIncludedFiles();
       for (int i = 0; i < files.length; i++)
@@ -234,6 +224,7 @@ public class VisionCopyAssetsTask extends VisionBaseTask
     String fileName = (dot == -1) ? curFile : curFile.substring(0, dot);
     String fileExt = (dot == -1) ? "" : curFile.substring(dot);
             
+    File actualFile = new File( getPath(root, curFile) );
     File pvrFile = new File( getPath(root, fileName+".pvr") );
     File etcFile = new File( getPath(root, fileName+".etc") );
     File rgbaFile = new File( getPath(root, fileName+".rgba") );
@@ -247,7 +238,9 @@ public class VisionCopyAssetsTask extends VisionBaseTask
     }
             
     //exclude shader bin that are not GLES2.vShaderBin
-    if ( fileExt.compareTo(".vShaderBin") == 0 && fileName.compareTo("GLES2") != 0 )
+    //make sure not to exclude folders that have the .vShaderBin extension
+    if ( (fileExt.compareTo(".vShaderBin") == 0 && actualFile.isDirectory() == false) 
+        && fileName.endsWith("GLES2") == false )
     {
         return true;
     }

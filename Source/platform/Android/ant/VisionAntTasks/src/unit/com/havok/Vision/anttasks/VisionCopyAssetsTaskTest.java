@@ -6,6 +6,7 @@ package com.havok.Vision.anttasks;
 import static org.junit.Assert.*;
 
 import java.io.File;
+import java.io.IOException;
 
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.BuildFileTest;
@@ -62,6 +63,21 @@ public class VisionCopyAssetsTaskTest extends BuildFileTest
   public void testCopyManagedResources()
   {
     executeTarget("copyManagedResources");
+  }
+  
+  @Test
+  public void testCopyManagedBaseResources() throws IOException
+  {
+    executeTarget("copyManagedBaseResources");
+    
+    File SpanScreenSpaceBillboardPermutationfile = new File(TASKDEFS_DIR + "..\\toAssetTest\\copyManagedBaseResources\\Shaders\\FixedFunctionShaders.Shaderbin\\SpanScreenSpaceBillboardPermutation.lua");
+    File GLES2file = new File(TASKDEFS_DIR + "..\\toAssetTest\\copyManagedBaseResources\\Shaders\\FixedFunctionShaders.Shaderbin\\GLES2.vShaderBin");
+    File DX9file = new File(TASKDEFS_DIR + "..\\toAssetTest\\copyManagedBaseResources\\Shaders\\FixedFunctionShaders.Shaderbin\\DX9.vShaderBin");
+    
+    assertTrue( "The SpanScreenSpaceBillboardPermutationfile '"+ SpanScreenSpaceBillboardPermutationfile.getCanonicalPath() +"' was not copied", SpanScreenSpaceBillboardPermutationfile.exists() );
+    assertTrue( "The GLES2File '"+ GLES2file.getCanonicalPath() +"' was not copied", GLES2file.exists() );
+    assertFalse( "The DX9file '"+ DX9file.getCanonicalPath() +"' was copied and is not needed", DX9file.exists() );
+    
   }
 
   /**

@@ -1,1 +1,4 @@
 /AndroidTemp/
+/vFileServeHost.txt
+*.vcxproj_Debug.deploy
+*.vcxproj.user

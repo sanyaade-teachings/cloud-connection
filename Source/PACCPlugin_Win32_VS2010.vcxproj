@@ -48,6 +48,12 @@
     <ClInclude Include="GPGStateManager.hpp" />
     <ClInclude Include="VisionBaseIncludes.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Lua\CCAchievement.i" />
+    <None Include="Lua\CloudConnection.i" />
+    <None Include="Lua\CloudConnectionClient.i" />
+    <None Include="Lua\CloudConnectionLuaModule.i" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{0C53509C-55A9-460A-A04E-FEABEED95BC2}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>

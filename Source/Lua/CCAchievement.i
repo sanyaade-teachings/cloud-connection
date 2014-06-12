@@ -68,12 +68,6 @@ public:
   /// milliseconds since the Unix epoch).
   /// It can only be called when Achievement::Valid() returns true.
   virtual ULONG64 LastModified() const;
-    
-  //Vision specific extension:
-  %extend 
-  {
-    VSWIG_CREATE_CAST_UNSAFE(CCAchievement)
-  }
 };
 
 

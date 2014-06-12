@@ -3183,9 +3183,6 @@ SWIGINTERN void CloudConnectionClient_RemoveScriptCallbackListener__SWIG_1(Cloud
 SWIGINTERN CloudConnection *CloudConnection_Cast(unsigned long *lObject){
     return (CloudConnection *) lObject;
   }
-SWIGINTERN CCAchievement *CCAchievement_Cast(unsigned long *lObject){
-    return (CCAchievement *) lObject;
-  }
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -12454,39 +12451,6 @@ fail:
 }
 
 
-static int _wrap_CCAchievement_Cast(lua_State* L) {
-  int SWIG_arg = 0;
-  unsigned long *arg1 = (unsigned long *) 0 ;
-  CCAchievement *result = 0 ;
-  
-  SWIG_check_num_args("CCAchievement_Cast",1,1)
-  if(!SWIG_isptrtype(L,1)) SWIG_fail_arg("CCAchievement_Cast",1,"unsigned long *");
-  
-  if (!SWIG_IsOK(SWIG_ConvertPtr(L,1,(void**)&arg1,SWIGTYPE_p_unsigned_long,0))){
-    SWIG_fail_ptr("CCAchievement_Cast",1,SWIGTYPE_p_unsigned_long);
-  }
-  
-  result = (CCAchievement *)CCAchievement_Cast(arg1);
-  
-  if(VTraits::IsBaseOf<VTypedObject, CCAchievement>::value)
-  {
-    LUA_PushObjectProxy(L, (VTypedObject*)result); SWIG_arg++;
-  }
-  else
-  {
-    SWIG_NewPointerObj(L,result,SWIGTYPE_p_CCAchievement,0); SWIG_arg++;
-  }
-  
-  return SWIG_arg;
-  
-  if(0) SWIG_fail;
-  
-fail:
-  lua_error(L);
-  return SWIG_arg;
-}
-
-
 static swig_lua_method swig_CCAchievement_methods[] = {
     {"Valid", _wrap_CCAchievement_Valid}, 
     {"Id", _wrap_CCAchievement_Id}, 
@@ -12513,7 +12477,6 @@ static swig_lua_class _wrap_class_CCAchievement = { "CCAchievement", &SWIGTYPE_p
 static const struct luaL_reg swig_commands[] = {
     { "CloudConnectionClient_Cast", _wrap_CloudConnectionClient_Cast},
     { "CloudConnection_Cast", _wrap_CloudConnection_Cast},
-    { "CCAchievement_Cast", _wrap_CCAchievement_Cast},
     {0,0}
 };
 

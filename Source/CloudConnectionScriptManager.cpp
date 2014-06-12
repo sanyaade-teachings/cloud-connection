@@ -69,42 +69,4 @@ void CloudConnectionScriptMananger::OnHandleCallback( IVisCallbackDataObject_cl*
       hkvLog::Warning("Unable to get the VScriptManager in CloudConnection Lua Module");
     }
   } 
-  else if(pData->m_pSender==&IVScriptManager::OnScriptProxyCreation) 
-  {
-		VScriptCreateStackProxyObject * pScriptData = (VScriptCreateStackProxyObject *)pData;
-
-		//process data only if no other callback did that
-		if(!pScriptData->m_bProcessed)
-		{
-			int iRetParams = 0;
-
-			if(pScriptData->m_pInstance->IsOfType(V_RUNTIME_CLASS(CCAchievement)))
-      {
-        hkvLog::Debug("CloudConnectionScriptMananger - Processing Proxy creation for the class \"CCAchievement\"");
-				//call lua cast function for CCAchievement (created via the macro in CCAchievement.i)
-				iRetParams = LUA_CallStaticFunction(
-					pScriptData->m_pLuaState, // our lua state
-					LUA_MODULE_CLOUDCONNECTION, // the name of the module
-					"CCAchievement", // the name of the class
-					"Cast", // the name of the fucntion
-					"v>v", // the function's signature
-					pScriptData->m_pInstance //the input parameters (out instance to cast)
-					);
-			}
-
-			//could we handle the object?
-			if(iRetParams>0)
-			{
-				//the cast failed if the result is a nil value
-				if(lua_isnil(pScriptData->m_pLuaState, -1))
-        {
-					lua_pop(pScriptData->m_pLuaState, iRetParams); //in case of a nil value we drop the params from the lua stack
-        }
-				else
-        {
-					pScriptData->m_bProcessed = true; //avoid further processing
-        }
-			}
-		}
-	}
 }

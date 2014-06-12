@@ -114,4 +114,18 @@
       <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Lua\CCAchievement.i">
+      <Filter>src\Lua</Filter>
+    </None>
+    <None Include="Lua\CloudConnection.i">
+      <Filter>src\Lua</Filter>
+    </None>
+    <None Include="Lua\CloudConnectionClient.i">
+      <Filter>src\Lua</Filter>
+    </None>
+    <None Include="Lua\CloudConnectionLuaModule.i">
+      <Filter>src\Lua</Filter>
+    </None>
+  </ItemGroup>
 </Project>

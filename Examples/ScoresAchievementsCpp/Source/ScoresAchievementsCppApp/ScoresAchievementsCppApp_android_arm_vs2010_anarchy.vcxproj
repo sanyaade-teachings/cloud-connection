@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <!--
     
@@ -7,7 +7,6 @@
     SOURCE_LEVEL = "PUBLIC"
     REQUIRED_HAVOK_PRODUCTS = "VISION"
   -->
-        
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|hkAndroid">
       <Configuration>Debug</Configuration>
@@ -24,22 +23,24 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{596313B3-50B6-4B79-BADE-A7F588737AE7}</ProjectGuid>
-    <TargetFrameworkVersion></TargetFrameworkVersion>
+    <TargetFrameworkVersion>
+    </TargetFrameworkVersion>
     <Keyword>Application</Keyword>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectName>ScoresAchievementsCppApp</ProjectName>
-    
   </PropertyGroup>
-<Import Project="$(VISION_SDK)\Build\MSBuild\Microsoft.Cpp.Default.props" />
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
-        <Import Project="$(VISION_SDK)\Build\Vision\PropertySheets\Application_android_arm_vs2010_anarchyDebug.props" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dev|hkAndroid'">
-        <Import Project="$(VISION_SDK)\Build\Vision\PropertySheets\Application_android_arm_vs2010_anarchyDev.props" />
-    </ImportGroup>
-    <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
-        <Import Project="$(VISION_SDK)\Build\Vision\PropertySheets\Application_android_arm_vs2010_anarchyRelease.props" />
-    </ImportGroup>
+  <Import Project="$(VISION_SDK)\Build\MSBuild\Microsoft.Cpp.Default.props" />
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
+    <Import Project="$(VISION_SDK)\Build\Vision\PropertySheets\Application_android_arm_vs2010_anarchyDebug.props" />
+    <Import Project="$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\PropertySheets\Application_android_arm_vs2010_cloudconnectionDebug.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dev|hkAndroid'">
+    <Import Project="$(VISION_SDK)\Build\Vision\PropertySheets\Application_android_arm_vs2010_anarchyDev.props" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
+    <Import Project="$(VISION_SDK)\Build\Vision\PropertySheets\Application_android_arm_vs2010_anarchyRelease.props" />
+  </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>arm-linux-androideabi-4.8</PlatformToolset>
@@ -63,9 +64,9 @@
   </PropertyGroup>
   <Import Project="$(VISION_SDK)\Build\MSBuild\Microsoft.Cpp.props" />
   <PropertyGroup>
-<TargetExt  Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">.so</TargetExt>
-<TargetExt  Condition="'$(Configuration)|$(Platform)'=='Dev|hkAndroid'">.so</TargetExt>
-<TargetExt  Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">.so</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">.so</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Dev|hkAndroid'">.so</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">.so</TargetExt>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">../../Obj/android_arm_vs2010_anarchy/Debug/ScoresAchievementsCppApp\</IntDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">../../Bin/android_arm_vs2010_anarchy/Debug\</OutDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">ScoresAchievementsCppApp</TargetName>
@@ -78,56 +79,68 @@
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">../../Bin/android_arm_vs2010_anarchy/Release\</OutDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">ScoresAchievementsCppApp</TargetName>
     <OutputFile Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'"></LinkIncremental>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Dev|hkAndroid'"></LinkIncremental>
-    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'"></LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
+    </LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Dev|hkAndroid'">
+    </LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
+    </LinkIncremental>
   </PropertyGroup>
-    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
-        <Link>
-            <AdditionalDependencies>-lScoresAchievementsCppEnginePlugin;%(AdditionalDependencies)</AdditionalDependencies>
-        </Link>
-    </ItemDefinitionGroup>
-    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dev|hkAndroid'">
-        <Link>
-            <AdditionalDependencies>-lScoresAchievementsCppEnginePlugin;%(AdditionalDependencies)</AdditionalDependencies>
-        </Link>
-    </ItemDefinitionGroup>
-    <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
-        <Link>
-            <AdditionalDependencies>-lScoresAchievementsCppEnginePlugin;%(AdditionalDependencies)</AdditionalDependencies>
-        </Link>
-    </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
+    <Link>
+      <AdditionalDependencies>-lScoresAchievementsCppEnginePlugin;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dev|hkAndroid'">
+    <Link>
+      <AdditionalDependencies>-lScoresAchievementsCppEnginePlugin;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
+    <Link>
+      <AdditionalDependencies>-lScoresAchievementsCppEnginePlugin;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="ScoresAchievementsCppAppPCH.h">
-        <DeploymentContent>False</DeploymentContent></ClInclude>
+      <DeploymentContent>False</DeploymentContent>
+    </ClInclude>
     <ClCompile Include="$(NDKROOT)\sources\android\native_app_glue\android_native_app_glue.c">
-        <CompileAsWinRT>false</CompileAsWinRT>
-        <AdditionalOptions> </AdditionalOptions>
-        <DeploymentContent>False</DeploymentContent></ClCompile>
-    <Java Include="Android/VirtualKeyboardActivity.java"><DeploymentContent>False</DeploymentContent></Java>
-    <Java Include="Android/VNativeDialogAndroid.java"><DeploymentContent>False</DeploymentContent></Java>
+      <CompileAsWinRT>false</CompileAsWinRT>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <DeploymentContent>False</DeploymentContent>
+    </ClCompile>
+    <Java Include="Android/VirtualKeyboardActivity.java">
+      <DeploymentContent>False</DeploymentContent>
+    </Java>
+    <Java Include="Android/VNativeDialogAndroid.java">
+      <DeploymentContent>False</DeploymentContent>
+    </Java>
     <ClCompile Include="Main.cpp">
-        <DeploymentContent>False</DeploymentContent></ClCompile>
+      <DeploymentContent>False</DeploymentContent>
+    </ClCompile>
     <ClCompile Include="ScoresAchievementsCppAppPCH.cpp">
-        <DeploymentContent>False</DeploymentContent></ClCompile>
+      <DeploymentContent>False</DeploymentContent>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
-<Import Project="$(VISION_SDK)\Build\MSBuild\Microsoft.Cpp.targets" />
-<PropertyGroup>
+  <Import Project="$(VISION_SDK)\Build\MSBuild\Microsoft.Cpp.targets" />
+  <PropertyGroup>
     <CleanDependsOn>ScoresAchievementsCppApp_CleanReflections;$(CleanDependsOn)</CleanDependsOn>
-</PropertyGroup>
-<Target Name="ScoresAchievementsCppApp_CleanReflections">
+  </PropertyGroup>
+  <Target Name="ScoresAchievementsCppApp_CleanReflections">
     <Delete Files="$(MSBuildProjectDirectory)\reflectionSettings.cache;$(MSBuildProjectDirectory)\reflections.db" />
-</Target>
+  </Target>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
-</PropertyGroup>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|hkAndroid'">
-</PropertyGroup>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
-</PropertyGroup>
-<PropertyGroup>
-</PropertyGroup>
+  </PropertyGroup>
+  <PropertyGroup>
+  </PropertyGroup>
 </Project>

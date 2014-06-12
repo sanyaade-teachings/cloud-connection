@@ -1,3 +1,11 @@
+dialogs/dialogframe_cyanwhitetrans.png#android-default	AssetMgmt_data/transformed/dialogframe_cyanwhitet66f9vw0clgdtc.rgba	sRGB=false
+dialogs/dialogframe_cyanwhitetrans.png#android-pvr	AssetMgmt_data/transformed/dialogframe_cyanwhitetr66f9vw0clgdtc.pvr	sRGB=false
+dialogs/gilgongo_00.dds	Dialogs/gilgongo_00.dds	sRGB=false
+dialogs/gilgongo_large_00.dds	Dialogs/gilgongo_large_00.dds	sRGB=false
+dialogs/gilgongo_large_01.dds	Dialogs/gilgongo_large_01.dds	sRGB=false
+dialogs/gilgongo_small_00.dds	Dialogs/gilgongo_small_00.dds	sRGB=false
+dialogs/mousenorm.tga#android-default	AssetMgmt_data/transformed/mousenormg5jb9wsclgdtc.rgba	sRGB=false
+dialogs/mousenorm.tga#android-pvr	AssetMgmt_data/transformed/mousenormg5jb9wsclgdtc.pvr	sRGB=false
 fonts/arial32_00.dds	Fonts/Arial32_00.dds	sRGB=false
 fonts/arial_18_00.dds	Fonts/Arial_18_00.dds	sRGB=false
 fonts/arial_22_00.dds	Fonts/Arial_22_00.dds	sRGB=false

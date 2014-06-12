@@ -49,7 +49,7 @@
     <!-- copy any other .so libs required to run the game (such as fmod libs) --> 
     <foreach target="copyNativeLib" param="nativelibtocopy" list="${extranativelib}" delimiter="*"/>
                 
-    <!-- copy the main assets -->
+    <!-- copies the main /Assets folder to ./assets/Assets -->
     <VisionCopyAssets DestinationPath="./assets">
       <fileset dir="../../../../Assets/">
         <include name="**"/>
@@ -57,9 +57,9 @@
       </fileset>
     </VisionCopyAssets>
     
-    <!-- copy the vision base assets /Data folder -->
-    <VisionCopyAssets DestinationPath="./assets">
-      <fileset dir="../../../../Data/">
+    <!-- copies the Data/Vision/Base assets into ./assets/Data/Vision/Base folder -->
+    <VisionCopyAssets DestinationPath="./assets/Data/Vision/Base">
+      <fileset dir="../../../../Data/Vision/Base">
         <include name="**"/>
         <exclude name="**/AssetMgmt_data/thumbnails/*"/>
       </fileset>

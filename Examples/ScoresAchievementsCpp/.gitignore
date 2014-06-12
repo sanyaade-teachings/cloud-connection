@@ -1,0 +1,6 @@
+/Data/
+/Bin/
+/Lib/
+/Obj/
+*.sdf
+*.suo

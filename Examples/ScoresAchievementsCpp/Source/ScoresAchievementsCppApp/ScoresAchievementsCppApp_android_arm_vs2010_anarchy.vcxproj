@@ -90,6 +90,7 @@
     <Link>
       <AdditionalDependencies>-lScoresAchievementsCppEnginePlugin;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <Deploy />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dev|hkAndroid'">
     <Link>
@@ -111,12 +112,6 @@
       </AdditionalOptions>
       <DeploymentContent>False</DeploymentContent>
     </ClCompile>
-    <Java Include="Android/VirtualKeyboardActivity.java">
-      <DeploymentContent>False</DeploymentContent>
-    </Java>
-    <Java Include="Android/VNativeDialogAndroid.java">
-      <DeploymentContent>False</DeploymentContent>
-    </Java>
     <ClCompile Include="Main.cpp">
       <DeploymentContent>False</DeploymentContent>
     </ClCompile>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!--
+        Import per project custom build rules if present at the root of the project.
+        This is the place to put custom intermediary targets such as:
+            -pre-build
+            -pre-compile
+            -post-compile (This is typically used for code obfuscation.
+                           Compiled code location: ${out.classes.absolute.dir}
+                           If this is not done in place, override ${out.dex.input.absolute.dir})
+            -post-package
+            -post-build
+            -pre-clean
+    -->
+<project>    
+  
+  <!-- adding ant contrib to the tasks -->
+  <taskdef resource="net/sf/antcontrib/antcontrib.properties">
+    <classpath>
+      <pathelement location="ant/antcontrib/ant-contrib-0.6.jar"/>
+    </classpath>
+  </taskdef>
+  
+  <!-- adding the Vision ANT Tasks task definitions -->
+  <taskdef resource="com/havok/Vision/anttasks/visionanttasks.properties">
+    <classpath>
+      <pathelement location="ant/VisionAntTasks/VisionAntTasks.jar"/>
+    </classpath>
+  </taskdef>  
+  
+	<target name="-pre-build">
+	   <echo>**** -pre-build *****</echo>
+     
+    <fail unless="arch">The arch value has not been set!</fail>
+    <fail unless="mainlib">The mainlib value has not been set!</fail>
+    <fail unless="extranativelib">The extranativelib value has not been set!</fail>
+     
+     <echo>arch= ${arch}</echo> <!-- should be armeabi-v7a or x86 -->
+     <echo>mainlib= ${mainlib}</echo>
+     <echo>extranativelib= ${extranativelib}</echo>
+         
+    <!-- strip the symbols from the main lib to shrink it, copy it to the libs folder 
+    (inside the correct sub-folder) and prefix with "lib" if needed -->   
+    <VisionCopyLib 
+      Arch="${arch}" 
+      Lib="${mainlib}"
+      ToDir="./libs"
+      Strip="true"/>
+    
+    <!-- copy any other .so libs required to run the game (such as fmod libs) --> 
+    <foreach target="copyNativeLib" param="nativelibtocopy" list="${extranativelib}" delimiter="*"/>
+                
+    <!-- copies the main /Assets folder to ./assets/Assets -->
+    <VisionCopyAssets DestinationPath="./assets">
+      <fileset dir="../../../../Assets/">
+        <include name="**"/>
+        <exclude name="**/AssetMgmt_data/thumbnails/*"/>
+      </fileset>
+    </VisionCopyAssets>
+    
+    <!-- copies the Data/Vision/Base assets into ./assets/Data/Vision/Base folder -->
+    <VisionCopyAssets DestinationPath="./assets/Data/Vision/Base">
+      <fileset dir="../../../../Data/Vision/Base">
+        <include name="**"/>
+        <exclude name="**/AssetMgmt_data/thumbnails/*"/>
+      </fileset>
+    </VisionCopyAssets>
+        
+	</target>
+  
+  <!-- copy the file ${nativelibtocopy} to the libs folder, these are the
+  additional .so libraries require by the build, such as the FMOD libaries-->
+  <target name="copyNativeLib">
+        
+    <VisionCopyLib 
+      Arch="${arch}" 
+      Lib="${nativelibtocopy}"
+      ToDir="./libs"
+      Strip="false"/>
+    
+  </target>
+  
+	<target name="-pre-compile">
+	    <echo>**** -pre-compile *****</echo>
+	</target>
+	
+	<target name="-post-compile">
+	    <echo>**** -post-compile *****</echo>
+	</target>    
+	
+	<target name="-post-package">
+	    <echo>**** post-package *****</echo>
+	</target> 
+	
+	<target name="-post-build">
+	    <echo>**** -post-build *****</echo>
+	</target> 
+	
+	<target name="-pre-clean">
+	    <echo>**** -pre-clean *****</echo>
+	</target>
+</project>

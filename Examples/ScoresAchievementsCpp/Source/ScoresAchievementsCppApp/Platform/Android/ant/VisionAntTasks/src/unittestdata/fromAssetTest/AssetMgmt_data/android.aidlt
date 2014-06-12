@@ -1,0 +1,307 @@
+dialogs/checkmark_off.png#android-default	AssetMgmt_data/transformed/checkmark_offhxvyjf#dyfk92.rgba	sRGB=false
+dialogs/checkmark_off.png#android-pvr	AssetMgmt_data/transformed/checkmark_offhxvyjf#dyfk92.pvr	sRGB=false
+dialogs/checkmark_off.png#y1024	|dialogs/checkmark_off_y1024.png	
+dialogs/checkmark_off_y1024.png#android-default	AssetMgmt_data/transformed/checkmark_off_y10248jhlfqwdyfk92.rgba	sRGB=false
+dialogs/checkmark_off_y1024.png#android-pvr	AssetMgmt_data/transformed/checkmark_off_y10248jhlfqwdyfk92.pvr	sRGB=false
+dialogs/checkmark_on.png#android-default	AssetMgmt_data/transformed/checkmark_ongm5fyp#dyfk92.rgba	sRGB=false
+dialogs/checkmark_on.png#android-pvr	AssetMgmt_data/transformed/checkmark_ongm5fyp#dyfk92.pvr	sRGB=false
+dialogs/checkmark_on.png#y1024	|dialogs/checkmark_on_y1024.png	
+dialogs/checkmark_on_y1024.png#android-default	AssetMgmt_data/transformed/checkmark_on_y1024c9yrblmdyfk92.rgba	sRGB=false
+dialogs/checkmark_on_y1024.png#android-pvr	AssetMgmt_data/transformed/checkmark_on_y1024c9yrblmdyfk92.pvr	sRGB=false
+dialogs/dialogframe_blue.tga#android-default	AssetMgmt_data/transformed/dialogframe_bluecvrkhm8clgdtc.rgba	sRGB=false
+dialogs/dialogframe_blue.tga#android-pvr	AssetMgmt_data/transformed/dialogframe_bluecvrkhm8clgdtc.pvr	sRGB=false
+dialogs/dialogframe_cyantrans.png#android-default	AssetMgmt_data/transformed/dialogframe_cyantransfcn7crxclgdtc.rgba	sRGB=false
+dialogs/dialogframe_cyantrans.png#android-pvr	AssetMgmt_data/transformed/dialogframe_cyantransfcn7crxclgdtc.pvr	sRGB=false
+dialogs/dialogframe_cyanwhitetrans.png#android-default	AssetMgmt_data/transformed/dialogframe_cyanwhitet66f9vw0clgdtc.rgba	sRGB=false
+dialogs/dialogframe_cyanwhitetrans.png#android-pvr	AssetMgmt_data/transformed/dialogframe_cyanwhitetr66f9vw0clgdtc.pvr	sRGB=false
+dialogs/gametitle.png#android-default	AssetMgmt_data/transformed/gametitle7q5wbq3dyfk92.rgba	sRGB=false
+dialogs/gametitle.png#android-pvr	AssetMgmt_data/transformed/gametitle7q5wbq3dyfk92.pvr	sRGB=false
+dialogs/gametitle.png#y1024	|dialogs/gametitle_512x256.png	
+dialogs/gametitle_512x256.png#android-default	AssetMgmt_data/transformed/gametitle_512x256hfpk0lcdyfk92.rgba	sRGB=false
+dialogs/gametitle_512x256.png#android-pvr	AssetMgmt_data/transformed/gametitle_512x256hfpk0lcdyfk92.pvr	sRGB=false
+dialogs/media_stop.tga#android-default	AssetMgmt_data/transformed/media_stopb#l6x6sclgdtc.rgba	sRGB=false
+dialogs/media_stop.tga#android-pvr	AssetMgmt_data/transformed/media_stopb#l6x6sclgdtc.pvr	sRGB=false
+dialogs/mousehigh.tga#android-default	AssetMgmt_data/transformed/mousehigh3pppv28clgdtc.rgba	sRGB=false
+dialogs/mousehigh.tga#android-pvr	AssetMgmt_data/transformed/mousehigh3pppv28clgdtc.pvr	sRGB=false
+dialogs/mousenorm.tga#android-default	AssetMgmt_data/transformed/mousenorm93htxh8clgdtc.rgba	sRGB=false
+dialogs/mousenorm.tga#android-pvr	AssetMgmt_data/transformed/mousenorm93htxh8clgdtc.pvr	sRGB=false
+dialogs/projectanarchylogo.png#android-default	AssetMgmt_data/transformed/projectanarchylogo2yzy2x0clgdtc.rgba	sRGB=false
+dialogs/projectanarchylogo.png#android-pvr	AssetMgmt_data/transformed/projectanarchylogo2yzy2x0clgdtc.pvr	sRGB=false
+fonts/arial32_00.dds	Fonts/Arial32_00.dds	sRGB=false
+fonts/arial_18_00.dds	Fonts/Arial_18_00.dds	sRGB=false
+fonts/arial_22_00.dds	Fonts/Arial_22_00.dds	sRGB=false
+fonts/couriernew_18_00.dds	Fonts/CourierNew_18_00.dds	sRGB=false
+fonts/debugfont_00.dds	Fonts/DebugFont_00.dds	sRGB=false
+fonts/gilgongo_00.dds	Fonts/gilgongo_00.dds	sRGB=false
+fonts/gilgongo_large_00.dds	Fonts/gilgongo_large_00.dds	sRGB=false
+fonts/gilgongo_large_01.dds	Fonts/gilgongo_large_01.dds	sRGB=false
+fonts/gilgongo_small_00.dds	Fonts/gilgongo_small_00.dds	sRGB=false
+meshes/plane.vcolmesh	Meshes/Plane.vcolmesh	
+meshes/plane.vmesh	Meshes/Plane.VMESH	LODSwitchDistances=
+models/gameitems/backboard.vmesh	Models/gameitems/Backboard.vmesh	LODSwitchDistances=
+models/gameitems/battery.vmesh	Models/gameitems/Battery.vmesh	LODSwitchDistances=
+models/gameitems/coin.model	Models/gameitems/coin.model	LODSwitchDistances=
+models/gameitems/crate.model	Models/gameitems/crate.model	LODSwitchDistances=
+models/gameitems/exclamation.model	Models/gameitems/exclamation.model	LODSwitchDistances=
+models/gameitems/flusher.anim	Models/gameitems/Flusher.anim	
+models/gameitems/flusher.model	Models/gameitems/Flusher.model	LODSwitchDistances=
+models/gameitems/gauge.model	Models/gameitems/Gauge.model	LODSwitchDistances=
+models/gameitems/pickupdestroy.model	Models/gameitems/PickupDestroy.model	LODSwitchDistances=
+models/gameitems/pickupreverse.model	Models/gameitems/PickupReverse.model	LODSwitchDistances=
+models/gameitems/pickupsort.model	Models/gameitems/PickupSort.model	LODSwitchDistances=
+models/gameitems/placementcube.model	Models/gameitems/PlacementCube.model	LODSwitchDistances=
+models/gameitems/placementhexagon.model	Models/gameitems/PlacementHexagon.model	LODSwitchDistances=
+models/gameitems/placementincoming.model	Models/gameitems/PlacementIncoming.model	LODSwitchDistances=
+models/gameitems/placementoctagon.model	Models/gameitems/PlacementOctagon.model	LODSwitchDistances=
+models/gameitems/placementpentagon.model	Models/gameitems/PlacementPentagon.model	LODSwitchDistances=
+models/gameitems/placementtriangle.model	Models/gameitems/PlacementTriangle.model	LODSwitchDistances=
+models/gameitems/pointer.model	Models/gameitems/pointer.model	LODSwitchDistances=
+models/gameitems/sortableitemcube.model	Models/gameitems/SortableItemCube.model	LODSwitchDistances=
+models/gameitems/sortableitemhexagon.model	Models/gameitems/SortableItemHexagon.model	LODSwitchDistances=
+models/gameitems/sortableitemoctagon.model	Models/gameitems/SortableItemOctagon.model	LODSwitchDistances=
+models/gameitems/sortableitempentagon.model	Models/gameitems/SortableItemPentagon.model	LODSwitchDistances=
+models/gameitems/sortableitemtriangle.model	Models/gameitems/SortableItemTriangle.model	LODSwitchDistances=
+models/gameitems/textures/backboard_diffuse.png#android-default	AssetMgmt_data/transformed/backboard_diffuse1073g8713fdvx.rgba	sRGB=false
+models/gameitems/textures/backboard_diffuse.png#android-pvr	AssetMgmt_data/transformed/backboard_diffuse1073g8713fdvx.pvr	sRGB=false
+models/gameitems/textures/battery_diffuse.png#android-default	AssetMgmt_data/transformed/battery_diffuse80xnzlpn8mfq5.rgba	sRGB=false
+models/gameitems/textures/battery_diffuse.png#android-pvr	AssetMgmt_data/transformed/battery_diffuse80xnzlpn8mfq5.pvr	sRGB=false
+models/gameitems/textures/coin_diffuse.png#android-default	AssetMgmt_data/transformed/coin_diffusegn41wtnclgdtc.rgba	sRGB=false
+models/gameitems/textures/coin_diffuse.png#android-pvr	AssetMgmt_data/transformed/coin_diffusegn41wtnclgdtc.pvr	sRGB=false
+models/gameitems/textures/crate_diffuse.png#android-default	AssetMgmt_data/transformed/crate_diffuseg3kpb75n8mfq5.rgba	sRGB=false
+models/gameitems/textures/crate_diffuse.png#android-pvr	AssetMgmt_data/transformed/crate_diffuseg3kpb75n8mfq5.pvr	sRGB=false
+models/gameitems/textures/flusher_diffuse.png#android-default	AssetMgmt_data/transformed/flusher_diffusegh4c41#13fdvx.rgba	sRGB=false
+models/gameitems/textures/flusher_diffuse.png#android-pvr	AssetMgmt_data/transformed/flusher_diffusegh4c41#13fdvx.pvr	sRGB=false
+models/gameitems/textures/flusherhandle_diffuse.png#android-default	AssetMgmt_data/transformed/flusherhandle_diffuse28bpl7tn8mfq5.rgba	sRGB=false
+models/gameitems/textures/flusherhandle_diffuse.png#android-pvr	AssetMgmt_data/transformed/flusherhandle_diffuse28bpl7tn8mfq5.pvr	sRGB=false
+models/gameitems/textures/gauge_diffuse.png#android-default	AssetMgmt_data/transformed/gauge_diffuse81tbzbyn8mfq5.rgba	sRGB=false
+models/gameitems/textures/gauge_diffuse.png#android-pvr	AssetMgmt_data/transformed/gauge_diffuse81tbzbyn8mfq5.pvr	sRGB=false
+models/gameitems/textures/icon_diffuse.png#android-default	AssetMgmt_data/transformed/icon_diffusegzqtymtnplcvg.etc	sRGB=false
+models/gameitems/textures/icon_diffuse.png#android-pvr	AssetMgmt_data/transformed/icon_diffusegzqtymtnplcvg.pvr	sRGB=false
+models/gameitems/textures/incomingplacement_diffuse.png#android-default	AssetMgmt_data/transformed/incomingplacement_diff8fz9h9313fdvx.rgba	sRGB=false
+models/gameitems/textures/incomingplacement_diffuse.png#android-pvr	AssetMgmt_data/transformed/incomingplacement_diffu8fz9h9313fdvx.pvr	sRGB=false
+models/gameitems/textures/placementcube_diffuse.png#android-default	AssetMgmt_data/transformed/placementcube_diffuse8vqx83713fdvx.rgba	sRGB=false
+models/gameitems/textures/placementcube_diffuse.png#android-pvr	AssetMgmt_data/transformed/placementcube_diffuse8vqx83713fdvx.pvr	sRGB=false
+models/gameitems/textures/placementhexagon_diffuse.png#android-default	AssetMgmt_data/transformed/placementhexagon_diffu408tmnr13fdvx.rgba	sRGB=false
+models/gameitems/textures/placementhexagon_diffuse.png#android-pvr	AssetMgmt_data/transformed/placementhexagon_diffus408tmnr13fdvx.pvr	sRGB=false
+models/gameitems/textures/placementoctagon_diffuse.png#android-default	AssetMgmt_data/transformed/placementoctagon_diffu14p9vgh13fdvx.rgba	sRGB=false
+models/gameitems/textures/placementoctagon_diffuse.png#android-pvr	AssetMgmt_data/transformed/placementoctagon_diffus14p9vgh13fdvx.pvr	sRGB=false
+models/gameitems/textures/placementpentagon_diffuse.png#android-default	AssetMgmt_data/transformed/placementpentagon_diff23mj3y#13fdvx.rgba	sRGB=false
+models/gameitems/textures/placementpentagon_diffuse.png#android-pvr	AssetMgmt_data/transformed/placementpentagon_diffu23mj3y#13fdvx.pvr	sRGB=false
+models/gameitems/textures/placementtriangle_diffuse.png#android-default	AssetMgmt_data/transformed/placementtriangle_diff5g676s#13fdvx.rgba	sRGB=false
+models/gameitems/textures/placementtriangle_diffuse.png#android-pvr	AssetMgmt_data/transformed/placementtriangle_diffu5g676s#13fdvx.pvr	sRGB=false
+models/gameitems/textures/sortableitemcube_diffuse.png#android-default	AssetMgmt_data/transformed/sortableitemcube_diffuggbjq45n8mfq5.rgba	sRGB=false
+models/gameitems/textures/sortableitemcube_diffuse.png#android-pvr	AssetMgmt_data/transformed/sortableitemcube_diffusggbjq45n8mfq5.pvr	sRGB=false
+models/gameitems/textures/sortableitemhexagon_diffuse.png#android-default	AssetMgmt_data/transformed/sortableitemhexagon_di2y651lyn8mfq5.rgba	sRGB=false
+models/gameitems/textures/sortableitemhexagon_diffuse.png#android-pvr	AssetMgmt_data/transformed/sortableitemhexagon_dif2y651lyn8mfq5.pvr	sRGB=false
+models/gameitems/textures/sortableitemoctagon_diffuse.png#android-default	AssetMgmt_data/transformed/sortableitemoctagon_di7jk7cfpn8mfq5.rgba	sRGB=false
+models/gameitems/textures/sortableitemoctagon_diffuse.png#android-pvr	AssetMgmt_data/transformed/sortableitemoctagon_dif7jk7cfpn8mfq5.pvr	sRGB=false
+models/gameitems/textures/sortableitempentagon_diffuse.png#android-default	AssetMgmt_data/transformed/sortableitempentagon_dfms7vf9n8mfq5.rgba	sRGB=false
+models/gameitems/textures/sortableitempentagon_diffuse.png#android-pvr	AssetMgmt_data/transformed/sortableitempentagon_difms7vf9n8mfq5.pvr	sRGB=false
+models/gameitems/textures/sortableitemtriangle_diffuse.png#android-default	AssetMgmt_data/transformed/sortableitemtriangle_d4295s09n8mfq5.rgba	sRGB=false
+models/gameitems/textures/sortableitemtriangle_diffuse.png#android-pvr	AssetMgmt_data/transformed/sortableitemtriangle_di4295s09n8mfq5.pvr	sRGB=false
+models/scenery/beam.vcolmesh	Models/scenery/beam.vcolmesh	
+models/scenery/beam.vmesh	Models/scenery/beam.vmesh	LODSwitchDistances=
+models/scenery/bush.anim	Models/scenery/Bush.anim	
+models/scenery/bush.model	Models/scenery/Bush.model	LODSwitchDistances=
+models/scenery/dish.vcolmesh	Models/scenery/dish.vcolmesh	
+models/scenery/dish.vmesh	Models/scenery/dish.vmesh	LODSwitchDistances=
+models/scenery/edge.vcolmesh	Models/scenery/edge.vcolmesh	
+models/scenery/edge.vmesh	Models/scenery/edge.vmesh	LODSwitchDistances=
+models/scenery/edge_corner.vcolmesh	Models/scenery/edge_corner.vcolmesh	
+models/scenery/edge_corner.vmesh	Models/scenery/edge_corner.vmesh	LODSwitchDistances=
+models/scenery/fern.anim	Models/scenery/Fern.anim	
+models/scenery/fern.model	Models/scenery/Fern.model	LODSwitchDistances=
+models/scenery/floor.vcolmesh	Models/scenery/floor.vcolmesh	
+models/scenery/floor.vmesh	Models/scenery/floor.vmesh	LODSwitchDistances=
+models/scenery/floor4x8.vcolmesh	Models/scenery/floor4x8.vcolmesh	
+models/scenery/floor4x8.vmesh	Models/scenery/floor4x8.vmesh	LODSwitchDistances=
+models/scenery/pillar2.vcolmesh	Models/scenery/pillar2.vcolmesh	
+models/scenery/pillar2.vmesh	Models/scenery/pillar2.vmesh	LODSwitchDistances=
+models/scenery/plantpot.vcolmesh	Models/scenery/plantpot.vcolmesh	
+models/scenery/plantpot.vmesh	Models/scenery/plantpot.vmesh	LODSwitchDistances=
+models/scenery/sconce1.vmesh	Models/scenery/Sconce1.vmesh	LODSwitchDistances=
+models/scenery/sconce2.vmesh	Models/scenery/Sconce2.vmesh	LODSwitchDistances=
+models/scenery/textures/bush_diffuse.png#android-default	AssetMgmt_data/transformed/bush_diffuse7qxxdbxclgdtc.rgba	sRGB=false
+models/scenery/textures/bush_diffuse.png#android-pvr	AssetMgmt_data/transformed/bush_diffuse7qxxdbxclgdtc.pvr	sRGB=false
+models/scenery/textures/edge_diffuse.tga#android-default	AssetMgmt_data/transformed/edge_diffuse2#qhx9#13fdvx.rgba	sRGB=false
+models/scenery/textures/edge_diffuse.tga#android-pvr	AssetMgmt_data/transformed/edge_diffuse2#qhx9#13fdvx.pvr	sRGB=false
+models/scenery/textures/fern_diffuse.png#android-default	AssetMgmt_data/transformed/fern_diffuseb1lzfj4clgdtc.rgba	sRGB=false
+models/scenery/textures/fern_diffuse.png#android-pvr	AssetMgmt_data/transformed/fern_diffuseb1lzfj4clgdtc.pvr	sRGB=false
+models/scenery/textures/floor_diffuse.tga#android-default	AssetMgmt_data/transformed/floor_diffusegnq8tbsclgdtc.etc	sRGB=false
+models/scenery/textures/floor_diffuse.tga#android-pvr	AssetMgmt_data/transformed/floor_diffusegnq8tbsclgdtc.pvr	sRGB=false
+models/scenery/textures/gold_diffuse.tga#android-default	AssetMgmt_data/transformed/gold_diffusebch#4ppnplcvg.rgba	sRGB=false
+models/scenery/textures/gold_diffuse.tga#android-pvr	AssetMgmt_data/transformed/gold_diffusebch#4ppnplcvg.pvr	sRGB=false
+models/scenery/textures/plantpot_diffuse.tga#android-default	AssetMgmt_data/transformed/plantpot_diffuse88mqxsfn8mfq5.rgba	sRGB=false
+models/scenery/textures/plantpot_diffuse.tga#android-pvr	AssetMgmt_data/transformed/plantpot_diffuse88mqxsfn8mfq5.pvr	sRGB=false
+models/scenery/textures/sconce_diffuse.png#android-default	AssetMgmt_data/transformed/sconce_diffuse9zjxbqtnplcvg.rgba	sRGB=false
+models/scenery/textures/sconce_diffuse.png#android-pvr	AssetMgmt_data/transformed/sconce_diffuse9zjxbqtnplcvg.pvr	sRGB=false
+models/scenery/textures/wall_diffuse.tga#android-default	AssetMgmt_data/transformed/wall_diffusehg07rhh13fdvx.etc	sRGB=false
+models/scenery/textures/wall_diffuse.tga#android-pvr	AssetMgmt_data/transformed/wall_diffusehg07rhh13fdvx.pvr	sRGB=false
+models/scenery/vase.vcolmesh	Models/scenery/vase.vcolmesh	
+models/scenery/vase.vmesh	Models/scenery/vase.vmesh	LODSwitchDistances=
+models/scenery/vase2.vcolmesh	Models/scenery/vase2.vcolmesh	
+models/scenery/vase2.vmesh	Models/scenery/vase2.vmesh	LODSwitchDistances=
+models/scenery/wall.vcolmesh	Models/scenery/wall.vcolmesh	
+models/scenery/wall.vmesh	Models/scenery/wall.vmesh	LODSwitchDistances=
+particles/cratetap.vpfx	Particles/CrateTap.vpfx	
+particles/electric_1.dds#android-default	AssetMgmt_data/transformed/electric_1g31wy9pc#j1nb.rgba	sRGB=false
+particles/electric_1.dds#android-pvr	AssetMgmt_data/transformed/electric_1g31wy9pc#j1nb.rgba	sRGB=false
+particles/electricfieldtest.vpfx	Particles/electricfieldtest.vpfx	
+particles/exclamationglow.vpfx	Particles/ExclamationGlow.vpfx	
+particles/explosion_page.dds#android-default	AssetMgmt_data/transformed/explosion_page8ntjrzjclgdtc.rgba	sRGB=false
+particles/explosion_page.dds#android-pvr	AssetMgmt_data/transformed/explosion_page8ntjrzjclgdtc.pvr	sRGB=false
+particles/flare_4.dds#android-default	AssetMgmt_data/transformed/flare_4dpktkg0clgdtc.rgba	sRGB=false
+particles/flare_4.dds#android-pvr	AssetMgmt_data/transformed/flare_4dpktkg0clgdtc.pvr	sRGB=false
+particles/flusherdisabled.vpfx	Particles/FlusherDisabled.vpfx	
+particles/fog_group.dds#android-default	AssetMgmt_data/transformed/fog_grouph48r7x4clgdtc.rgba	sRGB=false
+particles/fog_group.dds#android-pvr	AssetMgmt_data/transformed/fog_grouph48r7x4clgdtc.pvr	sRGB=false
+particles/glow.dds#android-default	AssetMgmt_data/transformed/glowdmx46lxclgdtc.rgba	sRGB=false
+particles/glow.dds#android-pvr	AssetMgmt_data/transformed/glowdmx46lxclgdtc.pvr	sRGB=false
+particles/groundfog.dds#android-default	AssetMgmt_data/transformed/groundfog96btc8jclgdtc.rgba	sRGB=false
+particles/groundfog.dds#android-pvr	AssetMgmt_data/transformed/groundfog96btc8jclgdtc.pvr	sRGB=false
+particles/itemdestroy.vpfx	Particles/ItemDestroy.vpfx	
+particles/itemmovetrail.vpfx	Particles/ItemMoveTrail.vpfx	
+particles/itemzoomaway.vpfx	Particles/ItemZoomAway.vpfx	
+particles/particles_fire_torch_01.vpfx	Particles/Particles_Fire_Torch_01.vpfx	
+particles/placementsort.vpfx	Particles/PlacementSort.vpfx	
+particles/plasma_1.dds#android-default	AssetMgmt_data/transformed/plasma_1gtzk5rjclgdtc.rgba	sRGB=false
+particles/plasma_1.dds#android-pvr	AssetMgmt_data/transformed/plasma_1gtzk5rjclgdtc.pvr	sRGB=false
+particles/plume_2.dds#android-default	AssetMgmt_data/transformed/plume_2719k42dclgdtc.rgba	sRGB=false
+particles/plume_2.dds#android-pvr	AssetMgmt_data/transformed/plume_2719k42dclgdtc.pvr	sRGB=false
+particles/smoke.dds#android-default	AssetMgmt_data/transformed/smokef0bryq4clgdtc.rgba	sRGB=false
+particles/smoke.dds#android-pvr	AssetMgmt_data/transformed/smokef0bryq4clgdtc.pvr	sRGB=false
+particles/sparkle.dds#android-default	AssetMgmt_data/transformed/sparklebk1kmw0clgdtc.etc	sRGB=false
+particles/sparkle.dds#android-pvr	AssetMgmt_data/transformed/sparklebk1kmw0clgdtc.pvr	sRGB=false
+particles/star.dds#android-default	AssetMgmt_data/transformed/star1v8889sclgdtc.etc	sRGB=false
+particles/star.dds#android-pvr	AssetMgmt_data/transformed/star1v8889sclgdtc.pvr	sRGB=false
+particles/steam.dds#android-default	AssetMgmt_data/transformed/steamgfc5ddjclgdtc.rgba	sRGB=false
+particles/steam.dds#android-pvr	AssetMgmt_data/transformed/steamgfc5ddjclgdtc.pvr	sRGB=false
+particles/textures/particles_flame_tiles_4x4_01_d.tga#android-default	AssetMgmt_data/transformed/particles_flame_tiles_4fyn6p#sclgdtc.etc	sRGB=false
+particles/textures/particles_flame_tiles_4x4_01_d.tga#android-pvr	AssetMgmt_data/transformed/particles_flame_tiles_4fyn6p#sclgdtc.pvr	sRGB=false
+particles/textures/particles_glow_01_d.tga#android-default	AssetMgmt_data/transformed/particles_glow_01_dh46vn1jclgdtc.etc	sRGB=false
+particles/textures/particles_glow_01_d.tga#android-pvr	AssetMgmt_data/transformed/particles_glow_01_dh46vn1jclgdtc.pvr	sRGB=false
+particles/textures/particles_smoke_tiles_2x2_01_d.tga#android-default	AssetMgmt_data/transformed/particles_smoke_tiles_27wy#rtsclgdtc.etc	sRGB=false
+particles/textures/particles_smoke_tiles_2x2_01_d.tga#android-pvr	AssetMgmt_data/transformed/particles_smoke_tiles_27wy#rtsclgdtc.pvr	sRGB=false
+prefabs/dish_flaming.prefab	Prefabs/dish_flaming.prefab	
+prefabs/pillar_double.prefab	Prefabs/pillar_double.prefab	
+prefabs/pillar_row4.prefab	Prefabs/pillar_row4.prefab	
+prefabs/sconce1.prefab	Prefabs/sconce1.prefab	
+prefabs/sconce2.prefab	Prefabs/sconce2.prefab	
+prefabs/stairs.prefab	Prefabs/stairs.prefab	
+prefabs/stairs_nocorner.prefab	Prefabs/stairs_nocorner.prefab	
+scenes/stage1_p01.dds#android-default	AssetMgmt_data/transformed/stage1_p013p4sxzxclgdtc.etc	sRGB=false
+scenes/stage1_p01.dds#android-pvr	AssetMgmt_data/transformed/stage1_p013p4sxzxclgdtc.pvr	sRGB=false
+scenes/stage1_p02.dds#android-default	AssetMgmt_data/transformed/stage1_p0260njrjjclgdtc.etc	sRGB=false
+scenes/stage1_p02.dds#android-pvr	AssetMgmt_data/transformed/stage1_p0260njrjjclgdtc.pvr	sRGB=false
+scenes/stage2_p01.dds#android-default	AssetMgmt_data/transformed/stage2_p013f7s8nxclgdtc.etc	sRGB=false
+scenes/stage2_p01.dds#android-pvr	AssetMgmt_data/transformed/stage2_p013f7s8nxclgdtc.pvr	sRGB=false
+scenes/stage2_p02.dds#android-default	AssetMgmt_data/transformed/stage2_p02fw4w2j8clgdtc.etc	sRGB=false
+scenes/stage2_p02.dds#android-pvr	AssetMgmt_data/transformed/stage2_p02fw4w2j8clgdtc.pvr	sRGB=false
+scenes/stage3_p01.dds#android-default	AssetMgmt_data/transformed/stage3_p011h9vq5jclgdtc.etc	sRGB=false
+scenes/stage3_p01.dds#android-pvr	AssetMgmt_data/transformed/stage3_p011h9vq5jclgdtc.pvr	sRGB=false
+scenes/stage3_p02.dds#android-default	AssetMgmt_data/transformed/stage3_p02cmh11pxclgdtc.etc	sRGB=false
+scenes/stage3_p02.dds#android-pvr	AssetMgmt_data/transformed/stage3_p02cmh11pxclgdtc.pvr	sRGB=false
+shaders/misc_00/multassigned.bmp#android-default	AssetMgmt_data/transformed/multassigned824c8cnclgdtc.etc	sRGB=false
+shaders/misc_00/multassigned.bmp#android-pvr	AssetMgmt_data/transformed/multassigned824c8cnclgdtc.pvr	sRGB=false
+textures/colors/black.png#android-default	AssetMgmt_data/transformed/blackb13#2z8clgdtc.etc	sRGB=false
+textures/colors/black.png#android-pvr	AssetMgmt_data/transformed/blackb13#2z8clgdtc.pvr	sRGB=false
+textures/colors/blue.png#android-default	AssetMgmt_data/transformed/blue1g7ph8sclgdtc.etc	sRGB=false
+textures/colors/blue.png#android-pvr	AssetMgmt_data/transformed/blue1g7ph8sclgdtc.pvr	sRGB=false
+textures/colors/bluedark.png#android-default	AssetMgmt_data/transformed/bluedark45z3dkdclgdtc.etc	sRGB=false
+textures/colors/bluedark.png#android-pvr	AssetMgmt_data/transformed/bluedark45z3dkdclgdtc.pvr	sRGB=false
+textures/colors/bluelight.png#android-default	AssetMgmt_data/transformed/bluelightfmmd7gxclgdtc.etc	sRGB=false
+textures/colors/bluelight.png#android-pvr	AssetMgmt_data/transformed/bluelightfmmd7gxclgdtc.pvr	sRGB=false
+textures/colors/color_orange.dds#android-default	AssetMgmt_data/transformed/color_orange0l5ndbxclgdtc.rgba	sRGB=false
+textures/colors/color_orange.dds#android-pvr	AssetMgmt_data/transformed/color_orange0l5ndbxclgdtc.pvr	sRGB=false
+textures/colors/cyan.png#android-default	AssetMgmt_data/transformed/cyangldf3d8clgdtc.etc	sRGB=false
+textures/colors/cyan.png#android-pvr	AssetMgmt_data/transformed/cyangldf3d8clgdtc.pvr	sRGB=false
+textures/colors/cyandark.png#android-default	AssetMgmt_data/transformed/cyandark1vdg044clgdtc.etc	sRGB=false
+textures/colors/cyandark.png#android-pvr	AssetMgmt_data/transformed/cyandark1vdg044clgdtc.pvr	sRGB=false
+textures/colors/cyanlight.png#android-default	AssetMgmt_data/transformed/cyanlightbcdht60clgdtc.etc	sRGB=false
+textures/colors/cyanlight.png#android-pvr	AssetMgmt_data/transformed/cyanlightbcdht60clgdtc.pvr	sRGB=false
+textures/colors/gray33.png#android-default	AssetMgmt_data/transformed/gray333c4tsj4clgdtc.etc	sRGB=false
+textures/colors/gray33.png#android-pvr	AssetMgmt_data/transformed/gray333c4tsj4clgdtc.pvr	sRGB=false
+textures/colors/gray50.png#android-default	AssetMgmt_data/transformed/gray50h154qhjclgdtc.etc	sRGB=false
+textures/colors/gray50.png#android-pvr	AssetMgmt_data/transformed/gray50h154qhjclgdtc.pvr	sRGB=false
+textures/colors/gray66.png#android-default	AssetMgmt_data/transformed/gray66cf#0d#sclgdtc.etc	sRGB=false
+textures/colors/gray66.png#android-pvr	AssetMgmt_data/transformed/gray66cf#0d#sclgdtc.pvr	sRGB=false
+textures/colors/green.png#android-default	AssetMgmt_data/transformed/greenhnqlwqjclgdtc.etc	sRGB=false
+textures/colors/green.png#android-pvr	AssetMgmt_data/transformed/greenhnqlwqjclgdtc.pvr	sRGB=false
+textures/colors/greendark.png#android-default	AssetMgmt_data/transformed/greendark23p7z7dclgdtc.etc	sRGB=false
+textures/colors/greendark.png#android-pvr	AssetMgmt_data/transformed/greendark23p7z7dclgdtc.pvr	sRGB=false
+textures/colors/greenlight.png#android-default	AssetMgmt_data/transformed/greenlightd11x504clgdtc.etc	sRGB=false
+textures/colors/greenlight.png#android-pvr	AssetMgmt_data/transformed/greenlightd11x504clgdtc.pvr	sRGB=false
+textures/colors/magenta.png#android-default	AssetMgmt_data/transformed/magenta2pn3930clgdtc.etc	sRGB=false
+textures/colors/magenta.png#android-pvr	AssetMgmt_data/transformed/magenta2pn3930clgdtc.pvr	sRGB=false
+textures/colors/magentadark.png#android-default	AssetMgmt_data/transformed/magentadark20z5pjnclgdtc.etc	sRGB=false
+textures/colors/magentadark.png#android-pvr	AssetMgmt_data/transformed/magentadark20z5pjnclgdtc.pvr	sRGB=false
+textures/colors/magentalight.png#android-default	AssetMgmt_data/transformed/magentalight5fssyv8clgdtc.etc	sRGB=false
+textures/colors/magentalight.png#android-pvr	AssetMgmt_data/transformed/magentalight5fssyv8clgdtc.pvr	sRGB=false
+textures/colors/orange.png#android-default	AssetMgmt_data/transformed/orange3sjkj0nclgdtc.etc	sRGB=false
+textures/colors/orange.png#android-pvr	AssetMgmt_data/transformed/orange3sjkj0nclgdtc.pvr	sRGB=false
+textures/colors/orangedark.png#android-default	AssetMgmt_data/transformed/orangedark5qtct1nclgdtc.etc	sRGB=false
+textures/colors/orangedark.png#android-pvr	AssetMgmt_data/transformed/orangedark5qtct1nclgdtc.pvr	sRGB=false
+textures/colors/orangelight.png#android-default	AssetMgmt_data/transformed/orangelighthvp#3n0clgdtc.etc	sRGB=false
+textures/colors/orangelight.png#android-pvr	AssetMgmt_data/transformed/orangelighthvp#3n0clgdtc.pvr	sRGB=false
+textures/colors/red.png#android-default	AssetMgmt_data/transformed/red5#9b150clgdtc.etc	sRGB=false
+textures/colors/red.png#android-pvr	AssetMgmt_data/transformed/red5#9b150clgdtc.pvr	sRGB=false
+textures/colors/reddark.png#android-default	AssetMgmt_data/transformed/reddarkfnmsftdclgdtc.etc	sRGB=false
+textures/colors/reddark.png#android-pvr	AssetMgmt_data/transformed/reddarkfnmsftdclgdtc.pvr	sRGB=false
+textures/colors/redlight.png#android-default	AssetMgmt_data/transformed/redlight8ldss3nclgdtc.etc	sRGB=false
+textures/colors/redlight.png#android-pvr	AssetMgmt_data/transformed/redlight8ldss3nclgdtc.pvr	sRGB=false
+textures/colors/white.png#android-default	AssetMgmt_data/transformed/white5yglsn4clgdtc.etc	sRGB=false
+textures/colors/white.png#android-pvr	AssetMgmt_data/transformed/white5yglsn4clgdtc.pvr	sRGB=false
+textures/colors/yellow.png#android-default	AssetMgmt_data/transformed/yellow6#g4sb4clgdtc.etc	sRGB=false
+textures/colors/yellow.png#android-pvr	AssetMgmt_data/transformed/yellow6#g4sb4clgdtc.pvr	sRGB=false
+textures/colors/yellowdark.png#android-default	AssetMgmt_data/transformed/yellowdark05v84ldclgdtc.etc	sRGB=false
+textures/colors/yellowdark.png#android-pvr	AssetMgmt_data/transformed/yellowdark05v84ldclgdtc.pvr	sRGB=false
+textures/colors/yellowlight.png#android-default	AssetMgmt_data/transformed/yellowlightcrp600dclgdtc.etc	sRGB=false
+textures/colors/yellowlight.png#android-pvr	AssetMgmt_data/transformed/yellowlightcrp600dclgdtc.pvr	sRGB=false
+textures/grid01.jpg#android-default	AssetMgmt_data/transformed/grid016ppcvq4clgdtc.etc	sRGB=false
+textures/grid01.jpg#android-pvr	AssetMgmt_data/transformed/grid016ppcvq4clgdtc.pvr	sRGB=false
+textures/sky/clear_morning_back.bmp#android-default	AssetMgmt_data/transformed/clear_morning_back3672t4f5vwwv3.etc	sRGB=false
+textures/sky/clear_morning_back.bmp#android-pvr	AssetMgmt_data/transformed/clear_morning_back3672t4f5vwwv3.pvr	sRGB=false
+textures/sky/clear_morning_front.bmp#android-default	AssetMgmt_data/transformed/clear_morning_frontbj1xtf95vwwv3.etc	sRGB=false
+textures/sky/clear_morning_front.bmp#android-pvr	AssetMgmt_data/transformed/clear_morning_frontbj1xtf95vwwv3.pvr	sRGB=false
+textures/sky/clear_morning_left.bmp#android-default	AssetMgmt_data/transformed/clear_morning_left6ttqkft5vwwv3.etc	sRGB=false
+textures/sky/clear_morning_left.bmp#android-pvr	AssetMgmt_data/transformed/clear_morning_left6ttqkft5vwwv3.pvr	sRGB=false
+textures/sky/clear_morning_right.bmp#android-default	AssetMgmt_data/transformed/clear_morning_right8bjj#q15vwwv3.etc	sRGB=false
+textures/sky/clear_morning_right.bmp#android-pvr	AssetMgmt_data/transformed/clear_morning_right8bjj#q15vwwv3.pvr	sRGB=false
+textures/sky/clear_morning_top.bmp#android-default	AssetMgmt_data/transformed/clear_morning_tophc4sqy95vwwv3.etc	sRGB=false
+textures/sky/clear_morning_top.bmp#android-pvr	AssetMgmt_data/transformed/clear_morning_tophc4sqy95vwwv3.pvr	sRGB=false
+textures/ui/loading.png#android-default	AssetMgmt_data/transformed/loading4hcs2c7dyfk92.rgba	sRGB=false
+textures/ui/loading.png#android-pvr	AssetMgmt_data/transformed/loading4hcs2c7dyfk92.pvr	sRGB=false
+textures/ui/loading.png#y1024	|textures/ui/loading_512x256.png	
+textures/ui/loading_512x256.png#android-default	AssetMgmt_data/transformed/loading_512x2561gnv97wdyfk92.rgba	sRGB=false
+textures/ui/loading_512x256.png#android-pvr	AssetMgmt_data/transformed/loading_512x2561gnv97wdyfk92.pvr	sRGB=false
+textures/ui/overlayicons/back.png#android-default	AssetMgmt_data/transformed/backh4s#7c7znv#kz.rgba	sRGB=false
+textures/ui/overlayicons/back.png#android-pvr	AssetMgmt_data/transformed/backh4s#7c7znv#kz.pvr	sRGB=false
+textures/ui/overlayicons/back.png#y1024	|textures/ui/overlayicons/back_128x128.png	
+textures/ui/overlayicons/back_128x128.png#android-default	AssetMgmt_data/transformed/back_128x128h4s#7c7dyfk92.rgba	sRGB=false
+textures/ui/overlayicons/back_128x128.png#android-pvr	AssetMgmt_data/transformed/back_128x128h4s#7c7dyfk92.pvr	sRGB=false
+textures/ui/overlayicons/panelend.tga#android-default	AssetMgmt_data/transformed/panelend7kpt9wwdyfk92.rgba	sRGB=false
+textures/ui/overlayicons/panelend.tga#android-pvr	AssetMgmt_data/transformed/panelend7kpt9wwdyfk92.pvr	sRGB=false
+textures/ui/overlayicons/panelend.tga#y1024	|textures/ui/overlayicons/panelend_128x128.tga	
+textures/ui/overlayicons/panelend_128x128.tga#android-default	AssetMgmt_data/transformed/panelend_128x1287vkp9t#dyfk92.rgba	sRGB=false
+textures/ui/overlayicons/panelend_128x128.tga#android-pvr	AssetMgmt_data/transformed/panelend_128x1287vkp9t#dyfk92.pvr	sRGB=false
+textures/ui/overlayicons/panelmid.tga#android-default	AssetMgmt_data/transformed/panelmid0t5ft1#dyfk92.rgba	sRGB=false
+textures/ui/overlayicons/panelmid.tga#android-pvr	AssetMgmt_data/transformed/panelmid0t5ft1#dyfk92.pvr	sRGB=false
+textures/ui/overlayicons/panelmid.tga#y1024	|textures/ui/overlayicons/panelmid_32x128.tga	
+textures/ui/overlayicons/panelmid_32x128.tga#android-default	AssetMgmt_data/transformed/panelmid_32x128dspk5#rdyfk92.rgba	sRGB=false
+textures/ui/overlayicons/panelmid_32x128.tga#android-pvr	AssetMgmt_data/transformed/panelmid_32x128dspk5#rdyfk92.pvr	sRGB=false
+textures/ui/pickupicons/pickup0.png#android-default	AssetMgmt_data/transformed/pickup0129r2fxclgdtc.rgba	sRGB=false
+textures/ui/pickupicons/pickup0.png#android-pvr	AssetMgmt_data/transformed/pickup0129r2fxclgdtc.pvr	sRGB=false
+textures/ui/pickupicons/pickup1.png#android-default	AssetMgmt_data/transformed/pickup18#06534clgdtc.rgba	sRGB=false
+textures/ui/pickupicons/pickup1.png#android-pvr	AssetMgmt_data/transformed/pickup18#06534clgdtc.pvr	sRGB=false
+textures/ui/pickupicons/pickup2.png#android-default	AssetMgmt_data/transformed/pickup2fjrql60clgdtc.rgba	sRGB=false
+textures/ui/pickupicons/pickup2.png#android-pvr	AssetMgmt_data/transformed/pickup2fjrql60clgdtc.pvr	sRGB=false
+textures/ui/splash/splashdev.png#android-default	AssetMgmt_data/transformed/splashdev4w0qdv3dyfk92.rgba	sRGB=false
+textures/ui/splash/splashdev.png#android-pvr	AssetMgmt_data/transformed/splashdev4w0qdv3dyfk92.pvr	sRGB=false
+textures/ui/splash/splashdev.png#y1024	|textures/ui/splash/splashdev_1024x512.png	
+textures/ui/splash/splashdev_1024x512.png#android-default	AssetMgmt_data/transformed/splashdev_1024x512fz0b3lcdyfk92.rgba	sRGB=false
+textures/ui/splash/splashdev_1024x512.png#android-pvr	AssetMgmt_data/transformed/splashdev_1024x512fz0b3lcdyfk92.pvr	sRGB=false
+textures/ui/splash/splashgame.png#android-default	AssetMgmt_data/transformed/splashgamecz1g953dyfk92.rgba	sRGB=false
+textures/ui/splash/splashgame.png#android-pvr	AssetMgmt_data/transformed/splashgamecz1g953dyfk92.pvr	sRGB=false
+textures/ui/splash/splashgame.png#y1024	|textures/ui/splash/splashgame_1024x1024.png	
+textures/ui/splash/splashgame_1024x1024.png#android-default	AssetMgmt_data/transformed/splashgame_1024x1024blrx6n#dyfk92.rgba	sRGB=false
+textures/ui/splash/splashgame_1024x1024.png#android-pvr	AssetMgmt_data/transformed/splashgame_1024x1024blrx6n#dyfk92.pvr	sRGB=false

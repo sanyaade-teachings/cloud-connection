@@ -50,7 +50,7 @@
     <foreach target="copyNativeLib" param="nativelibtocopy" list="${extranativelib}" delimiter="*"/>
                 
     <!-- copies the main /Assets folder to ./assets/Assets -->
-    <VisionCopyAssets DestinationPath="./assets">
+    <VisionCopyAssets DestinationPath="./assets/Assets">
       <fileset dir="../../../../Assets/">
         <include name="**"/>
         <exclude name="**/AssetMgmt_data/thumbnails/*"/>

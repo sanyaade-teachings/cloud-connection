@@ -186,11 +186,11 @@ Copies assets from one folder to another. Is aware of the Vision asset managemen
 
 **Example 1:**
 
-Will copy the assets into `./assets/Assets` from `../../../../Assets/` while excluding the Vision asset management data thumbnails folder.  `./assets/Assets` will be created if it doesn't exist.
+Will copy the assets contained in `./assets/Assets` from `../../../../Assets/` while excluding the Vision asset management data thumbnails folder.  `./assets/Assets` folders will be created if they don't exist.
 
 ```xml
 
-	<VisionCopyAssets DestinationPath="./assets">
+	<VisionCopyAssets DestinationPath="./assets/Assets">
 	  <fileset dir="../../../../Assets/">
 	    <include name="**"/>
 	    <exclude name="**/AssetMgmt_data/thumbnails/*"/>
@@ -201,12 +201,12 @@ Will copy the assets into `./assets/Assets` from `../../../../Assets/` while exc
 
 **Example 2:**
 
-Will copy the assets into `./assets/Data` from `../../../../Data/` while excluding the Vision asset management data thumbnails folder. `./assets/Data` will be created if it doesn't exist.
+Will copy the assets contained in `./assets/Data/Vision/Base` from `../../../../Data/Vision/Base` while excluding the Vision asset management data thumbnails folder. `./assets/Data/Vision/Base` folders will be created if they don't exist.
 
 ```xml
 
-    <VisionCopyAssets DestinationPath="./assets">
-      <fileset dir="../../../../Data/">
+    <VisionCopyAssets DestinationPath="./assets/Data/Vision/Base">
+      <fileset dir="../../../../Data/Vision/Base">
         <include name="**"/>
         <exclude name="**/AssetMgmt_data/thumbnails/*"/>
       </fileset>

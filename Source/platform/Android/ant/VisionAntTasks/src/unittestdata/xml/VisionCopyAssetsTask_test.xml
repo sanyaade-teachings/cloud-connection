@@ -8,7 +8,7 @@
   <!-- copy the managed resources, this source folder does have the .aidlt file -->
   <target name="copyManagedResources">
             
-    <VisionCopyAssets DestinationPath="..\toAssetTest">
+    <VisionCopyAssets DestinationPath="..\toAssetTest\copyManagedResources">
       <fileset dir="..\fromAssetTest">
         <include name="**"/>
         <exclude name="**/AssetMgmt_data/thumbnails/*"/>
@@ -21,7 +21,7 @@
   <!-- copy the unmanaged resources, this source folder does not have the .aidlt file -->
   <target name="copyUnManagedResources">
    
-    <VisionCopyAssets DestinationPath="..\toAssetTest">
+    <VisionCopyAssets DestinationPath="..\toAssetTest\copyUnManagedResources">
       <fileset dir="..\fromAssetTest_NoProfile">
         <include name="**"/>
         <exclude name="**/testfile.excludeme"/>        
@@ -45,7 +45,7 @@
     <!-- SourcePath dir has been to an invalid folder, should throw a build exception -->
   <target name="invalidSourcePathSet">
   
-    <VisionCopyAssets DestinationPath="..\toAssetTest">
+    <VisionCopyAssets DestinationPath="..\toAssetTest\invalidSourcePathSet">
       <fileset dir="..\path\to\src\does\not\exist\anywhere">
         <include name="**"/>
         <exclude name="**/testfile.excludeme"/>        

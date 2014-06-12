@@ -136,11 +136,6 @@ public class VisionCopyAssetsTask extends VisionBaseTask
         FileSet fs = m_srcFileSet.get(0);
         DirectoryScanner ds = fs.getDirectoryScanner();
         
-        if ( fileDest.isDirectory() )
-        {            
-            fileDest = new File( getPath( fileDest.getPath(), srcFile.getName() ) );
-        }
-        
         log("Copying Asset Files:");
         String[] files = ds.getIncludedFiles();
         for (int i = 0; i < files.length; i++)
@@ -183,12 +178,7 @@ public class VisionCopyAssetsTask extends VisionBaseTask
       //copy unmanaged resources      
       FileSet fs = m_srcFileSet.get(0);
       DirectoryScanner ds = fs.getDirectoryScanner();
-      
-      if ( fileDest.isDirectory() )
-      {            
-          fileDest = new File( getPath( fileDest.getPath(), srcFile.getName() ) );
-      }
-              
+           
       log("Copying Asset Files:");
       String[] files = ds.getIncludedFiles();
       for (int i = 0; i < files.length; i++)

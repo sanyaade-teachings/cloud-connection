@@ -14,6 +14,8 @@
 
 #include "ScoresAchievementsCppEnginePluginModule.h"
 
+class CloudConnectionGUI;
+
 class MyGameManager : public IVisCallbackHandler_cl
 {
 public:
@@ -32,6 +34,9 @@ public:
 private:
   bool m_bPlayingTheGame;
   static MyGameManager g_GameManager;
+
+  //Creating a GUI class that shows off the Cloud Connection Features
+  CloudConnectionGUI* m_pCloudConnectionGUI;
 };
 
 

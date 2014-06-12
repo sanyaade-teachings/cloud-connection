@@ -102,9 +102,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CloudConnectionGUI.cpp" />
     <ClCompile Include="TemplateAction.cpp">
       <DeploymentContent>False</DeploymentContent>
     </ClCompile>
+    <ClInclude Include="CloudConnectionGUI.hpp" />
     <ClInclude Include="GameManager.h">
       <DeploymentContent>False</DeploymentContent>
     </ClInclude>

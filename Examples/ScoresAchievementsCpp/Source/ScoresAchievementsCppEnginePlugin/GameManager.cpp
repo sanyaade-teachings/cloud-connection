@@ -9,6 +9,11 @@
 #include "ScoresAchievementsCppEnginePluginPCH.h"
 #include "GameManager.h"
 
+// Cloud Connection Plugin Includes - Start
+#include "CloudConnectionBase.h"
+#include "CloudConnectionGui.hpp"
+// Cloud Connection Plugin Includes - End
+
 // one global static instance
 MyGameManager MyGameManager::g_GameManager;
 
@@ -22,6 +27,11 @@ void MyGameManager::OneTimeInit()
   Vision::Callbacks.OnAfterSceneLoaded += this;
   Vision::Callbacks.OnUpdateSceneBegin += this;
   Vision::Callbacks.OnWorldDeInit += this;
+
+    
+  //Create a GUI with all the functionality to show off the cloud connection
+  m_pCloudConnectionGUI = new CloudConnectionGUI();
+  m_pCloudConnectionGUI->InitGUI();
 }
 
 void MyGameManager::OneTimeDeInit()
@@ -31,6 +41,12 @@ void MyGameManager::OneTimeDeInit()
   Vision::Callbacks.OnAfterSceneLoaded -= this;
   Vision::Callbacks.OnUpdateSceneBegin -= this;
   Vision::Callbacks.OnWorldDeInit -= this;
+   
+  //destroy the cloud connection GUI
+  if ( m_pCloudConnectionGUI != NULL )
+  {
+    m_pCloudConnectionGUI->DeinitGUI();
+  }
 }
 
 
@@ -47,6 +63,13 @@ void MyGameManager::OnHandleCallback(IVisCallbackDataObject_cl *pData)
       {
         Vision::Message.Print(1, 200, 100, "The game is running");
       }
+      
+      //update the cloud connection GUI
+      if ( m_pCloudConnectionGUI != NULL )  
+      {
+        m_pCloudConnectionGUI->Update();
+      }
+
       return;
   }
 
@@ -69,6 +92,13 @@ void MyGameManager::OnHandleCallback(IVisCallbackDataObject_cl *pData)
     //gets triggered when the play-the-game vForge is started or outside vForge after loading the scene
     if (Vision::Editor.IsPlayingTheGame()) 
       SetPlayTheGame(true);
+    
+    //Show the cloud connection GUI straight away
+    if ( m_pCloudConnectionGUI != NULL )  
+    {
+      m_pCloudConnectionGUI->ShowGUI();
+    }
+
     return;
   }
 

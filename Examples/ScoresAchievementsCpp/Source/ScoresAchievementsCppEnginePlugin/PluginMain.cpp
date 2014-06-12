@@ -16,6 +16,11 @@
 
 #include <Common/Base/KeyCode.h>
 
+// Cloud Connection Plugin Includes - Start
+#include "CloudConnectionBase.h"
+#include "com_havok_Vision_CloudConnectionLifeCycleSupport.inl"
+// Cloud Connection Plugin Includes - End
+
 // use plugins if supported
 VIMPORT IVisPlugin_cl* GetEnginePlugin_vFmodEnginePlugin();
 #if defined( HAVOK_PHYSICS_2012_KEYCODE )
@@ -94,6 +99,15 @@ void ScoresAchievementsCppEnginePlugin::OnInitEnginePlugin()
 #endif
   
   VISION_PLUGIN_ENSURE_LOADED(vFmodEnginePlugin);
+
+  
+  //Cloud Connection Plugin Initialisation - Start
+  VISION_PLUGIN_ENSURE_LOADED(CloudConnectionPlugin); //ensure our plugin is loaded
+#if defined(_VISION_ANDROID)
+  DummyJNIFunction();                             //Dummy - don't let the compiler strip JNI functions for < Android 4.0
+  StateManager::InitServices(AndroidApplication); //Set up platform intiialization of Google Play Services
+#endif
+  //Cloud Connection Plugin Initialisation - End
 
   // In some cases the compiler optimizes away the full class from the plugin since it seems to be dead code. 
   // One workaround to prevent this is to add the following helper macro into the plugin initialization code:

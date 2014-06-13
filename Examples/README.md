@@ -84,6 +84,38 @@ and the following error can be found in the logcat output
 	1>  C:\Android\sdk\tools\ant\build.xml:542: Unable to resolve project target 'Google Inc.:Google APIs:18'
 ```
 
+### Failure to Build when Building in `Release` mode
+
+This kind of error is because you haven't specified any release keys to sign your application with.
+Because the application doesn't get signed then the VisionInstallApk also then fails because the final output `.apk` has not been created.
+
+```
+
+	...
+	-release-nosign:
+	1>       [echo] No key.store and key.alias properties found in build.properties.
+	1>       [echo] Please sign D:\ScoresAchievementsCpp\Source\ScoresAchievementsCppApp\Platform\Android\bin\CloudConnection-release-unsigned.apk manually
+	1>       [echo] and run zipalign from the Android SDK tools
+	...
+	1>  -post-build:
+	1>       [echo] **** -post-build *****
+	1>  
+	1>  BUILD FAILED
+	1>  D:\ScoresAchievementsCpp\Source\ScoresAchievementsCppApp\Platform\Android\custom_rules.xml:104: The apk file 'D:\ScoresAchievementsCpp\Source\ScoresAchievementsCppApp\Platform\Android\bin\CloudConnection-release.apk' does not exist.
+```
+
+See the Google docs on [Building and Running from the Command Line -> Build signed and aligned](http://developer.android.com/tools/building/building-cmdline.html#AutoReleaseMode) to sign your release build properly.
+
+In your `ant.properties` file you should add lines like the following as you can't prompt for a password when building from inside Visual Studio. 
+
+```
+
+	key.store=my-release-key.keystore
+	key.alias=cloudconnection
+	key.store.password=cloudconnection
+	key.alias.password=cloudconnection
+```
+
 ### When Trying To Connection to Google It Says I am UnAuthorised!!
 
 There can be a few reasons for this.

@@ -235,8 +235,7 @@ public abstract class VisionBaseTask extends Task
     Runtime rt = Runtime.getRuntime();
     Process proc = rt.exec(cmd);
 
-    BufferedReader stdInput = new BufferedReader(new InputStreamReader(proc.getInputStream()));   
-    //BufferedReader stdError = new BufferedReader(new InputStreamReader(proc.getErrorStream()));
+    BufferedReader stdInput = new BufferedReader(new InputStreamReader(proc.getInputStream()));
 
     // read the std output from the command
     String s = null;
@@ -254,13 +253,6 @@ public abstract class VisionBaseTask extends Task
       }
     }
 
-    // read any errors from the attempted command
-    /*
-     * System.out.println("Here is the standard error of the command (if any):\n"
-     * ); while ((s = stdError.readLine()) != null) { System.out.println(s); }
-     */
-
-    //stdError.close();
     stdInput.close();
 
     String[] devicesString = new String[devices.size()];
@@ -298,7 +290,7 @@ public abstract class VisionBaseTask extends Task
     Vector<String>failedDevicesErrorMsg = new Vector<String>();
     // src should not end with a trailing / even if it is a directory
     src = srcFile.getCanonicalPath();    
-    log( "Copying '"+src+"' to '"+dest+"' on device(s): " + devices );
+    //log( "Copying '"+src+"' to '"+dest+"' on to device(s)" );
         
     for (String device : devices)
     {      

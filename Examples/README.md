@@ -53,6 +53,12 @@ There are preprocessor defines for `#define ACHIEVEMENT_ID` and `#define LEADERB
 
 You have not set your Google Application ID in the ids.xml. See the section "*Set Your Google Application ID*" in the Android Installation readme file.
 
+The example app crashes out immediately on start-up...
+
+![alt text](../Docs/helpimages/exampleappclosed.png "App bombs out straight away")
+
+and the following error can be found in the logcat output
+
 ```
 
 	E/ValidateServiceOp(2857): Application ID (REPLACE_ME) must be a numeric value. Please verify 
@@ -84,7 +90,7 @@ There can be a few reasons for this.
 
 #### Make Sure You Are on the "Testers" List
 
-Before the Google game settings are published, you should make sure that whatever Google account you use for testing is on the testers list for the Google application. If not then the sign-in will behave as if the game settings have not been created. Once the game settings are published then this restriction no longer applies.
+Before the Google game settings are published, you should make sure that whatever Google account you use for testing is on your testers list on the Google servers. If not then the sign-in will behave as if the game settings have not been created. Once the game settings are published then this restriction no longer applies.
 
 #### Check You are building with the right key (Android)
 

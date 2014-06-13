@@ -99,6 +99,9 @@
 	
 	<target name="-post-build">
 	    <echo>**** -post-build *****</echo>
+      
+      <!-- installs the final .apk to the device(s) -->
+      <VisionInstallApk apk="${out.final.file}" />
 	</target> 
 	
 	<target name="-pre-clean">

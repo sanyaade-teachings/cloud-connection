@@ -17,22 +17,7 @@ import org.apache.tools.ant.BuildException;
  * @author Project Anarchy
  */
 public class VisionVFileServeTask extends VisionBaseTask
-{
-  /**
-   * Represents a nested element that is the name of a device to copy to
-   * @author Project Anarchy
-   */
-  public class Device
-  {                                           
-      String m_name;
-      /**
-       * ANT Attribute - required
-       * @param name The name of the device
-       */
-      public void setName(String name) { m_name = name; }
-      public String getName() { return m_name; }
-  }
-  
+{  
   /** The name of the file serve config file to create */
   private final static String VFILESERVECONFIG = "vFileServeHost.txt";
   /** The default vForge port used for file transfer */
@@ -129,7 +114,7 @@ public class VisionVFileServeTask extends VisionBaseTask
         }
         else
         {
-          log("No devices found, not coping the vFileServe config to any devices!");
+          log("No devices found, not copying the vFileServe config to any devices!");
         }
       } 
       catch (IOException e)

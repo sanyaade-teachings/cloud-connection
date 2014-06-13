@@ -4,4 +4,4 @@ SET ANDROID_HOME=%ADTROOT%\sdk
 cd .\Platform\Android
 
 REM Build and install in debug mode
-ant debug install -D%1=%2 -D%3=%4 -D%5=%6
+ant debug -D%1=%2 -D%3=%4 -D%5=%6

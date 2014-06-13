@@ -2,12 +2,31 @@
 
 ## Building the Examples
 
-**TODO**
+To build and run this application successfully you must do the following:
+
+### Run the RUN_ONCE.bat 
+
+This will copy in the data files required by the Vision engine to run the game, they are not included in the download to save space.
+
+### Add Your Google Application ID
+
+Change the REPLACE_ME value for the value provided to you by Google. Note that although the value given to you by Google is numeric, it must stay marked as a "string" value in the xml file.
+
+The value is found in this file...
+
+`ScoresAchievementsCpp\Source\ScoresAchievementsCppApp\Platform\Android\res\values\ids.xml`
+
+```xml
+
+	<string name="app_id">REPLACE_ME</string>
+```
+
+If you don't have a Google Application ID yet then you need to set one up, have an look on the main README.md file for information on how to configure your game.
 
 
 ## Example - ScoresAchievementsCpp
 
-Shows how to use the Plugin from the C++ interface
+Shows how to use the Plugin from the C++ interface.
 
 **TODO** - MAIN CLASSES
 

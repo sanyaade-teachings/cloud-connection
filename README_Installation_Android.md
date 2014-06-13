@@ -255,6 +255,39 @@ Generates the vFileServe.txt with an ip of `192.168.0.1` and port `9998` and cop
 	</VisionVFileServe>
 ```
 
+### VisionInstallApk
+
+Installs a `.apk` file onto an android device or device(s).
+
+**Parameters**
+
+* `apk` - REQUIRED - the filename of the .apk to be installed
+* `timeout` - OPTIONAL - the time in seconds to wait for the .apk install process to finish
+* `device` - OPTIONAL - nested attribute to specify the name of the device(s) to copy to, can be used muliple times
+
+
+**Example 1:**
+
+Installs the `mygame.apk` file onto the first device found by adb.exe, the default timeout will be 1200 seconds.
+If no devices are found to be attached to the host then installation is skipped.
+
+```xml
+
+	<VisionInstallApk apk="./mygame/mygame.apk" />
+```
+
+**Example 2**
+
+Installs the `mygame.apk` file onto the 2 android devices specified and waits no longer than 60 seconds for each install to complete.
+
+```xml
+
+	<VisionInstallApk apk="./mygame/mygame.apk" timeout="60">
+		<device name="TA74405TXW"/>
+		<device name="WXT50447AT"/>
+	</VisionInstallApk>
+```
+
 
 ### VisionStripLib
 

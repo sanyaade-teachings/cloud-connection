@@ -4,4 +4,4 @@ SET ANDROID_HOME=%ADTROOT%\sdk
 cd .\Platform\Android
 
 REM Build in release mode
-ant release install -D%1=%2 -D%3=%4 -D%5=%6
+ant release -D%1=%2 -D%3=%4 -D%5=%6

@@ -34,9 +34,9 @@
     <fail unless="mainlib">The mainlib value has not been set!</fail>
     <fail unless="extranativelib">The extranativelib value has not been set!</fail>
      
-     <echo>arch= ${arch}</echo> <!-- should be armeabi-v7a or x86 -->
-     <echo>mainlib= ${mainlib}</echo>
-     <echo>extranativelib= ${extranativelib}</echo>
+     <echo>arch= ${arch}</echo>                     <!-- should be armeabi-v7a or x86 -->
+     <echo>mainlib= ${mainlib}</echo>               <!-- the path to the main native library that was build in Visual Studio -->
+     <echo>extranativelib= ${extranativelib}</echo> <!-- a list of * speparated .so native libs that need to be included in the .apk -->
          
     <!-- strip the symbols from the main lib to shrink it, copy it to the libs folder 
     (inside the correct sub-folder) and prefix with "lib" if needed -->   
@@ -97,5 +97,13 @@
 	
 	<target name="-pre-clean">
 	    <echo>**** -pre-clean *****</echo>
+      
+      <!-- delete any temp assets that we copied in -->
+      <delete dir="./assets/Data" failonerror="false"/>
+      <delete dir="./assets/Assets" failonerror="false"/>
+      
+      <!-- delete any native libs that we copied in -->
+      <delete dir="./libs/x86" failonerror="false"/>
+      <delete dir="./libs/armeabi-v7a" failonerror="false"/>
 	</target>
 </project>

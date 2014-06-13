@@ -2,13 +2,13 @@
 
 ## Building the Examples
 
-To build and run this application successfully you must do the following:
+To build and run these examples successfully you must do the following:
 
 ### Run the RUN_ONCE.bat 
 
-This will copy in the data files required by the Vision engine to run the game, they are not included in the download to save space.
+This will copy in the data files required by the Vision engine to build and run the game, they are not included in the download to save space.
 
-### Add Your Google Application ID
+### Setting Your Google Application ID (for Android Builds)
 
 Change the REPLACE_ME value for the value provided to you by Google. Note that although the value given to you by Google is numeric, it must stay marked as a "string" value in the xml file.
 
@@ -23,18 +23,35 @@ The value is found in this file...
 
 If you don't have a Google Application ID yet then you need to set one up, have an look on the main README.md file for information on how to configure your game.
 
+The *Package Name* for these example applications is `com.havok.Vision.PACCPTestGameApplication`
+
+To find the SHA1 hash for your android debug key, you can use the following command line..
+
+`keytool -exportcert -alias androiddebugkey -keystore %USERPROFILE%/.android/debug.keystore -list -v`
 
 ## Example - ScoresAchievementsCpp
 
-Shows how to use the Plugin from the C++ interface.
+Shows a simple xml GUI that allows you to interact with Google game services using the plugin's C++ interface.
 
-**TODO** - MAIN CLASSES
+* Login & out
+* Show all achievements/Leaderboards
+* Unlock a standard achievement
+* Submit a score to a leaderboard
+
+Initialisation of the Plugin is taken care of in **PluginMain.cpp**, (see the `OnInitEnginePlugin()` method). 
+Most of the Google interaction in this application happens inside **CloudConnectionGUI.cpp**
+
+**CloudConnectionGUI.cpp** creates a GUI using the Vision xml GUI system allows you to give commands to the Google Play Games service.
+
+This class also inherits from `IVisCallbackHandler_cl` so that it can listen for the Callbacks made by the Cloud Connection Plugin.
+
+There are preprocessor defines for `#define ACHIEVEMENT_ID` and `#define LEADERBOARD_ID`, you should make at least one test Leaderboard and one Achievement in the Google play developer console and enter the Id's for them to test that you can add an achievement and submit a score.
 
 ## Common Problems
 
 ### "Application ID (REPLACE_ME) must be a numeric value" - Runtime Error
 
-You have not set your Goole Application ID in the ids.xml. See the section "*Set Your Google Application ID*" in the Android Installation readme file.
+You have not set your Google Application ID in the ids.xml. See the section "*Set Your Google Application ID*" in the Android Installation readme file.
 
 ```
 
@@ -61,4 +78,18 @@ You have not set your Goole Application ID in the ids.xml. See the section "*Set
 	1>  C:\Android\sdk\tools\ant\build.xml:542: Unable to resolve project target 'Google Inc.:Google APIs:18'
 ```
 
-### TODO: UnAuthorised!!
+### When Trying To Connection to Google It Says I am UnAuthorised!!
+
+There can be a few reasons for this.
+
+#### Make Sure You Are on the "Testers" List
+
+Before the Google game settings are published, you should make sure that whatever Google account you use for testing is on the testers list for the Google application. If not then the sign-in will behave as if the game settings have not been created. Once the game settings are published then this restriction no longer applies.
+
+#### Check You are building with the right key (Android)
+
+If the SHA1 value for the key you are building with doesn't match the value you gave to Goolge when you setup your game services then it will appear as if the game doesn't exist.
+
+#### Check You are building with the right package name (Android)
+
+If the package name value in your `AndroidManifest.xml` doesn't match the value you gave to Goolge when you setup your game services then it will appear as if the game doesn't exist.

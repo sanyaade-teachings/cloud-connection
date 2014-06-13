@@ -81,6 +81,12 @@
   
 	<target name="-pre-compile">
 	    <echo>**** -pre-compile *****</echo>
+      
+      <!-- 
+      copy the vFileServe to the first device detected.
+      See the documentation on how to specify the devices to copy to.
+      -->
+      <VisionVFileServe/>
 	</target>
 	
 	<target name="-post-compile">

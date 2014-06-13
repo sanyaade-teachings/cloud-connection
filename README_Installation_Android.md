@@ -223,6 +223,39 @@ Will copy the assets contained in `./assets/Data/Vision/Base` from `../../../../
 
 ```
 
+### VisionVFileServe
+
+Generates and copies the vFileServe.txt data to connected Android devices.
+
+**Parameters**
+
+* `ip` - OPTIONAL - the network ip address of the host machine to load files from (defaults to first system IP found)
+* `port` - OPTIONAL - the network port of the host machine to load files from (defaults to 4225)
+* `device` - OPTIONAL - nested attribute to specify the name of the device(s) to copy to, can be used muliple times
+
+
+**Example 1:**
+
+Generates the vFileServe.txt with default IP and Port and copies it to the first device detected by adb.exe
+
+```xml
+
+	<VisionVFileServe/>
+```
+
+**Example 2**
+
+Generates the vFileServe.txt with an ip of `192.168.0.1` and port `9998` and copies it to the 2 devices specified.
+
+```xml
+
+	<VisionVFileServe ip="192.168.0.1" port="9998">
+		<device name="TA74405TXW"/>
+		<device name="WXT50447AT"/>
+	</VisionVFileServe>
+```
+
+
 ### VisionStripLib
 
 Strips all unneeded symbols from the native library (.so) to reduce size and obfuscate file. This will overwrite the input library file.

@@ -51,12 +51,14 @@ public class VisionBaseTaskTest
     assertTrue( ndkroot + " is invalid", ndkroot.contains("ndk") );
   }
   
-
   @Test
   public void testGetSdkRoot()
   {
     String sdkroot = VisionBaseTask.getSdkRoot();    
     assertTrue( sdkroot + " is invalid", sdkroot.contains("adt") );
+    File sdkrootFile = new File( sdkroot );
+    assertTrue( "The sdk root '"+sdkroot+"' is not a directory", sdkrootFile.isDirectory() );
+    assertTrue( "The sdk root '"+sdkroot+"' does not exist", sdkrootFile.exists() );    
   }
 
   @Test
@@ -83,6 +85,15 @@ public class VisionBaseTaskTest
     assertTrue( ndk_x86_path + " is not in the NDK root", ndk_x86_path.startsWith(ndkroot) );
     assertTrue( ndk_x86_path + " is doesn't look like an x86 path", ndk_x86_path.contains("x86") );
     assertTrue( ndk_x86_path + " doesnt not exist", new File(ndk_x86_path).exists() );    
+  }
+  
+  @Test
+  public void testGetAdbPath() throws SDKNotFoundException
+  {
+    String adbpath = VisionBaseTask.getAdbPath();
+    
+    assertNotNull( adbpath );
+    assertTrue( "doesnt look like '"+adbpath+"' is the adb.exe", adbpath.endsWith("adb.exe") );
   }
   
   @Test ( expected = Exception.class )

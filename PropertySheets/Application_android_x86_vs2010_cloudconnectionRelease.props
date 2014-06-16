@@ -18,7 +18,7 @@
       <AdditionalOptions>-std=c++11 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Lib\android_x86\debug;$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/android/lib/x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Lib/android_x86/release;$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/android/lib/x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>-lCloudConnectionPlugin;-lgpg;-lgnustl_static;-llog;-lz;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>

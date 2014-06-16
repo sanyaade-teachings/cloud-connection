@@ -1,0 +1,41 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScoresAchievementsLuaAppDX9", "Source\ScoresAchievementsLuaApp\ScoresAchievementsLuaAppDX9_win32_vs2010_anarchy.vcxproj", "{96672137-AA3A-4871-9939-280B11B29FC0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1248BBBA-5FAA-4DEE-834B-50E77F1E69FD} = {1248BBBA-5FAA-4DEE-834B-50E77F1E69FD}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScoresAchievementsLuaEnginePluginDX9", "Source\ScoresAchievementsLuaEnginePlugin\ScoresAchievementsLuaEnginePluginDX9_win32_vs2010_anarchy.vcxproj", "{1248BBBA-5FAA-4DEE-834B-50E77F1E69FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vision", "Vision", "{F83F7315-7661-4771-BC63-DF9AE246E1DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{918D5949-C047-4D46-8931-084BFE3C12DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{23C223BD-9042-442E-9A47-1CD3468726CB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|win32 = Debug|win32
+		Dev|win32 = Dev|win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96672137-AA3A-4871-9939-280B11B29FC0}.Debug|win32.ActiveCfg = Debug|win32
+		{96672137-AA3A-4871-9939-280B11B29FC0}.Debug|win32.Build.0 = Debug|win32
+		{96672137-AA3A-4871-9939-280B11B29FC0}.Dev|win32.ActiveCfg = Dev|win32
+		{96672137-AA3A-4871-9939-280B11B29FC0}.Dev|win32.Build.0 = Dev|win32
+		{1248BBBA-5FAA-4DEE-834B-50E77F1E69FD}.Debug|win32.ActiveCfg = Debug|win32
+		{1248BBBA-5FAA-4DEE-834B-50E77F1E69FD}.Debug|win32.Build.0 = Debug|win32
+		{1248BBBA-5FAA-4DEE-834B-50E77F1E69FD}.Dev|win32.ActiveCfg = Dev|win32
+		{1248BBBA-5FAA-4DEE-834B-50E77F1E69FD}.Dev|win32.Build.0 = Dev|win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F83F7315-7661-4771-BC63-DF9AE246E1DD} = {39131420-9908-4A7F-AA38-130676ABEB76}
+		{918D5949-C047-4D46-8931-084BFE3C12DC} = {F83F7315-7661-4771-BC63-DF9AE246E1DD}
+		{23C223BD-9042-442E-9A47-1CD3468726CB} = {918D5949-C047-4D46-8931-084BFE3C12DC}
+		{96672137-AA3A-4871-9939-280B11B29FC0} = {23C223BD-9042-442E-9A47-1CD3468726CB}
+		{1248BBBA-5FAA-4DEE-834B-50E77F1E69FD} = {23C223BD-9042-442E-9A47-1CD3468726CB}
+	EndGlobalSection
+EndGlobal

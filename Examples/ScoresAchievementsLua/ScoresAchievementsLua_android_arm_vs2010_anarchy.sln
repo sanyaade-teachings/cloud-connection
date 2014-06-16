@@ -1,0 +1,46 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScoresAchievementsLuaApp", "Source\ScoresAchievementsLuaApp\ScoresAchievementsLuaApp_android_arm_vs2010_anarchy.vcxproj", "{96672137-AA3A-4871-9939-280B11B29FC0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1248BBBA-5FAA-4DEE-834B-50E77F1E69FD} = {1248BBBA-5FAA-4DEE-834B-50E77F1E69FD}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScoresAchievementsLuaEnginePlugin", "Source\ScoresAchievementsLuaEnginePlugin\ScoresAchievementsLuaEnginePlugin_android_arm_vs2010_anarchy.vcxproj", "{1248BBBA-5FAA-4DEE-834B-50E77F1E69FD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vision", "Vision", "{2BF70420-8E2B-42E1-89F1-AE5F5248ED4E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{ADFA4D03-B69B-4C0B-B9BD-C36FBDA5D5A3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{CE36ABB1-CD89-4CB6-8A82-4B48FBEC698A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|hkAndroid = Debug|hkAndroid
+		Dev|hkAndroid = Dev|hkAndroid
+		Release|hkAndroid = Release|hkAndroid
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96672137-AA3A-4871-9939-280B11B29FC0}.Debug|hkAndroid.ActiveCfg = Debug|hkAndroid
+		{96672137-AA3A-4871-9939-280B11B29FC0}.Debug|hkAndroid.Build.0 = Debug|hkAndroid
+		{96672137-AA3A-4871-9939-280B11B29FC0}.Dev|hkAndroid.ActiveCfg = Dev|hkAndroid
+		{96672137-AA3A-4871-9939-280B11B29FC0}.Dev|hkAndroid.Build.0 = Dev|hkAndroid
+		{96672137-AA3A-4871-9939-280B11B29FC0}.Release|hkAndroid.ActiveCfg = Release|hkAndroid
+		{96672137-AA3A-4871-9939-280B11B29FC0}.Release|hkAndroid.Build.0 = Release|hkAndroid
+		{1248BBBA-5FAA-4DEE-834B-50E77F1E69FD}.Debug|hkAndroid.ActiveCfg = Debug|hkAndroid
+		{1248BBBA-5FAA-4DEE-834B-50E77F1E69FD}.Debug|hkAndroid.Build.0 = Debug|hkAndroid
+		{1248BBBA-5FAA-4DEE-834B-50E77F1E69FD}.Dev|hkAndroid.ActiveCfg = Dev|hkAndroid
+		{1248BBBA-5FAA-4DEE-834B-50E77F1E69FD}.Dev|hkAndroid.Build.0 = Dev|hkAndroid
+		{1248BBBA-5FAA-4DEE-834B-50E77F1E69FD}.Release|hkAndroid.ActiveCfg = Release|hkAndroid
+		{1248BBBA-5FAA-4DEE-834B-50E77F1E69FD}.Release|hkAndroid.Build.0 = Release|hkAndroid
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{2BF70420-8E2B-42E1-89F1-AE5F5248ED4E} = {8428BA16-C4BC-4993-B90F-581FA9B12047}
+		{ADFA4D03-B69B-4C0B-B9BD-C36FBDA5D5A3} = {2BF70420-8E2B-42E1-89F1-AE5F5248ED4E}
+		{CE36ABB1-CD89-4CB6-8A82-4B48FBEC698A} = {ADFA4D03-B69B-4C0B-B9BD-C36FBDA5D5A3}
+		{96672137-AA3A-4871-9939-280B11B29FC0} = {CE36ABB1-CD89-4CB6-8A82-4B48FBEC698A}
+		{1248BBBA-5FAA-4DEE-834B-50E77F1E69FD} = {CE36ABB1-CD89-4CB6-8A82-4B48FBEC698A}
+	EndGlobalSection
+EndGlobal

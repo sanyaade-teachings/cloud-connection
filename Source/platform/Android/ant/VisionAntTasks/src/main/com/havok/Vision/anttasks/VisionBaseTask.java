@@ -11,6 +11,12 @@ import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetEncoder;
 import java.util.Vector;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
@@ -260,20 +266,33 @@ public abstract class VisionBaseTask extends Task
 
     return devicesString;
   }
-        
+  
+  /**
+   * same as #copyToDevice(String, String, String[], int) but with a default 60 second timeout
+   */
+  public String[] copyToDevice(String src, String dest, String[] devices ) throws Exception
+  {
+    return copyToDevice(src, dest, devices, 60);
+  }
+  
   /**
   * Copy src to dest on the devices specified using the adb tool
   * @param src The source file on the build machine
   * @param dest The destination folder on the device
   * @param devices The devices to copy to, or {""} for default device 
+  * @param timeout the timeout for each copy operation in seconds
    * @throws Exception if couldn't call the adb.exe or an error occurred while trying to call it
   */
-  public String[] copyToDevice(String src, String dest, String[] devices) throws Exception
+  public String[] copyToDevice(String src, String dest, String[] devices, int timeout ) throws Exception
   {    
     //check inputs
     if ( devices == null || devices.length == 0 )
     {
       throw new IllegalArgumentException("The devices cannot be null or zero length");
+    }
+    else if ( timeout <= 0 )
+    {
+      throw new IllegalArgumentException("The timeout must be >= 0");
     }
     
     for (String device : devices)
@@ -287,7 +306,6 @@ public abstract class VisionBaseTask extends Task
     File srcFile = new File(src);
     
     Vector<String>failedDevices = new Vector<String>();
-    Vector<String>failedDevicesErrorMsg = new Vector<String>();
     // src should not end with a trailing / even if it is a directory
     src = srcFile.getCanonicalPath();    
     //log( "Copying '"+src+"' to '"+dest+"' on to device(s)" );
@@ -295,13 +313,42 @@ public abstract class VisionBaseTask extends Task
     for (String device : devices)
     {      
       log( "Copying '"+src+"' to '"+dest+"' on device '"+device+"'" );
-      String cmdToCall = getAdbPath() + " -s "+ device + " push " + src + " " + dest;
-      int result = callCmd( cmdToCall );
-      if ( result != 0 )
+      String[] cmd = {getAdbPath(), "-s", device, "push", src, dest};
+                                 
+      ExecutorService executor = Executors.newSingleThreadExecutor();
+      CallCmdProcInThread cmdProc = new CallCmdProcInThread(cmd);
+      Future<Integer> future = executor.submit(cmdProc);
+      int retValue = -1;
+      try
       {
-        failedDevicesErrorMsg.add( "Failed to copy : '"+cmdToCall+"'" );
+        retValue = future.get( timeout, TimeUnit.SECONDS );
+      }
+      catch( TimeoutException e )
+      {
+        cmdProc.kill();
+        failedDevices.add( device );
+        log("Terminated adb due to timeout!");
+      } 
+      catch (InterruptedException e)
+      {
+        cmdProc.kill();
+        failedDevices.add( device );
+        log("Terminated adb due to interrupted! :" + e.getMessage());
+      } 
+      catch (ExecutionException e)
+      {
+        cmdProc.kill();
+        failedDevices.add( device );
+        log("Terminated adb due to exception! :" + e.getMessage());
+      }             
+      
+      if ( retValue != 0 )
+      {
+        //there was an error copying to this device
         failedDevices.add( device );
       }
+      
+      executor.shutdownNow();                       
     }
 
     //log any fail messages

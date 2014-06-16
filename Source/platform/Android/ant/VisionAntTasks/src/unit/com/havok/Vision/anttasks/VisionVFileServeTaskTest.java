@@ -74,17 +74,7 @@ public class VisionVFileServeTaskTest extends BuildFileTest
   @Test
   public void testInvalidDeviceNamed()
   {       
-    boolean buildexception = false;
-    try
-    {
-      executeTarget("invalidDeviceNamed");
-    } 
-    catch (BuildException e)
-    {     
-      buildexception = true;
-    }
-    
-    assertTrue(buildexception); 
+     executeTarget("invalidDeviceNamed");
   } 
   
   @Test

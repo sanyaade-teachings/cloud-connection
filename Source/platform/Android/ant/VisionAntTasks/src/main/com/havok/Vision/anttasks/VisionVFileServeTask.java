@@ -22,6 +22,8 @@ public class VisionVFileServeTask extends VisionBaseTask
   private final static String VFILESERVECONFIG = "vFileServeHost.txt";
   /** The default vForge port used for file transfer */
   private final static int DEFAULT_PORT = 4225;
+  /** the timeout for the copy to device operation in seconds */
+  private final static int DEFAULT_TIMEOUT = 10;
   
   /** the network address of the host where we are loading from */  
   private String m_ip = null;  
@@ -189,7 +191,7 @@ public class VisionVFileServeTask extends VisionBaseTask
         //copy the created file to the device
         try
         {
-            String[] failedDevices = copyToDevice(VFILESERVECONFIG, configDest, devices);
+            String[] failedDevices = copyToDevice(VFILESERVECONFIG, configDest, devices, DEFAULT_TIMEOUT);
             if ( failedDevices.length > 0 )
             {
                 log( "'There were copy errors for the next devices. Aborting process..." );

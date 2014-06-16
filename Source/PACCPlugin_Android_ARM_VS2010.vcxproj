@@ -5,6 +5,10 @@
       <Configuration>Debug</Configuration>
       <Platform>hkAndroid</Platform>
     </ProjectConfiguration>
+    <ProjectConfiguration Include="Dev|hkAndroid">
+      <Configuration>Dev</Configuration>
+      <Platform>hkAndroid</Platform>
+    </ProjectConfiguration>
     <ProjectConfiguration Include="Release|hkAndroid">
       <Configuration>Release</Configuration>
       <Platform>hkAndroid</Platform>
@@ -28,16 +32,24 @@
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
     <ConfigurationType>StaticLibrary</ConfigurationType>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|hkAndroid'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+  </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
-    <Import Project="C:\Havok\AnarchySDK\Build\Vision\PropertySheets\EnginePlugin_android_arm_vs2010_anarchyDebug.props" />
+    <Import Project="$(VISION_SDK)\Build\Vision\PropertySheets\EnginePlugin_android_arm_vs2010_anarchyDebug.props" />
     <Import Project="PACCPlugin_Android_Arm_x86.props" />
     <Import Project="PACCPlugin.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
-    <Import Project="C:\Havok\AnarchySDK\Build\Vision\PropertySheets\EnginePlugin_android_arm_vs2010_anarchyRelease.props" />
+    <Import Project="$(VISION_SDK)\Build\Vision\PropertySheets\EnginePlugin_android_arm_vs2010_anarchyRelease.props" />
+    <Import Project="PACCPlugin_Android_Arm_x86.props" />
+    <Import Project="PACCPlugin.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Dev|hkAndroid'" Label="PropertySheets">
+    <Import Project="$(VISION_SDK)\Build\Vision\PropertySheets\EnginePlugin_android_arm_vs2010_anarchyDev.props" />
     <Import Project="PACCPlugin_Android_Arm_x86.props" />
     <Import Project="PACCPlugin.props" />
   </ImportGroup>
@@ -50,6 +62,11 @@
     <TargetName>libCloudConnectionPlugin</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
+    <OutDir>..\Lib\android_arm\$(Configuration)\</OutDir>
+    <IntDir>..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
+    <TargetName>libCloudConnectionPlugin</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|hkAndroid'">
     <OutDir>..\Lib\android_arm\$(Configuration)\</OutDir>
     <IntDir>..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>libCloudConnectionPlugin</TargetName>
@@ -67,6 +84,12 @@
     <PreBuildEvent />
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
+    <Lib>
+      <AdditionalDependencies>
+      </AdditionalDependencies>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dev|hkAndroid'">
     <Lib>
       <AdditionalDependencies>
       </AdditionalDependencies>

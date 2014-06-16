@@ -4,9 +4,9 @@
 
 To build and run these examples successfully you must do the following:
 
-### Run the RUN_ONCE.bat 
+### Run the RUN_ONCE.bat  
 
-This will copy in the data files required by the Vision engine to build and run the game, they are not included in the download to save space.
+Be sure to run the `RUN_ONCE.bat` file to make sure the source compiles correctly in Visual Studio. This will copy in the data files required by the Vision engine to build and run the game, they are not included in the download to save space.
 
 ### Setting Your Google Application ID (for Android Builds)
 
@@ -21,7 +21,7 @@ The value is found in this file...
 	<string name="app_id">REPLACE_ME</string>
 ```
 
-If you don't have a Google Application ID yet then you need to set one up, have an look on the main README.md file for information on how to configure your game.
+If you [don't have a Google Application ID yet then you need to set one up](https://developers.google.com/games/services/console/enabling), have an look on the main README.md file for information on how to configure your game.
 
 The *Package Name* for these example applications is `com.havok.Vision.PACCPTestGameApplication`
 
@@ -75,7 +75,7 @@ and the following error can be found in the logcat output
 
 ### "Unable to resolve project target" - Build Error 
 
-**TODO**
+You need to make sure you have the Android 4.3 SDK installed or whatever SDK corresponds to "Google Inc.:Google APIs:18".
 
 ```
 
@@ -83,6 +83,9 @@ and the following error can be found in the logcat output
 	1>  C:\Android\sdk\tools\ant\build.xml:601: The following error occurred while executing this line:
 	1>  C:\Android\sdk\tools\ant\build.xml:542: Unable to resolve project target 'Google Inc.:Google APIs:18'
 ```
+
+To update which SDK target the build uses, see the following Google documentation ( [Updating a Project](http://developer.android.com/tools/projects/projects-cmdline.html#UpdatingAProject) | 
+[Updating a Library Project](http://developer.android.com/tools/projects/projects-cmdline.html#UpdatingLibraryProject) ).
 
 ### Failure to Build when Building in `Release` mode
 

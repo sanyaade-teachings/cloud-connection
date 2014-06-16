@@ -45,8 +45,6 @@ VEXPORT IVisPlugin_cl* GetEnginePlugin()
 
 void CloudConnectionPlugin::OnInitEnginePlugin()
 {
-  hkvLog::Debug("CloudConnectionPlugin:OnInitEnginePlugin()");
-
   // register our module when the plugin is initialized
   Vision::RegisterModule(&g_CloudConnectionModule);
 
@@ -56,8 +54,6 @@ void CloudConnectionPlugin::OnInitEnginePlugin()
 
 void CloudConnectionPlugin::OnDeInitEnginePlugin()
 {
-  hkvLog::Debug("CloudConnectionPlugin:OnDeInitEnginePlugin()");
-
   // de-register our module when the plugin is de-initialized
   Vision::UnregisterModule(&g_CloudConnectionModule);
 

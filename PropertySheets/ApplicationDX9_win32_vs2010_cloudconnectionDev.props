@@ -9,18 +9,18 @@
     </ClCompile>
     <PostBuildEvent>
       <Command>xcopy /Y /D /C "$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\win32_vs2010\dev\CloudConnectionPlugin.vPluginD" "$(TargetDir)"
-xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\fmodexL.dll" "$(TargetDir)"
-xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\fmod_event_netL.dll" "$(TargetDir)"
-xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\lua100D.dll" "$(TargetDir)"
-xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\vHavok.vPluginD" "$(TargetDir)"
-xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\VisionEnginePlugin.vPluginD" "$(TargetDir)"
-xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\vFmodEnginePlugin.vPluginD" "$(TargetDir)"
-xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\BaseD.dll" "$(TargetDir)"
-xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\BaseUID.dll" "$(TargetDir)"
-xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\VisionD.dll" "$(TargetDir)"
-xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\VisionAppD.dll" "$(TargetDir)"
-xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\vHavokAi.vPluginD" "$(TargetDir)"
-xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\vHavokBehavior.vPluginD" "$(TargetDir)"</Command>
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\fmodex.dll" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\fmod_event_net.dll" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\lua100.dll" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\vHavok.vPlugin" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\VisionEnginePlugin.vPlugin" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\vFmodEnginePlugin.vPlugin" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\Base.dll" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\BaseUI.dll" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\Vision.dll" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\VisionApp.dll" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\vHavokAi.vPlugin" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\vHavokBehavior.vPlugin" "$(TargetDir)"</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup />

@@ -226,6 +226,39 @@
                 }
             }
         },
+        "Dialogs/mouseHigh.tga": {
+            "AssetType": "Texture",
+            "Common": {
+                "Subtype": "2D",
+                "Tags": "__NEW_ASSET__",
+                "Dependencies": [
+
+                ],
+                "Variants": [
+
+                ],
+                "UpdateAfterLoad": false
+            },
+            "File": {
+                "Hash": 987150866,
+                "TimeStamp": 1387325138000000000,
+                "LastEditTime": 1402907710341990300
+            },
+            "Texture": {
+                "FileFormat": "TGA",
+                "DataFormat": "Targa ARGB",
+                "HasAlpha": true,
+                "Width": 32,
+                "Height": 32,
+                "Depth": 1,
+                "CubeFaces": 1,
+                "Images": 1,
+                "sRGB": false
+            },
+            "Transformations": {
+                "TemplateName": "Default"
+            }
+        },
         "Dialogs/mouseNorm.tga": {
             "AssetType": "Texture",
             "Common": {

@@ -1,5 +1,5 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+# Visual C++ Express 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ScoresAchievementsCppAppDX9", "Source\ScoresAchievementsCppApp\ScoresAchievementsCppAppDX9_win32_vs2010_anarchy.vcxproj", "{596313B3-50B6-4B79-BADE-A7F588737AE7}"
 	ProjectSection(ProjectDependencies) = postProject
 		{5A6EC3C6-F8CF-4F6B-975E-27AEC4866C1D} = {5A6EC3C6-F8CF-4F6B-975E-27AEC4866C1D}

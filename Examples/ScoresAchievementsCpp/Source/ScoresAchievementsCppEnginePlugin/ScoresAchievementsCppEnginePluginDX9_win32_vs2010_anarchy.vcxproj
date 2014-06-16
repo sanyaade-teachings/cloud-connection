@@ -32,6 +32,7 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dev|win32'">
     <Import Project="$(VISION_SDK)\Build\Vision\PropertySheets\EnginePluginDX9_win32_vs2010_anarchyDev.props" />
+    <Import Project="$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\PropertySheets\EnginePluginDX9_win32_vs2010_cloudconnectionDev.props" />
   </ImportGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|win32'" Label="Configuration">
     <CharacterSet>MultiByte</CharacterSet>

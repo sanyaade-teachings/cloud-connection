@@ -18,14 +18,14 @@
       <AdditionalOptions>-std=c++11 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Lib/android_arm/dev;$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/android/lib/armeabi-v7a;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Lib/android_x86/dev;$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/android/lib/x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>-lCloudConnectionPlugin;-lgpg;-lgnustl_static;-llog;-lz;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>Platform\Android\build_debug_vs.bat mainlib $(TargetPath) arch $(AndroidArch) extranativelib $(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/lib/android/armeabi-v7a/libfmodex.so*$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/lib/android/armeabi-v7a/libfmodevent.so</Command>
+      <Command>Platform\Android\build_debug_vs.bat mainlib $(TargetPath) arch $(AndroidArch) extranativelib $(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/lib/android/x86/libfmodex.so*$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/lib/android/x86/libfmodevent.so</Command>
     </PostBuildEvent>
     <PostBuildEvent>
-      <Message>Build Java and Package .apk using Android ANT build 'debug' process (signed with debug keys)</Message>
+      <Message>Build Java and Package .apk using Android ANT debug build process (signed with debug keys)</Message>
     </PostBuildEvent>
     <CustomBuildStep />
     <CustomBuildStep />

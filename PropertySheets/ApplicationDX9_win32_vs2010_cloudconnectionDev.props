@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>CLOUDCONNECTIONPLUGIN_IMPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <PostBuildEvent>
+      <Command>xcopy /Y /D /C "$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\win32_vs2010\dev\CloudConnectionPlugin.vPluginD" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\fmodexL.dll" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\fmod_event_netL.dll" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\lua100D.dll" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\vHavok.vPluginD" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\VisionEnginePlugin.vPluginD" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\vFmodEnginePlugin.vPluginD" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\BaseD.dll" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\BaseUID.dll" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\VisionD.dll" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\VisionAppD.dll" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\vHavokAi.vPluginD" "$(TargetDir)"
+xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\vHavokBehavior.vPluginD" "$(TargetDir)"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>

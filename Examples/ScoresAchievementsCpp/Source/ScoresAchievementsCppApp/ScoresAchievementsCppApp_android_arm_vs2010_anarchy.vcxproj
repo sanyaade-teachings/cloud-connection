@@ -37,6 +37,7 @@
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dev|hkAndroid'">
     <Import Project="$(VISION_SDK)\Build\Vision\PropertySheets\Application_android_arm_vs2010_anarchyDev.props" />
+    <Import Project="$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\PropertySheets\Application_android_arm_vs2010_cloudconnectionDev.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'">
     <Import Project="$(VISION_SDK)\Build\Vision\PropertySheets\Application_android_arm_vs2010_anarchyRelease.props" />

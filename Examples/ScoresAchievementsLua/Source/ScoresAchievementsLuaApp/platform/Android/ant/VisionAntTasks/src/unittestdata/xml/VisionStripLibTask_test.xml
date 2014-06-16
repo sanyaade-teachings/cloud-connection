@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- unit test file for VisionStripLibTask ANT Task -->
+<project> 
+
+  <!-- adding VisionStripLibTask to the tasks -->
+  <taskdef name="VisionStripLib" classname="com.havok.Vision.anttasks.VisionStripLibTask"/>
+
+  <!-- test can successfully strip the symbols from an Arm native library  -->
+  <target name="stripArmLib">
+            
+    <VisionStripLib 
+      Arch="arm"
+      Lib="..\testlibs\PACCPTestGameApplication.so"/>
+    
+  </target>
+  
+  <!-- test can't successfully strip the symbols when arch is wrong  -->
+  <target name="stripArmLibUsingx86Parameter">
+            
+    <VisionStripLib 
+      Arch="x86"
+      Lib="..\testlibs\PACCPTestGameApplication.so"/>
+    
+  </target>
+  
+  <!-- test can throw exception when file doesn't exist  -->
+  <target name="libFileDoesntExist">
+            
+    <VisionStripLib 
+      Arch="arm"
+      Lib="..\testlibs\this_file_does_not_exist_so_this_should_fail.so"/>
+    
+  </target>
+  
+  <target name="cleanup">
+    <echo>cleanup - done</echo>    
+  </target>  
+</project>

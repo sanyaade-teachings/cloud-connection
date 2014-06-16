@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- Builds the Vision Related Ant Tasks -->
+<project name="BuildVisionAntTasks" basedir="." default="jar">
+
+  <property name="output.jar" value="VisionAntTasks.jar"/>
+  <property name="classes.dir" value="classes"/>
+  <property name="source.dir" value="src/main"/>
+
+    <target name="clean" description="Delete all generated files">
+        <delete dir="${classes.dir}"/>
+        <delete file="${output.jar}"/>
+    </target>
+
+    <target name="compile" description="Compiles the Tasks" depends="clean">
+        <mkdir dir="${classes.dir}"/>
+        <javac srcdir="${source.dir}" destdir="${classes.dir}" target="1.6" source="1.6" includeAntRuntime="yes"/>
+    	<!-- copy the task definitions into the classes folder -->
+    	<copy 
+    		file="${source.dir}/com/havok/Vision/anttasks/visionanttasks.properties"
+    		todir="${classes.dir}/com/havok/Vision/anttasks/"
+    		failonerror="true"/>
+    </target>
+
+    <target name="jar" description="JARs the Tasks" depends="compile">
+        <jar destfile="${output.jar}" basedir="${classes.dir}"/>
+    </target>
+
+</project>

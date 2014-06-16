@@ -33,7 +33,7 @@
   <Import Project="$(VISION_SDK)\Build\MSBuild\Microsoft.Cpp.Default.props" />
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'">
     <Import Project="$(VISION_SDK)\Build\Vision\PropertySheets\Application_android_arm_vs2010_anarchyDebug.props" />
-    <Import Project="$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\plugins\cloud-connection\PropertySheets\Application_android_arm_vs2010_cloudconnectionDebug.props" />
+    <Import Project="$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\PropertySheets\Application_android_arm_vs2010_cloudconnectionDebug.props" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Dev|hkAndroid'">
     <Import Project="$(VISION_SDK)\Build\Vision\PropertySheets\Application_android_arm_vs2010_anarchyDev.props" />
@@ -113,12 +113,6 @@
       </AdditionalOptions>
       <DeploymentContent>False</DeploymentContent>
     </ClCompile>
-    <Java Include="Android/VirtualKeyboardActivity.java">
-      <DeploymentContent>False</DeploymentContent>
-    </Java>
-    <Java Include="Android/VNativeDialogAndroid.java">
-      <DeploymentContent>False</DeploymentContent>
-    </Java>
     <ClCompile Include="Main.cpp">
       <DeploymentContent>False</DeploymentContent>
     </ClCompile>

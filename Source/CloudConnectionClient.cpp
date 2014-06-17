@@ -31,10 +31,10 @@ void CloudConnectionClient::RemoveScriptCallbackListener( VScriptInstance* pInst
   VASSERT_MSG( pInstance != NULL, "The script instance to be removed from cloud connection client cannot be null" );
   
   VScriptComponent* pComp = Components().GetComponentOfType<CloudConnectionScriptComponent>();
-  if ( pComp != NULL )
+  if ( pComp != NULL && pComp->GetScriptInstance() == pInstance 
+    && pComp->IsDisposed() == false && pComp->IsDisposing() == false )
   {        
-    RemoveComponent( pComp );        
-    V_SAFE_DELETE( pComp );
+    RemoveComponent( pComp );
     hkvLog::Debug("CloudConnectionClient - removed the instance of the cloud connection script component");
   }
 }

@@ -188,6 +188,29 @@ After signing out, no further API calls can be made until the user authenticates
 	ccClient:SignOut()
 ```
 
+## Checking Player Authentication
+
+To check whether the player is currently authenticated use the `IsAuthenticated` method.
+This will return true if the player is authenticated and calls to the API can be made.
+Note: It is also possible to listen for changes to authentication by using callbacks.
+
+### C++
+
+```C++
+
+	CloudConnection* paccm = CloudConnection::GetInstance();  
+	CloudConnectionClient* pCClient = paccm->GetClient();
+	bool auth = pCClient->IsAuthenticated();
+```
+### Lua
+
+```Lua
+
+	local ccClient = CloudConnection:GetClient()
+	local auth = ccClient:IsAuthenticated()
+```
+
+
 ## Revealing/Unlocking an Achievement
 
 To unlock or reveal an achievement use the `UnlockAchievement` or `RevealAchievement` methods.

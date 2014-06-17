@@ -1,23 +1,23 @@
 ﻿# YAML
 bool: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
 byte: System.Byte, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-CSharpFramework.BaseTypes.Color4: CSharpFramework.BaseTypes.Color4, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.BaseTypes.ProfileEnum: CSharpFramework.BaseTypes.ProfileEnum, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.DynamicProperties.DynamicEnumPropertyType: CSharpFramework.DynamicProperties.DynamicEnumPropertyType, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.DynamicProperties.DynamicProperty: CSharpFramework.DynamicProperties.DynamicProperty, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.DynamicProperties.DynamicPropertyCollectionType.DynamicPropertyCollectionFlags_e: CSharpFramework.DynamicProperties.DynamicPropertyCollectionType+DynamicPropertyCollectionFlags_e, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.DynamicProperties.DynamicPropertyType: CSharpFramework.DynamicProperties.DynamicPropertyType, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Layer: CSharpFramework.Layer, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Math.Vector3F: CSharpFramework.Math.Vector3F, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.PropertyEditors.FlagsInt32_e: CSharpFramework.PropertyEditors.FlagsInt32_e, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Scene.ShapeComponent: CSharpFramework.Scene.ShapeComponent, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Scene.ShapeComponentCollection: CSharpFramework.Scene.ShapeComponentCollection, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Scene.ShapeComponentType: CSharpFramework.Scene.ShapeComponentType, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.ShapeCollection: CSharpFramework.ShapeCollection, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Shapes.LinkCollection: CSharpFramework.Shapes.LinkCollection, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Shapes.LinkTargetTriggerComponent: CSharpFramework.Shapes.LinkTargetTriggerComponent, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Shapes.ShapeBase: CSharpFramework.Shapes.ShapeBase, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Shapes.ShapeBase.HintFlags_e: CSharpFramework.Shapes.ShapeBase+HintFlags_e, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
+CSharpFramework.BaseTypes.Color4: CSharpFramework.BaseTypes.Color4, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.BaseTypes.ProfileEnum: CSharpFramework.BaseTypes.ProfileEnum, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.DynamicProperties.DynamicEnumPropertyType: CSharpFramework.DynamicProperties.DynamicEnumPropertyType, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.DynamicProperties.DynamicProperty: CSharpFramework.DynamicProperties.DynamicProperty, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.DynamicProperties.DynamicPropertyCollectionType.DynamicPropertyCollectionFlags_e: CSharpFramework.DynamicProperties.DynamicPropertyCollectionType+DynamicPropertyCollectionFlags_e, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.DynamicProperties.DynamicPropertyType: CSharpFramework.DynamicProperties.DynamicPropertyType, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Layer: CSharpFramework.Layer, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Math.Vector3F: CSharpFramework.Math.Vector3F, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.PropertyEditors.FlagsInt32_e: CSharpFramework.PropertyEditors.FlagsInt32_e, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Scene.ShapeComponent: CSharpFramework.Scene.ShapeComponent, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Scene.ShapeComponentCollection: CSharpFramework.Scene.ShapeComponentCollection, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Scene.ShapeComponentType: CSharpFramework.Scene.ShapeComponentType, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.ShapeCollection: CSharpFramework.ShapeCollection, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Shapes.LinkCollection: CSharpFramework.Shapes.LinkCollection, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Shapes.LinkTargetTriggerComponent: CSharpFramework.Shapes.LinkTargetTriggerComponent, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Shapes.ShapeBase: CSharpFramework.Shapes.ShapeBase, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Shapes.ShapeBase.HintFlags_e: CSharpFramework.Shapes.ShapeBase+HintFlags_e, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
 float: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
 int: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
 long: System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
@@ -30,10 +30,10 @@ System.Drawing.Color: System.Drawing.Color, System.Drawing, Version=4.0.0.0, Cul
 System.RuntimeType: System.RuntimeType, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
 System.Type: System.Type, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
 uint: System.UInt32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-VisionEditorPlugin.Shapes.DynLightShape: VisionEditorPlugin.Shapes.DynLightShape, VisionEditorPlugin.EditorPlugin, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-VisionEditorPlugin.Shapes.DynLightShape.LightAttenuationCurve_e: VisionEditorPlugin.Shapes.DynLightShape+LightAttenuationCurve_e, VisionEditorPlugin.EditorPlugin, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-VisionEditorPlugin.Shapes.DynLightShape.LightType_e: VisionEditorPlugin.Shapes.DynLightShape+LightType_e, VisionEditorPlugin.EditorPlugin, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-VisionManaged.ShadowCasterGeometryTypes_e: VisionManaged.ShadowCasterGeometryTypes_e, VisionManaged, Version=2014.1.0.31390, Culture=neutral, PublicKeyToken=null
+VisionEditorPlugin.Shapes.DynLightShape: VisionEditorPlugin.Shapes.DynLightShape, VisionEditorPlugin.EditorPlugin, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+VisionEditorPlugin.Shapes.DynLightShape.LightAttenuationCurve_e: VisionEditorPlugin.Shapes.DynLightShape+LightAttenuationCurve_e, VisionEditorPlugin.EditorPlugin, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+VisionEditorPlugin.Shapes.DynLightShape.LightType_e: VisionEditorPlugin.Shapes.DynLightShape+LightType_e, VisionEditorPlugin.EditorPlugin, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+VisionManaged.ShadowCasterGeometryTypes_e: VisionManaged.ShadowCasterGeometryTypes_e, VisionManaged, Version=2014.1.0.42490, Culture=neutral, PublicKeyToken=null
 ...
 ---
 - &8a1392b36f5e49fcaabb611646f9ba39 !CSharpFramework.Layer

@@ -1,35 +1,35 @@
 ﻿# YAML
 bool: System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
 byte: System.Byte, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-CSharpFramework.AssetManagement.ProfileSpecificSettings: CSharpFramework.AssetManagement.ProfileSpecificSettings, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.BaseTypes.Color4: CSharpFramework.BaseTypes.Color4, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.BaseTypes.Color4F: CSharpFramework.BaseTypes.Color4F, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.BaseTypes.ColorCurves: CSharpFramework.BaseTypes.ColorCurves, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.BaseTypes.CurvePoint: CSharpFramework.BaseTypes.CurvePoint, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.BaseTypes.PointList: CSharpFramework.BaseTypes.PointList, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.DynamicProperties.DynamicEnumPropertyType: CSharpFramework.DynamicProperties.DynamicEnumPropertyType, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.DynamicProperties.DynamicProperty: CSharpFramework.DynamicProperties.DynamicProperty, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.DynamicProperties.DynamicPropertyCollection: CSharpFramework.DynamicProperties.DynamicPropertyCollection, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.DynamicProperties.DynamicPropertyCollectionType: CSharpFramework.DynamicProperties.DynamicPropertyCollectionType, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.DynamicProperties.DynamicPropertyCollectionType.DynamicPropertyCollectionFlags_e: CSharpFramework.DynamicProperties.DynamicPropertyCollectionType+DynamicPropertyCollectionFlags_e, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.DynamicProperties.DynamicPropertyType: CSharpFramework.DynamicProperties.DynamicPropertyType, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.ISurface.SHADERMODE: CSharpFramework.ISurface+SHADERMODE, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.PropertyEditors.FlagsInt32_e: CSharpFramework.PropertyEditors.FlagsInt32_e, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Scene.FogSetup: CSharpFramework.Scene.FogSetup, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Scene.FogSetup.Mode: CSharpFramework.Scene.FogSetup+Mode, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Scene.RendererSetup: CSharpFramework.Scene.RendererSetup, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Scene.ShaderEffectConfig: CSharpFramework.Scene.ShaderEffectConfig, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Scene.ShapeComponent: CSharpFramework.Scene.ShapeComponent, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Scene.ShapeComponentCollection: CSharpFramework.Scene.ShapeComponentCollection, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Scene.ShapeComponentType: CSharpFramework.Scene.ShapeComponentType, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Scene.SkyLayer: CSharpFramework.Scene.SkyLayer, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Scene.SkyLayer.SkyMappingType_e: CSharpFramework.Scene.SkyLayer+SkyMappingType_e, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Scene.SkyLayerCollection: CSharpFramework.Scene.SkyLayerCollection, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
-CSharpFramework.Scene.TimeOfDay: CSharpFramework.Scene.TimeOfDay, CSharpFramework, Version=2014.1.0.0, Culture=neutral, PublicKeyToken=null
+CSharpFramework.AssetManagement.ProfileSpecificSettings: CSharpFramework.AssetManagement.ProfileSpecificSettings, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.BaseTypes.Color4: CSharpFramework.BaseTypes.Color4, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.BaseTypes.Color4F: CSharpFramework.BaseTypes.Color4F, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.BaseTypes.ColorCurves: CSharpFramework.BaseTypes.ColorCurves, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.BaseTypes.CurvePoint: CSharpFramework.BaseTypes.CurvePoint, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.BaseTypes.PointList: CSharpFramework.BaseTypes.PointList, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.DynamicProperties.DynamicEnumPropertyType: CSharpFramework.DynamicProperties.DynamicEnumPropertyType, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.DynamicProperties.DynamicProperty: CSharpFramework.DynamicProperties.DynamicProperty, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.DynamicProperties.DynamicPropertyCollection: CSharpFramework.DynamicProperties.DynamicPropertyCollection, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.DynamicProperties.DynamicPropertyCollectionType: CSharpFramework.DynamicProperties.DynamicPropertyCollectionType, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.DynamicProperties.DynamicPropertyCollectionType.DynamicPropertyCollectionFlags_e: CSharpFramework.DynamicProperties.DynamicPropertyCollectionType+DynamicPropertyCollectionFlags_e, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.DynamicProperties.DynamicPropertyType: CSharpFramework.DynamicProperties.DynamicPropertyType, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.ISurface.SHADERMODE: CSharpFramework.ISurface+SHADERMODE, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.PropertyEditors.FlagsInt32_e: CSharpFramework.PropertyEditors.FlagsInt32_e, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Scene.FogSetup: CSharpFramework.Scene.FogSetup, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Scene.FogSetup.Mode: CSharpFramework.Scene.FogSetup+Mode, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Scene.RendererSetup: CSharpFramework.Scene.RendererSetup, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Scene.ShaderEffectConfig: CSharpFramework.Scene.ShaderEffectConfig, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Scene.ShapeComponent: CSharpFramework.Scene.ShapeComponent, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Scene.ShapeComponentCollection: CSharpFramework.Scene.ShapeComponentCollection, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Scene.ShapeComponentType: CSharpFramework.Scene.ShapeComponentType, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Scene.SkyLayer: CSharpFramework.Scene.SkyLayer, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Scene.SkyLayer.SkyMappingType_e: CSharpFramework.Scene.SkyLayer+SkyMappingType_e, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Scene.SkyLayerCollection: CSharpFramework.Scene.SkyLayerCollection, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
+CSharpFramework.Scene.TimeOfDay: CSharpFramework.Scene.TimeOfDay, CSharpFramework, Version=2014.1.0.1, Culture=neutral, PublicKeyToken=null
 float: System.Single, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
 int: System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
 long: System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
-ManagedFramework.VisionSky: ManagedFramework.VisionSky, ManagedFramework, Version=2014.1.0.31383, Culture=neutral, PublicKeyToken=null
+ManagedFramework.VisionSky: ManagedFramework.VisionSky, ManagedFramework, Version=2014.1.0.42474, Culture=neutral, PublicKeyToken=null
 short: System.Int16, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
 string: System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
 string[]: System.String[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089
@@ -44,6 +44,7 @@ System.Type: System.Type, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyT
   _skyConfig: *d17ad093dfde4808ad1e4b91a9831076
   _fNearClip: !float 5
   _fFarClip: !float 32000
+  _fLODScale: !float 1
   _fovX: !float 90
   _defaultLightColor: !System.Drawing.Color
     name: null

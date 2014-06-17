@@ -1,3 +1,10 @@
+dialogs/dialogframe_cyanwhitetrans.png	AssetMgmt_data/transformed/dialogframe_cyanwhitetr66f9vw0clgdtc.pvr	sRGB=false
+dialogs/gilgongo_00.dds	Dialogs/gilgongo_00.dds	sRGB=false
+dialogs/gilgongo_large_00.dds	Dialogs/gilgongo_large_00.dds	sRGB=false
+dialogs/gilgongo_large_01.dds	Dialogs/gilgongo_large_01.dds	sRGB=false
+dialogs/gilgongo_small_00.dds	Dialogs/gilgongo_small_00.dds	sRGB=false
+dialogs/mousehigh.tga	AssetMgmt_data/transformed/mousehigh3pppv28clgdtc.pvr	sRGB=false
+dialogs/mousenorm.tga	AssetMgmt_data/transformed/mousenormg5jb9wsclgdtc.pvr	sRGB=false
 fonts/arial32_00.dds	Fonts/Arial32_00.dds	sRGB=false
 fonts/arial_18_00.dds	Fonts/Arial_18_00.dds	sRGB=false
 fonts/arial_22_00.dds	Fonts/Arial_22_00.dds	sRGB=false
@@ -17,11 +24,8 @@ particles/smoke.dds	AssetMgmt_data/transformed/smokef0bryq4clgdtc.pvr	sRGB=false
 particles/sparkle.dds	AssetMgmt_data/transformed/sparklebk1kmw0clgdtc.pvr	sRGB=false
 particles/star.dds	AssetMgmt_data/transformed/star1v8889sclgdtc.pvr	sRGB=false
 particles/steam.dds	AssetMgmt_data/transformed/steamgfc5ddjclgdtc.pvr	sRGB=false
-scripts/attachtocamera.lua	Scripts/AttachToCamera.lua	
-scripts/randommove.lua	Scripts/RandomMove.lua	
-scripts/rotateobject.lua	Scripts/RotateObject.lua	
-scripts/scriptmenu.lua	Scripts/ScriptMenu.lua	
-scripts/testlua.lua	Scripts/TestLua.lua	
+scripts/cloudconnectionmenu.lua	Scripts/CloudConnectionMenu.lua	
+scripts/defaultscenescript.lua	Scripts/DefaultSceneScript.lua	
 shaders/misc_00/multassigned.bmp	AssetMgmt_data/transformed/multassigned824c8cnclgdtc.pvr	sRGB=false
 textures/billboards/billboardatlas_diffuse.dds	AssetMgmt_data/transformed/billboardatlas_diffuse8y7vhynclgdtc.pvr	sRGB=false
 textures/billboards/billboardatlas_normal.dds	AssetMgmt_data/transformed/billboardatlas_normal7g4q8jxclgdtc.pvr	sRGB=false

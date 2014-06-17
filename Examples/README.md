@@ -39,13 +39,31 @@ Shows a simple xml GUI that allows you to interact with Google game services usi
 * Submit a score to a leaderboard
 
 Initialisation of the Plugin is taken care of in **PluginMain.cpp**, (see the `OnInitEnginePlugin()` method). 
-Most of the Google interaction in this application happens inside **CloudConnectionGUI.cpp**
+All of the Google interaction in this application happens inside **CloudConnectionGUI.cpp**
 
 **CloudConnectionGUI.cpp** creates a GUI using the Vision xml GUI system allows you to give commands to the Google Play Games service.
 
 This class also inherits from `IVisCallbackHandler_cl` so that it can listen for the Callbacks made by the Cloud Connection Plugin.
 
 There are preprocessor defines for `#define ACHIEVEMENT_ID` and `#define LEADERBOARD_ID`, you should make at least one test Leaderboard and one Achievement in the Google play developer console and enter the Id's for them to test that you can add an achievement and submit a score.
+
+## Example - ScoresAchievementsLua
+
+Shows a simple xml GUI that allows you to interact with Google game services using the plugin's Lua interface.
+
+* Login & out
+* Show all achievements/Leaderboards
+* Unlock a standard achievement
+* Submit a score to a leaderboard
+
+Initialisation of the Plugin is taken care of in **PluginMain.cpp**, (see the `OnInitEnginePlugin()` method). 
+All of the Google interaction in this application happens inside **Scripts\CloudConnectionMenu.lua**
+
+**Scripts\DefaultSceneScript.lua** loads and shows a GUI using the Vision xml GUI system allows you to give commands to the Google Play Games service.
+
+**Scripts\CloudConnectionMenu.lua** handles all the processing of the menu and callbacks from the Cloud Connection Plugin.
+
+There are lua local properties for `local ACHIEVEMENT_ID = ...` and `local LEADERBOARD_ID = ...`, you should make at least one test Leaderboard and one Achievement in the Google play developer console and enter the Id's for them to test that you can add an achievement and submit a score.
 
 ## Common Problems
 

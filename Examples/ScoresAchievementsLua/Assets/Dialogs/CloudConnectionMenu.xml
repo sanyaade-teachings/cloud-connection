@@ -1,0 +1,60 @@
+<root>
+  <DIALOG class="VDialog" name="MainMenu" fullscreen="FALSE" size="625,500" startPosition="ScreenCenter" pos="0, 0">
+    <script filename="..\scripts\CloudConnectionMenu.lua" />
+	  <fadein start="0" time="0.5"/>
+	  <frame texture="DialogFrame_CyanWhiteTrans.png"/>
+	 
+		<control class="VTextLabel" pos="0,0" size="625,30" ID="STATIC">
+			<text text="Google Games Services Demo" font="MenuSmall" color="181,221,208,255" halign="CENTER" valign="TOP"/>
+		</control>
+		
+	  <control class="VPushButton" pos="0,50" size="625,50" ID="SIGNIN" taborder="0" enabled="true" dialogResult="UserSignIn">
+		  <text text="Sign-In" font="Menu" color="24,255,126,255" halign="center">
+			  <statemodifier state="mouseOver" color="103,255,84,255" cursor="defaultHigh"/>
+			  <statemodifier state="selected"  color="103,255,84,255" cursor="defaultHigh"/>
+			  <statemodifier state="disabled"  color="100,100,100,255"/>
+		  </text>
+	  </control>
+				
+	  <control class="VPushButton" pos="0,125" size="625,50" ID="ALLACH" taborder="0" enabled="true" dialogResult="AllAchievements">
+		  <text text="Show all Achievements" font="Menu" color="24,255,126,255" halign="center">
+			  <statemodifier state="mouseOver" color="103,255,84,255" cursor="defaultHigh"/>
+			  <statemodifier state="selected"  color="103,255,84,255" cursor="defaultHigh"/>
+			  <statemodifier state="disabled"  color="100,100,100,255"/>
+		  </text>
+	  </control>
+
+    <control class="VPushButton" pos="0,200" size="625,50" ID="UNLOCKACH" taborder="0" enabled="true" dialogResult="UnlockAchievement">
+		  <text text="Unlock an Achievement" font="Menu" color="24,255,126,255" halign="center">
+			  <statemodifier state="mouseOver" color="103,255,84,255" cursor="defaultHigh"/>
+			  <statemodifier state="selected"  color="103,255,84,255" cursor="defaultHigh"/>
+			  <statemodifier state="disabled"  color="100,100,100,255"/>
+		  </text>
+	  </control>
+
+	  <control class="VPushButton" pos="0,275" size="625,50" ID="ALLLEAD" taborder="0" enabled="true" dialogResult="AllLeaderboards">
+		  <text text="Show All Leaderboards" font="Menu" color="24,255,126,255" halign="center">
+			  <statemodifier state="mouseOver" color="103,255,84,255" cursor="defaultHigh"/>
+			  <statemodifier state="selected"  color="103,255,84,255" cursor="defaultHigh"/>
+			  <statemodifier state="disabled"  color="100,100,100,255"/>
+		  </text>
+	  </control>    
+    
+    <control class="VPushButton" pos="0,350" size="625,50" ID="SUBMITSCORE" taborder="0" enabled="true" dialogResult="SubmitScore">
+		  <text text="Submit a High-Score" font="Menu" color="24,255,126,255" halign="center">
+			  <statemodifier state="mouseOver" color="103,255,84,255" cursor="defaultHigh"/>
+			  <statemodifier state="selected"  color="103,255,84,255" cursor="defaultHigh"/>
+			  <statemodifier state="disabled"  color="100,100,100,255"/>
+		  </text>
+	  </control>    
+	 
+	  <control class="VPushButton" pos="0,425" size="625,50" ID="SIGNOUT" taborder="0" enabled="true" dialogResult="SignOut">
+		  <text text="Sign Out" font="Menu" color="24,255,126,255" halign="center">
+			  <statemodifier state="mouseOver" color="103,255,84,255" cursor="defaultHigh"/>
+			  <statemodifier state="selected"  color="103,255,84,255" cursor="defaultHigh"/>
+			  <statemodifier state="disabled"  color="100,100,100,255"/>
+		  </text>
+	  </control>
+  
+  </DIALOG>
+</root>

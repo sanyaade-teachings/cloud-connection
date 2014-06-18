@@ -968,9 +968,9 @@
                 "UpdateAfterLoad": false
             },
             "File": {
-                "Hash": 2521814423,
-                "TimeStamp": 1403096108227965200,
-                "LastEditTime": 1403096170738824000
+                "Hash": 2862893878,
+                "TimeStamp": 1403100788569284400,
+                "LastEditTime": 1403100789583289500
             },
             "Transformations": {
                 "TemplateName": "Default"
@@ -989,9 +989,9 @@
                 "UpdateAfterLoad": false
             },
             "File": {
-                "Hash": 1797809141,
-                "TimeStamp": 1403089205857213900,
-                "LastEditTime": 1403096170739819900
+                "Hash": 3568392764,
+                "TimeStamp": 1403106244549140800,
+                "LastEditTime": 1403106245549331300
             },
             "Transformations": {
                 "TemplateName": "Default"
@@ -2440,6 +2440,39 @@
                 "HasAlpha": true,
                 "Width": 32,
                 "Height": 64,
+                "Depth": 1,
+                "CubeFaces": 1,
+                "Images": 1,
+                "sRGB": false
+            },
+            "Transformations": {
+                "TemplateName": "Default"
+            }
+        },
+        "Textures/GoogleSigninButtonRedLong.png": {
+            "AssetType": "Texture",
+            "Common": {
+                "Subtype": "2D",
+                "Tags": "__NEW_ASSET__",
+                "Dependencies": [
+
+                ],
+                "Variants": [
+
+                ],
+                "UpdateAfterLoad": false
+            },
+            "File": {
+                "Hash": 3361888432,
+                "TimeStamp": 1403098880823258400,
+                "LastEditTime": 1403098918323824700
+            },
+            "Texture": {
+                "FileFormat": "PNG",
+                "DataFormat": "PNG ARGB",
+                "HasAlpha": true,
+                "Width": 492,
+                "Height": 108,
                 "Depth": 1,
                 "CubeFaces": 1,
                 "Images": 1,

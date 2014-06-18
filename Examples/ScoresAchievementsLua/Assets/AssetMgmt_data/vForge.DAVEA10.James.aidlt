@@ -112,3 +112,4 @@ dialogs/mousehigh.tga	Dialogs/mouseHigh.tga	sRGB=false
 dialogs/mousenorm.tga	Dialogs/mouseNorm.tga	sRGB=false
 scripts/cloudconnectionmenu.lua	Scripts/CloudConnectionMenu.lua	
 scripts/defaultscenescript.lua	Scripts/DefaultSceneScript.lua	
+textures/googlesigninbuttonredlong.png	Textures/GoogleSigninButtonRedLong.png	sRGB=false

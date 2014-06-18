@@ -8,14 +8,6 @@
 			<text text="Google Games Services Demo - Lua" font="MenuSmall" color="181,221,208,255" halign="CENTER" valign="TOP"/>
 		</control>
 		
-	  <control class="VPushButton" pos="0,50" size="625,50" ID="SIGNIN" taborder="0" enabled="true" dialogResult="UserSignIn">
-		  <text text="Sign-In" font="Menu" color="24,255,126,255" halign="center">
-			  <statemodifier state="mouseOver" color="103,255,84,255" cursor="defaultHigh"/>
-			  <statemodifier state="selected"  color="103,255,84,255" cursor="defaultHigh"/>
-			  <statemodifier state="disabled"  color="100,100,100,255"/>
-		  </text>
-	  </control>
-				
 	  <control class="VPushButton" pos="0,125" size="625,50" ID="ALLACH" taborder="0" enabled="true" dialogResult="AllAchievements">
 		  <text text="Show all Achievements" font="Menu" color="24,255,126,255" halign="center">
 			  <statemodifier state="mouseOver" color="103,255,84,255" cursor="defaultHigh"/>

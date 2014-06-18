@@ -79,6 +79,8 @@ otherwise you will not be able to sign in to your game.
 
 There is an excellect video here from Google that points out the [Top 7 Google Play game services setup mistakes](https://developers.google.com/live/shows/5936979195723776)
 
+There is also a document here that covers the [Google Branding Guidelines](https://developers.google.com/+/branding-guidelines "Google Branding Guidelines") that you should read before adding graphics to your game.
+
 ## Add Achievements and Leaderboards
 
 Add 

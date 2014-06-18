@@ -17,8 +17,7 @@ function OnAfterSceneLoaded()
      
   -- test that we can get an acheivement via 'OnAchievementFetched' callback
   local ccClient = CloudConnection:GetClient()  
-  ccClient:GetAchievement( ACHIEVEMENT_ID )
-     
+  ccClient:GetAchievement( ACHIEVEMENT_ID )     
 end
 
 -- called when an item in the menu is clicked
@@ -29,9 +28,7 @@ function OnItemClicked(self, uiItem, buttons, mousePosX, mousePosY)
   local ccClient = CloudConnection:GetClient()
         
   -- action the button that was pressed
-  if uiItem:GetID() == GUI:GetID("SIGNIN") then  
-    ccClient:BeginUserInitiatedSignIn()               -- show the user sign-in dialog
-  elseif uiItem:GetID() == GUI:GetID("SIGNOUT") then  
+  if uiItem:GetID() == GUI:GetID("SIGNOUT") then  
     ccClient:SignOut()                                -- signs the user out    
   elseif uiItem:GetID() == GUI:GetID("ALLACH") then      
     ccClient:ShowAchievements()                       -- show the UI for all achievements for the signed in player
@@ -47,28 +44,6 @@ function OnItemClicked(self, uiItem, buttons, mousePosX, mousePosY)
   
 end
 
-
---This callback is made to the script when the Cloud Connection
---Client has started the authorisation process
-function OnAuthActionStarted()
-  Debug:Log("OnAuthActionStarted callback was successfully made to Lua script")
-end
-
---This callback is made to the script when the Cloud Connection
---Client has finsihed the authorisation process, either succesfully or unsucesfully
---this call can also be the result of a sign-out as well as a sign-in attempt
-function OnAuthActionFinished()
-  Debug:Log("OnAuthActionFinished callback was successfully made to Lua script")
-    
-  local ccClient = CloudConnection:GetClient()
-  
-  -- check the authentication
-  if ccClient:IsAuthenticated() then
-    Debug:Log("The user is now authenticated" )
-  else
-    Debug:Log("The user no longer authenticated" )
-  end
-end
 
 --This callback is made to the script when the Cloud Connection
 --Client has retrived the player data, this means that calls

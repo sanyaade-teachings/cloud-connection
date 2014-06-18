@@ -23,6 +23,8 @@ end
 
 -- called when an item in the menu is clicked
 function OnItemClicked(self, uiItem, buttons, mousePosX, mousePosY)
+  Debug:Log("An item on the menu was clicked")
+
   -- get the cloud connection client
   local ccClient = CloudConnection:GetClient()
         

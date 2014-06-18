@@ -5,6 +5,11 @@
 #include "CCAchievement.hpp"
 #include "CloudConnection.hpp"
 
+const char* CloudConnectionClient::FUNC_ONACHIEVEMENTFETCHED = "OnAchievementFetched"; ///< script Callback function name
+const char* CloudConnectionClient::FUNC_ONPLAYERDATAFETCHED  = "OnPlayerDataFetched";  ///< script Callback function name
+const char* CloudConnectionClient::FUNC_ONAUTHACTIONFINISHED = "OnAuthActionFinished"; ///< script Callback function name
+const char* CloudConnectionClient::FUNC_ONAUTHACTIONSTARTED  = "OnAuthActionStarted";  ///< script Callback function name
+
 /** RTTI definitions */
 V_IMPLEMENT_DYNAMIC( CloudConnectionClient, VisTypedEngineObject_cl, &g_CloudConnectionModule );
 
@@ -26,93 +31,52 @@ void CloudConnectionClient::OneTimeDeInit()
   CloudConnection::Callbacks.OnAchievementFetched -= this;
 }
 
-void CloudConnectionClient::RemoveScriptCallbackListener( VScriptInstance* pInstance )
-{
-  VASSERT_MSG( pInstance != NULL, "The script instance to be removed from cloud connection client cannot be null" );
-  
-  VScriptComponent* pComp = Components().GetComponentOfType<CloudConnectionScriptComponent>();
-  if ( pComp != NULL && pComp->GetScriptInstance() == pInstance 
-    && pComp->IsDisposed() == false && pComp->IsDisposing() == false )
-  {        
-    RemoveComponent( pComp );
-    hkvLog::Debug("CloudConnectionClient - removed the instance of the cloud connection script component");
-  }
-}
-
-void CloudConnectionClient::AddScriptCallbackListener( VScriptInstance* pInstance )
-{    
-  VASSERT_MSG( pInstance != NULL, "The script instance to add to the cloud connection client cannot be null" );
-  
-  VScriptComponent* pComp = Components().GetComponentOfType<CloudConnectionScriptComponent>();
-  if ( pComp == NULL )
-  {
-    IVScriptManager* pSM = Vision::GetScriptManager();
-    if(pSM)
-    {
-      lua_State* pLuaState = ((VScriptResourceManager*)pSM)->GetMasterState();
-      VASSERT_MSG( pLuaState != NULL, "The lua state cannot be null" );
-      if(pLuaState) 
-      {
-        //add the script component
-        CloudConnectionScriptComponent* pScriptComponent = new CloudConnectionScriptComponent();    
-        pScriptComponent->Initialize();
-        pScriptComponent->SetScriptInstance( pInstance );
-        AddComponent( pScriptComponent );
-
-        hkvLog::Debug("added CloudConnectionScriptComponent to the script instance");
-      }
-    }
-  }
-  else
-  {
-    hkvLog::Debug("CloudConnectionClient already has an instance of the cloud connection script component");
-  }
-}
-
 /// \brief IVisCallbackHandler_cl override
 void CloudConnectionClient::OnHandleCallback( IVisCallbackDataObject_cl* pData )
 {
   //Listen here for sign-in/sign-out callbacks
-  hkvLog::Debug("CloudConnectionScriptComponent - OnHandleCallback");      
   if( pData->m_pSender == &CloudConnection::Callbacks.OnAuthActionStarted )
   {
-    hkvLog::Debug("CloudConnectionScriptComponent - OnAuthActionStarted");
-    TriggerCCScriptFunction("OnAuthActionStarted");
+    hkvLog::Debug("CloudConnectionScriptComponent - %s", FUNC_ONAUTHACTIONSTARTED);
+    TriggerCCScriptFunction(FUNC_ONAUTHACTIONSTARTED);
   }
   else if( pData->m_pSender==&CloudConnection::Callbacks.OnAuthActionFinished )
   {                
-    hkvLog::Debug("CloudConnectionScriptComponent - OnAuthActionFinished");
-    TriggerCCScriptFunction("OnAuthActionFinished");
+    hkvLog::Debug("CloudConnectionScriptComponent - %s", FUNC_ONAUTHACTIONFINISHED);
+    TriggerCCScriptFunction(FUNC_ONAUTHACTIONFINISHED);
   }
   else if( pData->m_pSender==&CloudConnection::Callbacks.OnPlayerDataFetched )
   {                
-    hkvLog::Debug("CloudConnectionScriptComponent - OnPlayerDataFetched");
-    TriggerCCScriptFunction("OnPlayerDataFetched");
+    hkvLog::Debug("CloudConnectionScriptComponent - %s", FUNC_ONPLAYERDATAFETCHED);
+    TriggerCCScriptFunction(FUNC_ONPLAYERDATAFETCHED);
   }
   else if( pData->m_pSender==&CloudConnection::Callbacks.OnAchievementFetched )
   {                
     if ( pData != NULL )
     {          
       CCAchievement* pAch = (CCAchievement*)pData;
-      hkvLog::Debug("CloudConnectionScriptComponent - OnAchievementFetched '%s','%s'", pAch->Id(), pAch->Name() );
+      hkvLog::Debug("CloudConnectionScriptComponent - %s '%s','%s'", FUNC_ONACHIEVEMENTFETCHED, pAch->Id(), pAch->Name() );
 
       if ( pAch->Valid() )
       {
-        //this would be nice instead of a function with loads of parameters but couldn't get this to make an instance of the object in lua???
-        //TriggerCCScriptFunctionArg("OnAchievementFetched", "t",  pAch);   
+        //send the achievemnt data on to lua via the callback (all the script instances)
+        VScriptResourceManager& scriptManager = VScriptResourceManager::GlobalManager();  
+        VRefCountedCollection<VScriptInstance>& scriptInstances = scriptManager.Instances();
 
-        //send the achievemnt data on to lua via the callback
-        VScriptComponent* pComp = Components().GetComponentOfType<CloudConnectionScriptComponent>();  //there is only one CloudConnectionScriptComponent
-        if ( pComp != NULL )
+        //send callback to each script that has the function
+        for( int i = 0; i < scriptInstances.Count(); i++ )
         {
-          VScriptInstance* pScriptInst = pComp->GetScriptInstance();
+          VScriptInstance* pScriptInst = scriptInstances.GetAt(i);
           if ( pScriptInst != NULL )
           {
-            const char* szFunction = "OnAchievementFetched";
-            if ( pScriptInst->HasFunction(szFunction) )
-            {                
+            if ( pScriptInst->HasFunction(FUNC_ONACHIEVEMENTFETCHED) )
+            {                              
+              //this would be nice instead of a function with loads of parameters 
+              // but couldn't get this to make an instance of the object in lua??? (causes buffer overflow)
+              //pScriptInst->ExecuteFunctionArg(FUNC_ONACHIEVEMENTFETCHED, "t",  pAch);  
+
               //send this data on to Lua
-              pScriptInst->ExecuteFunctionArg(szFunction, "sssiiii", 
+              pScriptInst->ExecuteFunctionArg(FUNC_ONACHIEVEMENTFETCHED, "sssiiii", 
                 pAch->Id(), 
                 pAch->Name(), 
                 pAch->Description(),
@@ -120,10 +84,6 @@ void CloudConnectionClient::OnHandleCallback( IVisCallbackDataObject_cl* pData )
                 pAch->State(),
                 pAch->TotalSteps(),
                 pAch->CurrentSteps() );
-            }
-            else
-            {
-              hkvLog::Warning("CloudConnectionClient - CloudConnectionScriptComponent does not have callback function '%s'", szFunction);
             }
           }      
         }
@@ -138,42 +98,21 @@ void CloudConnectionClient::OnHandleCallback( IVisCallbackDataObject_cl* pData )
 }
 
 void CloudConnectionClient::TriggerCCScriptFunction( const char* szFunction )
-{      
-  VScriptComponent* pComp = Components().GetComponentOfType<CloudConnectionScriptComponent>();  //there is only one CloudConnectionScriptComponent
-  if ( pComp != NULL )
+{          
+  //get all the script instances
+  VScriptResourceManager& scriptManager = VScriptResourceManager::GlobalManager();  
+  VRefCountedCollection<VScriptInstance>& scriptInstances = scriptManager.Instances();
+
+  //send callback to each script that has the function
+  for( int i = 0; i < scriptInstances.Count(); i++ )
   {
-    VScriptInstance* pScriptInst = pComp->GetScriptInstance();
+    VScriptInstance* pScriptInst = scriptInstances.GetAt(i);
     if ( pScriptInst != NULL )
     {
       if ( pScriptInst->HasFunction(szFunction) )
       {                
         pScriptInst->ExecuteFunction(szFunction);
       }
-      else
-      {
-        hkvLog::Warning("CloudConnectionClient - CloudConnectionScriptComponent does not have callback function '%s'", szFunction);
-      }
-    }      
-  }
-}
-
-void CloudConnectionClient::TriggerCCScriptFunctionArg( const char* szFunction, const char* szArgFormat, void* parameter )
-{      
-  VScriptComponent* pComp = Components().GetComponentOfType<CloudConnectionScriptComponent>();  //there is only one CloudConnectionScriptComponent
-  if ( pComp != NULL )
-  {
-    VScriptInstance* pScriptInst = pComp->GetScriptInstance();
-    if ( pScriptInst != NULL )
-    {
-      if ( pScriptInst->HasFunction(szFunction) )
-      {                
-        // We access the ellipses through a va_list, so let's declare one
-        pScriptInst->ExecuteFunctionArg(szFunction, szArgFormat, parameter);
-      }
-      else
-      {
-        hkvLog::Warning("CloudConnectionClient - CloudConnectionScriptComponent does not have callback function '%s'", szFunction);
-      }
-    }      
-  }
+    }
+  }    
 }

@@ -523,30 +523,7 @@ The following lua functions can be implemented to listen for callbacks
 
 ### Using Lua the callbacks
 
-Call the `AddScriptCallbackListener` function in the script that you want to listen for the callbacks in.
-
-```Lua
-
-	function OnAfterSceneLoaded()  
-  		-- adding listener for CloudConnection callbacks for to this script
-  		local ccClient = CloudConnection:GetClient()
-  		ccClient:AddScriptCallbackListener()
-	end
-```
-
-You should remove the callback listeners when the script is unloaded using `RemoveScriptCallbackListener`
-
-```Lua
-
-	function OnBeforeSceneUnloaded()
-	  
-	  -- removing listener for CloudConnection callbacks for to this script
-	  local ccClient = CloudConnection:GetClient()
-	  ccClient:RemoveScriptCallbackListener()    
-	end
-```   
-
-Implement the following Lua functions that will get called when CloudConnection events happen
+Implement the following Lua functions in any script that you want to recieve CloudConnection events:
 
 ```Lua
 

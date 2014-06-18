@@ -28,21 +28,6 @@ public:
   virtual void OnHandleCallback( IVisCallbackDataObject_cl* pData ) HKV_OVERRIDE;
 
   /// \brief
-  /// Adds a script component that will list for callback events for the Cloud Connection
-  /// The script can define and listen for callbacks inside the following script functions
-  ///
-  /// OnAuthActionStarted
-  /// OnAuthActionStarted
-  /// OnPlayerDataFetched
-  /// 
-  void AddScriptCallbackListener( VScriptInstance* pInstance );
-
-  /// \brief
-  /// Removes a script component that that was listening for callback events for the Cloud Connection
-  /// The script can define and listen for callbacks inside the following script functions
-  void RemoveScriptCallbackListener( VScriptInstance* pInstance );
-
-  /// \brief
   /// Returns whether or not user is authenticated
   virtual bool IsAuthenticated() = 0;
 
@@ -103,20 +88,16 @@ public:
 
 protected:
 private:
+  static const char* FUNC_ONACHIEVEMENTFETCHED; ///< script Callback function name
+  static const char* FUNC_ONPLAYERDATAFETCHED;  ///< script Callback function name
+  static const char* FUNC_ONAUTHACTIONFINISHED; ///< script Callback function name
+  static const char* FUNC_ONAUTHACTIONSTARTED;  ///< script Callback function name
 
   /// \brief
   /// Calls the script function with no parameters for any CloudConnectionScriptComponent's
-  /// that have been added to this client
+  /// on all script instances currently available
   /// \param szFunction  Name of the script function to call 
   void TriggerCCScriptFunction( const char* szFunction );
-
-  /// \brief
-  /// Calls the script function for any CloudConnectionScriptComponent's
-  /// that have been added to this client
-  /// \param szFunction  Name of the script function to call 
-  /// \param szArgFormat  See IVScriptInstance::ExecuteFunctionArgV
-  /// \param parameter the argument as specified in szArgFormat 
-  void TriggerCCScriptFunctionArg( const char* szFunction, const char* szArgFormat, void* parameter );
 };
 
 #endif

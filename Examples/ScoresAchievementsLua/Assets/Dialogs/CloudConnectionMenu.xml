@@ -5,7 +5,7 @@
 	  <frame texture="DialogFrame_CyanWhiteTrans.png"/>
 	 
 		<control class="VTextLabel" pos="0,0" size="625,30" ID="STATIC">
-			<text text="Google Games Services Demo" font="MenuSmall" color="181,221,208,255" halign="CENTER" valign="TOP"/>
+			<text text="Google Games Services Demo - Lua" font="MenuSmall" color="181,221,208,255" halign="CENTER" valign="TOP"/>
 		</control>
 		
 	  <control class="VPushButton" pos="0,50" size="625,50" ID="SIGNIN" taborder="0" enabled="true" dialogResult="UserSignIn">

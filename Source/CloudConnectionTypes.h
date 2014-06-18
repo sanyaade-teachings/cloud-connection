@@ -10,7 +10,7 @@ Google C++ Sample applications use uint64_t as their type to send scores so type
 Google Java API submits the score as a java "long"
 */
 
-#define CLOUDCONNECTION_VERSION "1.0.0" ///< define a version number for the client
+#define CLOUDCONNECTION_VERSION "1.0.1" ///< define a version number for the client
 
 #if defined(_VISION_ANDROID)
   typedef uint64_t ULONG64;  ///< 64 bit unsigned.

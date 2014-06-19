@@ -968,9 +968,9 @@
                 "UpdateAfterLoad": false
             },
             "File": {
-                "Hash": 2749217314,
-                "TimeStamp": 1403107943591625500,
-                "LastEditTime": 1403175242867918700
+                "Hash": 2045124675,
+                "TimeStamp": 1403175584114836200,
+                "LastEditTime": 1403179005588444300
             },
             "Transformations": {
                 "TemplateName": "Default"
@@ -989,9 +989,9 @@
                 "UpdateAfterLoad": false
             },
             "File": {
-                "Hash": 2129585538,
-                "TimeStamp": 1403171437014732700,
-                "LastEditTime": 1403175242867918700
+                "Hash": 3776233355,
+                "TimeStamp": 1403179272845037500,
+                "LastEditTime": 1403179273847779000
             },
             "Transformations": {
                 "TemplateName": "Default"
@@ -2465,7 +2465,7 @@
             "File": {
                 "Hash": 3361888432,
                 "TimeStamp": 1403098880823258400,
-                "LastEditTime": 1403098918323824700
+                "LastEditTime": 1403179035428513700
             },
             "Texture": {
                 "FileFormat": "PNG",
@@ -2479,7 +2479,39 @@
                 "sRGB": false
             },
             "Transformations": {
-                "TemplateName": "Default"
+                "pcdx9": {
+                    "TextureTransformationRule": {
+                        "Compression": "Quality",
+                        "Usage": "Undefined",
+                        "RemoveAlphaChannel": false,
+                        "CreateMipMaps": true,
+                        "DownscaleLevel": 0,
+                        "MinimumSize": 0,
+                        "MaximumSize": 0
+                    }
+                },
+                "ios": {
+                    "TextureTransformationRule": {
+                        "Compression": "Uncompressed",
+                        "Usage": "Undefined",
+                        "RemoveAlphaChannel": false,
+                        "CreateMipMaps": true,
+                        "DownscaleLevel": 0,
+                        "MinimumSize": 0,
+                        "MaximumSize": 0
+                    }
+                },
+                "android": {
+                    "TextureTransformationRule": {
+                        "Compression": "Uncompressed",
+                        "Usage": "Undefined",
+                        "RemoveAlphaChannel": false,
+                        "CreateMipMaps": true,
+                        "DownscaleLevel": 0,
+                        "MinimumSize": 0,
+                        "MaximumSize": 0
+                    }
+                }
             }
         },
         "Textures/grid01.jpg": {

@@ -2,6 +2,12 @@
 -- See the MainMenu.lua script file to see how the actions from the dialog that is opened are processed
 -- For tutorial on how to use the GUI system in lua then please see http://www.projectanarchy.com/guis-lua
 
+-- used to track if the authentication Google services has changed
+-- Set to true by default as the user may have been automatically logged into to Google services
+-- on startup of the application (if they have used the game before and logged in), 
+-- so we need to check whether we should display the sign-in button or the menu that appears after sign-in
+authenticationChanged = true    
+
 function OnAfterSceneLoaded()
            
   GUI:LoadResourceFile("Dialogs/MenuSystem.xml")
@@ -24,10 +30,6 @@ function OnAfterSceneLoaded()
   G.inputMap:MapTrigger("SignInButton", {buttonX,buttonY,buttonX+buttonWidth,buttonY+buttonHeight, 10000}, "CT_TOUCH_ANY", {once = true})   -- map a trigger to the touch area at x,y, width,height with priority 10000 
   G.inputMap:MapTrigger("SignInButton", {buttonX,buttonY,buttonX+buttonWidth,buttonY+buttonHeight, 10000, "MOUSE"}, "CT_MOUSE_LEFT_BUTTON", {once = true})   -- map a trigger for the left mouse button
 
-  -- The user may have been automatically logged into to Google services
-  -- if they have used the game before and logged in, so we need to check whether
-  -- we should display the sign-in button or the menu that appears after sign-in
-  displayMenu()
 end
 
 function OnBeforeSceneUnloaded()
@@ -48,9 +50,16 @@ end
 function OnUpdateSceneFinished()
 	Debug:Enable(true)  
   local ccClient = CloudConnection:GetClient()      -- get the cloud connection client     
+       
+  -- the user authentication has changed and the user 
+  -- may be signed-in or out at this point so display the correct menu
+  if authenticationChanged then   
+    displayMenu()
+    authenticationChanged = false
+  end
   
-  if ccClient:IsAuthenticated() == false then
-    -- check to see if the sign in button was pressed
+  -- check to see if the sign in button was pressed
+  if ccClient:IsAuthenticated() == false then    
     local signInButtonTrigger = G.inputMap:GetTrigger("SignInButton")
     
     -- user clicked the google sign in button
@@ -72,14 +81,14 @@ end
 function OnAuthActionFinished()
   Debug:Log("OnAuthActionFinished callback was successfully made to Lua script")
 
-  -- the user may be signed-in or out at this point so display the correct menu
-  displayMenu()
+  -- set our flag to show that authentication may have changed
+  authenticationChanged = true
 end
 
 --This callback is made to the script when the Cloud Connection
 --Client has started the authorisation process
 function OnAuthActionStarted()
-  Debug:Log("OnAuthActionStarted callback was successfully made to Lua script")
+  Debug:Log("OnAuthActionStarted callback was successfully made to Lua script")    
 end
 
 -- shows either the main menu or the sign-in button

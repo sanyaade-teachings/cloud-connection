@@ -116,7 +116,7 @@
     <OutDir>..\Lib\win32_vs2010\$(Configuration)\</OutDir>
     <IntDir>..\Obj\$(ProjectName)\$(Configuration)\</IntDir>
     <TargetName>CloudConnectionPlugin</TargetName>
-    <TargetExt>.vPluginD</TargetExt>
+    <TargetExt>.vPlugin</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -163,7 +163,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <ImportLibrary>..\Lib\win32_vs2010\$(Configuration)\$(TargetName)D.lib</ImportLibrary>
+      <ImportLibrary>..\Lib\win32_vs2010\$(Configuration)\$(TargetName).lib</ImportLibrary>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

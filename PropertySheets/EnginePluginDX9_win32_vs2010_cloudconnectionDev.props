@@ -6,7 +6,7 @@
   <ItemDefinitionGroup>
     <Link>
       <AdditionalLibraryDirectories>$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\win32_vs2010\dev;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>CloudConnectionPluginD.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>CloudConnectionPlugin.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ClCompile>
       <AdditionalIncludeDirectories>$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>

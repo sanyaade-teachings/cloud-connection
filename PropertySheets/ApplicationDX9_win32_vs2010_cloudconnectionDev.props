@@ -8,7 +8,7 @@
       <PreprocessorDefinitions>CLOUDCONNECTIONPLUGIN_IMPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <PostBuildEvent>
-      <Command>xcopy /Y /D /C "$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\win32_vs2010\dev\CloudConnectionPlugin.vPluginD" "$(TargetDir)"
+      <Command>xcopy /Y /D /C "$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\win32_vs2010\dev\CloudConnectionPlugin.vPlugin" "$(TargetDir)"
 xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\fmodex.dll" "$(TargetDir)"
 xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\fmod_event_net.dll" "$(TargetDir)"
 xcopy /Y /D /C "$(VISION_SDK)\Bin\win32_vs2010_anarchy\dev\DX9\lua100.dll" "$(TargetDir)"

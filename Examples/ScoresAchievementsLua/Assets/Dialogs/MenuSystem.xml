@@ -7,8 +7,10 @@
 
   <CURSOR name="Default" texture="mouseNorm.tga" color="255,255,255,255" hotspot="2,2"/>
   <CURSOR name="defaultHigh" texture="mouseHigh.tga" color="255,255,255,255" hotspot="2,2"/>
-
+    
   <defaults
     cursor = "default"
   />
+    
+  <LOADRESOURCE type="DIALOG" filename="CloudConnectionMenu.xml"/>
 </root>

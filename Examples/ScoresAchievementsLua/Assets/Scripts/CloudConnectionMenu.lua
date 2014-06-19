@@ -54,7 +54,7 @@ function OnPlayerDataFetched()
   local ccClient = CloudConnection:GetClient()
   
   -- check the users display name now we know it is available
-  if ccClient:isAuthenticated() then
+  if ccClient:IsAuthenticated() then
     local displayName = ccClient:GetUserDisplayName()    
     Debug:Log("The users Display Name is '" .. displayName .. "'" )    
   end

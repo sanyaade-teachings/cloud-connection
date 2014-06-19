@@ -100,11 +100,9 @@ end
 
 -- shows the GUI main menu and hides the sign-in button
 function showGUIMenu()
-  -- initalise the GUI and show it (if it hasn't been done already)
-  if G.basicGUI == nil then
-    G.basicGUI = GUI:ShowDialog("Dialogs/CloudConnectionMenu.xml")
-    G.basicGUI:SetVisible(true)      
-  end
+  -- initalise the GUI and show it
+  G.basicGUI = GUI:ShowDialog("Dialogs/CloudConnectionMenu.xml")    
+  G.basicGUI:SetVisible(true)
   
   G.googleSignInButton:SetVisible(false)
   GUI:SetCursorVisible(true)
@@ -115,7 +113,6 @@ function hideGUIMenu()
   -- close the menu
   if G.basicGUI ~= nil then
      GUI:CloseDialog( G.basicGUI )
-     G.basicGUI = nil
   end
   
   G.googleSignInButton:SetVisible(true)

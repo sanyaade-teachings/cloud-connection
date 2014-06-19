@@ -38,10 +38,16 @@ Shows a simple xml GUI that allows you to interact with Google game services usi
 * Unlock a standard achievement
 * Submit a score to a leaderboard
 
-Initialisation of the Plugin is taken care of in **PluginMain.cpp**, (see the `OnInitEnginePlugin()` method). 
-All of the Google interaction in this application happens inside **CloudConnectionGUI.cpp**
+Initialisation of the Plugin is taken care of in `PluginMain.cpp`, see the `OnInitEnginePlugin()` method.
 
-**CloudConnectionGUI.cpp** creates a GUI using the Vision xml GUI system allows you to give commands to the Google Play Games service.
+Notable files:
+
+* `Source\CloudConnectionGUI.cpp` 
+* `Source\CloudConnectionGUI.hpp`
+
+All of the Google interaction in this application happens inside `CloudConnectionGUI.cpp`
+
+`CloudConnectionGUI.cpp` creates a GUI using the Vision xml GUI system allows you to give commands to the Google Play Games service.
 
 This class also inherits from `IVisCallbackHandler_cl` so that it can listen for the Callbacks made by the Cloud Connection Plugin.
 
@@ -49,21 +55,29 @@ There are preprocessor defines for `#define ACHIEVEMENT_ID` and `#define LEADERB
 
 ## Example - ScoresAchievementsLua
 
-Shows a simple xml GUI that allows you to interact with Google game services using the plugin's Lua interface.
+Shows a Google sign-in button and after a succesful authentication will show a simple xml GUI that allows you to interact with Google game services, all using the plugin's Lua interface.
 
 * Login & out
 * Show all achievements/Leaderboards
 * Unlock a standard achievement
 * Submit a score to a leaderboard
 
-Initialisation of the Plugin is taken care of in **PluginMain.cpp**, (see the `OnInitEnginePlugin()` method). 
-All of the Google interaction in this application happens inside **Scripts\CloudConnectionMenu.lua**
+Initialisation of the Plugin must still be taken care of in C++, see `PluginMain.cpp` in the `OnInitEnginePlugin()` method. After that all other interaction is from Lua script.
 
-**Scripts\DefaultSceneScript.lua** loads and shows a GUI using the Vision xml GUI system allows you to give commands to the Google Play Games service.
+Notable files:
 
-**Scripts\CloudConnectionMenu.lua** handles all the processing of the menu and callbacks from the Cloud Connection Plugin.
+* `Scripts\CloudConnectionMenu.lua`
+* `Scripts\DefaultSceneScript.lua`
+* `Assets\Dialogs\CloudConnectionMenu.xml`
+* `Assets\Textures\GoogleSigninButtonRedLong.png` (See [Google Branding Guidelines](https://developers.google.com/+/branding-guidelines "Google Branding Guidelines"))
+ 
+The Google interaction in this application happens inside `CloudConnectionMenu.lua` and `DefaultSceneScript.lua`
 
-There are lua local properties for `local ACHIEVEMENT_ID = ...` and `local LEADERBOARD_ID = ...`, you should make at least one test Leaderboard and one Achievement in the Google play developer console and enter the Id's for them to test that you can add an achievement and submit a score.
+`DefaultSceneScript.lua` shows a Google sign-in button that when clicked will show a GUI (using the Vision xml GUI system) that allows you to give commands to the Google Play Games service.
+
+`CloudConnectionMenu.lua` handles all the processing of the GUI menu and callbacks from the Cloud Connection Plugin.
+
+In `CloudConnectionMenu.lua` there are lua local properties for `local ACHIEVEMENT_ID = ...` and `local LEADERBOARD_ID = ...`, you should make at least one test Leaderboard and one Achievement in the Google play developer console and enter the Id's for them to test that you can add an achievement and submit a score.
 
 ## Common Problems
 

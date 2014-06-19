@@ -19,15 +19,14 @@ function OnAfterSceneLoaded()
   G.googleSignInButton = Game:CreateScreenMask(buttonX,buttonY, "Textures/GoogleSigninButtonRedLong.png")  
   G.googleSignInButton:SetBlending(Vision.BLEND_ALPHA)
         
-  -- create an input map with specific dimensions     
-  numTriggers = 10 --the max number of triggers we can use with this map
-  numAlternatives = 5 --we are going to map 5 controls to the trigger "Jump"
-
   -- create an input map to the sign-in button (touch screen and mouse)
-  G.inputMap = Input:CreateMap(numTriggers, numAlternatives)
+  G.inputMap = Input:CreateMap()
   G.inputMap:MapTrigger("SignInButton", {buttonX,buttonY,buttonX+buttonWidth,buttonY+buttonHeight, 10000}, "CT_TOUCH_ANY", {once = true})   -- map a trigger to the touch area at x,y, width,height with priority 10000 
   G.inputMap:MapTrigger("SignInButton", {buttonX,buttonY,buttonX+buttonWidth,buttonY+buttonHeight, 10000, "MOUSE"}, "CT_MOUSE_LEFT_BUTTON", {once = true})   -- map a trigger for the left mouse button
 
+  -- The user may have been automatically logged into to Google services
+  -- if they have used the game before and logged in, so we need to check whether
+  -- we should display the sign-in button or the menu that appears after sign-in
   displayMenu()
 end
 
@@ -47,17 +46,34 @@ end
 
 
 function OnUpdateSceneFinished()
-	Debug:Enable(true)
-      
-  local signInButtonTrigger = G.inputMap:GetTrigger("SignInButton")
+	Debug:Enable(true)  
+  local ccClient = CloudConnection:GetClient()      -- get the cloud connection client     
   
-  -- user clicked the google sign in button
-  if signInButtonTrigger > 0 then
-    local ccClient = CloudConnection:GetClient()      -- get the cloud connection client
-    Debug:Log("show the user sign-in dialog")
-    ccClient:BeginUserInitiatedSignIn()               -- show the user sign-in dialog
+  if ccClient:IsAuthenticated() == false then
+    -- check to see if the sign in button was pressed
+    local signInButtonTrigger = G.inputMap:GetTrigger("SignInButton")
+    
+    -- user clicked the google sign in button
+    if signInButtonTrigger > 0 then    
+      Debug:Log("show the user sign-in dialog")
+      
+      -- show the user sign-in dialog
+      -- this method will return straight away and we will be notified
+      -- in the OnAuthActionFinished() method when it is finished
+      ccClient:BeginUserInitiatedSignIn()               
+    end  
   end
   
+end
+
+--This callback is made to the script when the Cloud Connection
+--Client has finsihed the authorisation process, either succesfully or unsucesfully
+--this call can also be the result of a sign-out as well as a sign-in attempt
+function OnAuthActionFinished()
+  Debug:Log("OnAuthActionFinished callback was successfully made to Lua script")
+
+  -- the user may be signed-in or out at this point so display the correct menu
+  displayMenu()
 end
 
 --This callback is made to the script when the Cloud Connection
@@ -66,16 +82,9 @@ function OnAuthActionStarted()
   Debug:Log("OnAuthActionStarted callback was successfully made to Lua script")
 end
 
---This callback is made to the script when the Cloud Connection
---Client has finsihed the authorisation process, either succesfully or unsucesfully
---this call can also be the result of a sign-out as well as a sign-in attempt
-function OnAuthActionFinished()
-  Debug:Log("OnAuthActionFinished callback was successfully made to Lua script")    
-  displayMenu()
-end
-
 -- shows either the main menu or the sign-in button
 -- depending on whether the user is authenticated or not
+-- by the cloud connection plugin
 function displayMenu()   
   local ccClient = CloudConnection:GetClient()
   
@@ -89,7 +98,7 @@ function displayMenu()
   end
 end 
 
--- shows the GUI main menu
+-- shows the GUI main menu and hides the sign-in button
 function showGUIMenu()
   -- initalise the GUI and show it (if it hasn't been done already)
   if G.basicGUI == nil then

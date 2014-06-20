@@ -10,4 +10,4 @@ mkdir -p ./Data/Common/Anarchy
 cp -R -f "$VISION_SDK/Data/Common/Anarchy" ./Data/Common
 
 mkdir -p ./Source/GameApplication/Common/iOS
-cp -R -f "$VISION_SDK/Source/Vision/Runtime/Common/iOS" ./Source/GameApplication/Common
+cp -R -f "$VISION_SDK/Source/Vision/Runtime/Common/iOS" ./Source/ScoresAchievementsLuaApp/Common

@@ -310,7 +310,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "python ../../../../../../../Build/StandaloneTools/Deployment/Python/copyiOSResources.py -d $BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH -r Data -r Assets";
+			shellScript = "python $VISION_SDK/Build/StandaloneTools/Deployment/Python/copyiOSResources.py -d $BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH -r Data -r Assets";
 		};
 		6333780000000000020241 /* Making symlinks to resources.... */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -324,7 +324,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "python ../../../../../../../Build/StandaloneTools/Deployment/Python/linkiOSResources.py -r ../../Data/Vision/Base/ Data/Vision/Base/ -r ../../Assets/ Assets/ -l $CONFIGURATION";
+			shellScript = "python $VISION_SDK/Build/StandaloneTools/Deployment/Python/linkiOSResources.py -r ../../Data/Vision/Base/ Data/Vision/Base/ -r ../../Assets/ Assets/ -l $CONFIGURATION";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -428,14 +428,14 @@
 				INFOPLIST_FILE = "../../Data/Common/iOS/Samples-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
-					./../../../../../../../Source/Vision/Samples/Templates/Project_Template/Bin/ios_xcode_anarchy/debug,
-					"$(VISION_SDK)/../../../../../../../Lib/ios_xcode_anarchy/debug",
+					../../Bin/ios_xcode_anarchy/debug,
+					"$(VISION_SDK)/Lib/ios_xcode_anarchy/debug",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Lua/5.1.4/lib/iphoneos/Debug",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/lib/ios",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/Debug_NoRTTI/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/curl/7.22.0/iOS/lib/iphoneos/Release",
-					"../../../../../../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
+					"../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
 				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_CPLUSPLUSFLAGS = (
@@ -611,14 +611,14 @@
 				INFOPLIST_FILE = "../../Data/Common/iOS/Samples-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
-					./../../../../../../../Source/Vision/Samples/Templates/Project_Template/Bin/ios_xcode_anarchy/distrib,
-					"$(VISION_SDK)/../../../../../../../Lib/ios_xcode_anarchy/distrib",
+					../../Bin/ios_xcode_anarchy/distrib,
+					"$(VISION_SDK)/Lib/ios_xcode_anarchy/distrib",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Lua/5.1.4/lib/iphoneos/Release",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/lib/ios",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/Release_NoRTTI/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/curl/7.22.0/iOS/lib/iphoneos/Release",
-					"../../../../../../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
+					"../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
 				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_CPLUSPLUSFLAGS = (
@@ -772,14 +772,14 @@
 				INFOPLIST_FILE = "../../Data/Common/iOS/Samples-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
-					./../../../../../../../Source/Vision/Samples/Templates/Project_Template/Bin/ios_xcode_anarchy/release,
-					"$(VISION_SDK)/../../../../../../../Lib/ios_xcode_anarchy/release",
+					../../Bin/ios_xcode_anarchy/release,
+					"$(VISION_SDK)/Lib/ios_xcode_anarchy/release",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Lua/5.1.4/lib/iphoneos/Release",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/lib/ios",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/Release_NoRTTI/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/curl/7.22.0/iOS/lib/iphoneos/Release",
-					"../../../../../../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
+					"../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
 				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_CPLUSPLUSFLAGS = (
@@ -933,14 +933,14 @@
 				INFOPLIST_FILE = "../../Data/Common/iOS/Samples-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				LIBRARY_SEARCH_PATHS = (
-					./../../../../../../../Source/Vision/Samples/Templates/Project_Template/Bin/ios_xcode_anarchy/dev,
-					"$(VISION_SDK)/../../../../../../../Lib/ios_xcode_anarchy/dev",
+					../../Bin/ios_xcode_anarchy/dev,
+					"$(VISION_SDK)/Lib/ios_xcode_anarchy/dev",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Lua/5.1.4/lib/iphoneos/Release",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/lib/ios",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/Release_NoRTTI/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/curl/7.22.0/iOS/lib/iphoneos/Release",
-					"../../../../../../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
+					"../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
 				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_CPLUSPLUSFLAGS = (

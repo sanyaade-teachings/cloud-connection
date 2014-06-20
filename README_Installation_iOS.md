@@ -35,10 +35,17 @@ or
 
 `$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\iOS\Debug-iphone\libCloudConnection.a`
 
-### In project settings ‘Custom compiler flags’
-`-std=c++98` must be changed for `-std=c++11`
+### In Build Settings -> Deployment
 
-### Third Party Library, Framework & Bundle Requirements
+You must set the “iOS Deployment Target” to at least “iOS 6.0” (iOS 4.3 will not work)
+
+### In Build settings -> ‘Custom compiler flags’
+
+Under “Apple LLVM 5.1 - Language - C++”, you must set the “C++ Language Dialect” to “GNU++11 -std=gnu++11” and the “C++ Standard Library” to “libc++ (LLVM C++ standard library with C++ 11 support)
+
+`-std=c++98` must be removed from “Apple LLVM 5.1 - Custom Compiler Flags” -> “Other C++ Flags”
+
+## Third Party Library, Framework & Bundle Requirements
 
 Add the following to `Build Phases` -> `Link Binary With Libraries`
 

@@ -10,9 +10,11 @@ The plugin should be downloaded from GitHub to the following folder (you will ne
 
 (this folder is an alias of the following... `%VISION_SDK%\ThirdParty\plugins\cloud-connection`)
 
-## Manual Setup iOS
+## XCode Project Setup iOS
 
 ### include files required
+Add the following to your "`Build Settings` -> `Search Paths` -> `Header Search Paths`"
+
 `$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Source`
 
 ### Library file required

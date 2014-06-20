@@ -7,4 +7,7 @@ Android/Java Google Play Services Library
 Google Plus iOS Services Library
 
 ## gpg-cpp-sdk
-Google Play Games Servies C++ SDK
+Google Play Games Services Native C++ SDK
+
+## GooglePlayGames-iOS-SDK
+Google Play Games Services SDK

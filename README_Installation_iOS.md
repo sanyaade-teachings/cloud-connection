@@ -15,26 +15,28 @@ The plugin should be downloaded from GitHub to the following folder (you will ne
 ### Add Header Search Paths
 Add the following to your "`Build Settings` -> `Search Paths` -> `Header Search Paths`"
 
-`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Source`
+`$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Source`
 
 ### Add Library Search Paths
 
 ** TODO NOT WORKING ***
 
-`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\ios`
-`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\google-plus-ios-sdk\V1.5.1`
+`$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios`
+`$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1`
 
 
+### Library files required (Application Project Only)
 
-### Library file required
-link against library `libCloudConnection.a`
+Add to `Build Settings` -> `Search Paths` -> `Library Search Paths` 
+
+`$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Lib/iOS/Debug-iphoneos/`
+`$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Lib/iOS/Release-iphoneos/`
+
+Add the Cloud Connection library `-lCloudConnection` to `Build Settings` -> `Linking` -> `Other Linker Flags`.
+This will link your application against the library `libCloudConnection.a`
+
+** TODO : LINK AGAINST THE GPG libraries **
  
-`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\iOS\Release-iphone\libCloudConnection.a`
-
-or
-
-`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\iOS\Debug-iphone\libCloudConnection.a`
-
 ### In Build Settings -> Deployment
 
 You must set the “iOS Deployment Target” to at least “iOS 6.0” (iOS 4.3 will not work)

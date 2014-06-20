@@ -21,6 +21,8 @@
 		3AB81B111954724100F9D8C8 /* VisViewControllerIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB81B0A1954724100F9D8C8 /* VisViewControllerIOS.m */; };
 		3AB81B121954724100F9D8C8 /* VisViewControllerIOS.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AB81B0B1954724100F9D8C8 /* VisViewControllerIOS.xib */; };
 		3AB81B151954725F00F9D8C8 /* ScoresAchievementsLuaAppPCH.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AB81B131954725F00F9D8C8 /* ScoresAchievementsLuaAppPCH.cpp */; };
+		3AB81B1D19548FFD00F9D8C8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB81B1C19548FFD00F9D8C8 /* UIKit.framework */; };
+		3AB81B201954906900F9D8C8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB81B1E1954900500F9D8C8 /* OpenGLES.framework */; };
 		4036150000000000020196 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5143640000000000020195 /* AudioToolbox.framework */; };
 		4320920000000000020210 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1487260000000000020209 /* Default-Landscape~ipad.png */; };
 		4347760000000000020188 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1144040000000000020187 /* Foundation.framework */; };
@@ -29,8 +31,6 @@
 		4899230000000000020202 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 8838730000000000020197 /* Icon.png */; };
 		4933630000000000020190 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7068940000000000020189 /* QuartzCore.framework */; };
 		6023070000000000020218 /* Default@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 2007440000000000020217 /* Default@2x~iphone.png */; };
-		6031310000000000020184 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5869760000000000020183 /* OpenGLES.framework */; };
-		7631590000000000020186 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2206870000000000020185 /* UIKit.framework */; };
 		9138070000000000020204 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2706760000000000020203 /* Icon@2x.png */; };
 		9255430000000000020216 /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 3748090000000000020215 /* Default-568h@2x~iphone.png */; };
 		9362640000000000020220 /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 6886090000000000020219 /* Default~iphone.png */; };
@@ -54,7 +54,6 @@
 		1621080000000000020191 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		1706280000000000020205 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		2007440000000000020217 /* Default@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x~iphone.png"; sourceTree = "<group>"; };
-		2206870000000000020185 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		2668990000000000020221 /* Samples-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Samples-Info.plist"; sourceTree = "<group>"; };
 		2706760000000000020203 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		3274560000000000020213 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
@@ -76,10 +75,11 @@
 		3AB81B131954725F00F9D8C8 /* ScoresAchievementsLuaAppPCH.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ScoresAchievementsLuaAppPCH.cpp; sourceTree = "<group>"; };
 		3AB81B141954725F00F9D8C8 /* ScoresAchievementsLuaAppPCH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScoresAchievementsLuaAppPCH.h; sourceTree = "<group>"; };
 		3AB81B16195472E400F9D8C8 /* GamePlugin_ios_anarchy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GamePlugin_ios_anarchy.xcodeproj; path = ../ScoresAchievementsLuaEnginePlugin/GamePlugin_ios_anarchy.xcodeproj; sourceTree = "<group>"; };
+		3AB81B1C19548FFD00F9D8C8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3AB81B1E1954900500F9D8C8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
 		4367040000000000020225 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		5143640000000000020195 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5768950000000000020152 /* Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
-		5869760000000000020183 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		5902450000000000020207 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		6886090000000000020219 /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
 		7068940000000000020189 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -92,11 +92,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB81B201954906900F9D8C8 /* OpenGLES.framework in Frameworks */,
+				3AB81B1D19548FFD00F9D8C8 /* UIKit.framework in Frameworks */,
 				4933630000000000020190 /* QuartzCore.framework in Frameworks */,
 				4036150000000000020196 /* AudioToolbox.framework in Frameworks */,
-				7631590000000000020186 /* UIKit.framework in Frameworks */,
 				4667500000000000020194 /* SystemConfiguration.framework in Frameworks */,
-				6031310000000000020184 /* OpenGLES.framework in Frameworks */,
 				9845970000000000020192 /* CoreData.framework in Frameworks */,
 				4347760000000000020188 /* Foundation.framework in Frameworks */,
 			);
@@ -191,8 +191,6 @@
 				3AB81B131954725F00F9D8C8 /* ScoresAchievementsLuaAppPCH.cpp */,
 				3AB81B141954725F00F9D8C8 /* ScoresAchievementsLuaAppPCH.h */,
 				3AB81AFF1954724100F9D8C8 /* iOS */,
-				5869760000000000020183 /* OpenGLES.framework */,
-				2206870000000000020185 /* UIKit.framework */,
 				1144040000000000020187 /* Foundation.framework */,
 				7068940000000000020189 /* QuartzCore.framework */,
 				1621080000000000020191 /* CoreData.framework */,
@@ -202,6 +200,8 @@
 				7906830000000000020223 /* Data */,
 				4367040000000000020225 /* Assets */,
 				3AB81AEA19546E7E00F9D8C8 /* Products */,
+				3AB81B1E1954900500F9D8C8 /* OpenGLES.framework */,
+				3AB81B1C19548FFD00F9D8C8 /* UIKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -388,6 +388,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
@@ -426,7 +428,7 @@
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/inc",
 				);
 				INFOPLIST_FILE = "../../Data/Common/iOS/Samples-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					../../Bin/ios_xcode_anarchy/debug,
 					"$(VISION_SDK)/Lib/ios_xcode_anarchy/debug",
@@ -436,11 +438,12 @@
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/Debug_NoRTTI/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/curl/7.22.0/iOS/lib/iphoneos/Release",
 					"../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Lib/iOS/Debug-iphoneos/",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1",
 				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-fno-strict-aliasing",
-					"-std=c++98",
 					"-mfpu=neon",
 					"-mfloat-abi=softfp",
 					"-DHK_ANARCHY",
@@ -519,6 +522,8 @@
 					"-lvHavokBehavior",
 					"-lvScaleformPlugin",
 					"-lvScaleformUtilsD",
+					"-lGamePlugin",
+					"-lCloudConnection",
 				);
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -571,6 +576,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
@@ -609,7 +616,7 @@
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/inc",
 				);
 				INFOPLIST_FILE = "../../Data/Common/iOS/Samples-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					../../Bin/ios_xcode_anarchy/distrib,
 					"$(VISION_SDK)/Lib/ios_xcode_anarchy/distrib",
@@ -623,7 +630,6 @@
 				MACH_O_TYPE = mh_execute;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-fno-strict-aliasing",
-					"-std=c++98",
 					"-mfpu=neon",
 					"-mfloat-abi=softfp",
 					"-DHK_ANARCHY",
@@ -732,6 +738,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
@@ -770,7 +778,7 @@
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/inc",
 				);
 				INFOPLIST_FILE = "../../Data/Common/iOS/Samples-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					../../Bin/ios_xcode_anarchy/release,
 					"$(VISION_SDK)/Lib/ios_xcode_anarchy/release",
@@ -780,11 +788,11 @@
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/Release_NoRTTI/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/curl/7.22.0/iOS/lib/iphoneos/Release",
 					"../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Lib/iOS/Release-iphoneos/",
 				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-fno-strict-aliasing",
-					"-std=c++98",
 					"-mfpu=neon",
 					"-mfloat-abi=softfp",
 					"-DHK_ANARCHY",
@@ -893,6 +901,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
@@ -931,7 +941,7 @@
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/inc",
 				);
 				INFOPLIST_FILE = "../../Data/Common/iOS/Samples-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					../../Bin/ios_xcode_anarchy/dev,
 					"$(VISION_SDK)/Lib/ios_xcode_anarchy/dev",
@@ -945,7 +955,6 @@
 				MACH_O_TYPE = mh_execute;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-fno-strict-aliasing",
-					"-std=c++98",
 					"-mfpu=neon",
 					"-mfloat-abi=softfp",
 					"-DHK_ANARCHY",

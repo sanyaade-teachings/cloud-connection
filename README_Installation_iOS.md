@@ -12,10 +12,19 @@ The plugin should be downloaded from GitHub to the following folder (you will ne
 
 ## XCode Project Setup iOS
 
-### include files required
+### Add Header Search Paths
 Add the following to your "`Build Settings` -> `Search Paths` -> `Header Search Paths`"
 
 `$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Source`
+
+### Add Library Search Paths
+
+** TODO NOT WORKING ***
+
+`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\ios`
+`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\google-plus-ios-sdk\V1.5.1`
+
+
 
 ### Library file required
 link against library `libCloudConnection.a`
@@ -31,7 +40,17 @@ or
 
 ### Third Party Library, Framework & Bundle Requirements
 
-https://developers.google.com/games/services/downloads/
+Add the following to `Build Phases` -> `Link Binary With Libraries`
+
+### For your Plugin Xcode Project
+
+* From the Google Play Games C++ SDK (gpg-cpp-sdk) ( `$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\ios` )
+  * gpg.framework
+* From the Google+ iOS SDK (`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\google-plus-ios-sdk\V1.5.1`)
+  * GooglePlus.framework
+  * GoogleOpenSource.framework
+
+### For your Application Xcode Project
 
 * From the Google Play Games C++ SDK (gpg-cpp-sdk) ( `$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\ios` )
   * gpg.bundle
@@ -40,3 +59,8 @@ https://developers.google.com/games/services/downloads/
   * GooglePlus.framework
   * GooglePlus.bundle
   * GoogleOpenSource.framework
+
+
+## Links
+
+* Google SDK’s - https://developers.google.com/games/services/downloads/

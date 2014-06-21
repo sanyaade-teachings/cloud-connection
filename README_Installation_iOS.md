@@ -36,6 +36,10 @@ Add the Cloud Connection library `-lCloudConnection` to `Build Settings` -> `Lin
 This will link your application against the library `libCloudConnection.a`
 
 ** TODO : LINK AGAINST THE GPG libraries **
+
+** TODO: see guide on linking with the Google Play Games services SDK **
+https://developers.google.com/games/services/ios/quickstart
+https://developers.google.com/games/services/ios/quickstart#option_2_manual_installation
  
 ### In Build Settings -> Deployment
 
@@ -46,6 +50,8 @@ You must set the “iOS Deployment Target” to at least “iOS 6.0” (iOS 4.3 
 Under “Apple LLVM 5.1 - Language - C++”, you must set the “C++ Language Dialect” to “GNU++11 -std=gnu++11” and the “C++ Standard Library” to “libc++ (LLVM C++ standard library with C++ 11 support)
 
 `-std=c++98` must be removed from “Apple LLVM 5.1 - Custom Compiler Flags” -> “Other C++ Flags”
+
+Set `Enable C++ Runtime Types` to `Yes`
 
 ## Third Party Library, Framework & Bundle Requirements
 

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- unit test file for VisionCopyGdbserver ANT Task -->
+<project> 
+
+  <!-- adding VisionCopyGdbserverTask to the tasks -->
+  <taskdef name="VisionCopyGdbserver" classname="com.havok.Vision.anttasks.VisionCopyGdbserverTask"/>
+
+  <!-- test can successfully copy the gdbserver arm  -->
+  <target name="copyGdbserverArm">
+            
+    <VisionCopyGdbserver 
+      ToDir="..\testlibs"
+      Arch="arm" />
+    
+  </target>
+  
+  <!-- test can successfully copy the gdbserver x86  -->
+  <target name="copyGdbserverX86">
+            
+    <VisionCopyGdbserver 
+      ToDir="..\testlibs"
+      Arch="x86" />
+    
+  </target>
+  
+  <!-- test throw exception when ToDir has not been specified   -->
+  <target name="testToDirNotSpecified">
+            
+    <VisionCopyGdbserver Arch="x86" />
+    
+  </target>  
+  
+  
+  <target name="cleanup">
+    <echo>cleanup - done</echo>    
+  </target>  
+</project>

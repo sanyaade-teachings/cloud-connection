@@ -75,6 +75,24 @@ Will copy the assets contained in `./assets/Data/Vision/Base` from `../../../../
 
 ```
 
+## VisionCopyGdbserver
+
+Copies the native gdbserver file from the Android NDK into the folder that is used for debugging on the device.
+
+**Parameters:**
+
+* `Arch` - REQUIRED - x86, arm or armv7  
+* `ToDir`- REQUIRED - The path to the folder where the gdbserver will be copied to (and placed in an the appropriate architecture sub-folder)
+
+**Example:**
+
+This example will copy the x86 gdbserver to `d:/output/libs/x86/gdbserver`
+
+```xml
+   
+	<VisionCopyLib Arch="x86" ToDir="d:/output/libs"/>
+```
+
 ## VisionVFileServe
 
 Generates and copies the vFileServe.txt data to connected Android devices.

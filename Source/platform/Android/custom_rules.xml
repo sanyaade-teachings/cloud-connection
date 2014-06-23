@@ -49,6 +49,9 @@
     <!-- copy any other .so libs required to run the game (such as fmod libs) --> 
     <foreach target="copyNativeLib" param="nativelibtocopy" list="${extranativelib}" delimiter="*"/>
                 
+    <!-- copy the gdbserver (for debugging on the device) -->
+    <VisionCopyGdbserver Arch="${arch}" ToDir="./libs"/>                
+                
     <!-- copies the main /Assets folder to ./assets/Assets -->
     <VisionCopyAssets DestinationPath="./assets/Assets">
       <fileset dir="../../../../Assets/">

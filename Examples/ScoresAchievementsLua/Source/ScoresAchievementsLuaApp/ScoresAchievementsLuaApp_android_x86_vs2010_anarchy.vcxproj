@@ -46,7 +46,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>x86-4.8</PlatformToolset>
-    <AndroidAPILevel>android-10</AndroidAPILevel>
+    <AndroidAPILevel>android-17</AndroidAPILevel>
     <AndroidArch>x86</AndroidArch>
     <AndroidStlType>stlport_static</AndroidStlType>
   </PropertyGroup>
@@ -121,6 +121,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <Java Include="platform\Android\src\com\havok\Vision\CloudConnectionLifeCycleSupport.java" />
+    <Java Include="platform\Android\src\com\havok\Vision\VirtualKeyboardActivity.java" />
+    <Java Include="platform\Android\src\com\havok\Vision\VNativeDialogAndroid.java" />
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="$(NDKROOT)\sources\android\native_app_glue\android_native_app_glue.c" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ScoresAchievementsLuaAppPCH.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ScoresAchievementsLuaAppPCH.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Java">
+      <UniqueIdentifier>{8f2adfb0-5d58-46c4-8886-1f164f7e3d6c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Java Include="platform\Android\src\com\havok\Vision\CloudConnectionLifeCycleSupport.java">
+      <Filter>Java</Filter>
+    </Java>
+    <Java Include="platform\Android\src\com\havok\Vision\VirtualKeyboardActivity.java">
+      <Filter>Java</Filter>
+    </Java>
+    <Java Include="platform\Android\src\com\havok\Vision\VNativeDialogAndroid.java">
+      <Filter>Java</Filter>
+    </Java>
+  </ItemGroup>
+</Project>

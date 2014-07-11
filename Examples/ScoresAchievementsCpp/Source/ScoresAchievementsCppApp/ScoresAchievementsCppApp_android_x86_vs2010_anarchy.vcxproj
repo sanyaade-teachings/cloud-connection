@@ -46,21 +46,21 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|hkAndroid'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>x86-4.8</PlatformToolset>
-    <AndroidAPILevel>android-10</AndroidAPILevel>
+    <AndroidAPILevel>android-17</AndroidAPILevel>
     <AndroidArch>x86</AndroidArch>
     <AndroidStlType>stlport_static</AndroidStlType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Dev|hkAndroid'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>x86-4.8</PlatformToolset>
-    <AndroidAPILevel>android-10</AndroidAPILevel>
+    <AndroidAPILevel>android-17</AndroidAPILevel>
     <AndroidArch>x86</AndroidArch>
     <AndroidStlType>stlport_static</AndroidStlType>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|hkAndroid'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <PlatformToolset>x86-4.8</PlatformToolset>
-    <AndroidAPILevel>android-10</AndroidAPILevel>
+    <AndroidAPILevel>android-17</AndroidAPILevel>
     <AndroidArch>x86</AndroidArch>
     <AndroidStlType>stlport_static</AndroidStlType>
   </PropertyGroup>
@@ -121,8 +121,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-  </ItemGroup>
-  <ItemGroup>
+    <Java Include="Platform\Android\src\com\havok\Vision\CloudConnectionLifeCycleSupport.java" />
+    <Java Include="Platform\Android\src\com\havok\Vision\VirtualKeyboardActivity.java" />
+    <Java Include="Platform\Android\src\com\havok\Vision\VNativeDialogAndroid.java" />
   </ItemGroup>
   <Import Project="$(VISION_SDK)\Build\MSBuild\Microsoft.Cpp.targets" />
   <PropertyGroup>

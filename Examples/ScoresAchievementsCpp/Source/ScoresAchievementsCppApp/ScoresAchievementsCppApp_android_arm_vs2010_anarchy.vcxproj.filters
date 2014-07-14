@@ -21,6 +21,9 @@
       <UniqueIdentifier>4820E52E-820E-4E48-0E52-4820E52E4820</UniqueIdentifier>
       <DeploymentContent>False</DeploymentContent>
     </Filter>
+    <Filter Include="Java">
+      <UniqueIdentifier>{70c2d058-c207-465a-ab6a-c0fd60dae071}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -42,5 +45,16 @@
       </Filter>
       <DeploymentContent>False</DeploymentContent>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Java Include="Platform\Android\src\com\havok\Vision\CloudConnectionLifeCycleSupport.java">
+      <Filter>Java</Filter>
+    </Java>
+    <Java Include="Platform\Android\src\com\havok\Vision\VirtualKeyboardActivity.java">
+      <Filter>Java</Filter>
+    </Java>
+    <Java Include="Platform\Android\src\com\havok\Vision\VNativeDialogAndroid.java">
+      <Filter>Java</Filter>
+    </Java>
   </ItemGroup>
 </Project>

@@ -33,12 +33,14 @@ The property sheet must be "above" the anarchy property sheet....
 
 You will need to perform this step for all configurations that you want to use the Plugin (this includes the Win32 build as there is a Dummy Client available to do prototyping and testing on that platform)
 
-
 ## Java Project Setup
 
-The use of the cloud connection plugin requires a custom Java setup, this will override the "Deploy APK" process that is provided by default in Project Anarchy and use the Google Android ANT build process.
+The use of the cloud connection plugin requires some extra Java code, libraries and resources.
+To use the Google Java libraries you **must** build with a higher API Target than `android-10`.
 
-After the native binaries have been built in Visual Studio, the Android ANT build process is called to finish the build or java classes and libraries and package the .apk output ready for deployment to the handset.
+Set the `Android API Target Level` to at least `Android 4.2 (android-17)`. Make sure you do this for `All Configurations`.
+
+![alt text](Docs/helpimages/androidtargetapi.png "Set the Android Target API")
 
 ### Add The Java Project To Your Game
 
@@ -56,19 +58,15 @@ Your manifest, Android res and java source folders will now be located in the fo
 * Android Res folder (icons etc ) - `$(MY_GAME)\Source\$(MY_GAME_APPLICATION)\Platform\Android\res`
 * Java Source - `$(MY_GAME)\Source\$(MY_GAME_APPLICATION)\Platform\Android\src`
 
-Your .apk file will now be built into the following folder:
+### Include .java Files in Visual Studio
 
-* .apk output - `$(MY_GAME)\Source\$(MY_GAME_APPLICATION)\Platform\Android\bin`
+There are a few java source files that should be added to your visual studio project so they can be compiled into the final .apk file.
 
-### Exclude .java Files from Visual Studio
+`$(MY_GAME)\Source\$(MY_GAME_APPLICATION)\Platform\Android\src\com\havok\Vision\CloudConnectionLifeCycleSupport.java`
+`$(MY_GAME)\Source\$(MY_GAME_APPLICATION)\Platform\Android\src\com\havok\Vision\VirtualKeyboardActivity.java`
+`$(MY_GAME)\Source\$(MY_GAME_APPLICATION)\Platform\Android\src\com\havok\Vision\VNativeDialogAndroid.java`
 
-You should move any Java source files that you want compiled into your final .apk inside the Java source folder (inside the correct package folders as required by Java).
-
-You should also exclude any .java files from your Visual Studio project if you have any listed as they will now be compiled by the ANT build process instead.
-
-![alt text](Docs/helpimages/removejavafromvs.png "Remove any .java files from Visual Studio if you have any")
-
-You might see errors like this `javac: file not found: Android\VNativeDialogAndroid.java` if you don't.
+Note, you may already have `VirtualKeyboardActivity.java` and `VNativeDialogAndroid.java` included. `CloudConnectionLifeCycleSupport.java` is only required if you want to support devices of previous to Android 4.0
 
 ### Modify Your Manifest
  
@@ -136,112 +134,3 @@ To support Google Play Games services correctly on handsets that are less than A
 
 If you have your own custom Java Activity already then you can extend it from `com.havok.Vision.CloudConnectionLifeCycleSupport`
 
-### Customising the Build Process
-
-There is a `custom_rules.xml` file which grab's the native binaries that were compiled in Visual Studio and also places the assets required into the final .apk.
-
-* Custom Build - `$(MY_GAME)\Source\$(MY_GAME_APPLICATION)\Platform\Android\custom_rules.xml`
-
-This file has hooks in it to the Android build process and you should modify this file to suit your needs if required.
-
-### Futher Reading
-
-The [Google Android ANT Build Process Documentation](http://developer.android.com/tools/building/building-cmdline.html) is available online for further reading on how the build process works.
-
-The [Vision ANT Tasks Documentation](Source/platform/Android/ant/VisionAntTasks/README.md) describes all the tasks that are used in the custom-rules.xml build file. 
-
-## Manual Setup Android
-
-This section describes all the settings you would require to setup the plugin manually if you do not want to use the property sheets.
-
-#### Compiler params required to build with the google gpg pluging for android
-* NDK tool chain version must be at least 4.8 for x86 build
-* NDK tool chain version must be at least 4.6 for Arm build
-* -std=gnu++11 
-* -frtti 
-
-#### PreProcessor Definitions required in developer plugin
-* CLOUDCONNECTIONPLUGIN_IMPORTS in both the developer plugin and application
-
-#### Win32 dll Only 
-* Cloud Connection pluging dll must be coped into the exe target dir in the Post-Build Event step
-xcopy /Y /D /C "CloudConnectionPlugin.vPluginD" "$(TargetDir)"
-
-
-###include folders required
-
-#### All platforms
-
-`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Source`
-
-
-#### Android
-```
-
-	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\include
-	$(NDKROOT)/platforms/android-9/arch-arm/usr/include
-	$(NDKROOT)/sources/android/native_app_glue
-```
-
-###lib folders required
-
-##### Arm
-```
-
-	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\android_arm\debug (for debug only) 
-	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\android_arm\release (for release only) 
-	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\lib\armeabi-v7a
-	$(NDKROOT)/platforms\android-9\arch-arm\usr\lib
-	$(NDKROOT)/sources/cxx-stl/gnu-libstdc++/4.8/libs/armeabi-v7a
-```
-
-##### x86
-```
-
-	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\android_arm\debug (for debug only) 
-	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Lib\android_x86\release (for release only) 
-	$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\android\lib\x86
-	$(NDKROOT)/platforms\android-9\arch-x86\usr\lib
-	$(NDKROOT)/sources/cxx-stl/gnu-libstdc++/4.8/libs/x86
-```
-
-### Libraries required for Linking
-#### Cloud Connection Plugin
-* -lCloudConnectionPlugin
-
-#### google gpg plugin for android
-
-* -lgpg
-* -llog 
-* -lz
-* -lgnustl_static
-
-
-#### already included by Project Anarchy project
-* -landroid 
-* -lEGL 
-* -lGLESv1_CM
-
-#### Android Manifest
-Requires a customised Manifest from `cloud-connection\Data\Android\AndroidManifest.xml`
-
-Add these lines to your AndroidManifest.xml
-
-```xml
-
-	<meta-data android:name="com.google.android.gms.games.APP_ID" android:value="@string/app_id" />`
-	<meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version" />
-```
-
-#### Android Activity		
-Extend activity from this class to have pre-Android 4.0 support `com.havok.Vision.CloudConnectionLifeCycleSupport`
-
-		
-#### Android Google Play Services Java Library
-Android build is reliant on this library (contains classes and resources), it must be compiled correctly into the final .apk
-`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\Source\platform\Android\google-play-services_lib\V4323000`
-
-The Google Play Services APP_ID must be given in the xml in the developer build and compiled correctly into the final .apk
-`res\values\ids.xml` - contains the `APP_ID` that must be changed for the developers Google Application
-
-`<string name="app_id">REPLACE_ME</string>`

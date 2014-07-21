@@ -57,7 +57,7 @@
     }
   }  
  
-  protected void onCreate(Bundle savedInstanceState){
+  public void onCreate(Bundle savedInstanceState){
     super.onCreate(savedInstanceState);
     loadNativeLibrary();  //makes sure our main android native library is loaded or JNI calls won't work
     try
@@ -73,7 +73,7 @@
     }
   }
 
-  protected void onDestroy(){
+  public void onDestroy(){
     super.onDestroy();
     try
     {
@@ -88,7 +88,7 @@
     }
   }
 
-  protected void onPause(){
+  public void onPause(){
     super.onPause();
     try
     {
@@ -103,7 +103,7 @@
     }
   }
 
-  protected void onResume(){
+  public void onResume(){
     super.onResume();
     try
     {
@@ -118,7 +118,7 @@
     } 
   }
 
-  protected void onStart(){
+  public void onStart(){
     super.onStart();     
     try
     {
@@ -133,7 +133,7 @@
     }	 
   }
 
-  protected void onStop(){
+  public void onStop(){
     super.onStop();
     try
     {
@@ -148,7 +148,7 @@
     }	 
   }
 
-  protected void onSaveInstanceState(Bundle outState) {
+  public void onSaveInstanceState(Bundle outState) {
     super.onSaveInstanceState(outState);     
     try
     {

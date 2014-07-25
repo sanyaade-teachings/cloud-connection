@@ -13,7 +13,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2667460000000000000001"
+               BlueprintIdentifier = "398331140199985600000132"
                BuildableName = "GameApplication.app"
                BlueprintName = "GameApplication"
                ReferencedContainer = "container:GameApplication_ios_anarchy.xcodeproj">
@@ -31,7 +31,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2667460000000000000001"
+            BlueprintIdentifier = "398331140199985600000132"
             BuildableName = "GameApplication.app"
             BlueprintName = "GameApplication"
             ReferencedContainer = "container:GameApplication_ios_anarchy.xcodeproj">
@@ -44,12 +44,13 @@
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "debug"
+      ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2667460000000000000001"
+            BlueprintIdentifier = "398331140199985600000132"
             BuildableName = "GameApplication.app"
             BlueprintName = "GameApplication"
             ReferencedContainer = "container:GameApplication_ios_anarchy.xcodeproj">
@@ -67,7 +68,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "2667460000000000000001"
+            BlueprintIdentifier = "398331140199985600000132"
             BuildableName = "GameApplication.app"
             BlueprintName = "GameApplication"
             ReferencedContainer = "container:GameApplication_ios_anarchy.xcodeproj">

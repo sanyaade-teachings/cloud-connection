@@ -105,6 +105,8 @@ void ScoresAchievementsLuaEnginePlugin::OnInitEnginePlugin()
 #if defined(_VISION_ANDROID)
   DummyJNIFunction();                             //Dummy - don't let the compiler strip JNI functions for < Android 4.0
   StateManager::InitServices(AndroidApplication); //Set up platform intiialization of Google Play Services
+#elif defined(_VISION_IOS)
+  StateManager::InitServices("33140719607.apps.googleusercontent.com");
 #endif
   //Cloud Connection Plugin Initialisation - End
 

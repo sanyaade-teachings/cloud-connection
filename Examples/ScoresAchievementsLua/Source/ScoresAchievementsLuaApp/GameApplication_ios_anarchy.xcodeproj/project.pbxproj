@@ -13,6 +13,11 @@
 		1753960000000000020206 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 1706280000000000020205 /* Icon-72.png */; };
 		2460880000000000020214 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3274560000000000020213 /* Default-Portrait~ipad.png */; };
 		2705200000000000020212 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 3859910000000000020211 /* Default-Portrait@2x~ipad.png */; };
+		3A279B881955B28D00B45A02 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB81B4D19549C2400F9D8C8 /* CoreGraphics.framework */; };
+		3A279B891955B2D100B45A02 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB81B371954932900F9D8C8 /* CoreText.framework */; };
+		3A279B8A1955B38400B45A02 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB81B3D1954934600F9D8C8 /* Security.framework */; };
+		3A279B8B1955B3C100B45A02 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB81B351954932000F9D8C8 /* CoreMotion.framework */; };
+		3A279B8C1955B4DA00B45A02 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB81B391954933400F9D8C8 /* MediaPlayer.framework */; };
 		3AB81B0C1954724100F9D8C8 /* VisAppDelegateIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB81B011954724100F9D8C8 /* VisAppDelegateIOS.m */; };
 		3AB81B0D1954724100F9D8C8 /* VisEAGLViewIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB81B041954724100F9D8C8 /* VisEAGLViewIOS.m */; };
 		3AB81B0E1954724100F9D8C8 /* VisMainIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 3AB81B051954724100F9D8C8 /* VisMainIOS.m */; };
@@ -23,6 +28,15 @@
 		3AB81B151954725F00F9D8C8 /* ScoresAchievementsLuaAppPCH.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3AB81B131954725F00F9D8C8 /* ScoresAchievementsLuaAppPCH.cpp */; };
 		3AB81B1D19548FFD00F9D8C8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB81B1C19548FFD00F9D8C8 /* UIKit.framework */; };
 		3AB81B201954906900F9D8C8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB81B1E1954900500F9D8C8 /* OpenGLES.framework */; };
+		3AB81B24195490CC00F9D8C8 /* gpg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB81B22195490CC00F9D8C8 /* gpg.framework */; };
+		3AB81B28195490E400F9D8C8 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB81B25195490E400F9D8C8 /* GoogleOpenSource.framework */; };
+		3AB81B2A195490E400F9D8C8 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB81B27195490E400F9D8C8 /* GooglePlus.framework */; };
+		3AB81B2E195492E400F9D8C8 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB81B2D195492E400F9D8C8 /* AddressBook.framework */; };
+		3AB81B30195492F300F9D8C8 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB81B2F195492F300F9D8C8 /* AssetsLibrary.framework */; };
+		3AB81B321954930A00F9D8C8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB81B311954930A00F9D8C8 /* CoreData.framework */; };
+		3AB81B341954931400F9D8C8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AB81B331954931400F9D8C8 /* CoreLocation.framework */; };
+		3AB81B4C19549B3C00F9D8C8 /* GooglePlayGames.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3AB81B4B19549B3C00F9D8C8 /* GooglePlayGames.bundle */; };
+		3AB81B5019549ED300F9D8C8 /* gpg.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3AB81B4F19549ED200F9D8C8 /* gpg.bundle */; };
 		4036150000000000020196 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5143640000000000020195 /* AudioToolbox.framework */; };
 		4320920000000000020210 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 1487260000000000020209 /* Default-Landscape~ipad.png */; };
 		4347760000000000020188 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1144040000000000020187 /* Foundation.framework */; };
@@ -77,6 +91,29 @@
 		3AB81B16195472E400F9D8C8 /* GamePlugin_ios_anarchy.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GamePlugin_ios_anarchy.xcodeproj; path = ../ScoresAchievementsLuaEnginePlugin/GamePlugin_ios_anarchy.xcodeproj; sourceTree = "<group>"; };
 		3AB81B1C19548FFD00F9D8C8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		3AB81B1E1954900500F9D8C8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
+		3AB81B21195490CC00F9D8C8 /* gpg.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = gpg.bundle; path = "../../../../../../../Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios/gpg.bundle"; sourceTree = "<group>"; };
+		3AB81B22195490CC00F9D8C8 /* gpg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = gpg.framework; path = "../../../../../../../Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios/gpg.framework"; sourceTree = "<group>"; };
+		3AB81B25195490E400F9D8C8 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleOpenSource.framework; path = "../../../../../../../Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1/GoogleOpenSource.framework"; sourceTree = "<group>"; };
+		3AB81B26195490E400F9D8C8 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlus.bundle; path = "../../../../../../../Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1/GooglePlus.bundle"; sourceTree = "<group>"; };
+		3AB81B27195490E400F9D8C8 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlus.framework; path = "../../../../../../../Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1/GooglePlus.framework"; sourceTree = "<group>"; };
+		3AB81B2D195492E400F9D8C8 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AddressBook.framework; sourceTree = DEVELOPER_DIR; };
+		3AB81B2F195492F300F9D8C8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = DEVELOPER_DIR; };
+		3AB81B311954930A00F9D8C8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		3AB81B331954931400F9D8C8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		3AB81B351954932000F9D8C8 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		3AB81B371954932900F9D8C8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
+		3AB81B391954933400F9D8C8 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
+		3AB81B3B1954933D00F9D8C8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		3AB81B3D1954934600F9D8C8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		3AB81B3F1954935100F9D8C8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		3AB81B411954935B00F9D8C8 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/libc++.dylib"; sourceTree = DEVELOPER_DIR; };
+		3AB81B431954970F00F9D8C8 /* GooglePlayGames.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlayGames.framework; path = "../../../../../../../Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/GooglePlayGames-iOS-SDK/2.0.2/GooglePlayGames.framework"; sourceTree = "<group>"; };
+		3AB81B441954970F00F9D8C8 /* GooglePlayGames.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlayGames.bundle; path = "../../../../../../../Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/GooglePlayGames-iOS-SDK/2.0.2/GooglePlayGames.bundle"; sourceTree = "<group>"; };
+		3AB81B471954991900F9D8C8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
+		3AB81B491954995E00F9D8C8 /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/GLKit.framework; sourceTree = DEVELOPER_DIR; };
+		3AB81B4B19549B3C00F9D8C8 /* GooglePlayGames.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlayGames.bundle; path = "../../../../../../../Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/GooglePlayGames-iOS-SDK/2.0.2/GooglePlayGames.bundle"; sourceTree = "<group>"; };
+		3AB81B4D19549C2400F9D8C8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		3AB81B4F19549ED200F9D8C8 /* gpg.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = gpg.bundle; path = "../../../../../../../Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios/gpg.bundle"; sourceTree = "<group>"; };
 		4367040000000000020225 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
 		5143640000000000020195 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		5768950000000000020152 /* Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
@@ -92,6 +129,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A279B8C1955B4DA00B45A02 /* MediaPlayer.framework in Frameworks */,
+				3A279B8B1955B3C100B45A02 /* CoreMotion.framework in Frameworks */,
+				3A279B8A1955B38400B45A02 /* Security.framework in Frameworks */,
+				3A279B891955B2D100B45A02 /* CoreText.framework in Frameworks */,
+				3A279B881955B28D00B45A02 /* CoreGraphics.framework in Frameworks */,
+				3AB81B341954931400F9D8C8 /* CoreLocation.framework in Frameworks */,
+				3AB81B321954930A00F9D8C8 /* CoreData.framework in Frameworks */,
+				3AB81B30195492F300F9D8C8 /* AssetsLibrary.framework in Frameworks */,
+				3AB81B2E195492E400F9D8C8 /* AddressBook.framework in Frameworks */,
+				3AB81B28195490E400F9D8C8 /* GoogleOpenSource.framework in Frameworks */,
+				3AB81B2A195490E400F9D8C8 /* GooglePlus.framework in Frameworks */,
+				3AB81B24195490CC00F9D8C8 /* gpg.framework in Frameworks */,
 				3AB81B201954906900F9D8C8 /* OpenGLES.framework in Frameworks */,
 				3AB81B1D19548FFD00F9D8C8 /* UIKit.framework in Frameworks */,
 				4933630000000000020190 /* QuartzCore.framework in Frameworks */,
@@ -186,6 +235,29 @@
 		7453920000000000020148 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				3AB81B4F19549ED200F9D8C8 /* gpg.bundle */,
+				3AB81B4D19549C2400F9D8C8 /* CoreGraphics.framework */,
+				3AB81B4B19549B3C00F9D8C8 /* GooglePlayGames.bundle */,
+				3AB81B491954995E00F9D8C8 /* GLKit.framework */,
+				3AB81B471954991900F9D8C8 /* libz.dylib */,
+				3AB81B431954970F00F9D8C8 /* GooglePlayGames.framework */,
+				3AB81B441954970F00F9D8C8 /* GooglePlayGames.bundle */,
+				3AB81B411954935B00F9D8C8 /* libc++.dylib */,
+				3AB81B3F1954935100F9D8C8 /* SystemConfiguration.framework */,
+				3AB81B3D1954934600F9D8C8 /* Security.framework */,
+				3AB81B3B1954933D00F9D8C8 /* QuartzCore.framework */,
+				3AB81B391954933400F9D8C8 /* MediaPlayer.framework */,
+				3AB81B371954932900F9D8C8 /* CoreText.framework */,
+				3AB81B351954932000F9D8C8 /* CoreMotion.framework */,
+				3AB81B331954931400F9D8C8 /* CoreLocation.framework */,
+				3AB81B311954930A00F9D8C8 /* CoreData.framework */,
+				3AB81B2F195492F300F9D8C8 /* AssetsLibrary.framework */,
+				3AB81B2D195492E400F9D8C8 /* AddressBook.framework */,
+				3AB81B25195490E400F9D8C8 /* GoogleOpenSource.framework */,
+				3AB81B26195490E400F9D8C8 /* GooglePlus.bundle */,
+				3AB81B27195490E400F9D8C8 /* GooglePlus.framework */,
+				3AB81B21195490CC00F9D8C8 /* gpg.bundle */,
+				3AB81B22195490CC00F9D8C8 /* gpg.framework */,
 				3AB81B16195472E400F9D8C8 /* GamePlugin_ios_anarchy.xcodeproj */,
 				5768950000000000020152 /* Main.cpp */,
 				3AB81B131954725F00F9D8C8 /* ScoresAchievementsLuaAppPCH.cpp */,
@@ -278,6 +350,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AB81B5019549ED300F9D8C8 /* gpg.bundle in Resources */,
+				3AB81B4C19549B3C00F9D8C8 /* GooglePlayGames.bundle in Resources */,
 				6023070000000000020218 /* Default@2x~iphone.png in Resources */,
 				2460880000000000020214 /* Default-Portrait~ipad.png in Resources */,
 				1027080000000000020226 /* Assets in Resources */,
@@ -394,8 +468,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
+					"/Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1",
+					"/Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/GooglePlayGames-iOS-SDK/2.0.2",
+				);
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
-				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_ENABLE_SYMBOL_SEPARATION = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
@@ -524,6 +604,7 @@
 					"-lvScaleformUtilsD",
 					"-lGamePlugin",
 					"-lCloudConnection",
+					"-ObjC",
 				);
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -582,8 +663,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
+					"/Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1",
+					"/Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/GooglePlayGames-iOS-SDK/2.0.2",
+				);
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
-				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_ENABLE_SYMBOL_SEPARATION = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
@@ -744,8 +831,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
+					"/Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1",
+					"/Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/GooglePlayGames-iOS-SDK/2.0.2",
+				);
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
-				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_ENABLE_SYMBOL_SEPARATION = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;
@@ -907,8 +1000,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
+					"/Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1",
+					"/Havok/AnarchySDK/ThirdParty/plugins/cloud-connection/ThirdParty/redistsdks/GooglePlayGames-iOS-SDK/2.0.2",
+				);
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
-				GCC_ENABLE_CPP_RTTI = NO;
+				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_ENABLE_SYMBOL_SEPARATION = NO;
 				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
 				GCC_INLINES_ARE_PRIVATE_EXTERN = YES;

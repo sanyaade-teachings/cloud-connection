@@ -116,10 +116,16 @@ To initialise the plugin whether you wish to use it via C++ or Lua you must add 
 	#if defined(_VISION_ANDROID)
   		StateManager::InitServices(AndroidApplication); //Set up platform intiialization of Google Play Services
 		DummyJNIFunction();   //Dummy - don't let the compiler strip JNI functions for < Android 4.0
+	#elif defined(_VISION_IOS)
+  		//This is the "OAuth2 Client ID" that you setup in the Google Developer console (it is NOT the same as the Android Application ID)
+  		StateManager::InitServices(“00000000000-_REPLACEME_.apps.googleusercontent.com");
 	#endif
 ```
 
-**TODO - WHERE TO PUT THE GOOGLE APPLICATION ID ON ANDROID AND IOS**
+### Set Your Android Application ID
+
+For Android you must put your Android Application ID in the following xml file `Android/res/values/ids.xml`.
+Enter the application ID hat you setup in the Google Developer console where the REPLACE_ME value sits `<string name="app_id">REPLACE_ME</string>`
 
 ## Getting Access to the Client
 
@@ -562,7 +568,7 @@ When you are signing your APK file, please make sure that you are signing it wit
 
 ## Buidling for iOS
 
-**TODO**
+See the `README_Installation_iOS.md` document.
 
 ## Extending or Customising the Plugin
 

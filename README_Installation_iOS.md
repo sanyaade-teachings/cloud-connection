@@ -35,6 +35,11 @@ Add to `Build Settings` -> `Search Paths` -> `Library Search Paths`
 Add the Cloud Connection library `-lCloudConnection` to `Build Settings` -> `Linking` -> `Other Linker Flags`.
 This will link your application against the library `libCloudConnection.a`
 
+### Other Linker Flags Required
+
+Add the ObjectiveC linker flag `-ObjC` to `Build Settings` -> `Linking` -> `Other Linker Flags`.
+
+
 ** TODO : LINK AGAINST THE GPG libraries **
 
 ** TODO: see guide on linking with the Google Play Games services SDK **

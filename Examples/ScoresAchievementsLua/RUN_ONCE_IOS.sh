@@ -9,5 +9,5 @@ cp -R -f "$VISION_SDK/Data/Common/iOS" ./Data/Common
 mkdir -p ./Data/Common/Anarchy
 cp -R -f "$VISION_SDK/Data/Common/Anarchy" ./Data/Common
 
-mkdir -p ./Source/ScoresAchievementsLuaApp/platform/iOS
-cp -R -f "$VISION_SDK/Source/Vision/Runtime/Common/iOS" ./Source/ScoresAchievementsLuaApp/platform/
+# mkdir -p ./Source/ScoresAchievementsLuaApp/platform/iOS
+# cp -R -f "$VISION_SDK/Source/Vision/Runtime/Common/iOS" ./Source/ScoresAchievementsLuaApp/platform/

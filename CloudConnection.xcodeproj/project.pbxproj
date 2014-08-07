@@ -10,7 +10,6 @@
 		3A14560919323963006D3A9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A14560819323963006D3A9B /* Foundation.framework */; };
 		3A14561819323963006D3A9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A14560819323963006D3A9B /* Foundation.framework */; };
 		3A14561A19323963006D3A9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A14561919323963006D3A9B /* UIKit.framework */; };
-		3A14561D19323963006D3A9B /* libCloudConnection.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A14560519323963006D3A9B /* libCloudConnection.a */; };
 		3A14564C19323A8F006D3A9B /* ClientFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A14562E19323A8F006D3A9B /* ClientFactory.cpp */; };
 		3A14564D19323A8F006D3A9B /* CloudConnection.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A14563019323A8F006D3A9B /* CloudConnection.cpp */; };
 		3A14564E19323A8F006D3A9B /* CloudConnectionCallbacks.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3A14563319323A8F006D3A9B /* CloudConnectionCallbacks.cpp */; };
@@ -413,7 +412,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A14561D19323963006D3A9B /* libCloudConnection.a in Frameworks */,
 				3A14561A19323963006D3A9B /* UIKit.framework in Frameworks */,
 				3A14561819323963006D3A9B /* Foundation.framework in Frameworks */,
 			);
@@ -1823,7 +1821,7 @@
 					"$(PROJECT_DIR)/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CPLUSPLUSFLAGS = (
 					"$(OTHER_CFLAGS)",
 					"-DHK_ANARCHY",

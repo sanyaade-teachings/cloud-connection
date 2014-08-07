@@ -75,17 +75,13 @@ Add the following to `Build Phases` -> `Link Binary With Libraries`
 Confirm that `libz` is specified under "Link Binary with Libraries" in the sample project's build-phase settings
 
 ## Setup the Google+ iOS SDK SDK
-Set up the Google+ iOS SDK as described in steps 1-8 of Getting Started for iOS. [Google+ iOS SDK quickstart](https://developers.google.com/games/services/ios/quickstart)
+Set up the Google+ iOS SDK as described in steps 1-6 of Getting Started for iOS. [Google+ iOS SDK quickstart](https://developers.google.com/games/services/ios/quickstart)
 
 ### Notes
 
 **Step 5: Add a sign-in and sign-out button** 
 
 The GPGSignInButton is not supported by the C++ SDK. Instead, a button should be created with other mechanisms; clicking the button should trigger authentication (using `BeginUserInitiatedSignIn()` see README.md).
-
-**Step 7: Add a GPGStatusDelegate**
-
-Is not required for the Cloud Connection Plugin in Project Anarchy
 
 ## Links
 

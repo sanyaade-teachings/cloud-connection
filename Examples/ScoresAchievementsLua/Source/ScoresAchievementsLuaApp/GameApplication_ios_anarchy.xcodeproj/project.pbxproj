@@ -52,6 +52,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		3A95B8771993A5CC00FE5A06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AB81B16195472E400F9D8C8 /* GamePlugin_ios_anarchy.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 908049140199985600000131;
+			remoteInfo = libGamePlugin;
+		};
 		3AB81B1A195472E400F9D8C8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3AB81B16195472E400F9D8C8 /* GamePlugin_ios_anarchy.xcodeproj */;
@@ -258,10 +265,10 @@
 				3AB81B27195490E400F9D8C8 /* GooglePlus.framework */,
 				3AB81B21195490CC00F9D8C8 /* gpg.bundle */,
 				3AB81B22195490CC00F9D8C8 /* gpg.framework */,
-				3AB81B16195472E400F9D8C8 /* GamePlugin_ios_anarchy.xcodeproj */,
 				5768950000000000020152 /* Main.cpp */,
 				3AB81B131954725F00F9D8C8 /* ScoresAchievementsLuaAppPCH.cpp */,
 				3AB81B141954725F00F9D8C8 /* ScoresAchievementsLuaAppPCH.h */,
+				3AB81B16195472E400F9D8C8 /* GamePlugin_ios_anarchy.xcodeproj */,
 				3AB81AFF1954724100F9D8C8 /* iOS */,
 				1144040000000000020187 /* Foundation.framework */,
 				7068940000000000020189 /* QuartzCore.framework */,
@@ -294,6 +301,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				3A95B8781993A5CC00FE5A06 /* PBXTargetDependency */,
 			);
 			name = GameApplication;
 			productName = GameApplication;
@@ -418,6 +426,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3A95B8781993A5CC00FE5A06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = libGamePlugin;
+			targetProxy = 3A95B8771993A5CC00FE5A06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2606070000000000020237 /* distrib */ = {
@@ -713,6 +729,7 @@
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/Release_NoRTTI/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/curl/7.22.0/iOS/lib/iphoneos/Release",
 					"../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Lib/iOS/Release-iphoneos/",
 				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_CPLUSPLUSFLAGS = (
@@ -961,6 +978,9 @@
 					"-lvHavokBehavior",
 					"-lvScaleformPlugin",
 					"-lvScaleformUtils",
+					"-ObjC",
+					"-lCloudConnection",
+					"-lGamePlugin",
 				);
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
@@ -1050,6 +1070,7 @@
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/Release_NoRTTI/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/curl/7.22.0/iOS/lib/iphoneos/Release",
 					"../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Lib/iOS/Release-iphoneos/",
 				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_CPLUSPLUSFLAGS = (
@@ -1129,6 +1150,9 @@
 					"-lvHavokBehavior",
 					"-lvScaleformPlugin",
 					"-lvScaleformUtils",
+					"-ObjC",
+					"-lGamePlugin",
+					"-lCloudConnection",
 				);
 				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;

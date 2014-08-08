@@ -1070,7 +1070,7 @@
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/Release_NoRTTI/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/curl/7.22.0/iOS/lib/iphoneos/Release",
 					"../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
-					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Lib/iOS/Release-iphoneos/",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Lib/iOS/Dev-iphoneos/",
 				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_CPLUSPLUSFLAGS = (

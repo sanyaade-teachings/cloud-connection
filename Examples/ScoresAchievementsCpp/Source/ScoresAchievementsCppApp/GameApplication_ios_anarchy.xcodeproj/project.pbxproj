@@ -15,6 +15,29 @@
 		3547920000000000020185 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9405680000000000020184 /* QuartzCore.framework */; };
 		3747980000000000020187 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9875510000000000020186 /* CoreData.framework */; };
 		3807350000000000020215 /* Default~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 3693500000000000020214 /* Default~iphone.png */; };
+		3A114AED199501F100F388A8 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114AEC199501F100F388A8 /* OpenGLES.framework */; };
+		3A114AEF199501FA00F388A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114AEE199501FA00F388A8 /* UIKit.framework */; };
+		3A114AF5199504BC00F388A8 /* GoogleOpenSource.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114AF0199504BB00F388A8 /* GoogleOpenSource.framework */; };
+		3A114AF6199504BC00F388A8 /* GooglePlus.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3A114AF1199504BB00F388A8 /* GooglePlus.bundle */; };
+		3A114AF7199504BC00F388A8 /* GooglePlus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114AF2199504BB00F388A8 /* GooglePlus.framework */; };
+		3A114AF8199504BC00F388A8 /* GooglePlayGames.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3A114AF3199504BC00F388A8 /* GooglePlayGames.bundle */; };
+		3A114AF9199504BC00F388A8 /* GooglePlayGames.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114AF4199504BC00F388A8 /* GooglePlayGames.framework */; };
+		3A114AFD1995063F00F388A8 /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114AFC1995063F00F388A8 /* AddressBook.framework */; };
+		3A114AFF1995064700F388A8 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114AFE1995064700F388A8 /* AssetsLibrary.framework */; };
+		3A114B011995065000F388A8 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114B001995065000F388A8 /* CoreData.framework */; };
+		3A114B031995065A00F388A8 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114B021995065A00F388A8 /* CoreLocation.framework */; };
+		3A114B051995066400F388A8 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114B041995066400F388A8 /* CoreMotion.framework */; };
+		3A114B071995066C00F388A8 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114B061995066C00F388A8 /* CoreTelephony.framework */; };
+		3A114B091995067500F388A8 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114B081995067500F388A8 /* CoreText.framework */; };
+		3A114B0B1995067E00F388A8 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114B0A1995067E00F388A8 /* MediaPlayer.framework */; };
+		3A114B0D1995068500F388A8 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114B0C1995068500F388A8 /* QuartzCore.framework */; };
+		3A114B0F1995068D00F388A8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114B0E1995068D00F388A8 /* Security.framework */; };
+		3A114B111995069500F388A8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114B101995069500F388A8 /* SystemConfiguration.framework */; };
+		3A114B13199506A400F388A8 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114B12199506A400F388A8 /* libc++.dylib */; };
+		3A114B14199506AD00F388A8 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114AFA1995055F00F388A8 /* libz.dylib */; };
+		3A114B161995071700F388A8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114B151995071700F388A8 /* CoreGraphics.framework */; };
+		3A114B1A199508D700F388A8 /* gpg.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 3A114B18199508D700F388A8 /* gpg.bundle */; };
+		3A114B1B199508D700F388A8 /* gpg.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A114B19199508D700F388A8 /* gpg.framework */; };
 		3A95BAB61993CD5B00FE5A06 /* VisAppDelegateIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A95BAAB1993CD5B00FE5A06 /* VisAppDelegateIOS.m */; };
 		3A95BAB71993CD5B00FE5A06 /* VisEAGLViewIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A95BAAE1993CD5B00FE5A06 /* VisEAGLViewIOS.m */; };
 		3A95BAB81993CD5B00FE5A06 /* VisMainIOS.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A95BAAF1993CD5B00FE5A06 /* VisMainIOS.m */; };
@@ -26,30 +49,28 @@
 		4000840000000000020201 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 0481280000000000020200 /* Icon-72.png */; };
 		4451480000000000020197 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2130000000000000020192 /* Icon.png */; };
 		4568090000000000020191 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4811740000000000020190 /* AudioToolbox.framework */; };
-		4711020000000000020181 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8815750000000000020180 /* UIKit.framework */; };
 		4920860000000000020209 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 6920330000000000020208 /* Default-Portrait~ipad.png */; };
 		5583810000000000020221 /* Assets in Resources */ = {isa = PBXBuildFile; fileRef = 4837890000000000020220 /* Assets */; };
 		6313280000000000020207 /* Default-Portrait@2x~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 9123850000000000020206 /* Default-Portrait@2x~ipad.png */; };
 		7047180000000000020205 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 4762240000000000020204 /* Default-Landscape~ipad.png */; };
 		7140990000000000020219 /* Data in Resources */ = {isa = PBXBuildFile; fileRef = 2935990000000000020218 /* Data */; };
 		8163920000000000020148 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3846980000000000020147 /* Main.cpp */; };
-		9051450000000000020179 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4977370000000000020178 /* OpenGLES.framework */; };
 		9698340000000000020211 /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 7420380000000000020210 /* Default-568h@2x~iphone.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3A95BAC61993CDFD00FE5A06 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A95BAC01993CDFC00FE5A06 /* GamePlugin_ios_anarchy.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A95BAC31993CDFC00FE5A06;
-			remoteInfo = libGamePlugin;
-		};
-		3A95BAC81993CE4300FE5A06 /* PBXContainerItemProxy */ = {
+		3A114AE81994FCAB00F388A8 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A95BAC01993CDFC00FE5A06 /* GamePlugin_ios_anarchy.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = 660930140686508600000131;
+			remoteInfo = libGamePlugin;
+		};
+		3AB50E641994FAE80081F5D9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3A95BAC01993CDFC00FE5A06 /* GamePlugin_ios_anarchy.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3A95BAC31993CDFC00FE5A06;
 			remoteInfo = libGamePlugin;
 		};
 /* End PBXContainerItemProxy section */
@@ -61,6 +82,29 @@
 		2935990000000000020218 /* Data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Data; sourceTree = "<group>"; };
 		3693500000000000020214 /* Default~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default~iphone.png"; sourceTree = "<group>"; };
 		3846980000000000020147 /* Main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Main.cpp; sourceTree = "<group>"; };
+		3A114AEC199501F100F388A8 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/OpenGLES.framework; sourceTree = DEVELOPER_DIR; };
+		3A114AEE199501FA00F388A8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		3A114AF0199504BB00F388A8 /* GoogleOpenSource.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleOpenSource.framework; path = "../../../../ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1/GoogleOpenSource.framework"; sourceTree = "<group>"; };
+		3A114AF1199504BB00F388A8 /* GooglePlus.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlus.bundle; path = "../../../../ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1/GooglePlus.bundle"; sourceTree = "<group>"; };
+		3A114AF2199504BB00F388A8 /* GooglePlus.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlus.framework; path = "../../../../ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1/GooglePlus.framework"; sourceTree = "<group>"; };
+		3A114AF3199504BC00F388A8 /* GooglePlayGames.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GooglePlayGames.bundle; path = "../../../../ThirdParty/redistsdks/GooglePlayGames-iOS-SDK/2.0.2/GooglePlayGames.bundle"; sourceTree = "<group>"; };
+		3A114AF4199504BC00F388A8 /* GooglePlayGames.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GooglePlayGames.framework; path = "../../../../ThirdParty/redistsdks/GooglePlayGames-iOS-SDK/2.0.2/GooglePlayGames.framework"; sourceTree = "<group>"; };
+		3A114AFA1995055F00F388A8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/libz.dylib; sourceTree = DEVELOPER_DIR; };
+		3A114AFC1995063F00F388A8 /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AddressBook.framework; sourceTree = DEVELOPER_DIR; };
+		3A114AFE1995064700F388A8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AssetsLibrary.framework; sourceTree = DEVELOPER_DIR; };
+		3A114B001995065000F388A8 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreData.framework; sourceTree = DEVELOPER_DIR; };
+		3A114B021995065A00F388A8 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreLocation.framework; sourceTree = DEVELOPER_DIR; };
+		3A114B041995066400F388A8 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		3A114B061995066C00F388A8 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreTelephony.framework; sourceTree = DEVELOPER_DIR; };
+		3A114B081995067500F388A8 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreText.framework; sourceTree = DEVELOPER_DIR; };
+		3A114B0A1995067E00F388A8 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/MediaPlayer.framework; sourceTree = DEVELOPER_DIR; };
+		3A114B0C1995068500F388A8 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/QuartzCore.framework; sourceTree = DEVELOPER_DIR; };
+		3A114B0E1995068D00F388A8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		3A114B101995069500F388A8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
+		3A114B12199506A400F388A8 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/usr/lib/libc++.dylib"; sourceTree = DEVELOPER_DIR; };
+		3A114B151995071700F388A8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
+		3A114B18199508D700F388A8 /* gpg.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = gpg.bundle; path = "../../../../ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios/gpg.bundle"; sourceTree = "<group>"; };
+		3A114B19199508D700F388A8 /* gpg.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = gpg.framework; path = "../../../../ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios/gpg.framework"; sourceTree = "<group>"; };
 		3A95B87B1993CCC500FE5A06 /* GameApplication.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GameApplication.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A95BAAA1993CD5B00FE5A06 /* VisAppDelegateIOS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VisAppDelegateIOS.h; sourceTree = "<group>"; };
 		3A95BAAB1993CD5B00FE5A06 /* VisAppDelegateIOS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VisAppDelegateIOS.m; sourceTree = "<group>"; };
@@ -81,13 +125,11 @@
 		4762240000000000020204 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		4811740000000000020190 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4837890000000000020220 /* Assets */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Assets; sourceTree = "<group>"; };
-		4977370000000000020178 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		5822780000000000020188 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		6345030000000000020202 /* Default-Landscape@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Landscape@2x~ipad.png"; sourceTree = "<group>"; };
 		6884770000000000020182 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6920330000000000020208 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
 		7420380000000000020210 /* Default-568h@2x~iphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x~iphone.png"; sourceTree = "<group>"; };
-		8815750000000000020180 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9123850000000000020206 /* Default-Portrait@2x~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait@2x~ipad.png"; sourceTree = "<group>"; };
 		9297200000000000020216 /* Samples-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Samples-Info.plist"; sourceTree = "<group>"; };
 		9405680000000000020184 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -99,13 +141,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A114B161995071700F388A8 /* CoreGraphics.framework in Frameworks */,
+				3A114B14199506AD00F388A8 /* libz.dylib in Frameworks */,
+				3A114B13199506A400F388A8 /* libc++.dylib in Frameworks */,
+				3A114B1B199508D700F388A8 /* gpg.framework in Frameworks */,
+				3A114B111995069500F388A8 /* SystemConfiguration.framework in Frameworks */,
+				3A114B0F1995068D00F388A8 /* Security.framework in Frameworks */,
+				3A114B0D1995068500F388A8 /* QuartzCore.framework in Frameworks */,
+				3A114B0B1995067E00F388A8 /* MediaPlayer.framework in Frameworks */,
+				3A114B091995067500F388A8 /* CoreText.framework in Frameworks */,
+				3A114B071995066C00F388A8 /* CoreTelephony.framework in Frameworks */,
+				3A114B051995066400F388A8 /* CoreMotion.framework in Frameworks */,
+				3A114B031995065A00F388A8 /* CoreLocation.framework in Frameworks */,
+				3A114B011995065000F388A8 /* CoreData.framework in Frameworks */,
+				3A114AFF1995064700F388A8 /* AssetsLibrary.framework in Frameworks */,
+				3A114AFD1995063F00F388A8 /* AddressBook.framework in Frameworks */,
+				3A114AEF199501FA00F388A8 /* UIKit.framework in Frameworks */,
+				3A114AED199501F100F388A8 /* OpenGLES.framework in Frameworks */,
 				3547920000000000020185 /* QuartzCore.framework in Frameworks */,
 				4568090000000000020191 /* AudioToolbox.framework in Frameworks */,
-				4711020000000000020181 /* UIKit.framework in Frameworks */,
 				2630920000000000020189 /* SystemConfiguration.framework in Frameworks */,
-				9051450000000000020179 /* OpenGLES.framework in Frameworks */,
 				3747980000000000020187 /* CoreData.framework in Frameworks */,
+				3A114AF5199504BC00F388A8 /* GoogleOpenSource.framework in Frameworks */,
+				3A114AF7199504BC00F388A8 /* GooglePlus.framework in Frameworks */,
 				0932200000000000020183 /* Foundation.framework in Frameworks */,
+				3A114AF9199504BC00F388A8 /* GooglePlayGames.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,10 +208,10 @@
 			path = Platform/iOS;
 			sourceTree = "<group>";
 		};
-		3A95BAC11993CDFC00FE5A06 /* Products */ = {
+		3AB50E611994FAE80081F5D9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3A95BAC71993CDFD00FE5A06 /* libGamePlugin.a */,
+				3AB50E651994FAE80081F5D9 /* libGamePlugin.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -159,13 +219,34 @@
 		4099960000000000020143 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				3A114B18199508D700F388A8 /* gpg.bundle */,
+				3A114B19199508D700F388A8 /* gpg.framework */,
+				3A114B151995071700F388A8 /* CoreGraphics.framework */,
+				3A114B12199506A400F388A8 /* libc++.dylib */,
+				3A114B101995069500F388A8 /* SystemConfiguration.framework */,
+				3A114B0E1995068D00F388A8 /* Security.framework */,
+				3A114B0C1995068500F388A8 /* QuartzCore.framework */,
+				3A114B0A1995067E00F388A8 /* MediaPlayer.framework */,
+				3A114B081995067500F388A8 /* CoreText.framework */,
+				3A114B061995066C00F388A8 /* CoreTelephony.framework */,
+				3A114B041995066400F388A8 /* CoreMotion.framework */,
+				3A114B021995065A00F388A8 /* CoreLocation.framework */,
+				3A114B001995065000F388A8 /* CoreData.framework */,
+				3A114AFE1995064700F388A8 /* AssetsLibrary.framework */,
+				3A114AFC1995063F00F388A8 /* AddressBook.framework */,
+				3A114AFA1995055F00F388A8 /* libz.dylib */,
+				3A114AF0199504BB00F388A8 /* GoogleOpenSource.framework */,
+				3A114AF1199504BB00F388A8 /* GooglePlus.bundle */,
+				3A114AF2199504BB00F388A8 /* GooglePlus.framework */,
+				3A114AF3199504BC00F388A8 /* GooglePlayGames.bundle */,
+				3A114AF4199504BC00F388A8 /* GooglePlayGames.framework */,
+				3A114AEE199501FA00F388A8 /* UIKit.framework */,
+				3A114AEC199501F100F388A8 /* OpenGLES.framework */,
 				3A95BAC01993CDFC00FE5A06 /* GamePlugin_ios_anarchy.xcodeproj */,
 				3A95BABD1993CDDC00FE5A06 /* ScoresAchievementsCppAppPCH.cpp */,
 				3A95BABE1993CDDC00FE5A06 /* ScoresAchievementsCppAppPCH.h */,
 				3A95BAA91993CD5B00FE5A06 /* iOS */,
 				3846980000000000020147 /* Main.cpp */,
-				4977370000000000020178 /* OpenGLES.framework */,
-				8815750000000000020180 /* UIKit.framework */,
 				6884770000000000020182 /* Foundation.framework */,
 				9405680000000000020184 /* QuartzCore.framework */,
 				9875510000000000020186 /* CoreData.framework */,
@@ -229,7 +310,7 @@
 			buildRules = (
 			);
 			dependencies = (
-				3A95BAC91993CE4300FE5A06 /* PBXTargetDependency */,
+				3A114AE91994FCAB00F388A8 /* PBXTargetDependency */,
 			);
 			name = GameApplication;
 			productName = GameApplication;
@@ -255,7 +336,7 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = 3A95BAC11993CDFC00FE5A06 /* Products */;
+					ProductGroup = 3AB50E611994FAE80081F5D9 /* Products */;
 					ProjectRef = 3A95BAC01993CDFC00FE5A06 /* GamePlugin_ios_anarchy.xcodeproj */;
 				},
 			);
@@ -267,11 +348,11 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3A95BAC71993CDFD00FE5A06 /* libGamePlugin.a */ = {
+		3AB50E651994FAE80081F5D9 /* libGamePlugin.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
 			path = libGamePlugin.a;
-			remoteRef = 3A95BAC61993CDFD00FE5A06 /* PBXContainerItemProxy */;
+			remoteRef = 3AB50E641994FAE80081F5D9 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -282,6 +363,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0088100000000000020213 /* Default@2x~iphone.png in Resources */,
+				3A114AF6199504BC00F388A8 /* GooglePlus.bundle in Resources */,
 				4920860000000000020209 /* Default-Portrait~ipad.png in Resources */,
 				5583810000000000020221 /* Assets in Resources */,
 				3A95BAB91993CD5B00FE5A06 /* VisMainWindowIOS.xib in Resources */,
@@ -289,11 +371,13 @@
 				3A95BABC1993CD5B00FE5A06 /* VisViewControllerIOS.xib in Resources */,
 				3807350000000000020215 /* Default~iphone.png in Resources */,
 				6313280000000000020207 /* Default-Portrait@2x~ipad.png in Resources */,
+				3A114B1A199508D700F388A8 /* gpg.bundle in Resources */,
 				4000840000000000020201 /* Icon-72.png in Resources */,
 				7140990000000000020219 /* Data in Resources */,
 				4451480000000000020197 /* Icon.png in Resources */,
 				2480090000000000020199 /* Icon@2x.png in Resources */,
 				7047180000000000020205 /* Default-Landscape~ipad.png in Resources */,
+				3A114AF8199504BC00F388A8 /* GooglePlayGames.bundle in Resources */,
 				0231820000000000020203 /* Default-Landscape@2x~ipad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -349,10 +433,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		3A95BAC91993CE4300FE5A06 /* PBXTargetDependency */ = {
+		3A114AE91994FCAB00F388A8 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = libGamePlugin;
-			targetProxy = 3A95BAC81993CE4300FE5A06 /* PBXContainerItemProxy */;
+			targetProxy = 3A114AE81994FCAB00F388A8 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -361,9 +445,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				COMPRESS_PNG_FILES = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1",
+					"/Users/davepoo/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1",
+					"/Users/davepoo/cloud-connection/ThirdParty/redistsdks/GooglePlayGames-iOS-SDK/2.0.2",
+					"/Users/davepoo/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
+				);
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_ENABLE_SYMBOL_SEPARATION = NO;
@@ -396,20 +489,19 @@
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/inc",
 				);
 				INFOPLIST_FILE = "../../Data/Common/iOS/Samples-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Lua/5.1.4/lib/iphoneos/Release",
-					"$(VISION_SDK)/../../../../../../../Lib/ios_xcode_anarchy/distrib",
+					"$(VISION_SDK)/Lib/ios_xcode_anarchy/distrib",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/lib/ios",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/Release_NoRTTI/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/curl/7.22.0/iOS/lib/iphoneos/Release",
-					"../../../../../../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
+					"../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
 				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-fno-strict-aliasing",
-					"-std=c++98",
 					"-mfpu=neon",
 					"-mfloat-abi=softfp",
 					"-DHK_ANARCHY",
@@ -485,6 +577,9 @@
 					"-lvHavokBehavior",
 					"-lvScaleformPlugin",
 					"-lvScaleformUtils",
+					"-ObjC",
+					"-lCloudConnection",
+					"-lGamePlugin",
 				);
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
@@ -551,9 +646,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1",
+					"/Users/davepoo/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1",
+					"/Users/davepoo/cloud-connection/ThirdParty/redistsdks/GooglePlayGames-iOS-SDK/2.0.2",
+					"/Users/davepoo/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
+				);
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_ENABLE_SYMBOL_SEPARATION = NO;
@@ -586,20 +690,20 @@
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/inc",
 				);
 				INFOPLIST_FILE = "../../Data/Common/iOS/Samples-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Lua/5.1.4/lib/iphoneos/Debug",
-					"$(VISION_SDK)/../../../../../../../Lib/ios_xcode_anarchy/debug",
+					"$(VISION_SDK)/Lib/ios_xcode_anarchy/debug",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/lib/ios",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/Debug_NoRTTI/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/curl/7.22.0/iOS/lib/iphoneos/Release",
-					"../../../../../../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Lib/iOS/Debug-iphoneos/",
+					"../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
 				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-fno-strict-aliasing",
-					"-std=c++98",
 					"-mfpu=neon",
 					"-mfloat-abi=softfp",
 					"-DHK_ANARCHY",
@@ -678,6 +782,9 @@
 					"-lvHavokBehavior",
 					"-lvScaleformPlugin",
 					"-lvScaleformUtilsD",
+					"-ObjC",
+					"-lGamePlugin",
+					"-lCloudConnection",
 				);
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
@@ -727,9 +834,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1",
+					"/Users/davepoo/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1",
+					"/Users/davepoo/cloud-connection/ThirdParty/redistsdks/GooglePlayGames-iOS-SDK/2.0.2",
+					"/Users/davepoo/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
+				);
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_ENABLE_SYMBOL_SEPARATION = NO;
@@ -762,20 +878,20 @@
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/inc",
 				);
 				INFOPLIST_FILE = "../../Data/Common/iOS/Samples-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Lua/5.1.4/lib/iphoneos/Release",
-					"$(VISION_SDK)/../../../../../../../Lib/ios_xcode_anarchy/release",
+					"$(VISION_SDK)/Lib/ios_xcode_anarchy/release",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/lib/ios",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/Release_NoRTTI/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/curl/7.22.0/iOS/lib/iphoneos/Release",
-					"../../../../../../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Lib/iOS/Release-iphoneos/",
+					"../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
 				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-fno-strict-aliasing",
-					"-std=c++98",
 					"-mfpu=neon",
 					"-mfloat-abi=softfp",
 					"-DHK_ANARCHY",
@@ -851,6 +967,9 @@
 					"-lvHavokBehavior",
 					"-lvScaleformPlugin",
 					"-lvScaleformUtils",
+					"-ObjC",
+					"-lCloudConnection",
+					"-lGamePlugin",
 				);
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;
@@ -900,9 +1019,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COMPRESS_PNG_FILES = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1",
+					"/Users/davepoo/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1",
+					"/Users/davepoo/cloud-connection/ThirdParty/redistsdks/GooglePlayGames-iOS-SDK/2.0.2",
+					"/Users/davepoo/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
+				);
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_ENABLE_SYMBOL_SEPARATION = NO;
@@ -935,20 +1063,20 @@
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/inc",
 				);
 				INFOPLIST_FILE = "../../Data/Common/iOS/Samples-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Lua/5.1.4/lib/iphoneos/Release",
-					"$(VISION_SDK)/../../../../../../../Lib/ios_xcode_anarchy/dev",
+					"$(VISION_SDK)/Lib/ios_xcode_anarchy/dev",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/lib/ios",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Scaleform/4.3.26/Lib/iPhone-armv7/Release_NoRTTI/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/curl/7.22.0/iOS/lib/iphoneos/Release",
-					"../../../../../../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Lib/iOS/Dev-iphoneos/",
+					"../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
 				);
 				MACH_O_TYPE = mh_execute;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-fno-strict-aliasing",
-					"-std=c++98",
 					"-mfpu=neon",
 					"-mfloat-abi=softfp",
 					"-DHK_ANARCHY",
@@ -1024,6 +1152,9 @@
 					"-lvHavokBehavior",
 					"-lvScaleformPlugin",
 					"-lvScaleformUtils",
+					"-ObjC",
+					"-lCloudConnection",
+					"-lGamePlugin",
 				);
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = NO;

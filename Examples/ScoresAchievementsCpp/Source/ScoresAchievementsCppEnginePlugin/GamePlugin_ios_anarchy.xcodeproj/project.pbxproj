@@ -22,6 +22,7 @@
 		3311050000000000020245 /* GameManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameManager.h; sourceTree = "<group>"; };
 		3401110000000000020257 /* PluginMain.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = PluginMain.cpp; sourceTree = "<group>"; };
 		3897810000000000020242 /* GameManager.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameManager.cpp; sourceTree = "<group>"; };
+		3A8AD5A71994F5DD00E8AB20 /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS7.1.sdk/System/Library/Frameworks/AddressBookUI.framework; sourceTree = DEVELOPER_DIR; };
 		3A95BAC31993CDFC00FE5A06 /* libGamePlugin.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libGamePlugin.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A95BACA1993D0A400FE5A06 /* CloudConnectionGUI.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CloudConnectionGUI.cpp; sourceTree = "<group>"; };
 		3A95BACB1993D0A400FE5A06 /* CloudConnectionGUI.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CloudConnectionGUI.hpp; sourceTree = "<group>"; };
@@ -53,6 +54,7 @@
 		6614850000000000020243 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				3A8AD5A71994F5DD00E8AB20 /* AddressBookUI.framework */,
 				3A95BACA1993D0A400FE5A06 /* CloudConnectionGUI.cpp */,
 				3A95BACB1993D0A400FE5A06 /* CloudConnectionGUI.hpp */,
 				3A95BACC1993D0A400FE5A06 /* ScoresAchievementsCppEnginePluginModule.h */,
@@ -155,7 +157,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1",
+				);
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_ENABLE_SYMBOL_SEPARATION = NO;
@@ -204,8 +212,9 @@
 					"$(VISION_SDK)/Source",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Lua/5.1.4/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/inc",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Source",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(VISION_SDK)/../../../../../../../Lib/ios_xcode_anarchy/debug",
 					"../../../../../../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
@@ -213,7 +222,6 @@
 				MACH_O_TYPE = staticlib;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-fno-strict-aliasing",
-					"-std=c++98",
 					"-mfpu=neon",
 					"-mfloat-abi=softfp",
 					"-DHK_ANARCHY",
@@ -275,7 +283,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1",
+				);
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_ENABLE_SYMBOL_SEPARATION = NO;
@@ -324,8 +338,9 @@
 					"$(VISION_SDK)/Source",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Lua/5.1.4/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/inc",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Source",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(VISION_SDK)/../../../../../../../Lib/ios_xcode_anarchy/distrib",
 					"../../../../../../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
@@ -333,7 +348,6 @@
 				MACH_O_TYPE = staticlib;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-fno-strict-aliasing",
-					"-std=c++98",
 					"-mfpu=neon",
 					"-mfloat-abi=softfp",
 					"-DHK_ANARCHY",
@@ -392,7 +406,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1",
+				);
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_ENABLE_SYMBOL_SEPARATION = NO;
@@ -441,8 +461,9 @@
 					"$(VISION_SDK)/Source",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Lua/5.1.4/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/inc",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Source",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(VISION_SDK)/../../../../../../../Lib/ios_xcode_anarchy/release",
 					"../../../../../../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
@@ -450,7 +471,6 @@
 				MACH_O_TYPE = staticlib;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-fno-strict-aliasing",
-					"-std=c++98",
 					"-mfpu=neon",
 					"-mfloat-abi=softfp",
 					"-DHK_ANARCHY",
@@ -551,7 +571,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = armv7;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1",
+				);
 				GCC_ENABLE_CPP_EXCEPTIONS = NO;
 				GCC_ENABLE_CPP_RTTI = YES;
 				GCC_ENABLE_SYMBOL_SEPARATION = NO;
@@ -600,8 +626,9 @@
 					"$(VISION_SDK)/Source",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Lua/5.1.4/",
 					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/inc",
+					"$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Source",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(VISION_SDK)/../../../../../../../Lib/ios_xcode_anarchy/dev",
 					"../../../../../../../Lib/ios_xcode_anarchy/$(CONFIGURATION)",
@@ -609,7 +636,6 @@
 				MACH_O_TYPE = staticlib;
 				OTHER_CPLUSPLUSFLAGS = (
 					"-fno-strict-aliasing",
-					"-std=c++98",
 					"-mfpu=neon",
 					"-mfloat-abi=softfp",
 					"-DHK_ANARCHY",

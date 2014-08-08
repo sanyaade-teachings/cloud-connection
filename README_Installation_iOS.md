@@ -17,23 +17,26 @@ Add the following to your "`Build Settings` -> `Search Paths` -> `Header Search 
 
 `$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Source`
 
-### Add Library Search Paths
+### Add Framework Search Paths
 
-Add in the library search paths for the Google Play Games C++ SDK and the Google Plus iOS SDK which are included in the cloud connection files.
+For your plugin Xcode project, add in the framework search paths for the Google Play Games C++ SDK and the Google Plus iOS SDK which are included in the cloud connection files.
 
 `$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios`
 `$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1`
 
-### Library files required (Application Project Only)s
+### Library files required (Application Project Only)
 
 Add the the Cloud Connection libraries:
 
 Add to `Build Settings` -> `Search Paths` -> `Library Search Paths` 
 
 `$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Lib/iOS/Debug-iphoneos/` - For debug build target
+`$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Lib/iOS/Dev-iphoneos/` - For dev build target
 `$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Lib/iOS/Release-iphoneos/` - For release build target
 
 ### In Build Settings -> Linking -> Other Linker Flags
+
+For the Application Xcode project
 
 * Add the ObjectiveC linker flag `-ObjC` to `Build Settings` -> `Linking` -> `Other Linker Flags`.
 * Add the Cloud Connection library flag `-lCloudConnection`. This will link your application against the library `libCloudConnection.a` binary file.
@@ -41,26 +44,22 @@ Add to `Build Settings` -> `Search Paths` -> `Library Search Paths`
  
 ### In Build Settings -> Deployment
 
+For the plugin Xcode project
+
 You must set the `iOS Deployment Target` to at least `iOS 6.0` (iOS 4.3 will not work)
 
 ### In Build settings -> Custom compiler flags
 
-* Under `Apple LLVM 5.1 - Language - C++`?, you must set the `C++ Language Dialect`? to `GNU++11 -std=gnu++11`?.
+For the plugin and application Xcode project
+
+* Under `Apple LLVM 5.1 - Language - C++`?, you must set the `C++ Language Dialect`? to `GNU++11 -std=gnu++11`.
 * Set the `C++ Standard Library`? to `libc++ (LLVM C++ standard library with C++ 11 support)`.
 * `-std=c++98` must be removed from `Apple LLVM 5.1 - Custom Compiler Flags` -> `Other C++ Flags`
 * Set `Enable C++ Runtime Types` to `Yes`
 
 ## Third Party Library, Framework & Bundle Requirements
 
-Add the following to `Build Phases` -> `Link Binary With Libraries`
-
-### For your Plugin Xcode Project
-
-* From the Google Play Games C++ SDK (gpg-cpp-sdk) ( `$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\gpg-cpp-sdk\V1.0\ios` )
-  * gpg.framework
-* From the Google+ iOS SDK (`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\google-plus-ios-sdk\V1.5.1`)
-  * GooglePlus.framework
-  * GoogleOpenSource.framework
+Add the following to `Build Phases` -> `Link Binary With Libraries` or by choosing “Add files to..” to your project.
 
 ### For your Application Xcode Project
 
@@ -71,11 +70,33 @@ Add the following to `Build Phases` -> `Link Binary With Libraries`
   * GooglePlus.framework
   * GooglePlus.bundle
   * GoogleOpenSource.framework
+* From the Google Play Games iOS SDK (`$(HAVOK_THIRDPARTY_DIR)\plugins\cloud-connection\ThirdParty\redistsdks\GooglePlayGames-iOS-SDK\2.0.2`)
+  * GooglePlayGames.bundle
+  * GooglePlayGames.framework
 
-Confirm that `libz` is specified under "Link Binary with Libraries" in the sample project's build-phase settings
+
+These additional frameworks are also required as described in the Google Play iOS quick start guide.
+
+Open your project settings and in the Build Phases tab, Link Binary With Libraries section, click the + sign and add the following frameworks:
+
+*AddressBook.framework
+*AssetsLibrary.framework
+*CoreData.framework
+*CoreLocation.framework
+*CoreMotion.framework
+*CoreTelephony.framework
+*CoreText.framework
+*MediaPlayer.framework
+*QuartzCore.framework
+*Security.framework
+*SystemConfiguration.framework
+*libc++.dylib
+*libz.dylib
+*CoreGraphics.framework	
+
 
 ## Setup the Google+ iOS SDK SDK
-Set up the Google+ iOS SDK as described in steps 1-6 of Getting Started for iOS. [Google+ iOS SDK quickstart](https://developers.google.com/games/services/ios/quickstart)
+Set up the Google+ iOS SDK as described in steps 1-6 of Getting Started for iOS. [Google+ iOS SDK quickstart](https://developers.google.com/games/services/ios/quickstart). Pay particular attention to step 6.4 (or your signing will not finish correctly).
 
 ### Notes
 

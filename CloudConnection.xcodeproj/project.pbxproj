@@ -1838,9 +1838,6 @@
 					"-DUSE_HAVOK",
 					"-DVISIONDLL_LIB",
 					"-DCURL_STATICLIB",
-					"-D_DEBUG",
-					"-DHK_DEBUG",
-					"-DHK_DEBUG_SLOW",
 					"-fno-inline",
 				);
 				OTHER_LDFLAGS = "-ObjC";

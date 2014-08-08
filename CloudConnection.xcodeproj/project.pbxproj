@@ -1838,7 +1838,6 @@
 					"-DUSE_HAVOK",
 					"-DVISIONDLL_LIB",
 					"-DCURL_STATICLIB",
-					"-fno-inline",
 				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1902,6 +1901,141 @@
 			};
 			name = Release;
 		};
+		3A3D34A51994DF5B00C7794C /* Dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Dev;
+		};
+		3A3D34A61994DF5B00C7794C /* Dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = armv7;
+				CONFIGURATION_BUILD_DIR = "Lib/iOS/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)";
+				DSTROOT = /tmp/CloudConnection.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
+				);
+				GCC_ENABLE_CPP_EXCEPTIONS = NO;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_ENABLE_SYMBOL_SEPARATION = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Source/CloudConnectionPluginPCH.hpp;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					HK_ANARCHY,
+					PROFILING,
+					_VISION_IOS,
+					_VISION_POSIX,
+					_VR_GLES2,
+					VBASE_LIB,
+					LINK_WITH_VISION,
+					VISIONDLL_LIB,
+					USE_HAVOK,
+					CURL_STATICLIB,
+				);
+				GCC_STRICT_ALIASING = NO;
+				GCC_THUMB_SUPPORT = NO;
+				GCC_USE_GCC3_PFE_SUPPORT = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
+				"GCC_WARN_64_TO_32_BIT_CONVERSION[arch=*64]" = YES;
+				GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO = NO;
+				HEADER_SEARCH_PATHS = (
+					"$(VISION_SDK)/Source",
+					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/Lua/5.1.4/",
+					"$(HAVOK_THIRDPARTY_DIR)/redistsdks/fmod/4.44.23/inc",
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(PROJECT_DIR)/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-DHK_ANARCHY",
+					"-fno-strict-aliasing",
+					"-std=c++11",
+					"-mfpu=neon",
+					"-mfloat-abi=softfp",
+					"-DPROFILING",
+					"-D_VISION_IOS",
+					"-D_VISION_POSIX",
+					"-D_VR_GLES2",
+					"-DVBASE_LIB",
+					"-DLINK_WITH_VISION",
+					"-DUSE_HAVOK",
+					"-DVISIONDLL_LIB",
+					"-DCURL_STATICLIB",
+					"-fno-inline",
+					"-DHK_DEBUG",
+				);
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 1;
+				WARNING_CFLAGS = (
+					"-W",
+					"-Wall",
+					"-Wundef",
+					"-Wno-inline",
+					"-Wcast-qual",
+					"-Wno-unused",
+					"-Wno-unknown-pragmas",
+					"-Wno-ignored-qualifiers",
+					"-Wno-overflow",
+					"-Wno-type-limits",
+					"-Wno-sign-compare",
+					"-Wno-char-subscripts",
+					"-Wno-switch",
+					"-Wno-dangling-else",
+					"-Wno-comment",
+					"-Wno-shadow",
+					"-Wno-unused-parameter",
+				);
+			};
+			name = Dev;
+		};
+		3A3D34A71994DF5B00C7794C /* Dev */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "CloudConnection/CloudConnection-Prefix.pch";
+				INFOPLIST_FILE = "CloudConnectionTests/CloudConnectionTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Dev;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1910,6 +2044,7 @@
 			buildConfigurations = (
 				3A14562619323963006D3A9B /* Debug */,
 				3A14562719323963006D3A9B /* Release */,
+				3A3D34A51994DF5B00C7794C /* Dev */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1919,6 +2054,7 @@
 			buildConfigurations = (
 				3A14562919323963006D3A9B /* Debug */,
 				3A14562A19323963006D3A9B /* Release */,
+				3A3D34A61994DF5B00C7794C /* Dev */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1928,6 +2064,7 @@
 			buildConfigurations = (
 				3A14562C19323963006D3A9B /* Debug */,
 				3A14562D19323963006D3A9B /* Release */,
+				3A3D34A71994DF5B00C7794C /* Dev */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

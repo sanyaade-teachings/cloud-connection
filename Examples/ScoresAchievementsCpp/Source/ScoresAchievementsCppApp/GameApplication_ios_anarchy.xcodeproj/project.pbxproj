@@ -219,6 +219,20 @@
 		4099960000000000020143 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				3A95BAC01993CDFC00FE5A06 /* GamePlugin_ios_anarchy.xcodeproj */,
+				3A95BABD1993CDDC00FE5A06 /* ScoresAchievementsCppAppPCH.cpp */,
+				3A95BABE1993CDDC00FE5A06 /* ScoresAchievementsCppAppPCH.h */,
+				3A95B87C1993CCC500FE5A06 /* Products */,
+				3A95BAA91993CD5B00FE5A06 /* iOS */,
+				3846980000000000020147 /* Main.cpp */,
+				6884770000000000020182 /* Foundation.framework */,
+				9405680000000000020184 /* QuartzCore.framework */,
+				9875510000000000020186 /* CoreData.framework */,
+				5822780000000000020188 /* SystemConfiguration.framework */,
+				4811740000000000020190 /* AudioToolbox.framework */,
+				4483280000000000020196 /* ../../Data */,
+				2935990000000000020218 /* Data */,
+				4837890000000000020220 /* Assets */,
 				3A114B18199508D700F388A8 /* gpg.bundle */,
 				3A114B19199508D700F388A8 /* gpg.framework */,
 				3A114B151995071700F388A8 /* CoreGraphics.framework */,
@@ -242,20 +256,6 @@
 				3A114AF4199504BC00F388A8 /* GooglePlayGames.framework */,
 				3A114AEE199501FA00F388A8 /* UIKit.framework */,
 				3A114AEC199501F100F388A8 /* OpenGLES.framework */,
-				3A95BAC01993CDFC00FE5A06 /* GamePlugin_ios_anarchy.xcodeproj */,
-				3A95BABD1993CDDC00FE5A06 /* ScoresAchievementsCppAppPCH.cpp */,
-				3A95BABE1993CDDC00FE5A06 /* ScoresAchievementsCppAppPCH.h */,
-				3A95BAA91993CD5B00FE5A06 /* iOS */,
-				3846980000000000020147 /* Main.cpp */,
-				6884770000000000020182 /* Foundation.framework */,
-				9405680000000000020184 /* QuartzCore.framework */,
-				9875510000000000020186 /* CoreData.framework */,
-				5822780000000000020188 /* SystemConfiguration.framework */,
-				4811740000000000020190 /* AudioToolbox.framework */,
-				4483280000000000020196 /* ../../Data */,
-				2935990000000000020218 /* Data */,
-				4837890000000000020220 /* Assets */,
-				3A95B87C1993CCC500FE5A06 /* Products */,
 			);
 			name = Products;
 			sourceTree = "<group>";

@@ -16,6 +16,8 @@
 
 #include <unistd.h>
 
+#import <GooglePlus/GooglePlus.h>
+
 extern char g_szDeviceName[256];
 
 @implementation VisAppDelegate
@@ -114,6 +116,16 @@ extern char g_szDeviceName[256];
   [window release];
   
   [super dealloc];
+}
+
+
+//See https://developers.google.com/games/services/ios/quickstart
+//Call the GPPURLHandler URL handler from your app delegate's URL handler. This method handles the URL that your application receives at the end of the authentication process.
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation {
+    return [GPPURLHandler handleURL:url sourceApplication:sourceApplication annotation:annotation];
 }
 
 @end

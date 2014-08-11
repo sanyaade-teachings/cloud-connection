@@ -16,24 +16,32 @@ std::unique_ptr<gpg::GameServices> StateManager::game_services_;
 std::shared_ptr<gpg::Player> StateManager::player_;
 VMap<std::string, CCAchievement*> StateManager::m_ccAchievementCache;
 
-gpg::GameServices *StateManager::GetGameServices() {
+gpg::GameServices *StateManager::GetGameServices() 
+{
   return game_services_.get();
 }
 
 gpg::Player *StateManager::GetSignedInPlayer() 
-{
+{  
   return player_.get();
 }
 
-void StateManager::BeginUserInitiatedSignIn() {
-  if (!game_services_->IsAuthorized()) {
+void StateManager::BeginUserInitiatedSignIn() 
+{
+  VASSERT_MSG( game_services_ != NULL, "The Google Play Game Services have not been initialised" );
+
+  if (!game_services_->IsAuthorized()) 
+  {
     hkvLog::Debug("StartAuthorizationUI");
     game_services_->StartAuthorizationUI();
   }
 }
 
 void StateManager::SignOut() {
-  if (game_services_->IsAuthorized()) {
+  VASSERT_MSG( game_services_ != NULL, "The Google Play Game Services have not been initialised" );
+
+  if (game_services_->IsAuthorized()) 
+  {
     hkvLog::Debug("SignOut");
     game_services_->SignOut();
     if ( GetSignedInPlayer() != NULL )
@@ -45,6 +53,8 @@ void StateManager::SignOut() {
 
 void StateManager::FetchAchievement(const char *achievementId)
 {
+  VASSERT_MSG( game_services_ != NULL, "The Google Play Game Services have not been initialised" );
+
   if (game_services_->IsAuthorized()) 
   {
     hkvLog::Debug("FetchAchievement");               
@@ -57,6 +67,8 @@ void StateManager::FetchAchievement(const char *achievementId)
 
 void StateManager::IncrementAchievement(const char *achievementId, uint32_t steps) 
 {
+  VASSERT_MSG( game_services_ != NULL, "The Google Play Game Services have not been initialised" );
+
   if (game_services_->IsAuthorized()) 
   {
     hkvLog::Debug("Achievement Increment Steps");
@@ -66,6 +78,8 @@ void StateManager::IncrementAchievement(const char *achievementId, uint32_t step
 
 void StateManager::SetAchievementStepsAtLeast(const char *achievementId, uint32_t steps) 
 {
+  VASSERT_MSG( game_services_ != NULL, "The Google Play Game Services have not been initialised" );
+
   if (game_services_->IsAuthorized()) 
   {
     hkvLog::Debug("Achievement Set Steps");
@@ -76,6 +90,8 @@ void StateManager::SetAchievementStepsAtLeast(const char *achievementId, uint32_
 
 void StateManager::RevealAchievement(char const *achievement_id) 
 {
+  VASSERT_MSG( game_services_ != NULL, "The Google Play Game Services have not been initialised" );
+
   if (game_services_->IsAuthorized()) 
   {
     hkvLog::Debug("Achievement revealed");
@@ -85,6 +101,8 @@ void StateManager::RevealAchievement(char const *achievement_id)
 
 void StateManager::UnlockAchievement(char const *achievement_id) 
 {
+  VASSERT_MSG( game_services_ != NULL, "The Google Play Game Services have not been initialised" );
+
   if (game_services_->IsAuthorized()) 
   {
     hkvLog::Debug("Achievement unlocked");
@@ -94,6 +112,8 @@ void StateManager::UnlockAchievement(char const *achievement_id)
 
 void StateManager::SubmitHighScore(char const *leaderboard_id, uint64_t score) 
 {
+  VASSERT_MSG( game_services_ != NULL, "The Google Play Game Services have not been initialised" );
+
   if (game_services_->IsAuthorized()) 
   {
     hkvLog::Debug("High score submitted");
@@ -103,6 +123,8 @@ void StateManager::SubmitHighScore(char const *leaderboard_id, uint64_t score)
 
 void StateManager::SubmitHighScore(char const *leaderboard_id, uint64_t score, char const *metadata) 
 {
+  VASSERT_MSG( game_services_ != NULL, "The Google Play Game Services have not been initialised" );
+
   if (game_services_->IsAuthorized()) 
   {
     hkvLog::Debug("High score submitted with metadata");
@@ -110,15 +132,23 @@ void StateManager::SubmitHighScore(char const *leaderboard_id, uint64_t score, c
   }
 }
 
-void StateManager::ShowAchievements() {
-  if (game_services_->IsAuthorized()) {
+void StateManager::ShowAchievements() 
+{
+  VASSERT_MSG( game_services_ != NULL, "The Google Play Game Services have not been initialised" );
+
+  if (game_services_->IsAuthorized()) 
+  {
     hkvLog::Debug("Show achievement");
     game_services_->Achievements().ShowAllUI();
   }
 }
 
-void StateManager::ShowLeaderboard(char const *leaderboard_id) {
-  if (game_services_->IsAuthorized()) {
+void StateManager::ShowLeaderboard(char const *leaderboard_id) 
+{
+  VASSERT_MSG( game_services_ != NULL, "The Google Play Game Services have not been initialised" );
+
+  if (game_services_->IsAuthorized()) 
+  {
     hkvLog::Debug("Show leaderboard");
     game_services_->Leaderboards().ShowUI(leaderboard_id);
   }
@@ -126,6 +156,8 @@ void StateManager::ShowLeaderboard(char const *leaderboard_id) {
 
 void StateManager::ShowLeaderboards() 
 {
+  VASSERT_MSG( game_services_ != NULL, "The Google Play Game Services have not been initialised" );
+
   if (game_services_->IsAuthorized()) 
   {
     hkvLog::Debug("Show All leaderboards");
@@ -135,16 +167,17 @@ void StateManager::ShowLeaderboards()
 
 void StateManager::InitServices( gpg::PlatformConfiguration const &pc ) 
 {
-  hkvLog::Debug("Initializing Services");
-  if (!game_services_) {
-    hkvLog::Debug("Uninitialized services, so creating");
+  hkvLog::Debug("Initializing Google Play Games Services");
+  if (!game_services_) 
+  {
+    hkvLog::Debug("Uninitialized Google Play Games services, so creating");
     game_services_ = gpg::GameServices::Builder()
         .SetLogging(gpg::DEFAULT_ON_LOG, gpg::LogLevel::VERBOSE)
         .SetOnAuthActionStarted( OnAuthStarted )
         .SetOnAuthActionFinished( OnAuthFinished )
         .Create(pc);
   }
-  hkvLog::Debug("Created");
+  hkvLog::Debug("Created Google Play Games Services");
 }
 
 void StateManager::OnAuthStarted(gpg::AuthOperation op)
@@ -154,7 +187,10 @@ void StateManager::OnAuthStarted(gpg::AuthOperation op)
   CloudConnection::Callbacks.OnAuthActionStarted.TriggerCallbacks();
 }
 
-void StateManager::OnAuthFinished(gpg::AuthOperation op, gpg::AuthStatus status) {
+void StateManager::OnAuthFinished(gpg::AuthOperation op, gpg::AuthStatus status) 
+{
+  VASSERT_MSG( game_services_ != NULL, "The Google Play Game Services have not been initialised" );
+
   hkvLog::Debug("Sign in finished with a result of %d, %s", status, AuthStatusToName(status) );
   is_auth_in_progress_ = false;
   CloudConnection::Callbacks.OnAuthActionFinished.TriggerCallbacks();

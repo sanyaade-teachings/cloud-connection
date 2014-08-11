@@ -2002,6 +2002,11 @@ SWIGINTERN bool VTypedObject_operator_Se__Se_(VTypedObject *self,VTypedObject co
     }
 SWIGINTERN void VTypedObject_GetProperty(VTypedObject *self,char const *pszName,VCaptureSwigEnvironment *env){
       VisVariable_cl* pVar = self->GetVariable(pszName);
+
+      // if variable can't be found by name try with display name
+      if(!pVar)
+        pVar = self->GetVariableByDisplayName(pszName);
+
       if(!pVar)
       {
         hkvLog::Warning("Called getter of unknown property '%s'", pszName);

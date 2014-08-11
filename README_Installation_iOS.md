@@ -1,6 +1,6 @@
 # Project Anarchy Cloud Connection Plugin Installation (iOS)
 
-This document shows you how to setup the plugin to work with your game. For details on how to use the plugin then please see the main README.md file.
+This document shows you how to setup the plugin to work with your game. For details on how to use the plugin then please see the main [README.md](README.md) file.
 
 ## Download The Plugin
 
@@ -13,7 +13,7 @@ The plugin should be downloaded from GitHub to the following folder (you will ne
 ## XCode Project Setup iOS
 
 ### Add Header Search Paths
-Add the following to your "`Build Settings` -> `Search Paths` -> `Header Search Paths`"
+Add the following to your "`Build Settings` -> `Search Paths` -> `Header Search Paths`
 
 `$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/Source`
 
@@ -24,9 +24,9 @@ For your plugin Xcode project, add in the framework search paths for the Google 
 `$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/gpg-cpp-sdk/V1.0/ios`
 `$(HAVOK_THIRDPARTY_DIR)/plugins/cloud-connection/ThirdParty/redistsdks/google-plus-ios-sdk/V1.5.1`
 
-### Library files required (Application Project Only)
+### Library files required
 
-Add the the Cloud Connection libraries:
+In your Application Xcode project, add the the Cloud Connection libraries:
 
 Add to `Build Settings` -> `Search Paths` -> `Library Search Paths` 
 
@@ -36,7 +36,7 @@ Add to `Build Settings` -> `Search Paths` -> `Library Search Paths`
 
 ### In Build Settings -> Linking -> Other Linker Flags
 
-For the Application Xcode project
+In your Application Xcode project
 
 * Add the ObjectiveC linker flag `-ObjC` to `Build Settings` -> `Linking` -> `Other Linker Flags`.
 * Add the Cloud Connection library flag `-lCloudConnection`. This will link your application against the library `libCloudConnection.a` binary file.
@@ -44,7 +44,7 @@ For the Application Xcode project
  
 ### In Build Settings -> Deployment
 
-For the plugin Xcode project
+In your plugin Xcode project
 
 You must set the `iOS Deployment Target` to at least `iOS 6.0` (iOS 4.3 will not work)
 
@@ -53,9 +53,9 @@ You must set the `iOS Deployment Target` to at least `iOS 6.0` (iOS 4.3 will not
 For the plugin and application Xcode project
 
 * Under `Apple LLVM 5.1 - Language - C++`?, you must set the `C++ Language Dialect`? to `GNU++11 -std=gnu++11`.
-* Set the `C++ Standard Library`? to `libc++ (LLVM C++ standard library with C++ 11 support)`.
+* Set the `C++ Standard Library` to `libc++ (LLVM C++ standard library with C++ 11 support)`.
 * `-std=c++98` must be removed from `Apple LLVM 5.1 - Custom Compiler Flags` -> `Other C++ Flags`
-* Set `Enable C++ Runtime Types` to `Yes`
+* You must set `Enable C++ Runtime Types` to `Yes`
 
 ## Third Party Library, Framework & Bundle Requirements
 
@@ -79,24 +79,23 @@ These additional frameworks are also required as described in the Google Play iO
 
 Open your project settings and in the Build Phases tab, Link Binary With Libraries section, click the + sign and add the following frameworks:
 
-*AddressBook.framework
-*AssetsLibrary.framework
-*CoreData.framework
-*CoreLocation.framework
-*CoreMotion.framework
-*CoreTelephony.framework
-*CoreText.framework
-*MediaPlayer.framework
-*QuartzCore.framework
-*Security.framework
-*SystemConfiguration.framework
-*libc++.dylib
-*libz.dylib
-*CoreGraphics.framework	
-
+* AddressBook.framework
+* AssetsLibrary.framework
+* CoreData.framework
+* CoreLocation.framework
+* CoreMotion.framework
+* CoreTelephony.framework
+* CoreText.framework
+* MediaPlayer.framework
+* QuartzCore.framework
+* Security.framework
+* SystemConfiguration.framework
+* libc++.dylib
+* libz.dylib
+* CoreGraphics.framework	
 
 ## Setup the Google+ iOS SDK SDK
-Set up the Google+ iOS SDK as described in steps 1-6 of Getting Started for iOS. [Google+ iOS SDK quickstart](https://developers.google.com/games/services/ios/quickstart). Pay particular attention to step 6.4 (or your signing will not finish correctly).
+Set up the Google+ iOS SDK as described in steps 1-6 of Getting Started for iOS. [Google+ iOS SDK quickstart](https://developers.google.com/games/services/ios/quickstart). Pay particular attention to step 6.4 (or your signin will not finish correctly).
 
 ### Notes
 

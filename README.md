@@ -36,13 +36,14 @@ Calls to methods in the client will output debug information to the Vision log f
 
 ### Android
 * Android NDK r9d or greater (NDK previous to r9d will not work)
-* [Apache Ant](http://ant.apache.org/) 1.8 or later
-* Build	**MUST** be compiled with C++11 support ( -std=c++11 )
-* Build **MUST** to be compiled with RTTI support ( -frtti )
+* Build	**MUST** be compiled with C++11 enabled
+* Build **MUST** to be compiled with RTTI enabled
 
 ### iOS
 * Xcode version 5.0.1 or higher.
 * A mobile device running iOS 6.0 or higher.
+* Build	**MUST** be compiled with C++11 enabled
+* Build **MUST** to be compiled with RTTI enabled
 
 
 ## Configure Your Game Service
@@ -95,9 +96,8 @@ Achievement and leaderboard IDs are alphanumeric strings (e.g. "Cgkx9eiuwi8_AQ")
 
 Please refer to one of the following readme files on how to install the plugin:
 
-[Android Installation](README_Installation_Android.md)
-
-[iOS Installation](README_Installation_iOS.md)
+* [Android Installation](README_Installation_Android.md)
+* [iOS Installation](README_Installation_iOS.md)
 
 ## Using the Plugin
 
@@ -108,7 +108,7 @@ To initialise the plugin whether you wish to use it via C++ or Lua you must add 
 ```C++
 
 	#include "CloudConnectionBase.h"
-	#include "com_havok_Vision_CloudConnectionLifeCycleSupport.inl"
+	#include "com_havok_Vision_CloudConnectionLifeCycleSupport.inl"  //JNI functions for < Android 4.0
 	...
 	
 	// inside your OnInitEnginePlugin() method
@@ -587,6 +587,8 @@ See `DummyClient` for an example of an implementation of `CloudConnectionClient`
 When compiling for Android you may see the warning `warning : command line option '-std=c++11' is valid for C++/ObjC++ but not for C [enabled by default]` - C++11 is required by the Google Native Games SDK and it is not used by the plugin itself.
 
 `__LP64__` warnings when compiling with Android NDK r9d - [Please see this issue](https://code.google.com/p/android/issues/detail?id=69975) which is being resolved in a future release of the Android NDK
+
+`08-06 16:40:30.573: E/GooglePlayServicesUtil(27040): The Google Play services resources were not found. Check your project configuration to ensure that the resources are included.` - You may see this error in your LogCat output. This is because text resources from Java libraries are not being compiled properly in Project Anarchy 2014.1
 
 ### All Platforms
 

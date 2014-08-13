@@ -96,6 +96,7 @@ Achievement and leaderboard IDs are alphanumeric strings (e.g. "Cgkx9eiuwi8_AQ")
 
 Please refer to one of the following readme files on how to install the plugin:
 
+* [Win32 Installation](README_Installation_Win32.md)
 * [Android Installation](README_Installation_Android.md)
 * [iOS Installation](README_Installation_iOS.md)
 

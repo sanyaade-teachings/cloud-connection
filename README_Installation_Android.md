@@ -1,6 +1,6 @@
 # Project Anarchy Cloud Connection Plugin Installation (Android)
 
-This document shows you how to setup the plugin to work with your game. For details on how to use the plugin then please see the main README.md file.
+This document shows you how to setup the plugin to work with your game. For details on how to use the plugin then please see the main [README.md](README.md) file.
 
 ## Download The Plugin
 

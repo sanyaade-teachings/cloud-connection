@@ -108,7 +108,8 @@ void ScoresAchievementsCppEnginePlugin::OnInitEnginePlugin()
   StateManager::InitServices(AndroidApplication); //Set up platform intiialization of Google Play Services
 #elif defined(_VISION_IOS)
     //This is the "OAuth2 Client ID" that you setup in the Google Developer console (it is NOT the same as the Android Application ID)
-    StateManager::InitServices("33140719607-8frn9motsbcp3k4vqe3khr68r88tmgbo.apps.googleusercontent.com");
+    //e.g 33140719607-8frn9motsbcp3k4vqe3khr68r88tmgbo.apps.googleusercontent.com
+    StateManager::InitServices("REPLACE_ME");
 #endif
   //Cloud Connection Plugin Initialisation - End
 

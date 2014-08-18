@@ -33,10 +33,10 @@ function OnAfterSceneLoaded()
 end
 
 function OnBeforeSceneUnloaded()
-
   GUI:SetCursorVisible(false) 
 
-  -- remove any screen masks we created
+  -- remove any screen masks we created    
+  G.googleSignInButton = nil
   Game:DeleteAllUnrefScreenMasks()
   -- remove any input maps we created
   if G.inputMap ~= nil then
